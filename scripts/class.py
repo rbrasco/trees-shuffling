@@ -1,54 +1,67 @@
-class Node:
-    name: str
-    prop: dict
-    
-    def __init__(self, name, **prop):
-        self.name = name
-        self.prop = prop
-    def __str__(self):
-        return self.name
+class Operad:
+    def __init__(self, n=1):
+        self.colors = {f"c{i}": None for i in range(n)} or {}
+        self.operations = {f"o{i}": None for i in range(n)} or {}
 
-class Edge:
-    name: str
-    prop: dict
+    def get_next_color(self, prop={}):
+        for color, obj in self.colors.items():
+            if not obj:
+                self.colors[color] = True or prop
+                return color
+        color = f"c{len(self.colors)}"
+        self.colors[color] = True or prop
+        return color
 
-    def __init__(self, name, **prop):
-        self.name = name
-        self.prop = prop
-    def __str__(self):
-        return self.name
+    def get_next_operation(self, prop={}):
+        for operation, obj in self.operations.items():
+            if not obj:
+                self.operations[operation] = True or prop
+                return operation
+        operation = f"o{len(self.operations)}"
+        self.operations[operation] = True or prop
+        return operation
 
 
 class Tree:
-    trunk: Edge
-    branches: list = []
-    node: Node = None
+    def __init__(self, depth=0, prop={}, operad=None):
+        self.operad = Operad() if not operad else operad
+        self.trunk = Edge(self.operad.get_next_color(), prop)
+        self.branches = []
+        self.depth = depth
+        self.node = None
 
-    def __init__(self, name, **prop):
-        self.trunk = Edge(name, **prop)
-    
-    def add_node(self, name, **prop):
-        self.node = Node(name, **prop)
+    def add_node(self, prop={}):
+        self.node = Node(self.operad.get_next_operation(), prop)
 
     def add_branch(self, tree):
         self.branches.append(tree)
-    
-    def add_branches(self, names, **prop):
-        for name in names:
-            self.add_branch(name, **prop)
-    
-    def get_branches(self):
-        return [str(t.trunk) for t in self.branches]
 
-def _recursive(n, name="e", depth=0):
-    t = Tree(f"{name}-{depth}")
-    
-    if n <= 0:
-        return t
-    t.add_node(str(t.trunk))
-    t.add_branch(_recursive(n-1, str(t.trunk), depth+1 ))
+    def get_branch(self, index):
+        return self.branches[index]
 
-    return t
+    def get_node(self):
+        return self.node
 
-t = _recursive(1)
-breakpoint()
+    def __str__(self):
+        return "".join(
+            [f"{str(self.trunk)}\n"]
+            + ["\t" * (self.depth + 1) + f"{str(branch)}\n" for branch in self.branches]
+        )
+
+
+class Node:
+    def __init__(self, name, prop):
+        self.name = name
+        self.prop = prop
+
+    def __str__(self):
+        return self.name
+
+
+class Edge:
+    def __init__(self, name, prop):
+        self.name = name
+        self.prop = prop
+
+    def __str__(self):
+        return self.name
