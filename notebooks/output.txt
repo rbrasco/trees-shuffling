@@ -1,57 +1,337 @@
-[
-    (
-        [
-            ('0B(2-b,2-c;2-a)', '0B(3-b,3-c;3-a)'),
-            ('1W(2-b,3-b;1-b)', '1W(2-c,3-c;1-c)')
-        ]
-    ),
-    ('0W(1-b;0-b)', '0W(1-c;0-c)')
-]
+Number of trees: 14
+R0
+0W
+	1W
+		0B
+			1B
+				None
 
-(
-    [
-        (
-            ['0B(2-b,2-c;2-a)', '0B(3-b,3-c;3-a)'],
-            ['1W(2-b,3-b;1-b)', '1W(2-c,3-c;1-c)']
-        )
-    ],
-    [
-        '0W(1-b;0-b)',
-        '0W(1-c;0-c)'
-    ]
-)
 
-(
-    [
-        (
-            'o0b(1-b,1-c;1-a)',
-            [
-                'None(;1-b)',
-                'None(;1-c)'
-            ]
-        ),
-        (
-            'o0b(2-b,2-c;2-a)',
-            [
-                'None(;2-b)',
-                'None(;2-c)'
-            ]
-        )
-    ],
-    [
-        (
-            [
-                'None(;1-b)',
-                'None(;2-b)'
-            ],
-            'o0w(1-b,2-b;0-b)'
-        ),
-        (
-            [
-                'None(;1-c)',
-                'None(;2-c)'
-            ],
-            'o0w(1-c,2-c;0-c)'
-        )
-    ]
-)
+			2B
+				None
+
+
+
+		0B
+			1B
+				None
+
+
+			2B
+				None
+
+
+
+
+
+R1
+0W
+	0B
+		1W
+			1B
+				None
+
+
+			1B
+				None
+
+
+
+		1W
+			2B
+				None
+
+
+			2B
+				None
+
+
+
+
+
+R2
+0B
+	0W
+		1W
+			1B
+				None
+
+
+			1B
+				None
+
+
+
+
+	0W
+		1W
+			2B
+				None
+
+
+			2B
+				None
+
+
+
+
+
+R3
+0W
+	0B
+		1B
+			1W
+				None
+
+				None
+
+
+
+		1W
+			2B
+				None
+
+
+			2B
+				None
+
+
+
+
+
+R4
+0W
+	0B
+		1W
+			1B
+				None
+
+
+			1B
+				None
+
+
+
+		2B
+			1W
+				None
+
+				None
+
+
+
+
+
+R5
+0B
+	0W
+		1W
+			1B
+				None
+
+
+			1B
+				None
+
+
+
+
+	0W
+		2B
+			1W
+				None
+
+				None
+
+
+
+
+
+R6
+0W
+	0B
+		1B
+			1W
+				None
+
+				None
+
+
+
+		2B
+			1W
+				None
+
+				None
+
+
+
+
+
+R7
+0B
+	0W
+		1B
+			1W
+				None
+
+				None
+
+
+
+
+	0W
+		2B
+			1W
+				None
+
+				None
+
+
+
+
+
+R8
+0B
+	1B
+		0W
+			1W
+				None
+
+				None
+
+
+
+
+	0W
+		2B
+			1W
+				None
+
+				None
+
+
+
+
+
+R9
+0B
+	0W
+		1B
+			1W
+				None
+
+				None
+
+
+
+
+	2B
+		0W
+			1W
+				None
+
+				None
+
+
+
+
+
+R10
+0B
+	1B
+		0W
+			1W
+				None
+
+				None
+
+
+
+
+	2B
+		0W
+			1W
+				None
+
+				None
+
+
+
+
+
+R11
+0B
+	0W
+		1W
+			1B
+				None
+
+
+			1B
+				None
+
+
+
+
+	2B
+		0W
+			1W
+				None
+
+				None
+
+
+
+
+
+R12
+0B
+	0W
+		1B
+			1W
+				None
+
+				None
+
+
+
+
+	0W
+		1W
+			2B
+				None
+
+
+			2B
+				None
+
+
+
+
+
+R13
+0B
+	1B
+		0W
+			1W
+				None
+
+				None
+
+
+
+
+	0W
+		1W
+			2B
+				None
+
+
+			2B
+				None
+
+
+
+
+
