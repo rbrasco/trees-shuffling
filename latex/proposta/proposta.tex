@@ -1,6 +1,8 @@
 % --- Empiezan las configuraciones ---------
 \documentclass[11pt,a4paper,openright,oneside]{article}
 \usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate}
+\usepackage[all]{xy}
+\SelectTips{cm}{} %to change the tips and tail of the arrows 
 \usepackage[spanish]{babel}
 \usepackage{epsfig}
 
@@ -74,8 +76,8 @@
             \vspace*{2cm}
             \renewcommand{\arraystretch}{1.5}
             \begin{tabular}{ll}
-                \textbf{\Large Director:}    & \textbf{\Large Dr. Javier J. Guti\'errez }        \\
-                \textbf{\Large Realitzat a:} & \textbf{\Large  Departament de Topolog\'ia}   \\
+                \textbf{\Large Director:}    & \textbf{\Large Dr. Javier J. Guti\'errez }  \\
+                \textbf{\Large Realitzat a:} & \textbf{\Large  Departament de Topolog\'ia} \\
                 \\
                 \textbf{\Large Barcelona,}   & \textbf{\Large 23 de enero de 2022 }
             \end{tabular}
@@ -124,8 +126,63 @@
 
 % --- Empieza sección 1 --------------------
 \section{Nociones previas}
-\subsection{Categorias}
+\subsection{Categor\'ias}
+% Bibliografía Adámek, Jiří; Herrlich, Horst; Strecker, George E. (1990), Abstract and Concrete Categories (PDF), Wiley, ISBN 0-471-60922-6 (now free on-line edition, GNU FDL). http://katmat.math.uni-bremen.de/acc/acc.pdf
+\begin{defi}
+    Categor\'ia
+\end{defi}
+Una categor\'ia is una cuadr\'upula $\mathbf{A} = (\mathcal{O}, \text{hom}, \mathit{id}, \circ)$ que consiste en:
+\begin{enumerate}[(1)]
+    \item Una clase $\mathcal{O}$ que sus elementos ser\'an llamados $\mathbf{A}$\textbf{-objetos}. Usaremos la notaci\'on $\mathit{Ob}(\mathbf{A})$ oara simplificar.
+    \item Para cada pareja de objetos $(A, B)$ de $\mathbf{A}$, tenemos un conjunto de $\text{hom}(A,B)$, cuyos elementos ser\'an llamados $\mathbf{A}$\textbf{-morfismos} de $A$ a $B$; \'es decir, los morfismos $A \overset{f}{\longrightarrow} B$ para todo $f \in \text{hom}(A,B)$.
+    \item Para cada objeto $A$ de $\mathbf{A}$ definimos el morfismo $A \overset{\mathit{id}_{A}}{\longrightarrow} A$ como la identidad $A$.
+    \item Sean $A \overset{f}{\longrightarrow} B$ y $B \overset{g}{\longrightarrow} C$ dos morifismos de $\mathbf{A}$, definimos la composici\'on $\circ$ como:
+          $$
+              \xymatrix{
+                  A \ar[rd]_{g\circ f} \ar[r]^f
+                  &B \ar[d]^g\\
+                  &C
+              }
+          $$
+          Composici\'on que cumple con las siguientes condiciones:
+          \begin{enumerate}[(a)]
+              \item Es asociativa: sean $A \overset{f}{\longrightarrow} B$, $B \overset{g}{\longrightarrow} C$ y $C \overset{h}{\longrightarrow} D$ morifismos de $\mathbf{A}$, entonces se cumple $h\circ (g\circ f) = (h\circ g)\circ f$.
+              \item Respecta la identidad: para todo morfismo $A \overset{f}{\longrightarrow} B$ de $\mathbf{A}$, se cumple $\mathit{id}_B\circ f = f$ y $f\circ \mathit{id}_A = f$.
+          \end{enumerate}
+\end{enumerate}
+\begin{ex}
+    Categor\'ia $\mathbf{Set}$ cuyos objetos son todos los conjuntos y los morfismos son las funciones totales.
+\end{ex}
+
+\begin{defi}
+    Categor\'ia opuesta
+\end{defi}
+Para toda categor\'ia $\mathbf{A} = (\mathcal{O}, \text{hom}_{\mathbf{A}}, \mathit{id}, \circ)$ definimos la categor\'ia opuesta como $\mathbf{A}^{\text{op}} = (\mathcal{O}, \text{hom}_{\mathbf{A}^{\text{op}}}, \mathit{id}, \circ^{\text{op}})$,
+donde $\text{hom}_{\mathbf{A}^{\text{op}}}(A,B) = \text{hom}_{\mathbf{A}}(B,A)$ y $f\circ^{\text{op}}g = g\circ f$. Podemos observar que $\mathbf{A}$ y $\mathbf{A}^{\text{op}}$ tienen los mismos objetos y los mismos morfismos pero cambiados de direcci\'on.
+
 \subsubsection{Functores}
+\begin{defi}
+    Functor
+\end{defi}
+Sean $\mathbf{A}$ y $\mathbf{B}$ dos categor\'ias, definimos un functor $F$ de $\mathbf{A}$ a $\mathbf{B}$ como una funci\'on que asigna cada objeto $A \in\mathit{Ob}(\mathbf{A})$ un objeto $F(A) \in\mathit{Ob}(\mathbf{B})$,
+y para cada morfismo de $\mathbf{A}$ $A \overset{f}{\longrightarrow} A'$ un morfismo de $\mathbf{B}$ $F(A) \overset{F(f)}{\longrightarrow} F(A')$.
+\begin{align*}
+    F: \mathbf{A} & \longrightarrow \mathbf{B} \\
+    A & \longmapsto\!
+    \begin{aligned}[t]
+        F(A)
+    \end{aligned} \\
+    f & \longmapsto\!
+    \begin{aligned}[t]
+    F(f)
+    \end{aligned} 
+\end{align*}
+De manera que:
+\begin{enumerate}[(1)]
+    \item $F$ conserva la composici\'on: $F(f\circ g) = F(f)\circ F(g)$, siempre y cuando $f\circ g$ est\'e bien definido.
+    \item $F$ conserva los morfismos identidad: $F(\mathit{id}_A)=\mathit{id}_{F(A)}$, para cada $A \in\mathit{Ob}(\mathbf{A})$.
+\end{enumerate}
+
 \subsection{Operadas}
 \subsubsection{Operadas coloradas}
 \newpage
