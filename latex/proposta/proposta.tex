@@ -131,12 +131,12 @@
 \begin{defi}
     Categor\'ia
 \end{defi}
-Una categor\'ia is una cuadr\'upula $\mathbf{A} = (\mathcal{O}, \text{hom}, \mathit{id}, \circ)$ que consiste en:
+Una categor\'ia is una cuadr\'upula $\mathcal{A} = (\mathcal{O}, \text{hom}, \mathit{id}, \circ)$ que consiste en:
 \begin{enumerate}[(1)]
-    \item Una clase $\mathcal{O}$ que sus elementos ser\'an llamados $\mathbf{A}$\textbf{-objetos}. Usaremos la notaci\'on $\mathit{Ob}(\mathbf{A})$ oara simplificar.
-    \item Para cada pareja de objetos $(A, B)$ de $\mathbf{A}$, tenemos un conjunto de $\text{hom}(A,B)$, cuyos elementos ser\'an llamados $\mathbf{A}$\textbf{-morfismos} de $A$ a $B$; \'es decir, los morfismos $A \overset{f}{\longrightarrow} B$ para todo $f \in \text{hom}(A,B)$.
-    \item Para cada objeto $A$ de $\mathbf{A}$ definimos el morfismo $A \overset{\mathit{id}_{A}}{\longrightarrow} A$ como la identidad $A$.
-    \item Sean $A \overset{f}{\longrightarrow} B$ y $B \overset{g}{\longrightarrow} C$ dos morifismos de $\mathbf{A}$, definimos la composici\'on $\circ$ como:
+    \item Una clase $\mathcal{O}$ que sus elementos ser\'an llamados $\mathcal{A}$\textbf{-objetos}. Usaremos la notaci\'on $\mathit{Ob}(\mathcal{A})$ para simplificar.
+    \item Para cada pareja de objetos $(A, B)$ de $\mathcal{A}$, tenemos un conjunto de $\text{hom}(A,B)$, cuyos elementos ser\'an llamados $\mathcal{A}$\textbf{-morfismos} de $A$ a $B$; \'es decir, los morfismos $A \overset{f}{\longrightarrow} B$ para todo $f \in \text{hom}(A,B)$.
+    \item Para cada objeto $A$ de $\mathcal{A}$ definimos el morfismo $A \overset{\mathit{id}_{A}}{\longrightarrow} A$ como la identidad $A$.
+    \item Sean $A \overset{f}{\longrightarrow} B$ y $B \overset{g}{\longrightarrow} C$ dos morifismos de $\mathcal{A}$, definimos la composici\'on $\circ$ como:
           $$
               \xymatrix{
                   A \ar[rd]_{g\circ f} \ar[r]^f
@@ -146,8 +146,8 @@ Una categor\'ia is una cuadr\'upula $\mathbf{A} = (\mathcal{O}, \text{hom}, \mat
           $$
           Composici\'on que cumple con las siguientes condiciones:
           \begin{enumerate}[(a)]
-              \item Es asociativa: sean $A \overset{f}{\longrightarrow} B$, $B \overset{g}{\longrightarrow} C$ y $C \overset{h}{\longrightarrow} D$ morifismos de $\mathbf{A}$, entonces se cumple $h\circ (g\circ f) = (h\circ g)\circ f$.
-              \item Respecta la identidad: para todo morfismo $A \overset{f}{\longrightarrow} B$ de $\mathbf{A}$, se cumple $\mathit{id}_B\circ f = f$ y $f\circ \mathit{id}_A = f$.
+              \item Es asociativa: sean $A \overset{f}{\longrightarrow} B$, $B \overset{g}{\longrightarrow} C$ y $C \overset{h}{\longrightarrow} D$ morifismos de $\mathcal{A}$, entonces se cumple $h\circ (g\circ f) = (h\circ g)\circ f$.
+              \item Respecta la identidad: para todo morfismo $A \overset{f}{\longrightarrow} B$ de $\mathcal{A}$, se cumple $\mathit{id}_B\circ f = f$ y $f\circ \mathit{id}_A = f$.
           \end{enumerate}
 \end{enumerate}
 \begin{ex}
@@ -157,34 +157,100 @@ Una categor\'ia is una cuadr\'upula $\mathbf{A} = (\mathcal{O}, \text{hom}, \mat
 \begin{defi}
     Categor\'ia opuesta
 \end{defi}
-Para toda categor\'ia $\mathbf{A} = (\mathcal{O}, \text{hom}_{\mathbf{A}}, \mathit{id}, \circ)$ definimos la categor\'ia opuesta como $\mathbf{A}^{\text{op}} = (\mathcal{O}, \text{hom}_{\mathbf{A}^{\text{op}}}, \mathit{id}, \circ^{\text{op}})$,
-donde $\text{hom}_{\mathbf{A}^{\text{op}}}(A,B) = \text{hom}_{\mathbf{A}}(B,A)$ y $f\circ^{\text{op}}g = g\circ f$. Podemos observar que $\mathbf{A}$ y $\mathbf{A}^{\text{op}}$ tienen los mismos objetos y los mismos morfismos pero cambiados de direcci\'on.
+Para toda categor\'ia $\mathcal{A} = (\mathcal{O}, \text{hom}_{\mathcal{A}}, \mathit{id}, \circ)$ definimos la categor\'ia opuesta como $\mathcal{A}^{\text{op}} = (\mathcal{O}, \text{hom}_{\mathcal{A}^{\text{op}}}, \mathit{id}, \circ^{\text{op}})$,
+donde $\text{hom}_{\mathcal{A}^{\text{op}}}(A,B) = \text{hom}_{\mathcal{A}}(B,A)$ y $f\circ^{\text{op}}g = g\circ f$. Podemos observar que $\mathcal{A}$ y $\mathcal{A}^{\text{op}}$ tienen los mismos objetos y los mismos morfismos pero cambiados de direcci\'on.
+
 
 \subsubsection{Functores}
 \begin{defi}
     Functor
 \end{defi}
-Sean $\mathbf{A}$ y $\mathbf{B}$ dos categor\'ias, definimos un functor $F$ de $\mathbf{A}$ a $\mathbf{B}$ como una funci\'on que asigna cada objeto $A \in\mathit{Ob}(\mathbf{A})$ un objeto $F(A) \in\mathit{Ob}(\mathbf{B})$,
-y para cada morfismo de $\mathbf{A}$ $A \overset{f}{\longrightarrow} A'$ un morfismo de $\mathbf{B}$ $F(A) \overset{F(f)}{\longrightarrow} F(A')$.
+Sean $\mathcal{A}$ y $\mathcal{B}$ dos categor\'ias, definimos un functor $F$ de $\mathcal{A}$ a $\mathcal{B}$ como una funci\'on que asigna cada objeto $A \in\mathit{Ob}(\mathcal{A})$ un objeto $F(A) \in\mathit{Ob}(\mathcal{B})$,
+y para cada morfismo de $\mathcal{A}$ $A \overset{f}{\longrightarrow} A'$ un morfismo de $\mathcal{B}$ $F(A) \overset{F(f)}{\longrightarrow} F(A')$.
 \begin{align*}
-    F: \mathbf{A} & \longrightarrow \mathbf{B} \\
-    A & \longmapsto\!
+    F: \mathcal{A} & \longrightarrow \mathcal{B} \\
+    A              & \longmapsto\!
     \begin{aligned}[t]
         F(A)
-    \end{aligned} \\
-    f & \longmapsto\!
+    \end{aligned}                    \\
+    f              & \longmapsto\!
     \begin{aligned}[t]
-    F(f)
-    \end{aligned} 
+        F(f)
+    \end{aligned}
 \end{align*}
 De manera que:
 \begin{enumerate}[(1)]
     \item $F$ conserva la composici\'on: $F(f\circ g) = F(f)\circ F(g)$, siempre y cuando $f\circ g$ est\'e bien definido.
-    \item $F$ conserva los morfismos identidad: $F(\mathit{id}_A)=\mathit{id}_{F(A)}$, para cada $A \in\mathit{Ob}(\mathbf{A})$.
+    \item $F$ conserva los morfismos identidad: $F(\mathit{id}_A)=\mathit{id}_{F(A)}$, para cada $A \in\mathit{Ob}(\mathcal{A})$.
+\end{enumerate}
+\begin{defi}
+    Tipos de functores
+\end{defi}
+Sea $F: \mathcal{A}\longrightarrow\mathcal{B}$ un functor de las categor\'ias $\mathcal{A}$ y $\mathcal{B}$.
+\begin{enumerate}[(1)]
+    \item $F$ es un functor covariante si preserva la direcci\'on de los morfismos; es decir, el morfismo $f: A \longrightarrow A'$ de $\mathcal{A}$ es asignado al morfismo $F(f): F(A) \longrightarrow F(A')$ de $\mathcal{B}$.
+    \item $F$ es un functor contravariante si invierte la direcci\'on de los morfismos; es decir, el morfismo $f: A \longrightarrow A'$ de $\mathcal{A}$ es asignado al morfismo $F(f): F(A') \longrightarrow F(A)$ de $\mathcal{B}$.
+    \item $F$ es un functor fiel si para cada par de objetos $A, A'\in\mathit{Ob}(\mathcal{A})$ la funci\'on $F_{A,A'}: \text{hom}_{\mathcal{A}}(A, A') \longrightarrow\text {hom}_{\mathcal{B}}(F(A), F(A'))$ es inyectiva.
 \end{enumerate}
 
 \subsection{Operadas}
-\subsubsection{Operadas coloradas}
+% Bibliografía Ieke Moerdijk; Bertrand Toën. (2010), SImplicial Methods for Operads and Algebraic Geometry (PDF), Birkhäuser, ISBN 978-3-0348-0051-8
+Sea $\mathcal{C}$ una categor\'ia cocompleta, sim\'etrica y monoidal, con producto tensorial $\otimes$ y unidad $I$. % TODO: Definicions de cocompleta, sim\'etrica y monoidal
+Suponemos que $\mathcal{C}$ es cerrada y la $\text{hom}(X, Y)$ es la $\text{hom}$ interna. Finalmente, denotamos el grupo sim\'etrico de $n$ letras como $\sum_n$.
+\begin{defi}
+    Operada
+\end{defi}
+Una operada $P$ en $\mathcal{C}$ consiste en objetos $P(n)$ de $\mathcal{C}$ para todo $n\ge 0$ y las siguientes afirmaciones: % TODO: afirmaciones/axiomas? 
+\begin{enumerate}[(1)]
+    \item Elemento unidad, definido por el morfismo $I \longrightarrow P(1)$.
+    \item Un producto composici\'on definido por los morfismos
+          $$
+              P(n)\otimes P(k_1) \otimes\dots\otimes P(k_n)\longrightarrow P(k)
+          $$
+          para todo $n$ y $k_1,\dots,k_n$ tal que $k=\sum_{i=1}^{n}{k_i}$. El producto composici\'on es equivariante y asociativo con la unidad.
+    \item Acci\'on permutaci\'on de variables definido por la acci\'on de $\sum_n$ por la de derecha en $P(n)$ para cada $n$.
+\end{enumerate}
+
+\begin{defi}
+    Morfismo de operadas
+\end{defi}
+Sean $P$ y $Q$ dos operadas en $\mathcal{C}$. Un morfismo de operadas $f: P \longrightarrow Q$ es definido por los morfismos $f_n: P(n)\longrightarrow Q(n)$ para cada $n$
+que sean compatibles con el producto composici\'on, el elemento unidad y la acci\'on del grupo sim\'etrico.
+
+
+\subsubsection{Operadas coloreadas}
+Sea $C$ un conjunto cuyos elementos los nombramos colores. Una operada $C\text{-coloreada}$ $P$ consiste en:
+\begin{enumerate}[(1)]
+    \item Para cada secuencia de colores $c_1,\dots,c_n,c\in C$, tenemos un objeto $P(c_1,\dots,c_n;c)\in\mathcal{C}$.
+          Este objeto reperesenta el conjunto de operaciones cuyas entradas son los colores $c_1,\dots,c_n$ y las salidas son el color $c$.
+    \item Elemento unidad, definido por el morfismo $I \longrightarrow P(c;c)$ para todo $c\in C$.
+    \item Para cada tupla de $n+1$ colores $(c_1,\dots,c_n;c)$ y $n$ tuplas cualesquiera
+          $$
+              (d_{1,1},\dots,d_{1,k_1};c_1),\dots,(d_{n,1},\dots,d_{n,k_n};c_n)
+          $$
+          definimos un producto composici\'on asociativo mediante los morfismos
+          \begin{align*}
+              P(c_1,\dots,c_n;c) & \otimes P(d_{1,1},\dots,d_{1,k_1};c_1) \otimes\dots\otimes P(d_{n,1},\dots,d_{n,k_n};c_n) \\
+                                 & \longrightarrow P(d_{1,1},\dots,d_{1,k_1},\dots,d_{n,1},\dots,d_{n,k_n};c)
+          \end{align*}
+    \item Acci\'on permutaci\'on de variables definido por la acci\'on del grupo sim\'etrico. Sea $\sigma\in\sum_n$ una permutaci\'on, definimos el morfismo
+          $$
+              \sigma^{*}: P(c_1,\dots,c_n;c) \longrightarrow P(c_{\sigma(1)},\dots,c_{\sigma(n)};c)
+          $$
+\end{enumerate}
+
+\begin{defi}
+    Morfismo de operadas coloreadas
+\end{defi}
+Sean $P$ y $Q$ dos operadas $C\text{-coloreada}$ y $D\text{-coloreada}$, respectivamente, en $\mathcal{C}$. Un morfismo de $P$ a $Q$ de operadas coloreadas es formado
+por un morfismo de colores $f: C \longrightarrow D$ y los morfismos
+$$
+    \varphi_{c_1,\dots,c_n;c}: P(c_1,\dots,c_n;c) \longrightarrow Q(f(c_1),\dots,f(c_n);c)
+$$
+que sean compatibles con el producto composici\'on, el elemento unidad y la acci\'on del grupo sim\'etrico.
+
+Usaremos la notaci\'on $Oper(\mathcal{C})$ para referenciar a la categor\'ia cuyos objetos son operadas coloreadas en $\mathcal{C}$ y cuyos morfismos son morfismos de operadas coloreadas.
+
 \newpage
 % --- Acaba sección 1 ----------------------
 
