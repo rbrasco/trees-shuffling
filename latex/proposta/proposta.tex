@@ -388,6 +388,12 @@ Definimos un conjunto simplicial como una secuencia de conjuntos $X_0,X_1,\dots$
 \end{enumerate}
 Formando el siguiente diagrama (Falta por hacer)
 
+$$ %Not working
+    \xymatrix{
+    X_0  \ar@/{}^{1pc}/[r]  & X_1  \ar@/{}^{1pc}/[r] & X_2  \dots
+    }
+$$
+
 \subsubsection{Definici\'on categ\'orica del conjunto simplicial}
 \begin{defi}
     Categor\'ia $\Delta$
@@ -436,18 +442,12 @@ Un conjunto simplicial es un functor covariante $X: \Delta^{op} \longrightarrow 
 Usaremos la notaci\'on $\Delta[n]=\Delta(\_,[n])$.
 \begin{align*}
     \Delta[n]: \Delta^{op} & \longrightarrow \mathbf{Set} \\
-    [m] & \longmapsto\!
+    [m]                    & \longmapsto\!
     \begin{aligned}[t]
         \Delta([m],[n])
     \end{aligned}
 \end{align*}
 Faltan observaciones.
-
-$$ %Not working
-    \xymatrix{
-    X_0  \ar@/{}^{1pc}/[r]  & X_1  \ar@/{}^{1pc}/[r] & X_2  \dots
-    }
-$$
 
 \subsection{Realizaci\'on geom\'etrica}
 \begin{defi}
@@ -468,6 +468,7 @@ Donde $\sim$ es la relaci\'on de equivalencia generada por las relaciones:
     $\Delta[2] = \Delta(\_, [2])$
 \end{ex}
 Falta por escribir
+
 % --- Acaba sección 2 ----------------------
 
 % ------------------------------------------
