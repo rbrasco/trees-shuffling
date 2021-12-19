@@ -1,9 +1,9 @@
 \babel@toc {spanish}{}
 \contentsline {section}{\numberline {1}Nociones previas}{1}%
 \contentsline {subsection}{\numberline {1.1}Categor\'ias}{1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Functores}{1}%
-\contentsline {subsection}{\numberline {1.2}Operadas}{2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Operadas coloreadas}{3}%
+\contentsline {subsubsection}{\numberline {1.1.1}Funtores}{1}%
+\contentsline {subsection}{\numberline {1.2}Op\'eradas en conjuntos}{2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Op\'eradas coloreadas}{3}%
 \contentsline {section}{\numberline {2}Conjuntos Simpliciales}{4}%
 \contentsline {subsection}{\numberline {2.1}Complejos simpliciales}{4}%
 \contentsline {subsubsection}{\numberline {2.1.1}Morfismos simpliciales}{4}%
