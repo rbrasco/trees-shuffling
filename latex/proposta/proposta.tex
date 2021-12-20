@@ -495,8 +495,8 @@ de v\'ertices exteriores, llamado \emph{inputs} o \emph{entradas}. Este \'ultimo
 Para dibujar dichos \'arboles, borraremos los v\'ertices output e inputs de la figura. De tal manera que los v\'ertices restantes ser\'an los \emph{v\'ertices} del \'arbol.
 Dado un \'arbol T, definimos el conjunto de v\'ertices como $V(T)$ y el conjunto de aristas como $E(T)$.
 
-Llamaremos \emph{hojas} a las aristas adjuntas de los v\'ertices inputs y \emph{ra\'iz} a la arista adjunta del v\'ertice output.
-De tal manera que las aristas restantes las llamaremos \emph{aristas interiores}. Podemos observar que existe una direcci\'on clara en cada \'arbol, desde las hojas hasta la ra\'iz.
+Llamaremos \emph{hojas} o \emph{aristas externas} a las aristas adjuntas de los v\'ertices inputs y \emph{ra\'iz} a la arista adjunta del v\'ertice output.
+De tal manera que las aristas restantes las llamaremos \emph{aristas internas}. Podemos observar que existe una direcci\'on clara en cada \'arbol, desde las hojas hasta la ra\'iz.
 
 Sea \emph{v} un v\'ertice de un \'arbol finito con ra\'iz, definimos out$(v)$ como la \'unica arista de salida y in$(v)$ como el conjunto de aristas de entrada, observamos que este \'ultimo conjunto puede ser vac\'io.
 Llamaremos la \emph{valencia} de $v$ a la cardinalidad del conjunto in$(v)$.
@@ -553,8 +553,61 @@ Finalmente, consideramos a la siguiente figura como un \'arbol de ejemplo:
 \subsection{Morfismos en $\Omega_p$}
 En las siguientes secciones vamos a tratar con todos los tipos de morfismos en $\Omega_p$ y dar una descripci\'on m\'as expl\'icita.
 \subsubsection{Caras}
+Sea $T$ un \'arbol planar con ra\'iz.
+\begin{defi}
+    Una \emph{cara interna} asociada a una arista interna $b$ en $T$ es una funci\'on $\partial_b \colon T/b\to T$ en $\Omega_p$, donde $T/b$ es el \'arbol que se obtiene al contraer la arista $b$.
+
+    Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/b)$, excepto por la operaci\'on $u$, que se env\'ia a la composici\'on $r\circ_b v$.
+    Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tomamos la siguiente figura para visualizar la funci\'on.
+    % Figura de la funcion T/b -> T %
+\end{defi}
+\begin{defi}
+    Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adjunta, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ con todas sus aristas externas.
+
+    Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/v)$.
+    Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tenemos dos tipos de cara externa que mostramos en las siguientes figuras.
+    % Figura de la funcion T/v -> T con vertice con hojas y la funcion T/v -> T con vertice sin hojas %
+\end{defi}
+\begin{obs}
+    Con esta \'ultima definici\'on no queda exclu\'ida la posibilidad de cortar la ra\'iz. Esta situaci\'on solo sera posible si la ra\'iz tiene solamente una arista interna adjunta. Entonces, no todo \'arbol $T$ tiene una cara externa asociada a su ra\'iz.
+\end{obs}
+\begin{obs}
+    Vale la pena mencionar un caso en especial, la inclusi\'on de un \'arbol sin v\'ertices $\eta$ en un \'arbol con un v\'ertice, llamado \emph{corola}. En este caso tendremos $n+1$ caras si la corola tiene $n$ hojas.
+    La op\'erada $\Omega_p(\eta)$ consiste solamente de un color y la operaci\'on identidad de dicho color. Entonces, una funci\'on de op\'eradas $\Omega_p(\eta)\to\Omega(T)$ es simplemente un color de una corola $T$.
+\end{obs}
+
+Para concluir, llamaremos \emph{caras} tanto las caras internas como las caras externas.
+
 \subsubsection{Funciones degenerativas}
-\subsubsection{Identidades de morfismos}
+Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
+\begin{defi}
+    Una \emph{funci\'on degenerativa} asociada al v\'ertice $v$ es una funci\'on $\sigma_v\colon T\to T \char`\\ v$ en $\Omega_p$, donde $T \char`\\ v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ y juntar las dos aristas adjuntas en una nueva arista $e$.
+
+    Esta funci\'on env\'ia los colores $e_1$ y $e_2$ de $\Omega_p(T)$ al color $e$ de $\Omega_p(T\char`\\v)$ y env\'ia la operacion generativa $v$ a la operaci\'on identidad $id_e$, mientras que es la identidad para los colores y operaciones generativas restantes.
+    Tomamos la siguiente figura para visualizar la funci\'on.
+    % Figura de la funcion T -> T\v %
+\end{defi}
+
+\begin{obs}
+    Las caras y las funciones degenerativas generan toda la categor\'ia $\Omega_p$.
+\end{obs}
+El siguiente lema es una generalizaci\'on hacia $\Omega_p$ del lema en la categor\'ia $\Delta$, diciendo que toda flecha en dicha categor\'ia se puede escribir como composici\'on de funciones degenerativas seguidas por caras.
+
+\begin{lema}
+    Sea $A$ y $B$ dos \'arboles en $\Omega_p$, toda flecha $f\colon A \to B$ en $\Omega_p$ descompone, salvando isomorf\'ias, como
+    $$
+        \xymatrix{
+            A \ar[rd]_{\sigma} \ar[r]^f
+            &B \\
+            &C \ar[u]_\partial
+        }
+    $$
+    donde  $\sigma\colon A\to B$ es una composici\'on de funciones degenerativas y $\partial\colon C\to B$ es una composici\'on de caras.
+\end{lema}
+Demo: por hacer
+
+\subsubsection{Identidades dendroidales}
+
 \subsection{\'Arboles no planares}
 \subsection{Conjunto Dendroidal}
 \subsection{Producto tensorial de conjuntos dendroidales}
