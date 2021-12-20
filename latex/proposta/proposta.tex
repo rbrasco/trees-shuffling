@@ -535,7 +535,7 @@ Finalmente, consideramos a la siguiente figura como un \'arbol de ejemplo:
     La \emph{categor\'ia de \'arboles planares con ra\'iz} $\Omega_p$ es la subcategor\'ia completa$|$llena de la categor\'ia de op\'eradas coloreadas no-sim\'etricas cuyos objetos son $\Omega_p(T)$ para todo \'arbol $T$.
 
     Podemos pensar que $\Omega_p$ es una categor\'ia cuyos objetos son \'arboles planares con ra\'iz.
-    Sean S y T dos \'arboles planares con ra\'iz, el conjunto de morfismos $\Omega_p(S, T)$ es dado por los morfismos entre op\'eradas coloreadas no-sim\'etricas de $\Omega_p(S)$ a $\Omega_p(T)$.
+    Sean $S$ y $T$ dos \'arboles planares con ra\'iz, el conjunto de morfismos $\Omega_p(S, T)$ es dado por los morfismos entre op\'eradas coloreadas no-sim\'etricas de $\Omega_p(S)$ a $\Omega_p(T)$.
 \end{defi}
 \begin{obs}
     La categor\'ia $\Omega_p$ extiende la categor\'ia simplicial $\Delta$. Para todo $n\ge 0$ se define un \emph{\'arbol lineal} $L_n$ como un \'arbol planar con $n+1$ aristas y $n$ v\'ertices $v_1,\dots,v_n$, donde la valencia de todos los v\'ertices es uno.
@@ -594,21 +594,59 @@ Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
 El siguiente lema es una generalizaci\'on hacia $\Omega_p$ del lema en la categor\'ia $\Delta$, diciendo que toda flecha en dicha categor\'ia se puede escribir como composici\'on de funciones degenerativas seguidas por caras.
 
 \begin{lema}
-    Sea $A$ y $B$ dos \'arboles en $\Omega_p$, toda flecha $f\colon A \to B$ en $\Omega_p$ descompone, salvando isomorf\'ias, como
+    Sea $S$, $T$ y $H$ unos \'arboles en $\Omega_p$, toda flecha $f\colon S \to T$ en $\Omega_p$ descompone, salvo isomorf\'ias, como
     $$
         \xymatrix{
-            A \ar[rd]_{\sigma} \ar[r]^f
-            &B \\
-            &C \ar[u]_\partial
+            S \ar[rd]_{\sigma} \ar[r]^f
+            &T \\
+            &H \ar[u]_\partial
         }
     $$
-    donde  $\sigma\colon A\to B$ es una composici\'on de funciones degenerativas y $\partial\colon C\to B$ es una composici\'on de caras.
+    donde  $\sigma\colon S\to H$ es una composici\'on de funciones degenerativas y $\partial\colon H\to T$ es una composici\'on de caras.
 \end{lema}
 Demo: por hacer
 
 \subsubsection{Identidades dendroidales}
 
 \subsection{\'Arboles no planares}
+\begin{defi}
+    Sea $T$ un \'arbol no-planar. Denotaremos una op\'erada coloreada sim\'etrica generada por T como $\Omega(T)$. El conjunto de colores de $\Omega(T)$ es el conjunto de aristas $E(T)$ de $T$.
+    Las operaciones son generadas por los v\'ertices del \'arbol, y el grupo sim\'etrico de $n$ letras $\Sigma_n$ act\'ua en cada operaci\'on de $n$ entradas permutando el orden de las entradas.
+    Es decir, para cada v\'ertice $v$ con entradas $e_1,\dots,e_n$ y salida $e$, definimos una operaci\'on $v\in \Omega(T)(e_1,\dots,e_n;e)$. Las otras operaciones son las operaciones unitarias, las operaciones obtenidas por composici\'on y la acci\'on del grupo sim\'etrico.
+\end{defi}
+\begin{ex}
+    Consideramos la figura del siguiente \'arbol T:
+    % Figura de un árbol para describir %
+
+    La op\'erada $\Omega(T)$ tiene seis colores \textit{a, b, c, d, e,} y \textit{f}. Las operaciones generadoras son las mismas que las operaciones generativas en $\Omega_p(T)$. Observamos que toda operaci\'on de $\Omega_p(T)$ son operaciones de $\Omega(T)$, pero no a la inversa ya que hay m\'as operaciones en $\Omega(T)$ obtenidas por la acci\'on del grupo sim\'etrico.
+    Por ejemplo, sea $\sigma$ la transposici\'on de dos elementos de $\Sigma_2$, entonces tenemos una operaci\'on $v\circ\sigma\in\Omega(f,e;b)$.
+\end{ex}
+\begin{obs}
+    Sea $T$ cualquier \'arbol, entonces $\Omega(T) = \Sigma(\Omega_p(\overline{T}))$, donde $\overline{T}$ es una representaci\'on planar de $T$. De hecho, se elige una estructura planar de $T$ como generador de $\Omega(T)$.
+\end{obs}
+\begin{defi}
+    La \emph{categor\'ia de \'arboles con ra\'iz} $\Omega$ es la subcategor\'ia completa$|$llena de la categor\'ia de op\'eradas coloreadas cuyos objetos son $\Omega(T)$ para todo \'arbol $T$.
+
+    Podemos pensar que $\Omega$ es una categor\'ia cuyos objetos son \'arboles con ra\'iz.
+    Sean $S$ y $T$ dos \'arboles con ra\'iz, el conjunto de morfismos $\Omega(S, T)$ es dado por los morfismos entre op\'eradas coloreadas de $\Omega_p(S)$ a $\Omega_p(T)$.
+\end{defi}
+\begin{obs}
+    Los morfismos de la categor\'ia $\Omega$ son generados por las caras y las funciones degenerativas, an\'alogas al caso planar, y las isomorf\'ias no-planares.
+\end{obs}
+\begin{lema}
+    Sea $S$, $S'$, $T$ y $T'$ unos \'arboles en $\Omega$, toda flecha $f\colon S \to T$ en $\Omega$ descompone como
+    $$
+        \xymatrix{
+            S \ar[d]_{\sigma} \ar[r]^f
+            &T \\
+            S' \ar[r]^\varphi
+            &T' \ar[u]_\partial
+        }
+    $$
+    donde  $\sigma\colon S\to S'$ es una composici\'on de funciones degenerativas, $\varphi\colon S'\to T'$ es un isomorf\'ia, y $\partial\colon T\to T'$ es una composici\'on de caras.
+\end{lema}
+Demo: por hacer
+
 \subsection{Conjunto Dendroidal}
 \subsection{Producto tensorial de conjuntos dendroidales}
 \subsubsection{Producto tensorial Boardman Vogt}
