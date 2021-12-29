@@ -532,7 +532,7 @@ Finalmente, consideramos a la siguiente figura como un \'arbol de ejemplo:
     $$(r\circ_1 v)\circ_3 w = (r\circ_2 w)\circ_1 v  \in \Omega_p(T)(e,f,c;a)$$
 \end{ex}
 \begin{defi}
-    La \emph{categor\'ia de \'arboles planares con ra\'iz} $\Omega_p$ es la subcategor\'ia completa$|$llena de la categor\'ia de op\'eradas coloreadas no-sim\'etricas cuyos objetos son $\Omega_p(T)$ para todo \'arbol $T$.
+    La \emph{categor\'ia de \'arboles planares con ra\'iz} $\Omega_p$ es la subcategor\'ia plena de la categor\'ia de op\'eradas coloreadas no-sim\'etricas cuyos objetos son $\Omega_p(T)$ para todo \'arbol $T$.
 
     Podemos pensar que $\Omega_p$ es una categor\'ia cuyos objetos son \'arboles planares con ra\'iz.
     Sean $S$ y $T$ dos \'arboles planares con ra\'iz, el conjunto de morfismos $\Omega_p(S, T)$ es dado por los morfismos entre op\'eradas coloreadas no-sim\'etricas de $\Omega_p(S)$ a $\Omega_p(T)$.
@@ -702,11 +702,24 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
 \end{lema}
 Demo: por hacer
 
-% Se hace?
 \subsubsection{Prehaz? de estructuras planares}
-Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su estructura planar.
+Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de estructuras planares. Observamos que $P(T)$ es un torsor en $\text{Aut}(T)$ para cada \'arbol $T$, donde $\text{Aut}(T)$ denota el conjunto de automorfismos de $T$.
+Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por el morfismo $f\colon\to S$ en $\Omega$, tal que $P(f)(y) = x$.
+Entonces, tenemos que $\Omega\backslash P = \Omega_p$ y existe una proyecci\'on $v\colon\Omega_p\to\Omega$. Tenemos el siguiente tri\'angulo conmutativo:
+$$
+    \xymatrix{
+        \Delta \ar[rd]_{i} \ar[r]^u
+        &\Omega_p \ar[d]^v\\
+        &\Omega
+    }
+$$
+Donde $i$ es un encaje plenamente fiel  de $\Delta$ hacia $\Omega$, que env\'ia el objeto $[n]$ de $\Delta$ al \'arbol lineal $L_n$ de $\Omega$, para todo $n\ge 0$.
 \subsubsection{Relaci\'on con la categor\'ia simplicial}
-% Se hace?
+
+Hemos podido ver que las dos categor\'ias, $\Omega_p$ y $\Omega$, extienden la categor\'ia $\Delta$, gracias a ver los objetos de $\Delta$ como \'arboles lineales. Adem\'as, se puede obtener $\Delta$ como la categor\'ia coma de $\Omega_p$ o $\Omega$.
+
+Sea $\eta$ un \'arbol en $\Omega$ que no contiene ning\'un v\'ertice y tan solo una arista, y sea $\eta_p$ su representaci\'on planar en $\Omega_p$.
+Si $T$ es un \'arbol cualquiera en $\Omega$, entonces $\Omega(T,\eta)$ consiste en un solo morfismo o es el conjunto vac\'io, dependiendo si $T$ es un \'arbol lineal o no. Pasa lo mismo con $\Omega_p$ y $\eta_p$. Entonces, $\Omega\backslash\eta = \Omega_p\backslash\eta_p = \Delta$.
 
 \subsection{Conjunto Dendroidal}
 En esta secci\'on vamos a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de los prehaces en $\Omega$ y $\Omega_p$, respectivamente.
@@ -723,8 +736,28 @@ Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjunt
 \end{defi}
 
 
-
 \subsection{Producto tensorial de conjuntos dendroidales}
+\begin{defi}
+    Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial Boardman-Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de genreadores y relaciones de la siguiente manera.
+    Para cada color $d\in D$ y cada operaci\'on $p\in P(c_1,\dots,c_n;c)$ existe un generador
+    $$
+        p \otimes d \in P\otimes_{BV}Q((c_1,d),\dots,(c_n,d);(c,d))
+    $$
+    De manera an\'aloga, para cada color $c\in C$ y cada operaci\'on $q\in Q(d_1,\dots,d_m;d)$ existe un generador
+    $$
+        c \otimes q \in P\otimes_{BV}Q((c,d_1),\dots,(c,d_m);(c,d))
+    $$
+    Estos generadores estan sujetos a las siguientes relaciones:
+    \begin{enumerate}
+        \item[{\rm (i)}] $(p\otimes d) \circ ((p_1\otimes d),\dots,(p_n\otimes d)) = (p\circ(p_1,\dots,p_n))\otimes d$
+        \item[{\rm (ii)}] $\sigma^{*}(p\otimes d) = (\sigma^{*}p)\otimes d$, para cada $\sigma\in\Sigma_n$
+        \item[{\rm (iii)}] $(c\otimes q) \circ ((c\otimes q_1),\dots,(c\otimes q_m)) = c\otimes (q\circ(q_1,\dots,q_m))$
+        \item[{\rm (iv)}] $\sigma^{*}(c\otimes q) = c\otimes (\sigma^{*}q)$, para cada $\sigma\in\Sigma_m$
+        \item[{\rm (v)}] Falta
+    \end{enumerate}
+\end{defi}
+
+
 \subsubsection{Producto tensorial Boardman Vogt}
 \subsubsection{Producto Producto tensorial de conjuntos dendroidales}
 \newpage
