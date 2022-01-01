@@ -737,6 +737,7 @@ Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjunt
 
 
 \subsection{Producto tensorial de conjuntos dendroidales}
+\subsubsection{Producto tensorial Boardman Vogt}
 \begin{defi}
     Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial Boardman-Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de genreadores y relaciones de la siguiente manera.
     Para cada color $d\in D$ y cada operaci\'on $p\in P(c_1,\dots,c_n;c)$ existe un generador
@@ -753,13 +754,49 @@ Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjunt
         \item[{\rm (ii)}] $\sigma^{*}(p\otimes d) = (\sigma^{*}p)\otimes d$, para cada $\sigma\in\Sigma_n$
         \item[{\rm (iii)}] $(c\otimes q) \circ ((c\otimes q_1),\dots,(c\otimes q_m)) = c\otimes (q\circ(q_1,\dots,q_m))$
         \item[{\rm (iv)}] $\sigma^{*}(c\otimes q) = c\otimes (\sigma^{*}q)$, para cada $\sigma\in\Sigma_m$
-        \item[{\rm (v)}] Falta
+        \item[{\rm (v)}] $\sigma_{n,m}^{*}((p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))) = (c\otimes q)\circ((p\otimes d_1),\dots,(p\otimes d_m))$, donde $\sigma_{n,m}\in\Sigma_{nm}$ es una permutaci\'on que descibimos a continuaci\'on.
+              Consideramos el conjunto $\Sigma_{nm}$ como el conjunto de biyecciones del conjunto $\{0,1,\dots,nm-1\}$. Cada elemento de dicho conjunto se puede escribir como $kn+j$ de manera \'unica para $0\le k<m$ y $0\le j<n$; y, an\'alogamente, se puede escribir como $km+j$ para $0\le k<n$ y $0\le j<m$.
+              Finalmente, la permutaci\'on $\sigma_{n,m}$ la definimos de tal manera que $\sigma_{n,m}(kn+j) = jm+k$.
     \end{enumerate}
+\end{defi}
+\begin{obs}
+    Tenemos que las relaciones (i) y (ii) implican que para cada color $d\in D$ la funci\'on $P\to P\otimes_{BV}Q$ es una funci\'on de op\'eradas, que viene dada por $p\mapsto p\otimes d$. De manera an\'aloga, tenemos que las relaciones (iii) y (iv) implican que para cada color $c\in C$ la funci\'on $Q\to P\otimes_{BV}Q$ es una funci\'on de op\'eradas, que viene dada por $q\mapsto c\otimes q$.
+\end{obs}
+\begin{ex}
+    Vamos a ilustrar la relaci\'on (v), tambi\'en llamada como la \emph{relaci\'on del intercambio} con las siguientes figuras. Suponemos que $n=2$ y $m=3$.
+    Representamos mediante el siguiente \'arbol la operaci\'on de la izquierda de la relaci\'on (v), antes de aplicar la permutaci\'on $\sigma_{2,3}^{*}$
+    % Dibujo del arbol (p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))%
+
+    Representamos mediante el siguiente \'arbol la operaci\'on de la derecha de la relaci\'on (v)
+    % Dibujo del arbol (c\otimes q)\circ((p\otimes d_1),\dots,(p\otimes d_m))%
+
+    Observamos que la permutaci\'on $\sigma_{2,3}$ corresponde a la permutaci\'on (2 4 5 3) de $\Sigma_6$.
+    Hemos pintado los v\'ertices de las operaciones en $P$ de color blanco y para los v\'ertices de las operaciones en $Q$ de color negro.
+\end{ex}
+
+\subsubsection{Producto tensorial de conjuntos dendroidales}
+La categor\'ia de los conjuntos dendroidales es una categor\'ia de prehaces, y por consecuencia es cerrada cartesianamente.
+El producto cartesiano de los conjuntos dendroidales extiende el producto cartesiano de conjuntos simpliciales, es decir, para cada par de conjuntos simpliciales $X$ e $Y$
+$$
+    i_!(X\times Y) \cong i_!(X)\times i_!(Y)
+$$
+\begin{defi}
+    Para todo par de \'arboles $T$ y $S$ en $\Omega$, el \emph{producto tensorial} de los conjuntos de representables $\Omega[T]$ y $\Omega[S]$ se define como
+    $$
+        \Omega[T]\otimes\Omega[S] = N_d(\Omega(T)\otimes_{BV}\Omega(S))
+    $$
+    Donde $N_d$ es el nervio dendroidal, $\Omega(T)$ y $\Omega(S)$ son las op\'eradas coloreadas asociadas a los \'arboles $T$ y $S$, respectivamente; y $\otimes_{BV}$ es el producto tensorial Boardman-Vogt.
+
+    Esto define un producto tensorial en toda la categor\'ia de conjuntos dendroidales, ya que es una categor\'ia de prehaces y entonces cada objeto es un col\'imite can\'onico de representables y $\otimes$ mantiene los col\'imites en cada variable.
+\end{defi}
+\begin{defi}
+    Sean $X$ e $Y$ dos conjuntos dendroidales y sea $X = \lim_{\to}\Omega[T]$ y $Y = \lim_{\to}\Omega[S]$ sus expresiones can\'onicas como col\'imites de representables. Entonces, definimos el \emph{producto tensorial} $X\otimes Y$ como
+    $$
+        X\otimes Y = \lim_{\to}\Omega[T]\otimes\lim_{\to}\Omega[S] = \lim_{\to} N_d(\Omega(T)\otimes_{BV}\Omega(S))
+    $$
 \end{defi}
 
 
-\subsubsection{Producto tensorial Boardman Vogt}
-\subsubsection{Producto Producto tensorial de conjuntos dendroidales}
 \newpage
 % --- Acaba sección 3 ----------------------
 
