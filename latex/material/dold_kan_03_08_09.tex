@@ -263,44 +263,33 @@ As an example, consider the following picture of a tree $T$:
 
 \begin{equation}
     \xy
-<0.08cm, 0cm>:
-%Vertices%
-(0.0, 0.0)*{}="1"; %root_a
-(0.0, 10.0)*=0{\bullet}="2"; %vB
-(-17.5, 20.0)*{\circ}="3"; %vW
-(-25.0, 30.0)*{}="4"; %leaf_e
-(-10.0, 30.0)*{}="5"; %leaf_f
-(0, 20.0)*{}="6"; %leaf_c
-(20.0, 20.0)*=0{\bullet}="7"; %wB
-(5.0, 30.0)*{}="8"; %leaf_g
-(20.0, 30.0)*{}="9"; %leaf_h
-(35.0, 30.0)*=0{\bullet}="10"; %zB
-%Edges%
-"1";"2" **\dir{-};
-"2";"3" **\dir{-};
-"3";"4" **\dir{-};
-"3";"5" **\dir{-};
-"2";"6" **\dir{-};
-"2";"7" **\dir{-};
-"7";"8" **\dir{-};
-"7";"9" **\dir{-};
-"7";"10" **\dir{-};
-%Labels%
-(3.0, 10.0)*=0{\scriptstyle v};
-(-14.5, 20.0)*=0{\scriptstyle v};
-(23.0, 20.0)*=0{\scriptstyle w};
-(38.0, 30.0)*=0{\scriptstyle z};
-(-2.0, 5.0)*=0{\scriptstyle a};
-(-10.75, 15.0)*=0{\scriptstyle b};
-(-23.25, 25.0)*=0{\scriptstyle e};
-(-15.75, 25.0)*=0{\scriptstyle f};
-(-3.25, 15.0)*=0{\scriptstyle c};
-(8.0, 15.0)*=0{\scriptstyle d};
-(10.5, 25.0)*=0{\scriptstyle g};
-(18.0, 25.0)*=0{\scriptstyle h};
-(25.5, 25.0)*=0{\scriptstyle i};
-\endxy
-    \label{treeexample}
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %rB
+        (-15.0, 20.0)*{\circ}="3"; %vW
+        (-22.5, 30.0)*{}="4"; %leaf_e
+        (-7.5, 30.0)*{}="5"; %leaf_f
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (15.0, 20.0)*=0{\bullet}="7"; %wB
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        %Labels%
+        (3.0, 10.0)*=0{\scriptstyle r};
+        (-12.0, 20.0)*=0{\scriptstyle v};
+        (18.0, 20.0)*=0{\scriptstyle w};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-9.5, 15.0)*=0{\scriptstyle b};
+        (-20.75, 25.0)*=0{\scriptstyle e};
+        (-13.25, 25.0)*=0{\scriptstyle f};
+        (-2.0, 15.0)*=0{\scriptstyle c};
+        (5.5, 15.0)*=0{\scriptstyle d};
+    \endxy
 \end{equation}
 The output vertex at the edge $a$ and the input vertices at $e$, $f$, $c$, $g$ and $h$ have been deleted.
 This tree has four vertices $u$, $v$, $w$ and $z$ of respective valences 3, 2, 3 and 0. It also has five input

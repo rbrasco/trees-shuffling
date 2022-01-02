@@ -6,7 +6,7 @@
 \usepackage[all]{xy}
 
 \SelectTips{cm}{} %to change the tips and tail of the arrows 
-\usepackage[spanish]{babel}
+% \usepackage[spanish]{babel}
 \usepackage{epsfig}
 
 \parskip=5pt
@@ -501,8 +501,41 @@ De tal manera que las aristas restantes las llamaremos \emph{aristas internas}. 
 Sea \emph{v} un v\'ertice de un \'arbol finito con ra\'iz, definimos out$(v)$ como la \'unica arista de salida y in$(v)$ como el conjunto de aristas de entrada, observamos que este \'ultimo conjunto puede ser vac\'io.
 Llamaremos la \emph{valencia} de $v$ a la cardinalidad del conjunto in$(v)$.
 
-Finalmente, consideramos a la siguiente figura como un \'arbol de ejemplo:
+Finalmente, la siguiente figura es un \'arbol de ejemplo:
 % Figura arbol + explicación de sus partes %
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
+    (-22.5, 30.0)*{}="4"; %leaf_e
+    (-7.5, 30.0)*{}="5"; %leaf_f
+    (0.0, 20.0)*{}="6"; %leaf_c
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "2";"7" **\dir{-};
+    %Labels%
+    (3.0, 10.0)*=0{\scriptstyle r};
+    (-12.0, 20.0)*=0{\scriptstyle v};
+    (18.0, 20.0)*=0{\scriptstyle w};
+    (-2.0, 5.0)*=0{\scriptstyle a};
+    (-9.5, 15.0)*=0{\scriptstyle b};
+    (-20.75, 25.0)*=0{\scriptstyle e};
+    (-13.25, 25.0)*=0{\scriptstyle f};
+    (-2.0, 15.0)*=0{\scriptstyle c};
+    (5.5, 15.0)*=0{\scriptstyle d};
+    \endxy
+\end{equation}
+Observamos que hemos eliminado el v\'ertice output de la arista $a$ y los v\'ertices inputs en las aristas $e$, $f$ y $c$. Este \'arbol tiene tres v\'ertices $r$, $v$ y $w$ con valencia 3, 2 y 0, respectivamente.
+Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. Finalmente, la ra\'iz es la arista $a$.
+
 
 \subsubsection{\'Arboles planares}
 \begin{defi}
@@ -512,6 +545,61 @@ Finalmente, consideramos a la siguiente figura como un \'arbol de ejemplo:
     El orden de los conjuntos in$(v)$ se obtiene de la idea de dibujar los \'arboles en un plano. Es decir, para dibujar un \'arbol siempre pondremos la ra\'iz debajo y las hojas arriba con un orden trivial.
     Observamos con esta t\'ecnica que tendremos varias representaciones planares del mismo \'arbol. Por ejemplo,
     % Figura de dos representaciones planares del mismo arbol %
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_e
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-10.0, 20.0)*=0{\bullet}="3"; %vB
+        (-20.0, 30.0)*{}="4"; %leaf_a
+        (0.0, 30.0)*{}="5"; %leaf_b
+        (10.0, 20.0)*{}="6"; %leaf_d
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        %Labels%
+        (3.0, 10.0)*=0{\scriptstyle u};
+        (-7.0, 20.0)*=0{\scriptstyle v};
+        (-2.0, 5.0)*=0{\scriptstyle e};
+        (-7.0, 15.0)*=0{\scriptstyle c};
+        (-17.0, 25.0)*=0{\scriptstyle a};
+        (-7.0, 25.0)*=0{\scriptstyle b};
+        (3.0, 15.0)*=0{\scriptstyle d};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-20, 0.0)*{}="1";
+        (20, 0.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_e
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-10.0, 20.0)*{}="3"; %leaf_d
+        (10.0, 20.0)*=0{\bullet}="4"; %vB
+        (0.0, 30.0)*{}="5"; %leaf_b
+        (20.0, 30.0)*{}="6"; %leaf_a
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "4";"6" **\dir{-};
+        %Labels%
+        (3.0, 10.0)*=0{\scriptstyle u};
+        (13.0, 20.0)*=0{\scriptstyle v};
+        (-2.0, 5.0)*=0{\scriptstyle e};
+        (-7.0, 15.0)*=0{\scriptstyle d};
+        (3.0, 15.0)*=0{\scriptstyle c};
+        (3.0, 25.0)*=0{\scriptstyle b};
+        (13.0, 25.0)*=0{\scriptstyle a};
+        \endxy
+    \end{equation}
 \end{obs}
 \begin{defi}
     Un \'arbol es \emph{unitario} cuando la arista de entrada y salida son la misma. En ese caso lo denotaremos como $\eta$.
@@ -526,6 +614,37 @@ Finalmente, consideramos a la siguiente figura como un \'arbol de ejemplo:
 \begin{ex}
     Vamos a realizar la descripci\'on completa del siguiente \'arbol T:
     % Figura de un árbol para describir %
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %rB
+        (-20.0, 20.0)*=0{\bullet}="3"; %vB
+        (-30.0, 30.0)*{}="4"; %leaf_e
+        (-10.0, 30.0)*{}="5"; %leaf_f
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (20.0, 20.0)*=0{\bullet}="7"; %wB
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        %Labels%
+        (3.0, 10.0)*=0{\scriptstyle r};
+        (-17.0, 20.0)*=0{\scriptstyle v};
+        (23.0, 20.0)*=0{\scriptstyle w};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-12.0, 15.0)*=0{\scriptstyle b};
+        (-27.0, 25.0)*=0{\scriptstyle e};
+        (-17.0, 25.0)*=0{\scriptstyle f};
+        (-2.0, 15.0)*=0{\scriptstyle c};
+        (8.0, 15.0)*=0{\scriptstyle d};
+        (-12,0)*{T};
+        \endxy
+    \end{equation}
 
     La operada $\Omega_p(T)$ tiene seis colores \textit{a, b, c, d, e,} y \textit{f}. Las operaciones generadoras son $v\in \Omega_p(T)(e,f;b)$, $w\in \Omega_p(T)(\_;d)$ y $r\in \Omega_p(T)(b,c,d;a)$.
     Mientras que las otras operaciones son las operaciones unitarias $1_a,1_b,\dots,1_f$ y las operaciones composici\'on $r\circ_1v\in \Omega_p(T)(e,f,c,d;a)$, $r\circ_2w\in \Omega_p(T)(b,c;a)$ y
@@ -540,6 +659,35 @@ Finalmente, consideramos a la siguiente figura como un \'arbol de ejemplo:
 \begin{obs}
     La categor\'ia $\Omega_p$ extiende la categor\'ia simplicial $\Delta$. Para todo $n\ge 0$ se define un \emph{\'arbol lineal} $L_n$ como un \'arbol planar con $n+1$ aristas y $n$ v\'ertices $v_1,\dots,v_n$, donde la valencia de todos los v\'ertices es uno.
     % Figura del arbol L_n %
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0
+        (0.0, 10.0)*=0{\bullet}="2"; %v_1B
+        (0.0, 20.0)*=0{\bullet}="3"; %v_2B
+        (0.0, 30.0)*=0{\bullet}="4"; %v_3B
+        (0.0, 40.0)*=0{\bullet}="5"; %v_nB
+        (0.0, 50.0)*{}="6"; %leaf_n
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{.};
+        "5";"6" **\dir{-};
+        %Labels%
+        (4.0, 10.0)*=0{\scriptstyle v_1};
+        (4.0, 20.0)*=0{\scriptstyle v_2};
+        % (4.0, 30.0)*=0{\scriptstyle v_3};
+        (4.0, 40.0)*=0{\scriptstyle v_n};
+        (-2.0, 5.0)*=0{\scriptstyle 0};
+        (-2.0, 15.0)*=0{\scriptstyle 1};
+        (-2.0, 25.0)*=0{\scriptstyle 2};
+        % (-2.0, 35.0)*=0{\scriptstyle 3};
+        (-2.0, 45.0)*=0{\scriptstyle n};
+        (-12,0)*{L_n};
+        \endxy
+    \end{equation}
 
     Denotaremos este \'arbol por $[n]$. Toda apliaci\'on que mantiene el orden de manera que env\'ie $\{0,\dots,n\}$ a $\{0,\dots,m\}$, define un morfismo $[n] \to [m]$ en la categor\'ia $\Omega_p$. De esta manera obtenemos el siguiente funtor
     \[
@@ -560,6 +708,64 @@ Sea $T$ un \'arbol planar con ra\'iz.
     Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/b)$, excepto por la operaci\'on $u$, que se env\'ia a la composici\'on $r\circ_b v$.
     Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tomamos la siguiente figura para visualizar la funci\'on.
     % Figura de la funcion T/b -> T %
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-22.5, 20.0)*{}="3"; %leaf_e
+        (-7.5, 20.0)*{}="4"; %leaf_f
+        (7.5, 20.0)*{}="5"; %leaf_c
+        (22.5, 20.0)*=0{\bullet}="6"; %wB
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"4" **\dir{-};
+        "2";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        %Labels%
+        (3.0, 10.0)*=0{\scriptstyle u};
+        (25.5, 20.0)*=0{\scriptstyle w};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-13.25, 14.0)*=0{\scriptstyle e};
+        (-5.75, 15.0)*=0{\scriptstyle f};
+        (1.75, 15.0)*=0{\scriptstyle c};
+        (15.25, 15.0)*=0{\scriptstyle d};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-20, 0.0)*{}="1";
+        (20, 0.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %rB
+        (-15.0, 20.0)*=0{\bullet}="3"; %vB
+        (-22.5, 30.0)*{}="4"; %leaf_e
+        (-7.5, 30.0)*{}="5"; %leaf_f
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (15.0, 20.0)*{}="7"; %leaf_d
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        %Labels%
+        (3.0, 9.5)*=0{\scriptstyle r};
+        (-11.5, 20.0)*=0{\scriptstyle v};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-9.5, 14.0)*=0{\scriptstyle b};
+        (-21.3, 25.0)*=0{\scriptstyle e};
+        (-9, 25.0)*=0{\scriptstyle f};
+        (-2.0, 15.0)*=0{\scriptstyle c};
+        (10.4, 15.0)*=0{\scriptstyle d};
+        \endxy
+    \end{equation}
 \end{defi}
 \begin{defi}
     Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adjunta, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ con todas sus aristas externas.
