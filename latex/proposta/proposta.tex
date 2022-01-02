@@ -508,7 +508,7 @@ Finalmente, la siguiente figura es un \'arbol de ejemplo:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
     (-15.0, 20.0)*=0{\bullet}="3"; %vB
     (-22.5, 30.0)*{}="4"; %leaf_e
     (-7.5, 30.0)*{}="5"; %leaf_f
@@ -522,15 +522,16 @@ Finalmente, la siguiente figura es un \'arbol de ejemplo:
     "2";"6" **\dir{-};
     "2";"7" **\dir{-};
     %Labels%
-    (3.0, 10.0)*=0{\scriptstyle r};
-    (-12.0, 20.0)*=0{\scriptstyle v};
-    (18.0, 20.0)*=0{\scriptstyle w};
+    (3.0, 9.5)*=0{\scriptstyle r};
+    (-11.5, 20.0)*=0{\scriptstyle v};
     (-2.0, 5.0)*=0{\scriptstyle a};
-    (-9.5, 15.0)*=0{\scriptstyle b};
-    (-20.75, 25.0)*=0{\scriptstyle e};
-    (-13.25, 25.0)*=0{\scriptstyle f};
+    (-9.5, 14.0)*=0{\scriptstyle b};
+    (-21.3, 25.0)*=0{\scriptstyle e};
+    (-9, 25.0)*=0{\scriptstyle f};
     (-2.0, 15.0)*=0{\scriptstyle c};
-    (5.5, 15.0)*=0{\scriptstyle d};
+    (10.4, 15.0)*=0{\scriptstyle d};
+    (18.0, 20.0)*=0{\scriptstyle w};
+    (-13,0)*{T};
     \endxy
 \end{equation}
 Observamos que hemos eliminado el v\'ertice output de la arista $a$ y los v\'ertices inputs en las aristas $e$, $f$ y $c$. Este \'arbol tiene tres v\'ertices $r$, $v$ y $w$ con valencia 3, 2 y 0, respectivamente.
@@ -562,13 +563,13 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
         "3";"5" **\dir{-};
         "2";"6" **\dir{-};
         %Labels%
-        (3.0, 10.0)*=0{\scriptstyle u};
-        (-7.0, 20.0)*=0{\scriptstyle v};
+        % (3.0, 10.0)*=0{\scriptstyle u};
+        % (-7.0, 20.0)*=0{\scriptstyle v};
         (-2.0, 5.0)*=0{\scriptstyle e};
-        (-7.0, 15.0)*=0{\scriptstyle c};
-        (-17.0, 25.0)*=0{\scriptstyle a};
-        (-7.0, 25.0)*=0{\scriptstyle b};
-        (3.0, 15.0)*=0{\scriptstyle d};
+        (-8.0, 15.0)*=0{\scriptstyle c};
+        (-18.0, 25.0)*=0{\scriptstyle a};
+        (-2, 25.0)*=0{\scriptstyle b};
+        (7.0, 15.0)*=0{\scriptstyle d};
         \endxy
         \xy
         <0.08cm, 0cm>:
@@ -591,13 +592,13 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
         "4";"5" **\dir{-};
         "4";"6" **\dir{-};
         %Labels%
-        (3.0, 10.0)*=0{\scriptstyle u};
-        (13.0, 20.0)*=0{\scriptstyle v};
+        % (3.0, 10.0)*=0{\scriptstyle u};
+        % (13.0, 20.0)*=0{\scriptstyle v};
         (-2.0, 5.0)*=0{\scriptstyle e};
-        (-7.0, 15.0)*=0{\scriptstyle d};
-        (3.0, 15.0)*=0{\scriptstyle c};
-        (3.0, 25.0)*=0{\scriptstyle b};
-        (13.0, 25.0)*=0{\scriptstyle a};
+        (-8.0, 15.0)*=0{\scriptstyle d};
+        (7.0, 15.0)*=0{\scriptstyle c};
+        (2.0, 25.0)*=0{\scriptstyle b};
+        (18, 25.0)*=0{\scriptstyle a};
         \endxy
     \end{equation}
 \end{obs}
@@ -619,12 +620,12 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
         <0.08cm, 0cm>:
         %Vertices%
         (0.0, 0.0)*{}="1"; %root_a
-        (0.0, 10.0)*=0{\bullet}="2"; %rB
-        (-20.0, 20.0)*=0{\bullet}="3"; %vB
-        (-30.0, 30.0)*{}="4"; %leaf_e
-        (-10.0, 30.0)*{}="5"; %leaf_f
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-15.0, 20.0)*=0{\bullet}="3"; %vB
+        (-22.5, 30.0)*{}="4"; %leaf_e
+        (-7.5, 30.0)*{}="5"; %leaf_f
         (0.0, 20.0)*{}="6"; %leaf_c
-        (20.0, 20.0)*=0{\bullet}="7"; %wB
+        (15.0, 20.0)*=0{\bullet}="7"; %wB
         %Edges%
         "1";"2" **\dir{-};
         "2";"3" **\dir{-};
@@ -633,16 +634,16 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
         "2";"6" **\dir{-};
         "2";"7" **\dir{-};
         %Labels%
-        (3.0, 10.0)*=0{\scriptstyle r};
-        (-17.0, 20.0)*=0{\scriptstyle v};
-        (23.0, 20.0)*=0{\scriptstyle w};
+        (3.0, 9.5)*=0{\scriptstyle r};
+        (-11.5, 20.0)*=0{\scriptstyle v};
         (-2.0, 5.0)*=0{\scriptstyle a};
-        (-12.0, 15.0)*=0{\scriptstyle b};
-        (-27.0, 25.0)*=0{\scriptstyle e};
-        (-17.0, 25.0)*=0{\scriptstyle f};
+        (-9.5, 14.0)*=0{\scriptstyle b};
+        (-21.3, 25.0)*=0{\scriptstyle e};
+        (-9, 25.0)*=0{\scriptstyle f};
         (-2.0, 15.0)*=0{\scriptstyle c};
-        (8.0, 15.0)*=0{\scriptstyle d};
-        (-12,0)*{T};
+        (10.4, 15.0)*=0{\scriptstyle d};
+        (18.0, 20.0)*=0{\scriptstyle w};
+        (-13,0)*{T};
         \endxy
     \end{equation}
 
@@ -725,24 +726,136 @@ Sea $T$ un \'arbol planar con ra\'iz.
         "2";"5" **\dir{-};
         "2";"6" **\dir{-};
         %Labels%
-        (3.0, 10.0)*=0{\scriptstyle u};
+        (3.0, 9.0)*=0{\scriptstyle u};
         (25.5, 20.0)*=0{\scriptstyle w};
         (-2.0, 5.0)*=0{\scriptstyle a};
         (-13.25, 14.0)*=0{\scriptstyle e};
-        (-5.75, 15.0)*=0{\scriptstyle f};
-        (1.75, 15.0)*=0{\scriptstyle c};
+        (-1, 15.0)*=0{\scriptstyle f};
+        (5.75, 15.0)*=0{\scriptstyle c};
         (15.25, 15.0)*=0{\scriptstyle d};
+        (-13,0)*{T/b};
         \endxy
         \xy
         <0.08cm, 0cm>:
         (-20, 0.0)*{}="1";
         (20, 0.0)*{}="2";
+        (20, 10)*{}="3";
+        (-20, 10)*{}="4";
+        {\ar(-20, 10)*{};(20,10)*{}};
+        (0,13)*{\partial_b};
         \endxy
         \xy
         <0.08cm, 0cm>:
         %Vertices%
         (0.0, 0.0)*{}="1"; %root_a
-        (0.0, 10.0)*=0{\bullet}="2"; %rB
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-15.0, 20.0)*=0{\bullet}="3"; %vB
+        (-22.5, 30.0)*{}="4"; %leaf_e
+        (-7.5, 30.0)*{}="5"; %leaf_f
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (15.0, 20.0)*=0{\bullet}="7"; %wB
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        %Labels%
+        (3.0, 9.5)*=0{\scriptstyle r};
+        (-11.5, 20.0)*=0{\scriptstyle v};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-9.5, 14.0)*=0{\scriptstyle b};
+        (-21.3, 25.0)*=0{\scriptstyle e};
+        (-9, 25.0)*=0{\scriptstyle f};
+        (-2.0, 15.0)*=0{\scriptstyle c};
+        (10.4, 15.0)*=0{\scriptstyle d};
+        (18.0, 20.0)*=0{\scriptstyle w};
+        (-13,0)*{T};
+        \endxy
+    \end{equation}
+\end{defi}
+\begin{defi}
+    Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adjunta, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ con todas sus aristas externas.
+
+    Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/v)$.
+    Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tenemos dos tipos de cara externa que mostramos en las siguientes figuras.
+    % Figura de la funcion T/v -> T con vertice con hojas y la funcion T/v -> T con vertice sin hojas %
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-15.0, 20.0)*{}="3"; %leaf_b
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (15.0, 20.0)*=0{\bullet}="7"; %wB
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        %Labels%
+        (3.0, 9.5)*=0{\scriptstyle r};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-9.5, 14.0)*=0{\scriptstyle b};
+        (-2.0, 15.0)*=0{\scriptstyle c};
+        (10.4, 15.0)*=0{\scriptstyle d};
+        (18.0, 20.0)*=0{\scriptstyle w};
+        (-13,0)*{T/v};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 0.0)*{}="2";
+        (10, 10)*{}="3";
+        (-10, 10)*{}="4";
+        {\ar(-10, 10)*{};(10,10)*{}};
+        (0,13)*{\partial_v};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-15.0, 20.0)*=0{\bullet}="3"; %vB
+        (-22.5, 30.0)*{}="4"; %leaf_e
+        (-7.5, 30.0)*{}="5"; %leaf_f
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (15.0, 20.0)*=0{\bullet}="7"; %wB
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        %Labels%
+        (3.0, 9.5)*=0{\scriptstyle r};
+        (-11.5, 20.0)*=0{\scriptstyle v};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-9.5, 14.0)*=0{\scriptstyle b};
+        (-21.3, 25.0)*=0{\scriptstyle e};
+        (-9, 25.0)*=0{\scriptstyle f};
+        (-2.0, 15.0)*=0{\scriptstyle c};
+        (10.4, 15.0)*=0{\scriptstyle d};
+        (18.0, 20.0)*=0{\scriptstyle w};
+        (-13,0)*{T};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 0.0)*{}="2";
+        (10, 10)*{}="3";
+        (-10, 10)*{}="4";
+        {\ar(10, 10)*{};(-10,10)*{}};
+        (0,13)*{\partial_w};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
         (-15.0, 20.0)*=0{\bullet}="3"; %vB
         (-22.5, 30.0)*{}="4"; %leaf_e
         (-7.5, 30.0)*{}="5"; %leaf_f
@@ -764,15 +877,9 @@ Sea $T$ un \'arbol planar con ra\'iz.
         (-9, 25.0)*=0{\scriptstyle f};
         (-2.0, 15.0)*=0{\scriptstyle c};
         (10.4, 15.0)*=0{\scriptstyle d};
+        (-13,0)*{T/w};
         \endxy
     \end{equation}
-\end{defi}
-\begin{defi}
-    Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adjunta, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ con todas sus aristas externas.
-
-    Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/v)$.
-    Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tenemos dos tipos de cara externa que mostramos en las siguientes figuras.
-    % Figura de la funcion T/v -> T con vertice con hojas y la funcion T/v -> T con vertice sin hojas %
 \end{defi}
 \begin{obs}
     Con esta \'ultima definici\'on no queda exclu\'ida la posibilidad de cortar la ra\'iz. Esta situaci\'on solo sera posible si la ra\'iz tiene solamente una arista interna adjunta. Entonces, no todo \'arbol $T$ tiene una cara externa asociada a su ra\'iz.
@@ -784,20 +891,99 @@ Sea $T$ un \'arbol planar con ra\'iz.
 
 Para concluir, llamaremos \emph{caras} tanto las caras internas como las caras externas.
 
-\subsubsection{Funciones degenerativas}
+\subsubsection{Degeneradas}
 Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
 \begin{defi}
-    Una \emph{funci\'on degenerativa} asociada al v\'ertice $v$ es una funci\'on $\sigma_v\colon T\to T \backslash  v$ en $\Omega_p$, donde $T \backslash  v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ y juntar las dos aristas adjuntas en una nueva arista $e$.
+    Una \emph{degenerada} asociada al v\'ertice $v$ es una funci\'on $\sigma_v\colon T\to T \backslash  v$ en $\Omega_p$, donde $T \backslash  v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ y juntar las dos aristas adjuntas en una nueva arista $e$.
 
     Esta funci\'on env\'ia los colores $e_1$ y $e_2$ de $\Omega_p(T)$ al color $e$ de $\Omega_p(T\backslash v)$ y env\'ia la operacion generativa $v$ a la operaci\'on identidad $id_e$, mientras que es la identidad para los colores y operaciones generativas restantes.
     Tomamos la siguiente figura para visualizar la funci\'on.
     % Figura de la funcion T -> T\v %
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %rB
+        (-11.25, 20.0)*=0{\bullet}="3"; %vB
+        (-11.25, 30.0)*=0{\bullet}="4"; %uB
+        (-18.75, 40.0)*{}="5"; %leaf_f
+        (-3.75, 40.0)*{}="6"; %leaf_g
+        (11.25, 20.0)*=0{\bullet}="7"; %wB
+        (3.75, 30.0)*{}="8"; %leaf_c
+        (18.75, 30.0)*{}="9"; %leaf_d
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "4";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "7";"9" **\dir{-};
+        %Labels%
+        % (3.0, 10.0)*=0{\scriptstyle r};
+        (-8.25, 20.0)*=0{\scriptstyle v};
+        % (-8.25, 30.0)*=0{\scriptstyle u};
+        % (14.25, 20.0)*=0{\scriptstyle w};
+        % (-2.0, 5.0)*=0{\scriptstyle a};
+        (-7.62, 13.5)*=0{\scriptstyle e_2};
+        (-13.25, 25.0)*=0{\scriptstyle e_1};
+        % (-17.0, 35.0)*=0{\scriptstyle f};
+        % (-9.5, 35.0)*=0{\scriptstyle g};
+        % (3.62, 15.0)*=0{\scriptstyle b};
+        % (5.5, 25.0)*=0{\scriptstyle c};
+        % (13.0, 25.0)*=0{\scriptstyle d};
+        (-13,0)*{T};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-20, 0.0)*{}="1";
+        (20, 0.0)*{}="2";
+        (20, 10)*{}="3";
+        (-20, 0)*{}="4";
+        {\ar(-20, 10)*{};(20,10)*{}};
+        (0,13)*{\sigma_v};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %rB
+        (-15.0, 20.0)*=0{\bullet}="3"; %uB
+        (-22.5, 30.0)*{}="4"; %leaf_f
+        (-7.5, 30.0)*{}="5"; %leaf_g
+        (15.0, 20.0)*=0{\bullet}="6"; %vB
+        (7.5, 30.0)*{}="7"; %leaf_c
+        (22.5, 30.0)*{}="8"; %leaf_d
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "6";"7" **\dir{-};
+        "6";"8" **\dir{-};
+        %Labels%
+        % (3.0, 10.0)*=0{\scriptstyle r};
+        % (-12.0, 20.0)*=0{\scriptstyle u};
+        % (18.0, 20.0)*=0{\scriptstyle v};
+        % (-2.0, 5.0)*=0{\scriptstyle a};
+        (-9.5, 14.0)*=0{\scriptstyle e};
+        % (-20.75, 25.0)*=0{\scriptstyle f};
+        % (-13.25, 25.0)*=0{\scriptstyle g};
+        % (5.5, 15.0)*=0{\scriptstyle b};
+        % (9.25, 25.0)*=0{\scriptstyle c};
+        % (16.75, 25.0)*=0{\scriptstyle d};
+        (-13,0)*{T\backslash v};
+        \endxy
+    \end{equation}
 \end{defi}
 
 \begin{obs}
-    Las caras y las funciones degenerativas generan toda la categor\'ia $\Omega_p$.
+    Las caras y las degeneradas generan toda la categor\'ia $\Omega_p$.
 \end{obs}
-El siguiente lema es una generalizaci\'on hacia $\Omega_p$ del lema en la categor\'ia $\Delta$, diciendo que toda flecha en dicha categor\'ia se puede escribir como composici\'on de funciones degenerativas seguidas por caras.
+El siguiente lema es una generalizaci\'on hacia $\Omega_p$ del lema en la categor\'ia $\Delta$, diciendo que toda flecha en dicha categor\'ia se puede escribir como composici\'on de degeneradas seguidas por caras.
 
 \begin{lema}
     Sea $S$, $T$ y $H$ unos \'arboles en $\Omega_p$, toda flecha $f\colon S \to T$ en $\Omega_p$ descompone, salvo isomorf\'ias, como
@@ -808,7 +994,7 @@ El siguiente lema es una generalizaci\'on hacia $\Omega_p$ del lema en la catego
             &H \ar[u]_\partial
         }
     $$
-    donde  $\sigma\colon S\to H$ es una composici\'on de funciones degenerativas y $\partial\colon H\to T$ es una composici\'on de caras.
+    donde  $\sigma\colon S\to H$ es una composici\'on de degeneradas y $\partial\colon H\to T$ es una composici\'on de caras.
 \end{lema}
 Demo: por hacer
 
@@ -826,6 +1012,215 @@ $$
         &T
     }
 $$
+Mostramos esta relaci\'on mediante las siguientes figuras:
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (-22.5, 20.0)*{}="3"; %leaf_f
+    (-7.5, 20.0)*{}="4"; %leaf_g
+    (7.5, 20.0)*{}="5"; %leaf_c
+    (22.5, 20.0)*{}="6"; %leaf_d
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    "2";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-13.25, 15.0)*=0{\scriptstyle f};
+    % (-5.75, 15.0)*=0{\scriptstyle g};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    % (9.25, 15.0)*=0{\scriptstyle d};
+    (-13,0)*{(T/a)/b};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\partial_b};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (-15.0, 20.0)*{}="3"; %leaf_f
+    (0.0, 20.0)*{}="4"; %leaf_g
+    (15.0, 20.0)*=0{\bullet}="5"; %vB
+    (7.5, 30.0)*{}="6"; %leaf_c
+    (22.5, 30.0)*{}="7"; %leaf_d
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    "2";"5" **\dir{-};
+    "5";"6" **\dir{-};
+    "5";"7" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (18.0, 20.0)*=0{\scriptstyle v};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-9.5, 15.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle g};
+    (11.5, 15.0)*=0{\scriptstyle b};
+    % (9.25, 25.0)*=0{\scriptstyle c};
+    % (16.75, 25.0)*=0{\scriptstyle d};
+    (-13,0)*{T/a};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\partial_a};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (-15.0, 20.0)*=0{\bullet}="3"; %uB
+    (-22.5, 30.0)*{}="4"; %leaf_f
+    (-7.5, 30.0)*{}="5"; %leaf_g
+    (15.0, 20.0)*=0{\bullet}="6"; %vB
+    (7.5, 30.0)*{}="7"; %leaf_c
+    (22.5, 30.0)*{}="8"; %leaf_d
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (-12.0, 20.0)*=0{\scriptstyle u};
+    % (18.0, 20.0)*=0{\scriptstyle v};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    (-9.5, 14.0)*=0{\scriptstyle a};
+    % (-20.75, 25.0)*=0{\scriptstyle f};
+    % (-13.25, 25.0)*=0{\scriptstyle g};
+    (11.5, 15.0)*=0{\scriptstyle b};
+    % (9.25, 25.0)*=0{\scriptstyle c};
+    % (16.75, 25.0)*=0{\scriptstyle d};
+    (-13,0)*{T};
+    \endxy
+\end{equation}
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (-22.5, 20.0)*{}="3"; %leaf_f
+    (-7.5, 20.0)*{}="4"; %leaf_g
+    (7.5, 20.0)*{}="5"; %leaf_c
+    (22.5, 20.0)*{}="6"; %leaf_d
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    "2";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-13.25, 15.0)*=0{\scriptstyle f};
+    % (-5.75, 15.0)*=0{\scriptstyle g};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    % (9.25, 15.0)*=0{\scriptstyle d};
+    (-13,0)*{(T/b)/a};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\partial_a};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (-15.0, 20.0)*=0{\bullet}="3"; %uB
+    (-22.5, 30.0)*{}="4"; %leaf_f
+    (-7.5, 30.0)*{}="5"; %leaf_g
+    (0.0, 20.0)*{}="6"; %leaf_c
+    (15.0, 20.0)*{}="7"; %leaf_d
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "2";"7" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (-12.0, 20.0)*=0{\scriptstyle u};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    (-11.5, 15.0)*=0{\scriptstyle a};
+    % (-20.75, 25.0)*=0{\scriptstyle f};
+    % (-13.25, 25.0)*=0{\scriptstyle g};
+    % (-2.0, 15.0)*=0{\scriptstyle c};
+    % (5.5, 15.0)*=0{\scriptstyle d};
+    (-13,0)*{T/b};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\partial_b};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %rB
+    (-15.0, 20.0)*=0{\bullet}="3"; %uB
+    (-22.5, 30.0)*{}="4"; %leaf_f
+    (-7.5, 30.0)*{}="5"; %leaf_g
+    (15.0, 20.0)*=0{\bullet}="6"; %vB
+    (7.5, 30.0)*{}="7"; %leaf_c
+    (22.5, 30.0)*{}="8"; %leaf_d
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (-12.0, 20.0)*=0{\scriptstyle u};
+    % (18.0, 20.0)*=0{\scriptstyle v};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    (-9.5, 14.0)*=0{\scriptstyle a};
+    % (-20.75, 25.0)*=0{\scriptstyle f};
+    % (-13.25, 25.0)*=0{\scriptstyle g};
+    (11.5, 15.0)*=0{\scriptstyle b};
+    % (9.25, 25.0)*=0{\scriptstyle c};
+    % (16.75, 25.0)*=0{\scriptstyle d};
+    (-13,0)*{T};
+    \endxy
+\end{equation}
 
 Sea $\partial_v \colon T/v\to T$ y $\partial_w \colon T/w\to T$ dos caras externas distintas de $T$, y asumimos que $T$ tiene como m\'inimo tres v\'ertices.
 Seguidamente tenemos las caras externas $\partial_v \colon (T/w)/v \to T/w$ y $\partial_w \colon (T/v)/w \to T/v$. Observamos que $(T/v)/w = (T/w)/v$, entonces el siguiente diagrama conmuta:
@@ -837,13 +1232,173 @@ $$
         &T
     }
 $$
+Mostramos esta relaci\'on mediante las siguientes figuras:
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-7.5, 20.0)*{}="3"; %leaf_b
+    (7.5, 20.0)*{}="4"; %leaf_c
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle u};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-5.75, 15.0)*=0{\scriptstyle b};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{(T/v)/w};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-20, 0.0)*{}="1";
+    (20, 0.0)*{}="2";
+    (20, 10)*{}="3";
+    (-20, 0)*{}="4";
+    {\ar(-20, 10)*{};(20,10)*{}};
+    (0,13)*{\partial_w};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-7.5, 20.0)*{}="3"; %leaf_b
+    (7.5, 20.0)*=0{\bullet}="4"; %wB
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle u};
+    (10.5, 20.0)*=0{\scriptstyle w};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-5.75, 15.0)*=0{\scriptstyle b};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{T/v};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-20, 0.0)*{}="1";
+    (20, 0.0)*{}="2";
+    (20, 10)*{}="3";
+    (-20, 0)*{}="4";
+    {\ar(-20, 10)*{};(20,10)*{}};
+    (0,13)*{\partial_v};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-7.5, 20.0)*=0{\bullet}="3"; %vB
+    (7.5, 20.0)*=0{\bullet}="4"; %wB
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle u};
+    (-4.5, 20.0)*=0{\scriptstyle v};
+    (10.5, 20.0)*=0{\scriptstyle w};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-5.75, 15.0)*=0{\scriptstyle b};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{T};
+    \endxy
+\end{equation}
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-7.5, 20.0)*{}="3"; %leaf_b
+    (7.5, 20.0)*{}="4"; %leaf_c
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle u};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-5.75, 15.0)*=0{\scriptstyle b};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{(T/w)/v};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-20, 0.0)*{}="1";
+    (20, 0.0)*{}="2";
+    (20, 10)*{}="3";
+    (-20, 0)*{}="4";
+    {\ar(-20, 10)*{};(20,10)*{}};
+    (0,13)*{\partial_v};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-7.5, 20.0)*=0{\bullet}="3"; %vB
+    (7.5, 20.0)*{}="4"; %leaf_c
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle u};
+    (-4.5, 20.0)*=0{\scriptstyle v};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-5.75, 15.0)*=0{\scriptstyle b};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{T/w};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-20, 0.0)*{}="1";
+    (20, 0.0)*{}="2";
+    (20, 10)*{}="3";
+    (-20, 0)*{}="4";
+    {\ar(-20, 10)*{};(20,10)*{}};
+    (0,13)*{\partial_w};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-7.5, 20.0)*=0{\bullet}="3"; %vB
+    (7.5, 20.0)*=0{\bullet}="4"; %wB
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    % (3.0, 10.0)*=0{\scriptstyle u};
+    (-4.5, 20.0)*=0{\scriptstyle v};
+    (10.5, 20.0)*=0{\scriptstyle w};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-5.75, 15.0)*=0{\scriptstyle b};
+    % (1.75, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{T};
+    \endxy
+\end{equation}
 
 En el caso que $T$ solo tenga dos v\'ertices, existe un diagrama conmutativo similar mediante la inclusi\'on de $\eta$ a una $n$-corla.
-\'Ultimo caso componer interna con externa. - por hacer!
+Existe un \'ultimo caso para combinar una cara interna con una cara externa, y viceversa; as\'i obteniendo un diagrama conmutativo similar, pero se debe tener cuenta dos condiciones excluyentes.
+Sean $\partial_v \colon T/v\to T$ y $\partial_e \colon T/e\to T$ una cara externa y una cara interna de $T$. Tenemos que la combinaci\'on de estas dos caras existen si:
+\begin{itemize}
+    \item Si la arista $e$ no es adyacente al v\'ertice $v$.
+    \item Si la arista $e$ si es adyacente al v\'ertice $v$, entonces existe otro v\'ertice $w$ adyacente a la arista $e$.
+\end{itemize}
 
-\subsubsection*{Relaciones elementales de funciones degenerativas}
-Sea $\sigma_v \colon T\to T\backslash v$ y $\sigma_w \colon T\to T\backslash w$ dos funciones degenerativas distintas de $T$.
-Seguidamente tenemos las funciones degenerativas $\sigma_v \colon T\backslash w \to (T\backslash w)\backslash v$ y $\sigma_w \colon T\backslash v \to (T\backslash v)\backslash w$. Observamos que $(T\backslash v)\backslash w = (T\backslash w)\backslash v$, entonces el siguiente diagrama conmuta:
+\subsubsection*{Relaciones elementales de degeneradas}
+Sea $\sigma_v \colon T\to T\backslash v$ y $\sigma_w \colon T\to T\backslash w$ dos degeneradas distintas de $T$.
+Seguidamente tenemos las degeneradas $\sigma_v \colon T\backslash w \to (T\backslash w)\backslash v$ y $\sigma_w \colon T\backslash v \to (T\backslash v)\backslash w$. Observamos que $(T\backslash v)\backslash w = (T\backslash w)\backslash v$, entonces el siguiente diagrama conmuta:
 $$
     \xymatrix{
         T \ar[d]_{\sigma_v} \ar[r]^{\sigma_w}
@@ -852,9 +1407,219 @@ $$
         &(T\backslash v)\backslash w
     }
 $$
+Mostramos esta relaci\'on mediante las siguientes figuras:
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
+    (-15.0, 30.0)*=0{\bullet}="4"; %rB
+    (-22.5, 40.0)*{}="5"; %leaf_e
+    (-7.5, 40.0)*{}="6"; %leaf_f
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
+    (15.0, 30.0)*=0{\bullet}="8"; %sB
+    (7.5, 40.0)*{}="9"; %leaf_g
+    (22.5, 40.0)*{}="10"; %leaf_h
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "4";"5" **\dir{-};
+    "4";"6" **\dir{-};
+    "2";"7" **\dir{-};
+    "7";"8" **\dir{-};
+    "8";"9" **\dir{-};
+    "8";"10" **\dir{-};
+    %Labels%
+    (-18.0, 20.0)*=0{\scriptstyle v};
+    (18.0, 20.0)*=0{\scriptstyle w};
+    (-11.5, 15.0)*=0{\scriptstyle e_1};
+    (-17.5, 25.0)*=0{\scriptstyle e_2};
+    (11.5, 15.0)*=0{\scriptstyle c_1};
+    (18, 25.0)*=0{\scriptstyle c_2};
+    (-13,0)*{T};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\sigma_v};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-11.25, 20.0)*=0{\bullet}="3"; %rB
+    (-18.75, 30.0)*{}="4"; %leaf_e
+    (-3.75, 30.0)*{}="5"; %leaf_f
+    (11.25, 20.0)*=0{\bullet}="6"; %wB
+    (11.25, 30.0)*=0{\bullet}="7"; %sB
+    (3.75, 40.0)*{}="8"; %leaf_g
+    (18.75, 40.0)*{}="9"; %leaf_h
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "7";"8" **\dir{-};
+    "7";"9" **\dir{-};
+    %Labels%
+    (14.25, 20.0)*=0{\scriptstyle w};
+    (-9, 15.0)*=0{\scriptstyle e};
+    (10, 15.0)*=0{\scriptstyle c_1};
+    (14, 25.0)*=0{\scriptstyle c_2};
+    (-13,0)*{T\backslash v};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\sigma_w};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-15.0, 20.0)*=0{\bullet}="3"; %rB
+    (-22.5, 30.0)*{}="4"; %leaf_e
+    (-7.5, 30.0)*{}="5"; %leaf_f
+    (15.0, 20.0)*=0{\bullet}="6"; %sB
+    (7.5, 30.0)*{}="7"; %leaf_g
+    (22.5, 30.0)*{}="8"; %leaf_h
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    (-11.5, 15.0)*=0{\scriptstyle e};
+    (10.5, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{(T\backslash v)\backslash w};
+    \endxy
+\end{equation}
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
+    (-15.0, 30.0)*=0{\bullet}="4"; %rB
+    (-22.5, 40.0)*{}="5"; %leaf_e
+    (-7.5, 40.0)*{}="6"; %leaf_f
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
+    (15.0, 30.0)*=0{\bullet}="8"; %sB
+    (7.5, 40.0)*{}="9"; %leaf_g
+    (22.5, 40.0)*{}="10"; %leaf_h
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "4";"5" **\dir{-};
+    "4";"6" **\dir{-};
+    "2";"7" **\dir{-};
+    "7";"8" **\dir{-};
+    "8";"9" **\dir{-};
+    "8";"10" **\dir{-};
+    %Labels%
+    (-18.0, 20.0)*=0{\scriptstyle v};
+    (-11.5, 15.0)*=0{\scriptstyle e_1};
+    (-17.5, 25.0)*=0{\scriptstyle e_2};
+    (18.0, 20.0)*=0{\scriptstyle w};
+    (11.5, 15.0)*=0{\scriptstyle c_1};
+    (18, 25.0)*=0{\scriptstyle c_2};
+    (-13,0)*{T};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\sigma_w};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-11.25, 20.0)*=0{\bullet}="3"; %vB
+    (-11.25, 30.0)*=0{\bullet}="4"; %rB
+    (-18.75, 40.0)*{}="5"; %leaf_e
+    (-3.75, 40.0)*{}="6"; %leaf_f
+    (11.25, 20.0)*=0{\bullet}="7"; %sB
+    (3.75, 30.0)*{}="8"; %leaf_g
+    (18.75, 30.0)*{}="9"; %leaf_h
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "4";"5" **\dir{-};
+    "4";"6" **\dir{-};
+    "2";"7" **\dir{-};
+    "7";"8" **\dir{-};
+    "7";"9" **\dir{-};
+    %Labels%
+    (-14.0, 20.0)*=0{\scriptstyle v};
+    (-9, 15.0)*=0{\scriptstyle e_1};
+    (-14, 25.0)*=0{\scriptstyle e_2};
+    (8.5, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{T\backslash w};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 0.0)*{}="2";
+    (10, 10)*{}="3";
+    (-10, 0)*{}="4";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    (0,13)*{\sigma_v};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-15.0, 20.0)*=0{\bullet}="3"; %rB
+    (-22.5, 30.0)*{}="4"; %leaf_e
+    (-7.5, 30.0)*{}="5"; %leaf_f
+    (15.0, 20.0)*=0{\bullet}="6"; %sB
+    (7.5, 30.0)*{}="7"; %leaf_g
+    (22.5, 30.0)*{}="8"; %leaf_h
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    (-11.5, 15.0)*=0{\scriptstyle e};
+    (10.5, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{(T\backslash w)\backslash v};
+    \endxy
+\end{equation}
+
 
 \subsubsection*{Relaciones combinadas}
-Sea $\sigma_v\colon T\to T\backslash v$ una funci\'on degenerativa y $\partial\colon T' \to T$ es una cara de tal manera que la funci\'on degenerativa $\sigma_v\colon T'\to T'\backslash v$ esta bien definida. Entonces existe una cara $\partial\colon T'\backslash v \to T\backslash v$ determinada por el mismo v\'ertice o arista que $\partial\colon T' \to T$.
+Sea $\sigma_v\colon T\to T\backslash v$ una degenerada y $\partial\colon T' \to T$ es una cara de tal manera que la degenerada $\sigma_v\colon T'\to T'\backslash v$ esta bien definida. Entonces existe una cara $\partial\colon T'\backslash v \to T\backslash v$ determinada por el mismo v\'ertice o arista que $\partial\colon T' \to T$.
 Adem\'as, el siguiente diagrama conmuta:
 $$
     \xymatrix{
@@ -865,7 +1630,7 @@ $$
     }
 $$
 
-Sea $\sigma_v\colon T\to T\backslash v$ una funci\'on degenerativa y $\partial\colon T' \to T$ es una cara interna en una arista adjunta a $v$ o una cara externa en $v$, si es posible. Entonces, tenemos que $T'=T\backslash v$ y la composici\'on
+Sea $\sigma_v\colon T\to T\backslash v$ una degenerada y $\partial\colon T' \to T$ es una cara interna en una arista adjunta a $v$ o una cara externa en $v$, si es posible. Entonces, tenemos que $T'=T\backslash v$ y la composici\'on
 $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\longrightarrow} T\backslash v$ es la funci\'on identidad $id_{T\backslash v}$.
 
 
@@ -876,8 +1641,39 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
     Es decir, para cada v\'ertice $v$ con entradas $e_1,\dots,e_n$ y salida $e$, definimos una operaci\'on $v\in \Omega(T)(e_1,\dots,e_n;e)$. Las otras operaciones son las operaciones unitarias, las operaciones obtenidas por composici\'on y la acci\'on del grupo sim\'etrico.
 \end{defi}
 \begin{ex}
-    Consideramos la figura del siguiente \'arbol T:
+    Consideramos la figura del siguiente \'arbol $T$:
     % Figura de un árbol para describir %
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-15.0, 20.0)*=0{\bullet}="3"; %vB
+        (-22.5, 30.0)*{}="4"; %leaf_e
+        (-7.5, 30.0)*{}="5"; %leaf_f
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (15.0, 20.0)*=0{\bullet}="7"; %wB
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        %Labels%
+        (3.0, 9.5)*=0{\scriptstyle r};
+        (-11.5, 20.0)*=0{\scriptstyle v};
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-9.5, 14.0)*=0{\scriptstyle b};
+        (-21.3, 25.0)*=0{\scriptstyle e};
+        (-9, 25.0)*=0{\scriptstyle f};
+        (-2.0, 15.0)*=0{\scriptstyle c};
+        (10.4, 15.0)*=0{\scriptstyle d};
+        (18.0, 20.0)*=0{\scriptstyle w};
+        (-13,0)*{T};
+        \endxy
+    \end{equation}
 
     La op\'erada $\Omega(T)$ tiene seis colores \textit{a, b, c, d, e,} y \textit{f}. Las operaciones generadoras son las mismas que las operaciones generativas en $\Omega_p(T)$. Observamos que toda operaci\'on de $\Omega_p(T)$ son operaciones de $\Omega(T)$, pero no a la inversa ya que hay m\'as operaciones en $\Omega(T)$ obtenidas por la acci\'on del grupo sim\'etrico.
     Por ejemplo, sea $\sigma$ la transposici\'on de dos elementos de $\Sigma_2$, entonces tenemos una operaci\'on $v\circ\sigma\in\Omega(f,e;b)$.
@@ -892,7 +1688,7 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
     Sean $S$ y $T$ dos \'arboles con ra\'iz, el conjunto de morfismos $\Omega(S, T)$ es dado por los morfismos entre op\'eradas coloreadas de $\Omega(S)$ a $\Omega(T)$.
 \end{defi}
 \begin{obs}
-    Los morfismos de la categor\'ia $\Omega$ son generados por las caras y las funciones degenerativas, an\'alogas al caso planar, y las isomorf\'ias no-planares.
+    Los morfismos de la categor\'ia $\Omega$ son generados por las caras y las degeneradas, an\'alogas al caso planar, y las isomorf\'ias no-planares.
 \end{obs}
 \begin{lema}
     Sea $S$, $S'$, $T$ y $T'$ unos \'arboles en $\Omega$, toda flecha $f\colon S \to T$ en $\Omega$ descompone como
@@ -904,7 +1700,7 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
             &T' \ar[u]_\partial
         }
     $$
-    donde  $\sigma\colon S\to S'$ es una composici\'on de funciones degenerativas, $\varphi\colon S'\to T'$ es un isomorf\'ia, y $\partial\colon T\to T'$ es una composici\'on de caras.
+    donde  $\sigma\colon S\to S'$ es una composici\'on de degeneradas, $\varphi\colon S'\to T'$ es un isomorf\'ia, y $\partial\colon T\to T'$ es una composici\'on de caras.
 \end{lema}
 Demo: por hacer
 
