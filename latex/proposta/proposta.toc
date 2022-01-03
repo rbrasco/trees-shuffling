@@ -20,12 +20,12 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Degeneradas}{11}%
 \contentsline {subsubsection}{\numberline {3.2.3}Identidades dendroidales}{11}%
 \contentsline {subsection}{\numberline {3.3}\'Arboles no planares}{13}%
-\contentsline {subsubsection}{\numberline {3.3.1}Prehaz? de estructuras planares}{14}%
+\contentsline {subsubsection}{\numberline {3.3.1}Prehaz de estructuras planares}{14}%
 \contentsline {subsubsection}{\numberline {3.3.2}Relaci\'on con la categor\'ia simplicial}{15}%
 \contentsline {subsection}{\numberline {3.4}Conjunto Dendroidal}{15}%
 \contentsline {subsection}{\numberline {3.5}Producto tensorial de conjuntos dendroidales}{15}%
 \contentsline {subsubsection}{\numberline {3.5.1}Producto tensorial Boardman Vogt}{15}%
-\contentsline {subsubsection}{\numberline {3.5.2}Producto tensorial de conjuntos dendroidales}{16}%
+\contentsline {subsubsection}{\numberline {3.5.2}Producto tensorial de conjuntos dendroidales}{17}%
 \contentsline {section}{\numberline {4}Injertos de \'arboles}{18}%
 \contentsline {subsection}{\numberline {4.1}Producto tensorial de \'arboles lineales}{18}%
 \contentsline {subsection}{\numberline {4.2}Producto tensorial de \'arboles}{18}%

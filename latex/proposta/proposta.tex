@@ -1704,7 +1704,7 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
 \end{lema}
 Demo: por hacer
 
-\subsubsection{Prehaz? de estructuras planares}
+\subsubsection{Prehaz de estructuras planares}
 Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de estructuras planares. Observamos que $P(T)$ es un torsor en $\text{Aut}(T)$ para cada \'arbol $T$, donde $\text{Aut}(T)$ denota el conjunto de automorfismos de $T$.
 Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por el morfismo $f\colon\to S$ en $\Omega$, tal que $P(f)(y) = x$.
 Entonces, tenemos que $\Omega\backslash P = \Omega_p$ y existe una proyecci\'on $v\colon\Omega_p\to\Omega$. Tenemos el siguiente tri\'angulo conmutativo:
@@ -1768,10 +1768,90 @@ Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjunt
     Vamos a ilustrar la relaci\'on (v), tambi\'en llamada como la \emph{relaci\'on del intercambio} con las siguientes figuras. Suponemos que $n=2$ y $m=3$.
     Representamos mediante el siguiente \'arbol la operaci\'on de la izquierda de la relaci\'on (v), antes de aplicar la permutaci\'on $\sigma_{2,3}^{*}$
     % Dibujo del arbol (p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))%
-
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_c-d
+        (0.0, 10.0)*{\circ}="2"; %p\otimes dW
+        (-45.0, 20.0)*=0{\bullet}="3"; %c_1\otimes qB
+        (-75.0, 30.0)*{}="4"; %leaf_c_1-d_1
+        (-45.0, 30.0)*{}="5"; %leaf_c_1-d_2
+        (-15.0, 30.0)*{}="6"; %leaf_c_1-d_3
+        (45.0, 20.0)*=0{\bullet}="7"; %c_2\otimes qB
+        (15.0, 30.0)*{}="8"; %leaf_c_2-d_1
+        (45.0, 30.0)*{}="9"; %leaf_c_2-d_2
+        (75.0, 30.0)*{}="10"; %leaf_c_2-d_3
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "3";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "7";"9" **\dir{-};
+        "7";"10" **\dir{-};
+        %Labels%
+        (5.0, 9.0)*=0{\scriptstyle p\otimes d};
+        (-52.0, 19.0)*=0{\scriptstyle c_1\otimes q};
+        (52.0, 19.0)*=0{\scriptstyle c_2\otimes q};
+        (-5.0, 5.0)*=0{\scriptstyle (c,d)};
+        (-20.5, 11.0)*=0{\scriptstyle (c_1,d)};
+        (-71.5, 25.0)*=0{\scriptstyle (c_1,d_1)};
+        (-45.0, 32.0)*=0{\scriptstyle (c_1,d_2)};
+        (-19.0, 25.0)*=0{\scriptstyle (c_1,d_3)};
+        (20.5, 11.0)*=0{\scriptstyle (c_2,d)};
+        (19.0, 25.0)*=0{\scriptstyle (c_2,d_1)};
+        (45.0, 32.0)*=0{\scriptstyle (c_2,d_2)};
+        (71.5, 25.0)*=0{\scriptstyle (c_2,d_3)};
+        \endxy
+    \end{equation}
     Representamos mediante el siguiente \'arbol la operaci\'on de la derecha de la relaci\'on (v)
     % Dibujo del arbol (c\otimes q)\circ((p\otimes d_1),\dots,(p\otimes d_m))%
-
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_c-d
+        (0.0, 15.0)*=0{\bullet}="2"; %c\otimes qB
+        (-60.0, 30.0)*{\circ}="3"; %p\otimes d_1W
+        (-75.0, 45.0)*{}="4"; %leaf_c_1-d_1
+        (-45.0, 45.0)*{}="5"; %leaf_c_2-d_1
+        (0.0, 30.0)*{\circ}="6"; %p\otimes d_2W
+        (-15.0, 45.0)*{}="7"; %leaf_c_1-d_2
+        (15.0, 45.0)*{}="8"; %leaf_c_2-d_2
+        (60.0, 30.0)*{\circ}="9"; %p\otimes d_3W
+        (45.0, 45.0)*{}="10"; %leaf_c_1-d_3
+        (75.0, 45.0)*{}="11"; %leaf_c_2-d_3
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "2";"6" **\dir{-};
+        "6";"7" **\dir{-};
+        "6";"8" **\dir{-};
+        "2";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "9";"11" **\dir{-};
+        %Labels%
+        (5.0, 13.5)*=0{\scriptstyle c\otimes q};
+        (-65.5, 30.0)*=0{\scriptstyle p\otimes d_1};
+        (6.0, 30.0)*=0{\scriptstyle p\otimes d_2};
+        (66, 30.0)*=0{\scriptstyle p\otimes d_3};
+        (-4.5, 7.5)*=0{\scriptstyle (c,d)};
+        (-32.0, 19.5)*=0{\scriptstyle (c,d_1)};
+        (-75, 37.5)*=0{\scriptstyle (c_1,d_1)};
+        (-45, 37.5)*=0{\scriptstyle (c_2,d_1)};
+        (-5.5, 22.5)*=0{\scriptstyle (c,d_2)};
+        (-15, 37.5)*=0{\scriptstyle (c_1,d_2)};
+        (15, 37.5)*=0{\scriptstyle (c_2,d_2)};
+        (32.0, 19.5)*=0{\scriptstyle (c,d_3)};
+        (45, 37.5)*=0{\scriptstyle (c_1,d_3)};
+        (75, 37.5)*=0{\scriptstyle (c_2,d_3)};
+        \endxy
+    \end{equation}
     Observamos que la permutaci\'on $\sigma_{2,3}$ corresponde a la permutaci\'on (2 4 5 3) de $\Sigma_6$.
     Hemos pintado los v\'ertices de las operaciones en $P$ de color blanco y para los v\'ertices de las operaciones en $Q$ de color negro.
 \end{ex}
