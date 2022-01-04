@@ -1725,10 +1725,10 @@ Si $T$ es un \'arbol cualquiera en $\Omega$, entonces $\Omega(T,\eta)$ consiste 
 
 \subsection{Conjunto Dendroidal}
 En esta secci\'on vamos a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de los prehaces en $\Omega$ y $\Omega_p$, respectivamente.
-Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante la uni\'on 'adjoint' natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales.
+Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante la adjunci\'on natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales.
 
 \begin{defi}
-    La categor\'ia $d\Set$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtors $\Omega^{\rm op}\to\Set$ y los morfismos vienen de las transformaciones naturales. La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
+    La categor\'ia $dSets$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtors $\Omega^{\rm op}\to\Set$ y los morfismos vienen de las transformaciones naturales. La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
 
     Entonces, un conjunto dendroidal $X$ viene definido como un conjunto $X(T)$, denotado por $X_T$, para cada \'arbol $T$, conjuntamente con una funci\'on $\alpha^{*}\colon X_T \to X_S$ para cada morfismo $\alpha\colon S\to T$ en $\Omega$. Como $X$ es un funtor, entonces $(id)^{*}=id$ y si $\alpha\colon S\to T$ y $\beta\colon R\to S$ son morfismos en $\Omega$, entonces $(\alpha\circ\beta)^{*}=\beta^{*}\circ\alpha^{*}$. El conjunto $X_T$ lo llamaremos conjunto de \emph{dendrices con forma T}, o simplemente como el conjunto de $T$-dendrices.
 
@@ -1736,7 +1736,114 @@ Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjunt
 
     Decimos que $Y$ es un \emph{subconjunto dendroidal} de $X$ si para cada \'arbol $T$ tenemos que $Y_T\subseteq X_T$ y la inclusi\'on $Y \hookrightarrow X$ es un morfismo de conjuntos dendroidales.
 \end{defi}
+\begin{defi}
+    Un dendrex $x\in X_T$ se llama \emph{degenerado} si existe otro dendrex $y\in X_S$ y una degenerada $\sigma\colon T\to S$ tal que $\sigma^{*}(y)=x$.
+\end{defi}
 
+Existen inclusiones can\'onicas y restricciones evidentes
+$$
+    \xymatrix{
+        \Delta \ar[rd]_{i} \ar[r]^u
+        &\Omega_p \ar[d]^v\\
+        &\Omega
+    }
+    \xymatrix{
+    sSets
+    &pdSets \ar[l]_{u^{*}} \\
+    &dSets \ar[lu]^{i^{*}} \ar[u]_{v^{*}}
+    }
+$$
+Donde todos tienen adjuntos por la derecha e izquierda
+$$
+    \xymatrix{
+    sSets \ar@<0.5ex>[r]_{u^{*}} \ar@<0.5ex>[rd]^{i_{!}}
+    &pdSets \ar@<0.5ex>[l]_{u_{!}} \ar@<0.5ex>[d]_{v_{!}} \\
+    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]_{v^{*}}
+    }
+    \xymatrix{
+    sSets \ar@<0.5ex>[r]_{u^{*}} \ar@<0.5ex>[rd]^{i_{*}}
+    &pdSets \ar@<0.5ex>[l]_{u_{*}} \ar@<0.5ex>[d]_{v_{*}} \\
+    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]_{v^{*}}
+    }
+$$
+Que vienen dados por las extensiones de Kan correspondientes. Por ejemplo, el funtor $i^{*}$ env\'ia un conjunto dendroidal $X$ al conjunto simplicial
+$$
+    i^{*}(X)_n = X_{i([n])}
+$$
+Su adjunto por la izquierda $i_{!}\colon sSets \to dSets$ es una extensi\'on por el zero, y env\'ia un conjunto simplicial $X$ a un conjunto dendroidal dado por
+\[
+    i_{!}(X)_T =
+    \begin{cases}
+        X_n       & \text{si } T\cong i([n])     \\
+        \emptyset & \text{si } T\not\cong i([n])
+    \end{cases}
+\]
+Podemos ver que $i_!$ es plenamente fiel y que $i^{*}i_{!}$ es el funtor identidad en los conjuntos simpliciales.
+
+El funtor $\Omega \to Oper$ que env\'ia un \'arbol $T$ a la op\'erada coloreada $\Omega(T)$ induce la siguiente adjunci\'on
+\[
+    \xymatrix{
+        \tau_d\colon dSets\ar@<0.5ex>[r] &  Oper\colon N_d \ar@<0.5ex>[l]
+    }
+\]
+
+El funtor $N_d$ se llama \emph{nervio dendroidal}. Para toda op\'erada $P$ su nervio dendroidal es el conjunto dendroidal
+$$
+    N_d(P)_T = Oper(\Omega(T), P)
+$$
+Este funtor es plenamente fiel y $N_d(\Omega(T))=\Omega[T]$ para cada \'arbol $T$ en $\Omega$.
+Tambi\'en extiende el nervio de categor\'ias a conjuntos simpliciales. Sea $\mathcal{C}$ una categor\'ia cualquiera y $P_{\mathcal{C}}$ es una op\'erada coloreada asociada, entonces
+$$
+    i^{*}(N_d(P_{\mathcal{C}})) = N(\mathcal{C})
+$$
+
+Sea $X$ un conjunto dendroidal, nos referimos a la adjunci\'on por la izquierda $\tau_d(X)$ como la \emph{op\'erada genreada por X}.
+Sabemos que el conjunto de colores de $\tau_d(X)$ es igual que el conjunto $X_\eta$. Las operaciones de las op\'eradas son generadas por los elementos de $X_{C_n}$, donde $C_n$ es la $n$-\'esima corola, con las siguientes relaciones:
+\begin{enumerate}
+    \item[{\rm (i)}] $s(x_a) = \text{id}_{x_a} \in \tau_d(X)(x_a;a_a)$ si $x_a\in X_\eta$ y $s=\sigma^{*}$, donde $\sigma$ es la degenerada $\sigma\colon C_1 \to\eta$.
+    \item[{\rm (ii)}] Si $T$ es un \'arbol de la forma
+          \begin{equation}
+              \xy
+              <0.08cm, 0cm>:
+              %Vertices%
+              (0.0, 0.0)*{}="1"; %root_x_a
+              (0.0, 10.0)*=0{\bullet}="2"; %wB
+              (-40.0, 20.0)*{}="3"; %leaf_x_{a_1}
+              (0.0, 20.0)*=0{\bullet}="4"; %vB
+              (-20.0, 30.0)*{}="5"; %leaf_x_{b_1}
+              (20.0, 30.0)*{}="6"; %leaf_x_{b_m}
+              (40.0, 20.0)*{}="7"; %leaf_x_{a_n}
+              %Edges%
+              "1";"2" **\dir{-};
+              "2";"3" **\dir{-};
+              "2";"4" **\dir{-};
+              "4";"5" **\dir{-};
+              "4";"6" **\dir{-};
+              "2";"7" **\dir{-};
+              %Labels%
+              (3.0, 9.0)*=0{\scriptstyle w};
+              (3.0, 19.5)*=0{\scriptstyle v};
+              (-2.5, 5.0)*=0{\scriptstyle x_a};
+              (-22.0, 13.0)*=0{\scriptstyle x_{a_1}};
+              (-3.0, 16)*=0{\scriptstyle x_{a_i}};
+              (-12.0, 24.0)*=0{\scriptstyle x_{b_1}};
+              (14.5, 24.0)*=0{\scriptstyle x_{b_m}};
+              (22.0, 13.0)*=0{\scriptstyle x_{a_n}};
+              (0,24)*{\dots\dots};
+              (-3.5,13)*{\dots};
+              (3.5,13)*{\dots};
+              (-13,0)*{T};
+              \endxy
+          \end{equation}
+          y $x\in X_T$, entonces $d_w(x)\circ_{x_{a_i}}d_v(x)=d_{x_{a_i}}(x)$, donde
+          \begin{align*}
+              d_w(x)         & \in \tau_d(X)(x_{a_1},\dots,x_{a_n};x_a)                                                     \\
+              d_v(x)         & \in \tau_d(X)(x_{b_1},\dots,x_{b_m};x_{a_i})                                                 \\
+              d_{a_{x_i}}(x) & \in \tau_d(X)(x_{a_1},\dots,x_{a_{i-1}},x_{b_1},\dots,x_{b_m},x_{a_{i+1}},\dots,x_{a_n};x_a)
+          \end{align*}
+          y $d_w = \partial_w^{*}$ viene inducido por la cara asociada al v\'ertice de la ra\'iz $w$; $d_v = \partial_v^{*}$ viene inducido por la cara externa asociada al v\'ertice $v$; y $d_{x_{a_i}}= \partial_{x_{a_i}}^{*}$ viene inducido por la cara interna asociada a la arista $x_{a_i}$.
+\end{enumerate}
+Entonces, $\tau_d(\Omega[T])=\Omega(T)$ para todo \'arbol $T$ en $\Omega$.
 
 \subsection{Producto tensorial de conjuntos dendroidales}
 \subsubsection{Producto tensorial Boardman Vogt}
@@ -1876,9 +1983,58 @@ $$
     $$
         X\otimes Y = \lim_{\to}\Omega[T]\otimes\lim_{\to}\Omega[S] = \lim_{\to} N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
+    Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias [Kel82], y el conjunto de $T$-dendrices de la hom interna viene definida por
+    $$
+        {\rm Hom}_{dSets}(X,Y)_T = dSets(\Omega[T]\otimes X, Y)
+    $$
+    Para cada par $X$ e $Y$ de conjuntos dendroidales y para cada \'arbol $T$ en $\Omega$.
 \end{defi}
+\begin{teo}
+    La categor\'ia de conjuntos dendroidales admite una estructura cerrada, monoidal y sim\'etrica. Esta estructura monoidal es \'unicamente determinada (salvando isomorf\'ias) por la propiedad de que existe un isomorfismo natural
+    $$
+        \Omega[T]\otimes\Omega[S] \cong N_d(\Omega(T)\otimes_{BV}\Omega(S))
+    $$
+    Para cada par $T$ y $S$ de objetos de $\Omega$. La unidad del producto tensorial es el conjunto dendroidal representable $\Omega[\eta]=i_!(\Delta[0]) = U$.
+\end{teo}
+\begin{prop}
+    Tenemos las siguientes propiedades:
+    \begin{enumerate}
+        \item[{\rm (i)}] Para cada par $X$ e $Y$ de conjuntos simpliciales, existe un isomorfismo natural
+              $$
+                  i_!(X)\otimes i_!(Y) \cong i_!(X\times Y)
+              $$
+        \item[{\rm (ii)}] Para cada par $X$ e $Y$ de conjuntos simpliciales, existe un isomorfismo natural
+              $$
+                  \tau_d(X\otimes Y) \cong \tau_d(X) \otimes_{BV} \tau_d(Y)
+              $$
+        \item[{\rm (iii)}] Para cada par $P$ e $Q$ de op\'eradas coloreadas, existe un isomorfismo natural
+              $$
+                  \tau_d(N_d(P)\otimes N_d(Q)) \cong P \otimes_{BV} Q
+              $$
+    \end{enumerate}
+    \begin{proof}
+        (i) Basta con ver que la propiedad se mantiene en los representables en $sSets$. Si vemos que $[n]$ y $[m]$ de $\Delta$ como categor\'ias, entonces tenemos
+        $$
+            j_!([n]\times [m]) \cong j_!([n]) \otimes_{BV} j_!([m])
+        $$
+        Entonces tenemos la siguiente cadena de isomorfismos naturales
+        \begin{align*}
+            i_!(\Delta[n]\times\Delta[m]) & \cong i_!(N([n])\times N([m]))\cong i_!(N([n]\times[m]))                          \\
+                                          & \cong N_d(j_!([n]\times [m])) \cong N_d(j_!([n])\otimes_{BV}j_!([m]))             \\
+                                          & \cong N_d(\Omega(L_n)\otimes_{BV}\Omega(L_m)) \cong \Omega[L_n]\otimes\Omega[L_m] \\
+                                          & \cong i_!(\Delta[n])\otimes i_!(\Delta[m])
+        \end{align*}
+        Donde $L_n$ y $L_m$ son dos \'arboles lineales con $n$ y $m$ v\'ertices, y $n+1$ y $m+1$ aristas; respectivamente.
 
+        (ii) Basta con ver que la propiedad se mantiene en los representables en $dSets$. Tenemos la siguiente cadena de isomorfismos naturales, usando el isomorfismo natural $\tau_d N_d\cong \rm id$
+        \begin{align*}
+            \tau_d(\Omega[T]\otimes\Omega[S]) & \cong \tau_d N_d((\Omega(T)\otimes_{BV}\Omega(S)) \cong \Omega(T)\otimes_{BV}\Omega(S) \\
+                                              & \cong \tau_d(\Omega[T])\otimes_{BV}\tau_d(\Omega[S])
+        \end{align*}
 
+        (iii) An\'alogamente siguiendo (ii) pero remplazando $X$ por $N_d(P)$ y $Y$ por $N_d(Y)$.
+    \end{proof}
+\end{prop}
 \newpage
 % --- Acaba sección 3 ----------------------
 
