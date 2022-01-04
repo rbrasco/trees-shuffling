@@ -486,16 +486,15 @@ Falta por escribir
 \newpage
 \section{Conjuntos Dendroidales}
 
-\subsection{\'Arbol como operadas}
+\subsection{\'Arboles como op\'eradas}
 \subsubsection{Formalismo de \'arboles}
-Un \emph{\'arbol} es un grafo no vac\'io, finito, conectado y sin lazos. Llamaremos un \emph{v\'ertice exterior} si tiene solamente una arista adjunta.
-Todos los \'arboles que consideraremos tendr\'an \emph{ra\'iz}, es decir, para cada \'arbol existe un v\'ertice exterior, llamado \emph{output} o \emph{salida}, donde se ve claramente que tiene un conjunto
-de v\'ertices exteriores, llamado \emph{inputs} o \emph{entradas}. Este \'ultimo conjunto puede ser vac\'io y no contiene el v\'ertice output.
+Un \emph{\'arbol} es un grafo no vac\'io, finito, conexo y sin lazos. Llamaremos \emph{v\'ertices exteriores} a los v\'ertices que tienen solamente una arista adyacente.
+Todos los \'arboles que consideraremos tendr\'an \emph{ra\'iz}, es decir, para cada \'arbol existe un v\'ertice exterior, llamado \emph{output} o \emph{salida}. El conjunto de v\'ertices exteriores restantes lo llamaremos \emph{inputs} o \emph{entradas}. Este \'ultimo conjunto puede ser vac\'io y no contiene el v\'ertice output.
 
 Para dibujar dichos \'arboles, borraremos los v\'ertices output e inputs de la figura. De tal manera que los v\'ertices restantes ser\'an los \emph{v\'ertices} del \'arbol.
-Dado un \'arbol T, definimos el conjunto de v\'ertices como $V(T)$ y el conjunto de aristas como $E(T)$.
+Dado un \'arbol $T$, definimos el conjunto de v\'ertices como $V(T)$ y el conjunto de aristas como $E(T)$.
 
-Llamaremos \emph{hojas} o \emph{aristas externas} a las aristas adjuntas de los v\'ertices inputs y \emph{ra\'iz} a la arista adjunta del v\'ertice output.
+Llamaremos \emph{hojas} o \emph{aristas externas} a las aristas adyacentes de los v\'ertices inputs y \emph{ra\'iz} a la arista adyacente del v\'ertice output.
 De tal manera que las aristas restantes las llamaremos \emph{aristas internas}. Podemos observar que existe una direcci\'on clara en cada \'arbol, desde las hojas hasta la ra\'iz.
 
 Sea \emph{v} un v\'ertice de un \'arbol finito con ra\'iz, definimos out$(v)$ como la \'unica arista de salida y in$(v)$ como el conjunto de aristas de entrada, observamos que este \'ultimo conjunto puede ser vac\'io.
@@ -543,7 +542,7 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
     Un \emph{\'arbol planar con ra\'iz} es un \'arbol con ra\'iz $T$ dotado con un orden lineal del conjunto in$(v)$ para cada $v$ de $T$.
 \end{defi}
 \begin{obs}
-    El orden de los conjuntos in$(v)$ se obtiene de la idea de dibujar los \'arboles en un plano. Es decir, para dibujar un \'arbol siempre pondremos la ra\'iz debajo y las hojas arriba con un orden trivial.
+    El orden de los conjuntos in$(v)$ se obtiene de la idea de dibujar los \'arboles en un plano. Es decir, para dibujar un \'arbol siempre pondremos la ra\'iz debajo y las hojas arriba ordenando de izquierda a derecha.
     Observamos con esta t\'ecnica que tendremos varias representaciones planares del mismo \'arbol. Por ejemplo,
     % Figura de dos representaciones planares del mismo arbol %
     \begin{equation}
@@ -603,17 +602,17 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
     \end{equation}
 \end{obs}
 \begin{defi}
-    Un \'arbol es \emph{unitario} cuando la arista de entrada y salida son la misma. En ese caso lo denotaremos como $\eta$.
+    Denotaremos por $\eta$ o \emph{unitario} el \'arbol que tiene una \'unica arista y ning\'un v\'ertice.
 \end{defi}
 \begin{defi}
-    Sea $T$ un \'arbol planar con ra\'iz. Denotaremos una op\'erada coloreada no-sim\'etrica generada por T como $\Omega_p(T)$. El conjunto de colores de $\Omega_p(T)$ es el conjunto de aristas $E(T)$ de $T$ y las operaciones son generadas por los v\'ertices del \'arbol.
+    Sea $T$ un \'arbol planar con ra\'iz. Denotaremos la op\'erada coloreada no-sim\'etrica generada por $T$ como $\Omega_p(T)$. El conjunto de colores de $\Omega_p(T)$ es el conjunto de aristas $E(T)$ de $T$ y las operaciones est\'an generadas por los v\'ertices del \'arbol.
     Es decir, para cada v\'ertice $v$ con entradas $e_1,\dots,e_n$ y salida $e$, definimos una operaci\'on $v\in \Omega_p(T)(e_1,\dots,e_n;e)$. Las otras operaciones son las operaciones unitarias y las operaciones obtenidas por composici\'on.
 \end{defi}
 \begin{obs}
     Para todo $e_1,\dots,e_n,e$, el conjunto de operaciones $\Omega_p(T)(e_1,\dots,e_n;e)$ contiene como mucho un solo elemento.
 \end{obs}
 \begin{ex}
-    Vamos a realizar la descripci\'on completa del siguiente \'arbol T:
+    Vamos a realizar la descripci\'on completa de la op\'erada asociada al \'arbol $T$:
     % Figura de un árbol para describir %
     \begin{equation}
         \xy
@@ -652,7 +651,7 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
     $$(r\circ_1 v)\circ_3 w = (r\circ_2 w)\circ_1 v  \in \Omega_p(T)(e,f,c;a)$$
 \end{ex}
 \begin{defi}
-    La \emph{categor\'ia de \'arboles planares con ra\'iz} $\Omega_p$ es la subcategor\'ia plena de la categor\'ia de op\'eradas coloreadas no-sim\'etricas cuyos objetos son $\Omega_p(T)$ para todo \'arbol $T$.
+    La \emph{categor\'ia de \'arboles planares con ra\'iz} $\Omega_p$ es la subcategor\'ia plena de la categor\'ia de op\'eradas coloreadas no-sim\'etricas cuyos objetos son $\Omega_p(T)$ para cada \'arbol $T$.
 
     Podemos pensar que $\Omega_p$ es una categor\'ia cuyos objetos son \'arboles planares con ra\'iz.
     Sean $S$ y $T$ dos \'arboles planares con ra\'iz, el conjunto de morfismos $\Omega_p(S, T)$ es dado por los morfismos entre op\'eradas coloreadas no-sim\'etricas de $\Omega_p(S)$ a $\Omega_p(T)$.
@@ -690,7 +689,7 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
         \endxy
     \end{equation}
 
-    Denotaremos este \'arbol por $[n]$. Toda apliaci\'on que mantiene el orden de manera que env\'ie $\{0,\dots,n\}$ a $\{0,\dots,m\}$, define un morfismo $[n] \to [m]$ en la categor\'ia $\Omega_p$. De esta manera obtenemos el siguiente funtor
+    Denotaremos este \'arbol por $[n]$. Toda apliaci\'on que mantiene el orden de manera que env\'ie $\{0,\dots,n\}$ a $\{0,\dots,m\}$, define un morfismo $[n] \to [m]$ en la categor\'ia $\Omega_p$. De esta manera obtenemos un funtor
     \[
         \begin{tikzcd}
             \Delta \arrow[hook]{r}{i} & \Omega_p
@@ -776,7 +775,7 @@ Sea $T$ un \'arbol planar con ra\'iz.
     \end{equation}
 \end{defi}
 \begin{defi}
-    Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adjunta, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ con todas sus aristas externas.
+    Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adyacente, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ con todas sus aristas externas.
 
     Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/v)$.
     Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tenemos dos tipos de cara externa que mostramos en las siguientes figuras.
@@ -882,7 +881,7 @@ Sea $T$ un \'arbol planar con ra\'iz.
     \end{equation}
 \end{defi}
 \begin{obs}
-    Con esta \'ultima definici\'on no queda exclu\'ida la posibilidad de cortar la ra\'iz. Esta situaci\'on solo sera posible si la ra\'iz tiene solamente una arista interna adjunta. Entonces, no todo \'arbol $T$ tiene una cara externa asociada a su ra\'iz.
+    Con esta \'ultima definici\'on no queda exclu\'ida la posibilidad de cortar la ra\'iz. Esta situaci\'on solo sera posible si la ra\'iz tiene solamente una arista interna adyacente. Entonces, no todo \'arbol $T$ tiene una cara externa asociada a su ra\'iz.
 \end{obs}
 \begin{obs}
     Vale la pena mencionar un caso en especial, la inclusi\'on de un \'arbol sin v\'ertices $\eta$ en un \'arbol con un v\'ertice, llamado \emph{corola}. En este caso tendremos $n+1$ caras si la corola tiene $n$ hojas.
@@ -891,12 +890,12 @@ Sea $T$ un \'arbol planar con ra\'iz.
 
 Para concluir, llamaremos \emph{caras} tanto las caras internas como las caras externas.
 
-\subsubsection{Degeneradas}
+\subsubsection{Degeneraciones}
 Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
 \begin{defi}
-    Una \emph{degenerada} asociada al v\'ertice $v$ es una funci\'on $\sigma_v\colon T\to T \backslash  v$ en $\Omega_p$, donde $T \backslash  v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ y juntar las dos aristas adjuntas en una nueva arista $e$.
+    Una \emph{degeneraci\'on} asociada al v\'ertice $v$ es una funci\'on $\sigma_v\colon T\to T \backslash  v$ en $\Omega_p$, donde $T \backslash  v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ y juntar las dos aristas adjuntas en una nueva arista $e$.
 
-    Esta funci\'on env\'ia los colores $e_1$ y $e_2$ de $\Omega_p(T)$ al color $e$ de $\Omega_p(T\backslash v)$ y env\'ia la operacion generativa $v$ a la operaci\'on identidad $id_e$, mientras que es la identidad para los colores y operaciones generativas restantes.
+    A nivel de op\'eradas, la funci\'on env\'ia los colores $e_1$ y $e_2$ de $\Omega_p(T)$ al color $e$ de $\Omega_p(T\backslash v)$ y env\'ia la operacion generativa $v$ a la operaci\'on identidad $id_e$, mientras que es la identidad para los colores y operaciones generativas restantes.
     Tomamos la siguiente figura para visualizar la funci\'on.
     % Figura de la funcion T -> T\v %
     \begin{equation}
@@ -981,12 +980,12 @@ Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
 \end{defi}
 
 \begin{obs}
-    Las caras y las degeneradas generan toda la categor\'ia $\Omega_p$.
+    Las caras y las degeneraciones generan todos los morfismos de la categor\'ia $\Omega_p$.
 \end{obs}
-El siguiente lema es una generalizaci\'on hacia $\Omega_p$ del lema en la categor\'ia $\Delta$, diciendo que toda flecha en dicha categor\'ia se puede escribir como composici\'on de degeneradas seguidas por caras.
+El siguiente lema es una generalizaci\'on en $\Omega_p$ del lema en la categor\'ia $\Delta$, diciendo que toda flecha en dicha categor\'ia se puede escribir como composici\'on de degeneraciones seguidas por caras.
 
 \begin{lema}
-    Sea $S$, $T$ y $H$ unos \'arboles en $\Omega_p$, toda flecha $f\colon S \to T$ en $\Omega_p$ descompone, salvo isomorf\'ias, como
+    Toda flecha $f\colon S \to T$ en $\Omega_p$ descompone, salvo isomorfismos, como
     $$
         \xymatrix{
             S \ar[rd]_{\sigma} \ar[r]^f
@@ -994,12 +993,12 @@ El siguiente lema es una generalizaci\'on hacia $\Omega_p$ del lema en la catego
             &H \ar[u]_\partial
         }
     $$
-    donde  $\sigma\colon S\to H$ es una composici\'on de degeneradas y $\partial\colon H\to T$ es una composici\'on de caras.
+    donde  $\sigma\colon S\to H$ es una composici\'on de degeneraciones y $\partial\colon H\to T$ es una composici\'on de caras.
 \end{lema}
 Demo: por hacer
 
 \subsubsection{Identidades dendroidales}
-En esta secci\'on vamos a dar las relaciones entre los morfismos generadores de $\Omega_p$. Las identidades que obtenemos generalizan los morfismos en la categor\'ia $\Delta$.
+En esta secci\'on vamos a dar las relaciones entre los morfismos generadores de $\Omega_p$. Las identidades que obtenemos generalizan las identidades simpliciales de la categor\'ia $\Delta$.
 
 \subsubsection*{Relaciones elementales de caras}
 Sea $\partial_a \colon T/a\to T$ y $\partial_b \colon T/b\to T$ dos caras internas distintas de $T$.
@@ -1388,7 +1387,7 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     \endxy
 \end{equation}
 
-En el caso que $T$ solo tenga dos v\'ertices, existe un diagrama conmutativo similar mediante la inclusi\'on de $\eta$ a una $n$-corla.
+En el caso que $T$ solo tenga dos v\'ertices, existe un diagrama conmutativo similar mediante la inclusi\'on de $\eta$ a una $n$-corola.
 Existe un \'ultimo caso para combinar una cara interna con una cara externa, y viceversa; as\'i obteniendo un diagrama conmutativo similar, pero se debe tener cuenta dos condiciones excluyentes.
 Sean $\partial_v \colon T/v\to T$ y $\partial_e \colon T/e\to T$ una cara externa y una cara interna de $T$. Tenemos que la combinaci\'on de estas dos caras existen si:
 \begin{itemize}
@@ -1396,9 +1395,9 @@ Sean $\partial_v \colon T/v\to T$ y $\partial_e \colon T/e\to T$ una cara extern
     \item Si la arista $e$ si es adyacente al v\'ertice $v$, entonces existe otro v\'ertice $w$ adyacente a la arista $e$.
 \end{itemize}
 
-\subsubsection*{Relaciones elementales de degeneradas}
-Sea $\sigma_v \colon T\to T\backslash v$ y $\sigma_w \colon T\to T\backslash w$ dos degeneradas distintas de $T$.
-Seguidamente tenemos las degeneradas $\sigma_v \colon T\backslash w \to (T\backslash w)\backslash v$ y $\sigma_w \colon T\backslash v \to (T\backslash v)\backslash w$. Observamos que $(T\backslash v)\backslash w = (T\backslash w)\backslash v$, entonces el siguiente diagrama conmuta:
+\subsubsection*{Relaciones elementales de degeneraciones}
+Sea $\sigma_v \colon T\to T\backslash v$ y $\sigma_w \colon T\to T\backslash w$ dos degeneraciones distintas de $T$.
+Seguidamente tenemos las degeneraciones $\sigma_v \colon T\backslash w \to (T\backslash w)\backslash v$ y $\sigma_w \colon T\backslash v \to (T\backslash v)\backslash w$. Observamos que $(T\backslash v)\backslash w = (T\backslash w)\backslash v$, entonces el siguiente diagrama conmuta:
 $$
     \xymatrix{
         T \ar[d]_{\sigma_v} \ar[r]^{\sigma_w}
@@ -1619,7 +1618,7 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
 
 
 \subsubsection*{Relaciones combinadas}
-Sea $\sigma_v\colon T\to T\backslash v$ una degenerada y $\partial\colon T' \to T$ es una cara de tal manera que la degenerada $\sigma_v\colon T'\to T'\backslash v$ esta bien definida. Entonces existe una cara $\partial\colon T'\backslash v \to T\backslash v$ determinada por el mismo v\'ertice o arista que $\partial\colon T' \to T$.
+Sea $\sigma_v\colon T\to T\backslash v$ una degeneraci\'on y $\partial\colon T' \to T$ es una cara de tal manera que la degeneraci\'on $\sigma_v\colon T'\to T'\backslash v$ esta bien definida. Entonces existe una cara $\partial\colon T'\backslash v \to T\backslash v$ determinada por el mismo v\'ertice o arista que $\partial\colon T' \to T$.
 Adem\'as, el siguiente diagrama conmuta:
 $$
     \xymatrix{
@@ -1630,14 +1629,14 @@ $$
     }
 $$
 
-Sea $\sigma_v\colon T\to T\backslash v$ una degenerada y $\partial\colon T' \to T$ es una cara interna en una arista adjunta a $v$ o una cara externa en $v$, si es posible. Entonces, tenemos que $T'=T\backslash v$ y la composici\'on
+Sea $\sigma_v\colon T\to T\backslash v$ una degeneraci\'on y $\partial\colon T' \to T$ es una cara interna en una arista adyacente a $v$ o una cara externa en $v$, si es posible. Entonces, tenemos que $T'=T\backslash v$ y la composici\'on
 $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\longrightarrow} T\backslash v$ es la funci\'on identidad $id_{T\backslash v}$.
 
 
 \subsection{\'Arboles no planares}
 \begin{defi}
-    Sea $T$ un \'arbol no-planar. Denotaremos una op\'erada coloreada sim\'etrica generada por T como $\Omega(T)$. El conjunto de colores de $\Omega(T)$ es el conjunto de aristas $E(T)$ de $T$.
-    Las operaciones son generadas por los v\'ertices del \'arbol, y el grupo sim\'etrico de $n$ letras $\Sigma_n$ act\'ua en cada operaci\'on de $n$ entradas permutando el orden de las entradas.
+    Sea $T$ un \'arbol no-planar. Denotaremos la op\'erada coloreada sim\'etrica generada por $T$ como $\Omega(T)$. El conjunto de colores de $\Omega(T)$ es el conjunto de aristas $E(T)$ de $T$.
+    Las operaciones est\'an generadas por los v\'ertices del \'arbol, y el grupo sim\'etrico de $n$ letras $\Sigma_n$ act\'ua en cada operaci\'on de $n$ entradas permutando el orden de las entradas.
     Es decir, para cada v\'ertice $v$ con entradas $e_1,\dots,e_n$ y salida $e$, definimos una operaci\'on $v\in \Omega(T)(e_1,\dots,e_n;e)$. Las otras operaciones son las operaciones unitarias, las operaciones obtenidas por composici\'on y la acci\'on del grupo sim\'etrico.
 \end{defi}
 \begin{ex}
@@ -1682,16 +1681,16 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
     Sea $T$ cualquier \'arbol, entonces $\Omega(T) = \Sigma(\Omega_p(\overline{T}))$, donde $\overline{T}$ es una representaci\'on planar de $T$. De hecho, se elige una estructura planar de $T$ como generador de $\Omega(T)$.
 \end{obs}
 \begin{defi}
-    La \emph{categor\'ia de \'arboles con ra\'iz} $\Omega$ es la subcategor\'ia completa$|$llena de la categor\'ia de op\'eradas coloreadas cuyos objetos son $\Omega(T)$ para todo \'arbol $T$.
+    La \emph{categor\'ia de \'arboles con ra\'iz} $\Omega$ es la subcategor\'ia plena de la categor\'ia de op\'eradas coloreadas cuyos objetos son $\Omega(T)$ para todo \'arbol $T$.
 
     Podemos pensar que $\Omega$ es una categor\'ia cuyos objetos son \'arboles con ra\'iz.
     Sean $S$ y $T$ dos \'arboles con ra\'iz, el conjunto de morfismos $\Omega(S, T)$ es dado por los morfismos entre op\'eradas coloreadas de $\Omega(S)$ a $\Omega(T)$.
 \end{defi}
 \begin{obs}
-    Los morfismos de la categor\'ia $\Omega$ son generados por las caras y las degeneradas, an\'alogas al caso planar, y las isomorf\'ias no-planares.
+    Los morfismos de la categor\'ia $\Omega$ son generados por las caras y las degeneraciones, an\'alogas al caso planar, y los isomorfismos no planares.
 \end{obs}
 \begin{lema}
-    Sea $S$, $S'$, $T$ y $T'$ unos \'arboles en $\Omega$, toda flecha $f\colon S \to T$ en $\Omega$ descompone como
+    Toda flecha $f\colon S \to T$ en $\Omega$ descompone como
     $$
         \xymatrix{
             S \ar[d]_{\sigma} \ar[r]^f
@@ -1700,13 +1699,13 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
             &T' \ar[u]_\partial
         }
     $$
-    donde  $\sigma\colon S\to S'$ es una composici\'on de degeneradas, $\varphi\colon S'\to T'$ es un isomorf\'ia, y $\partial\colon T\to T'$ es una composici\'on de caras.
+    donde  $\sigma\colon S\to S'$ es una composici\'on de degeneraciones, $\varphi\colon S'\to T'$ es isomorfismo, y $\partial\colon T\to T'$ es una composici\'on de caras.
 \end{lema}
 Demo: por hacer
 
 \subsubsection{Prehaz de estructuras planares}
-Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de estructuras planares. Observamos que $P(T)$ es un torsor en $\text{Aut}(T)$ para cada \'arbol $T$, donde $\text{Aut}(T)$ denota el conjunto de automorfismos de $T$.
-Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por el morfismo $f\colon\to S$ en $\Omega$, tal que $P(f)(y) = x$.
+Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de estructuras planares.
+Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por el morfismo $f\colon T\to S$ en $\Omega$, tal que $P(f)(y) = x$.
 Entonces, tenemos que $\Omega\backslash P = \Omega_p$ y existe una proyecci\'on $v\colon\Omega_p\to\Omega$. Tenemos el siguiente tri\'angulo conmutativo:
 $$
     \xymatrix{
@@ -1715,29 +1714,28 @@ $$
         &\Omega
     }
 $$
-Donde $i$ es un encaje plenamente fiel  de $\Delta$ hacia $\Omega$, que env\'ia el objeto $[n]$ de $\Delta$ al \'arbol lineal $L_n$ de $\Omega$, para todo $n\ge 0$.
+Donde $i$ es un encaje plenamente fiel de $\Delta$ en $\Omega$, que env\'ia el objeto $[n]$ de $\Delta$ al \'arbol lineal $L_n$ de $\Omega$, para todo $n\ge 0$.
 \subsubsection{Relaci\'on con la categor\'ia simplicial}
 
 Hemos podido ver que las dos categor\'ias, $\Omega_p$ y $\Omega$, extienden la categor\'ia $\Delta$, gracias a ver los objetos de $\Delta$ como \'arboles lineales. Adem\'as, se puede obtener $\Delta$ como la categor\'ia coma de $\Omega_p$ o $\Omega$.
-
 Sea $\eta$ un \'arbol en $\Omega$ que no contiene ning\'un v\'ertice y tan solo una arista, y sea $\eta_p$ su representaci\'on planar en $\Omega_p$.
 Si $T$ es un \'arbol cualquiera en $\Omega$, entonces $\Omega(T,\eta)$ consiste en un solo morfismo o es el conjunto vac\'io, dependiendo si $T$ es un \'arbol lineal o no. Pasa lo mismo con $\Omega_p$ y $\eta_p$. Entonces, $\Omega\backslash\eta = \Omega_p\backslash\eta_p = \Delta$.
 
-\subsection{Conjunto Dendroidal}
-En esta secci\'on vamos a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de los prehaces en $\Omega$ y $\Omega_p$, respectivamente.
-Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante la adjunci\'on natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales.
+\subsection{Conjuntos Dendroidales}
+En esta secci\'on vamos a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de prehaces en $\Omega$ y $\Omega_p$, respectivamente.
+Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante una adjunci\'on natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales.
 
 \begin{defi}
-    La categor\'ia $dSets$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtors $\Omega^{\rm op}\to\Set$ y los morfismos vienen de las transformaciones naturales. La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
+    La categor\'ia $dSets$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtores $\Omega^{\rm op}\to\Set$ y los morfismos vienen dados por las transformaciones naturales. La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
 
-    Entonces, un conjunto dendroidal $X$ viene definido como un conjunto $X(T)$, denotado por $X_T$, para cada \'arbol $T$, conjuntamente con una funci\'on $\alpha^{*}\colon X_T \to X_S$ para cada morfismo $\alpha\colon S\to T$ en $\Omega$. Como $X$ es un funtor, entonces $(id)^{*}=id$ y si $\alpha\colon S\to T$ y $\beta\colon R\to S$ son morfismos en $\Omega$, entonces $(\alpha\circ\beta)^{*}=\beta^{*}\circ\alpha^{*}$. El conjunto $X_T$ lo llamaremos conjunto de \emph{dendrices con forma T}, o simplemente como el conjunto de $T$-dendrices.
+    Entonces, un conjunto dendroidal $X$ viene definido como un conjunto $X(T)$, denotado por $X_T$, para cada \'arbol $T$, conjuntamente con una funci\'on $\alpha^{*}\colon X_T \to X_S$ para cada morfismo $\alpha\colon S\to T$ en $\Omega$. Como $X$ es un funtor, entonces $(id)^{*}=id$ y si $\alpha\colon S\to T$ y $\beta\colon R\to S$ son morfismos en $\Omega$, entonces $(\alpha\circ\beta)^{*}=\beta^{*}\circ\alpha^{*}$. El conjunto $X_T$ lo llamaremos conjunto de \emph{dendrices con forma T}, o simplemente conjunto de $T$-dendrices.
 
-    Sean $X$ y $Y$ dos conjuntos dendroidales, un \emph{morfismo de conjuntos dendroidales} $f\colon X \to Y$ viene definido por las funciones $f\colon X_T\to Y_T$, para cada \'arbol $T$, conmutando con las funciones de estructura. Es decir, si $\alpha\colon S\to T$ es cualquier morfismo en $\Omega$ y $x\in X_T$, entonces $f(\alpha^{*}x)=\alpha^{*}f(x)$.
+    Sean $X$ y $Y$ dos conjuntos dendroidales, un \emph{morfismo de conjuntos dendroidales} $f\colon X \to Y$ viene definido por funciones $f\colon X_T\to Y_T$, para cada \'arbol $T$, conmutando con las funciones de estructura. Es decir, si $\alpha\colon S\to T$ es cualquier morfismo en $\Omega$ y $x\in X_T$, entonces $f(\alpha^{*}x)=\alpha^{*}f(x)$.
 
     Decimos que $Y$ es un \emph{subconjunto dendroidal} de $X$ si para cada \'arbol $T$ tenemos que $Y_T\subseteq X_T$ y la inclusi\'on $Y \hookrightarrow X$ es un morfismo de conjuntos dendroidales.
 \end{defi}
 \begin{defi}
-    Un dendrex $x\in X_T$ se llama \emph{degenerado} si existe otro dendrex $y\in X_S$ y una degenerada $\sigma\colon T\to S$ tal que $\sigma^{*}(y)=x$.
+    Un dendrex $x\in X_T$ se llama \emph{degenerado} si existe otro dendrex $y\in X_S$ y una degeneraci\'on $\sigma\colon T\to S$ tal que $\sigma^{*}(y)=x$.
 \end{defi}
 
 Existen inclusiones can\'onicas y restricciones evidentes
@@ -1792,15 +1790,15 @@ $$
     N_d(P)_T = Oper(\Omega(T), P)
 $$
 Este funtor es plenamente fiel y $N_d(\Omega(T))=\Omega[T]$ para cada \'arbol $T$ en $\Omega$.
-Tambi\'en extiende el nervio de categor\'ias a conjuntos simpliciales. Sea $\mathcal{C}$ una categor\'ia cualquiera y $P_{\mathcal{C}}$ es una op\'erada coloreada asociada, entonces
+Tambi\'en extiende el nervio de categor\'ias a conjuntos simpliciales. Sea $\mathcal{C}$ una categor\'ia cualquiera y $\underline{\mathcal{C}}$ es una op\'erada coloreada asociada, entonces
 $$
-    i^{*}(N_d(P_{\mathcal{C}})) = N(\mathcal{C})
+    i^{*}(N_d(\underline{\mathcal{C}})) = N(\mathcal{C})
 $$
 
 Sea $X$ un conjunto dendroidal, nos referimos a la adjunci\'on por la izquierda $\tau_d(X)$ como la \emph{op\'erada genreada por X}.
 Sabemos que el conjunto de colores de $\tau_d(X)$ es igual que el conjunto $X_\eta$. Las operaciones de las op\'eradas son generadas por los elementos de $X_{C_n}$, donde $C_n$ es la $n$-\'esima corola, con las siguientes relaciones:
 \begin{enumerate}
-    \item[{\rm (i)}] $s(x_a) = \text{id}_{x_a} \in \tau_d(X)(x_a;a_a)$ si $x_a\in X_\eta$ y $s=\sigma^{*}$, donde $\sigma$ es la degenerada $\sigma\colon C_1 \to\eta$.
+    \item[{\rm (i)}] $s(x_a) = \text{id}_{x_a} \in \tau_d(X)(x_a;a_a)$ si $x_a\in X_\eta$ y $s=\sigma^{*}$, donde $\sigma$ es la degeneraci\'on $\sigma\colon C_1 \to\eta$.
     \item[{\rm (ii)}] Si $T$ es un \'arbol de la forma
           \begin{equation}
               \xy
@@ -1843,12 +1841,28 @@ Sabemos que el conjunto de colores de $\tau_d(X)$ es igual que el conjunto $X_\e
           \end{align*}
           y $d_w = \partial_w^{*}$ viene inducido por la cara asociada al v\'ertice de la ra\'iz $w$; $d_v = \partial_v^{*}$ viene inducido por la cara externa asociada al v\'ertice $v$; y $d_{x_{a_i}}= \partial_{x_{a_i}}^{*}$ viene inducido por la cara interna asociada a la arista $x_{a_i}$.
 \end{enumerate}
-Entonces, $\tau_d(\Omega[T])=\Omega(T)$ para todo \'arbol $T$ en $\Omega$.
-
+Entonces, $\tau_d(\Omega[T])=\Omega(T)$ para todo \'arbol $T$ en $\Omega$. Tambi\'en extiene el funtor $\tau\colon sSets \to Cat$ al nervio simplicial, es decir, para todo conjunto simplicial $X$
+$$
+    \tau(X) = j^{*}\tau_d(i_{!}(X))
+$$
+En particular, tenemos el siguiente diagrama de funtores adjuntos
+$$
+    \xymatrix{
+        sSets \ar@<0.5ex>[d]^{\tau} \ar@<0.5ex>[r]^{i_!}
+        &dSets \ar@<0.5ex>[l]^{i^{*}} \ar@<0.5ex>[d]^{\tau_d}\\
+        Cat \ar@<0.5ex>[r]^{j_!} \ar@<0.5ex>[u]^{N} 
+        &Oper \ar@<0.5ex>[u]^{N_d} \ar@<0.5ex>[l]^{j^{*}}
+    }
+$$
+Tenemos las siguientes relaciones conmutativas salvo isomorf\'ias:
+\begin{align*}
+    \tau N &= \text{id,  } \tau_d N_d = \text{id,    } i^{*}i_! = \text{id,  } j^{*}j_! = \text{id} \\
+    j_!\tau &= \tau_d i_! \text{,   } N j^{*} = i^{*}N_d\text{,    } i_!N = N_d j_!
+\end{align*}
 \subsection{Producto tensorial de conjuntos dendroidales}
-\subsubsection{Producto tensorial Boardman Vogt}
+\subsubsection{Producto tensorial Boardman-Vogt}
 \begin{defi}
-    Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial Boardman-Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de genreadores y relaciones de la siguiente manera.
+    Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial de Boardman--Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de generadores y relaciones de la siguiente manera.
     Para cada color $d\in D$ y cada operaci\'on $p\in P(c_1,\dots,c_n;c)$ existe un generador
     $$
         p \otimes d \in P\otimes_{BV}Q((c_1,d),\dots,(c_n,d);(c,d))
@@ -1964,19 +1978,19 @@ Entonces, $\tau_d(\Omega[T])=\Omega(T)$ para todo \'arbol $T$ en $\Omega$.
 \end{ex}
 
 \subsubsection{Producto tensorial de conjuntos dendroidales}
-La categor\'ia de los conjuntos dendroidales es una categor\'ia de prehaces, y por consecuencia es cerrada cartesianamente.
+La categor\'ia de los conjuntos dendroidales es una categor\'ia de prehaces, y por lo tanto cartesiano.
 El producto cartesiano de los conjuntos dendroidales extiende el producto cartesiano de conjuntos simpliciales, es decir, para cada par de conjuntos simpliciales $X$ e $Y$
 $$
     i_!(X\times Y) \cong i_!(X)\times i_!(Y)
 $$
 \begin{defi}
-    Para todo par de \'arboles $T$ y $S$ en $\Omega$, el \emph{producto tensorial} de los conjuntos de representables $\Omega[T]$ y $\Omega[S]$ se define como
+    Para todo par de \'arboles $T$ y $S$ en $\Omega$, el \emph{producto tensorial} de los representables $\Omega[T]$ y $\Omega[S]$ se define como
     $$
         \Omega[T]\otimes\Omega[S] = N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
-    Donde $N_d$ es el nervio dendroidal, $\Omega(T)$ y $\Omega(S)$ son las op\'eradas coloreadas asociadas a los \'arboles $T$ y $S$, respectivamente; y $\otimes_{BV}$ es el producto tensorial Boardman-Vogt.
+    Donde $N_d$ es el nervio dendroidal, $\Omega(T)$ y $\Omega(S)$ son las op\'eradas coloreadas asociadas a los \'arboles $T$ y $S$, respectivamente; y $\otimes_{BV}$ es el producto tensorial Boardman--Vogt.
 
-    Esto define un producto tensorial en toda la categor\'ia de conjuntos dendroidales, ya que es una categor\'ia de prehaces y entonces cada objeto es un col\'imite can\'onico de representables y $\otimes$ mantiene los col\'imites en cada variable.
+    Esto define un producto tensorial en toda la categor\'ia de conjuntos dendroidales, ya que es una categor\'ia de prehaces y entonces cada objeto es un col\'imite can\'onico de representables y $\otimes$ conserva col\'imites en cada variable.
 \end{defi}
 \begin{defi}
     Sean $X$ e $Y$ dos conjuntos dendroidales y sea $X = \lim_{\to}\Omega[T]$ y $Y = \lim_{\to}\Omega[S]$ sus expresiones can\'onicas como col\'imites de representables. Entonces, definimos el \emph{producto tensorial} $X\otimes Y$ como
