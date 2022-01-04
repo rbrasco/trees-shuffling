@@ -1678,7 +1678,7 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
     Por ejemplo, sea $\sigma$ la transposici\'on de dos elementos de $\Sigma_2$, entonces tenemos una operaci\'on $v\circ\sigma\in\Omega(f,e;b)$.
 \end{ex}
 \begin{obs}
-    Sea $T$ cualquier \'arbol, entonces $\Omega(T) = \Sigma(\Omega_p(\overline{T}))$, donde $\overline{T}$ es una representaci\'on planar de $T$. De hecho, se elige una estructura planar de $T$ como generador de $\Omega(T)$.
+    Sea $T$ cualquier \'arbol, entonces $\Omega(T) = \Sigma(\Omega_p(\overline{T}))$, donde $\overline{T}$ es una representaci\'on planar de $T$ y $\Sigma$ representa todas las acciones del grupo sim\'etrico posibles aplicadas a las entradas de las operaciones. De hecho, se elige una estructura planar de $T$ como generador de $\Omega(T)$.
 \end{obs}
 \begin{defi}
     La \emph{categor\'ia de \'arboles con ra\'iz} $\Omega$ es la subcategor\'ia plena de la categor\'ia de op\'eradas coloreadas cuyos objetos son $\Omega(T)$ para todo \'arbol $T$.
@@ -1754,14 +1754,14 @@ $$
 Donde todos tienen adjuntos por la derecha e izquierda
 $$
     \xymatrix{
-    sSets \ar@<0.5ex>[r]_{u^{*}} \ar@<0.5ex>[rd]^{i_{!}}
-    &pdSets \ar@<0.5ex>[l]_{u_{!}} \ar@<0.5ex>[d]_{v_{!}} \\
-    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]_{v^{*}}
+    sSets \ar@<0.5ex>[r]^{u_{!}} \ar@<0.5ex>[rd]^{i_{!}}
+    &pdSets \ar@<0.5ex>[l]^{u^{*}} \ar@<0.5ex>[d]^{v_{!}} \\
+    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]^{v^{*}}
     }
     \xymatrix{
-    sSets \ar@<0.5ex>[r]_{u^{*}} \ar@<0.5ex>[rd]^{i_{*}}
-    &pdSets \ar@<0.5ex>[l]_{u_{*}} \ar@<0.5ex>[d]_{v_{*}} \\
-    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]_{v^{*}}
+    sSets \ar@<0.5ex>[r]^{u_{*}} \ar@<0.5ex>[rd]^{i_{*}}
+    &pdSets \ar@<0.5ex>[l]^{u^{*}} \ar@<0.5ex>[d]^{v^{*}} \\
+    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]^{v_{*}}
     }
 $$
 Que vienen dados por las extensiones de Kan correspondientes. Por ejemplo, el funtor $i^{*}$ env\'ia un conjunto dendroidal $X$ al conjunto simplicial

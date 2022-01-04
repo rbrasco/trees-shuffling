@@ -1,9 +1,9 @@
 # Fdb version 3
-["pdflatex"] 1641317307 "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.tex" "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.pdf" "proposta" 1641317308
+["pdflatex"] 1641318204 "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.tex" "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.pdf" "proposta" 1641318204
   "/etc/texmf/web2c/texmf.cnf" 1632223638 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/rbrasco/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1095.600pk" 1638009362 12644 d2c9b3e696dbc0ee39605c1fc370a0ff ""
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.aux" 1641317308 4740 c6501d157d2354e53229ade6d12c5dd3 ""
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.tex" 1641317306 90672 8b7bc02ad7d6149d5ff93ba20e4535ef ""
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.aux" 1641318204 4740 c6501d157d2354e53229ade6d12c5dd3 ""
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.tex" 1641318203 90788 9768f04f3ec632f53b148f423d474460 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
@@ -209,13 +209,13 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1632224000 131035 efcb10a2e27152a282b9ad10f532e04c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1632224028 6480793 1612c887bd5b409f759ce119333c9b5e ""
-  "proposta.aux" 1641317308 4740 c6501d157d2354e53229ade6d12c5dd3 "pdflatex"
-  "proposta.tex" 1641317306 90672 8b7bc02ad7d6149d5ff93ba20e4535ef ""
-  "proposta.toc" 1641317308 2803 97aae92cea8de32507c32da4b949f4da "pdflatex"
+  "proposta.aux" 1641318204 4740 c6501d157d2354e53229ade6d12c5dd3 "pdflatex"
+  "proposta.tex" 1641318203 90788 9768f04f3ec632f53b148f423d474460 ""
+  "proposta.toc" 1641318204 2803 97aae92cea8de32507c32da4b949f4da "pdflatex"
   (generated)
-  "proposta.pdf"
-  "proposta.toc"
-  "proposta.aux"
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.pdf"
   "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.log"
   "proposta.log"
+  "proposta.pdf"
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proposta/proposta.pdf"
+  "proposta.aux"
+  "proposta.toc"
