@@ -2125,6 +2125,11 @@ Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
 
     Observamos que existe una biyecci\'on entre los shuffles de dos \'arboles lineales $L_n$ y $L_m$ con los $(n,\text{ }m)$-shuffles de $[n]\times[m]$.
 \end{defi}
+
+\subsection{Conjunto de shuffles}
+\begin{defi}
+    Sean $S$ y $T$ dos \'arboles. El \emph{conjunto de shuffles de $S$ y $T$} es la colecci\'on de todos los shuffles posibles entre $S$ y $T$.
+\end{defi}
 \begin{ex}
     Sean $S$ y $T$ los \'arboles
     $$
@@ -2288,7 +2293,7 @@ Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
     \end{equation}
 \end{ex}
 
-El conjunto de shuffles de dos \'arboles $S$ y $T$ es ordenado parcialmente. El \'arbol minimal $R_1$ en el conjunto ordenado parcialmente se obtiene mediante la inserci\'on de una copia del \'arbol negro $T$ en cada entrada del \'arbol blanco $S$.
+El conjunto de shuffles de $S$ y $T$ es \emph{ordenado parcialmente}. El \'arbol minimal $R_1$ en el conjunto ordenado parcialmente se obtiene mediante la inserci\'on de una copia del \'arbol negro $T$ en cada entrada del \'arbol blanco $S$.
 Es decir, primero hacemos una copia del \'arbol $S$ de la forma $S\otimes r_T$, donde todas sus aristas han sido renombradas como $(\underline{\hspace{.25cm}},\text{ }r_T)$, siendo $r_T$ la ra\'iz del \'arbol $T$.
 Luego hacemos una copia del \'arbol $T$ de la forma $l\otimes T$, para toda hoja $l$ de $S$; donde todas sus aristas han sido renombradas como $(l,\text{ }\underline{\hspace{.25cm}})$.
 Finalmente, obtenemos el \'arbol $R_1$ encajando las \'ultimas copias encima de las hojas de la forma $(l,\text{ }r_T)$ de la primera copia.
@@ -2333,7 +2338,7 @@ $$
     (-13,0)*{R_N};
     \endxy
 $$
-Existen los shuffles intermediarios $R_k$ $(1 < k < N)$ entre $R_1$ y $R_N$ obtenidos filtrando los v\'ertices negros en $R_1$ hacia la ra\'iz del \'arbol mediante intercambios con los v\'ertices blancos.
+Existen los \emph{shuffles intermediarios} $R_k$ $(1 < k < N)$ entre $R_1$ y $R_N$ obtenidos filtrando los v\'ertices negros en $R_1$ hacia la ra\'iz del \'arbol mediante intercambios con los v\'ertices blancos.
 Todo $R_k$ se obtiene desde un $R_l$ anterior. Es decir, cada intercambio se basa en transformar una configuraci\'on de $R_l$
 \begin{equation}
     \xy
@@ -2411,10 +2416,7 @@ Falta mencior los casos cr\'iticos.
 \end{ex}
 
 
-\subsubsection{Injertos de \'arboles resultantes}
-\subsection{C\'alculo de \'arboles resultantes}
-\subsubsection{Conjunto de \'arboles resultantes}
-\subsubsection{Generarador de \'arboles en Python}
+\subsection{Shuffle de \'arboles en Python}
 \newpage
 % --- Acaba sección 4 ----------------------
 
