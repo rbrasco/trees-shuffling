@@ -3,7 +3,7 @@ from utils import string_to_tree_space
 from operad import Operad
 
 
-def tree_to_latex(tree, sort=False, size_f=(15, 10), labels=True, label_b=(3, (-2, 0))):
+def tree_to_latex(tree, sort=False, size_f=(15, 10), labels=True, label_b=(3, (-2, 0)), tree_name=None):
     T = string_to_tree_space(tree, Operad(), sort=sort)
     G = ig.Graph()
     _recursive_add_edges(T[0], G)
@@ -61,9 +61,11 @@ def tree_to_latex(tree, sort=False, size_f=(15, 10), labels=True, label_b=(3, (-
             t_pos = scaled_vertices[t][1]
             pos = (
                 round((s_pos[0] + t_pos[0]) / 2 + label_b[1][0], 2),
-                round((s_pos[1] + t_pos[1]) / 2 + label_b[1][0], 2),
+                round((s_pos[1] + t_pos[1]) / 2 + label_b[1][1], 2),
             )
             print(str(pos) + "*=0{\\scriptstyle " + label + "};")
+    if tree_name:
+        print("(-13,0)*{"+tree_name+"};")
     print("\\endxy")
 
 
@@ -106,7 +108,7 @@ def _recursive_add_edges(T, G):
 
 def node_name(name):
     if "W" in name:
-        return "*{\\circ}"
+        return "*\cir<2pt>{}"
     if "B" in name:
         return "*=0{\\bullet}"
     return "*{}"

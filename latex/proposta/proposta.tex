@@ -1754,14 +1754,16 @@ $$
 Donde todos tienen adjuntos por la derecha e izquierda
 $$
     \xymatrix{
-    sSets \ar@<0.5ex>[r]^{u_{!}} \ar@<0.5ex>[rd]^{i_{!}}
-    &pdSets \ar@<0.5ex>[l]^{u^{*}} \ar@<0.5ex>[d]^{v_{!}} \\
-    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]^{v^{*}}
+    sSets \ar@<0.5ex>[rr]^{u_{!}} \ar@<0.5ex>[rrdd]^{i_{!}}
+    & & pdSets \ar@<0.5ex>[ll]^{u^{*}} \ar@<0.5ex>[dd]^{v_{!}} \\
+    & & \\
+    & &  dSets \ar@<0.5ex>[lluu]^{i^{*}} \ar@<0.5ex>[uu]^{v^{*}}
     }
     \xymatrix{
-    sSets \ar@<0.5ex>[r]^{u_{*}} \ar@<0.5ex>[rd]^{i_{*}}
-    &pdSets \ar@<0.5ex>[l]^{u^{*}} \ar@<0.5ex>[d]^{v^{*}} \\
-    &dSets \ar@<0.5ex>[lu]^{i^{*}} \ar@<0.5ex>[u]^{v_{*}}
+    sSets \ar@<0.5ex>[rr]^{u_{*}} \ar@<0.5ex>[rrdd]^{i_{*}}
+    & & pdSets \ar@<0.5ex>[ll]^{u^{*}} \ar@<0.5ex>[dd]^{v^{*}} \\
+    & & \\
+    & & dSets \ar@<0.5ex>[lluu]^{i^{*}} \ar@<0.5ex>[uu]^{v_{*}}
     }
 $$
 Que vienen dados por las extensiones de Kan correspondientes. Por ejemplo, el funtor $i^{*}$ env\'ia un conjunto dendroidal $X$ al conjunto simplicial
@@ -1894,7 +1896,7 @@ Tenemos las siguientes relaciones conmutativas salvo isomorf\'ias:
         <0.08cm, 0cm>:
         %Vertices%
         (0.0, 0.0)*{}="1"; %root_c-d
-        (0.0, 10.0)*{\circ}="2"; %p\otimes dW
+        (0.0, 10.0)*\cir<2pt>{}="2"; %p\otimes dW
         (-45.0, 20.0)*=0{\bullet}="3"; %c_1\otimes qB
         (-75.0, 30.0)*{}="4"; %leaf_c_1-d_1
         (-45.0, 30.0)*{}="5"; %leaf_c_1-d_2
@@ -1936,13 +1938,13 @@ Tenemos las siguientes relaciones conmutativas salvo isomorf\'ias:
         %Vertices%
         (0.0, 0.0)*{}="1"; %root_c-d
         (0.0, 15.0)*=0{\bullet}="2"; %c\otimes qB
-        (-60.0, 30.0)*{\circ}="3"; %p\otimes d_1W
+        (-60.0, 30.0)*\cir<2pt>{}="3"; %p\otimes d_1W
         (-75.0, 45.0)*{}="4"; %leaf_c_1-d_1
         (-45.0, 45.0)*{}="5"; %leaf_c_2-d_1
-        (0.0, 30.0)*{\circ}="6"; %p\otimes d_2W
+        (0.0, 30.0)*\cir<2pt>{}="6"; %p\otimes d_2W
         (-15.0, 45.0)*{}="7"; %leaf_c_1-d_2
         (15.0, 45.0)*{}="8"; %leaf_c_2-d_2
-        (60.0, 30.0)*{\circ}="9"; %p\otimes d_3W
+        (60.0, 30.0)*\cir<2pt>{}="9"; %p\otimes d_3W
         (45.0, 45.0)*{}="10"; %leaf_c_1-d_3
         (75.0, 45.0)*{}="11"; %leaf_c_2-d_3
         %Edges%
@@ -2055,9 +2057,360 @@ $$
 % ------------------------------------------
 
 % --- Empieza sección 4 --------------------
-\section{Injertos de \'arboles}
+\section{Shuffle de \'arboles (Naipear, Barajear o mezclar?)}
+En esta seci\'on describiremos el producto tensorial $\Omega[S]\otimes\Omega[T]$ para todo par de \'arboles $S$ y $T$ de $\Omega$, y as\'i conseguir que se entienda el resultado del producto tensorial de conjuntos dendroidales.
 \subsection{Producto tensorial de \'arboles lineales}
+Sean $S=L_n$ y $T=L_m$ dos \'arboles lineales, entonces por la proposici\'on 3.30(i),
+$$
+    \Omega[L_n]\otimes\Omega[L_m]=i_!(\Delta[n])\otimes i_!(\Delta[m])\cong i_!(\Delta[n]\times\Delta[m])
+$$
+Los simplices no degenerados del producto de dos representables en conjuntos simpliciales son computados mediante un \emph{shuffle}. Un \emph{(n,m)-shuffle} es un camino de longitud m\'axima en el conjunto de orden parcial $[n]\times[m]$.
+Los $(n+m)$-simplices no degenerados de $\Delta[n]\times\Delta[m]$ corresponde a los $(n,\text{ }m)$-shuffles. De hecho,
+$$
+    \Delta[n]\times\Delta[m] = \bigcup_{(n,m)}\Delta[n+m]
+$$
+Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
+\begin{ex}
+    Sea n... por hacer
+\end{ex}
 \subsection{Producto tensorial de \'arboles}
+\begin{defi}
+    Sea $S$ y $T$ dos objetos de $\Omega$. Un \emph{shuffle} de $S$ y $T$ es un \'arbol $R$ cuyo conjunto de aristas es un subconjunto de $E(S)\times E(T)$. La ra\'iz de $R$ es $(a,\text{ }x)$, donde $a$ es la ra\'iz de $S$ y $x$ es la ra\'iz de $T$,
+    y sus hojas son todos los pares $(l_S,\text{ }l_T)$, donde $l_S$ es una hoja de $S$ y $l_T$ es una hoja de $T$. Los v\'ertices son de la forma
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_b-x
+        (0.0, 10.0)*\cir<2pt>{}="2"; %uW
+        (-7.5, 20.0)*{}="3"; %leaf_a_1-x
+        (7.5, 20.0)*{}="4"; %leaf_a_n-x
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"4" **\dir{-};
+        %Labels%
+        (3.0, 10.0)*=0{\scriptstyle u};
+        (-5.5, 5)*=0{\scriptstyle (b,\text{ }x)};
+        (-10, 13.0)*=0{\scriptstyle (a_1,\text{ }x)};
+        (10, 13.0)*=0{\scriptstyle (a_n,\text{ }x)};
+        (0,15)*{\dots};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-15, 0.0)*{}="1";
+        (15, 10.0)*{}="2";
+        (0,10)*{\rm o};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a-y
+        (0.0, 10.0)*=0{\bullet}="2"; %vB
+        (-7.5, 20.0)*{}="3"; %leaf_a-x_1
+        (7.5, 20.0)*{}="4"; %leaf_a-x_m
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"4" **\dir{-};
+        %Labels%
+        (3.0, 10.0)*=0{\scriptstyle v};
+        (-5.5, 5)*=0{\scriptstyle (a,\text{ }y)};
+        (-10, 13.0)*=0{\scriptstyle (a,\text{ }x_1)};
+        (10, 13.0)*=0{\scriptstyle (a,\text{ }x_m)};
+        (0,15)*{\dots};
+        \endxy
+    $$
+    Donde $u$ es un v\'ertice de $S$ con entradas $a_1,\dots,a_n$ y salida $b$, y $v$ es un v\'ertice de $T$ con entradas $x_1,\dots,x_m$ y salida $y$. Nos referiremos a los dos tipos de v\'ertices como \emph{v\'ertices blancos} y \emph{v\'ertices negres}, respectivamente. Para diferenciarlos visualmente los pintaremos con $\circ$ y $\bullet$, respectivamente.
+
+    Observamos que existe una biyecci\'on entre los shuffles de dos \'arboles lineales $L_n$ y $L_m$ con los $(n,\text{ }m)$-shuffles de $[n]\times[m]$.
+\end{defi}
+\begin{ex}
+    Sean $S$ y $T$ los \'arboles
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+        (-15.0, 20.0)*{}="3"; %leaf_b
+        (15.0, 20.0)*\cir<2pt>{}="7"; %1W
+        (5.0, 30.0)*{}="8"; %leaf_d
+        (15.0, 30.0)*{}="9"; %leaf_e
+        (25.0, 30.0)*{}="10"; %leaf_f
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "7";"9" **\dir{-};
+        "7";"10" **\dir{-};
+        %Labels%
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-11, 15.0)*=0{\scriptstyle b};
+        (10.5, 15.0)*=0{\scriptstyle c};
+        (7.0, 25.0)*=0{\scriptstyle d};
+        (13.0, 25.0)*=0{\scriptstyle e};
+        (22.5, 25.0)*=0{\scriptstyle f};
+        (-13,0)*{S};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_x
+        (0.0, 10.0)*=0{\bullet}="2"; %0B
+        (0.0, 20.0)*{}="3"; %leaf_y
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        %Labels%
+        (-2.0, 5.0)*=0{\scriptstyle x};
+        (-2.0, 15.0)*=0{\scriptstyle y};
+        (-13,0)*{T};
+        \endxy
+    $$
+    El conjunto de shuffles de $S$ y $T$ consiste de los siguientes 3 \'arboles:
+    \begin{equation}
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a-x
+        (0.0, 12.5)*\cir<2pt>{}="2"; %0W
+        (-16.0, 25.0)*=0{\bullet}="3"; %2B
+        (-16.0, 37.5)*{}="4"; %leaf_b-y
+        (16.0, 25.0)*\cir<2pt>{}="5"; %1W
+        (0.0, 37.5)*=0{\bullet}="6"; %2B
+        (0.0, 50.0)*{}="7"; %leaf_d-y
+        (16.0, 37.5)*=0{\bullet}="8"; %2B
+        (16.0, 50.0)*{}="9"; %leaf_e-y
+        (32.0, 37.5)*=0{\bullet}="10"; %2B
+        (32.0, 50.0)*{}="11"; %leaf_f-y
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "2";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "6";"7" **\dir{-};
+        "5";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "5";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        %Labels%
+        (-2.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
+        (-10.0, 18.75)*=0{\scriptstyle (b,\text{ }x)};
+        (-18.0, 31.25)*=0{\scriptstyle (b,\text{ }y)};
+        (6.0, 18.75)*=0{\scriptstyle (c,\text{ }x)};
+        (6.0, 31.25)*=0{\scriptstyle (d,\text{ }x)};
+        (-2.0, 43.75)*=0{\scriptstyle (d,\text{ }y)};
+        (14.0, 31.25)*=0{\scriptstyle (e,\text{ }x)};
+        (14.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
+        (22.0, 31.25)*=0{\scriptstyle (f,\text{ }x)};
+        (30.0, 43.75)*=0{\scriptstyle (f,\text{ }y)};
+        (-13,0)*{R_1};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-5, 0.0)*{}="1";
+        (5, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a-x
+        (0.0, 12.5)*\cir<2pt>{}="2"; %0W
+        (-8.0, 25.0)*=0{\bullet}="3"; %2B
+        (-8.0, 37.5)*{}="4"; %leaf_b-y
+        (8.0, 25.0)*=0{\bullet}="5"; %2B
+        (8.0, 37.5)*\cir<2pt>{}="6"; %1W
+        (-8.0, 50.0)*{}="7"; %leaf_d-y
+        (8.0, 50.0)*{}="8"; %leaf_e-y
+        (24.0, 50.0)*{}="9"; %leaf_f-y
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "2";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "6";"7" **\dir{-};
+        "6";"8" **\dir{-};
+        "6";"9" **\dir{-};
+        %Labels%
+        (-2.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
+        (-6.0, 18.75)*=0{\scriptstyle (b,\text{ }x)};
+        (-10.0, 31.25)*=0{\scriptstyle (b,\text{ }y)};
+        (2.0, 18.75)*=0{\scriptstyle (c,\text{ }x)};
+        (6.0, 31.25)*=0{\scriptstyle (c,\text{ }y)};
+        (-2.0, 43.75)*=0{\scriptstyle (d,\text{ }y)};
+        (6.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
+        (14.0, 43.75)*=0{\scriptstyle (f,\text{ }y)};
+        (-13,0)*{R_2};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-5, 0.0)*{}="1";
+        (5, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a-x
+        (0.0, 12.5)*=0{\bullet}="2"; %2B
+        (0.0, 25.0)*\cir<2pt>{}="3"; %0W
+        (-8.0, 37.5)*{}="4"; %leaf_b-y
+        (8.0, 37.5)*\cir<2pt>{}="5"; %1W
+        (-8.0, 50.0)*{}="6"; %leaf_d-y
+        (8.0, 50.0)*{}="7"; %leaf_e-y
+        (24.0, 50.0)*{}="8"; %leaf_f-y
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "5";"8" **\dir{-};
+        %Labels%
+        (-2.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
+        (-2.0, 18.75)*=0{\scriptstyle (a,\text{ }y)};
+        (-6.0, 31.25)*=0{\scriptstyle (b,\text{ }y)};
+        (2.0, 31.25)*=0{\scriptstyle (c,\text{ }y)};
+        (-2.0, 43.75)*=0{\scriptstyle (d,\text{ }y)};
+        (6.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
+        (14.0, 43.75)*=0{\scriptstyle (f,\text{ }y)};
+        (-13,0)*{R_3};
+        \endxy
+    \end{equation}
+\end{ex}
+
+El conjunto de shuffles de dos \'arboles $S$ y $T$ es ordenado parcialmente. El \'arbol minimal $R_1$ en el conjunto ordenado parcialmente se obtiene mediante la inserci\'on de una copia del \'arbol negro $T$ en cada entrada del \'arbol blanco $S$.
+Es decir, primero hacemos una copia del \'arbol $S$ de la forma $S\otimes r_T$, donde todas sus aristas han sido renombradas como $(\underline{\hspace{.25cm}},\text{ }r_T)$, siendo $r_T$ la ra\'iz del \'arbol $T$.
+Luego hacemos una copia del \'arbol $T$ de la forma $l\otimes T$, para toda hoja $l$ de $S$; donde todas sus aristas han sido renombradas como $(l,\text{ }\underline{\hspace{.25cm}})$.
+Finalmente, obtenemos el \'arbol $R_1$ encajando las \'ultimas copias encima de las hojas de la forma $(l,\text{ }r_T)$ de la primera copia.
+El \'arbol maximal $R_N$ en el conjunto ordenado parcialmente se obtiene mediante la inserci\'on de una copia del \'arbol blanco $S$ en cada entrada del \'arbol negro $T$.
+Los \'arboles $R_1$ y $R_n$ deber\'ian lucir de la siguiente manera
+$$
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 20.0)*\cir<2pt>{}="2"; %0W
+    (-25.0, 40.0)*{}="3"; %leaf_b
+    (0.0, 40.0)*{}="4"; %leaf_c
+    (25.0, 40.0)*{}="5"; %leaf_d
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    "2";"5" **\dir{-};
+    (-13,0)*{R_1};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-10, 0.0)*{}="1";
+    (10, 10.0)*{}="2";
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 20.0)*=0{\bullet}="2"; %1B
+    (-37.5, 40.0)*{}="3"; %leaf_b
+    (-12.5, 40.0)*{}="4"; %leaf_c
+    (12.5, 40.0)*{}="5"; %leaf_d
+    (37.5, 40.0)*{}="6"; %leaf_e
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    "2";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    (-13,0)*{R_N};
+    \endxy
+$$
+Existen los shuffles intermediarios $R_k$ $(1 < k < N)$ entre $R_1$ y $R_N$ obtenidos filtrando los v\'ertices negros en $R_1$ hacia la ra\'iz del \'arbol mediante intercambios con los v\'ertices blancos.
+Todo $R_k$ se obtiene desde un $R_l$ anterior. Es decir, cada intercambio se basa en transformar una configuraci\'on de $R_l$
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 15.0)*\cir<2pt>{}="2"; %0W
+    (-25.0, 30.0)*=0{\bullet}="3"; %1B
+    (-37.5, 45.0)*{}="4"; %leaf_b_1-y_1
+    (-12.5, 45.0)*{}="5"; %leaf_b_n-y_1
+    (25.0, 30.0)*=0{\bullet}="6"; %2B
+    (12.5, 45.0)*{}="7"; %leaf_b_1-y_m
+    (37.5, 45.0)*{}="8"; %leaf_b_n-y_m
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    (-5.5, 7.5)*=0{\scriptstyle (a,\text{ }x)};
+    (-19.5, 21)*=0{\scriptstyle (a,\text{ }y_1)};
+    (-39, 37.5)*=0{\scriptstyle (b_1,\text{ }y_1)};
+    (-11, 37.5)*=0{\scriptstyle (b_n,\text{ }y_1)};
+    (19.5, 21)*=0{\scriptstyle (a,\text{ }y_m)};
+    (10.5, 37.5)*=0{\scriptstyle (b_1,\text{ }y_m)};
+    (39.5, 37.5)*=0{\scriptstyle (b_n,\text{ }y_m)};
+    (-25,35)*{\dots};
+    (25,35)*{\dots};
+    (0,20)*{\dots\dots};
+    \endxy
+\end{equation}
+A una configuraci\'on de $R_k$
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 15.0)*=0{\bullet}="2"; %0B
+    (-25.0, 30.0)*\cir<2pt>{}="3"; %1W
+    (-37.5, 45.0)*{}="4"; %leaf_b_1-y_1
+    (-12.5, 45.0)*{}="5"; %leaf_b_1-y_m
+    (25.0, 30.0)*\cir<2pt>{}="6"; %2W
+    (12.5, 45.0)*{}="7"; %leaf_b_n-y_1
+    (37.5, 45.0)*{}="8"; %leaf_b_n-y_m
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    (-5.5, 7.5)*=0{\scriptstyle (a,\text{ }x)};
+    (-19.5, 21)*=0{\scriptstyle (b_1,\text{ }x)};
+    (-39, 37.5)*=0{\scriptstyle (b_1,\text{ }y_1)};
+    (-11, 37.5)*=0{\scriptstyle (b_1,\text{ }y_m)};
+    (19.5, 21)*=0{\scriptstyle (b_n,\text{ }x)};
+    (10.5, 37.5)*=0{\scriptstyle (b_n,\text{ }y_1)};
+    (39.5, 37.5)*=0{\scriptstyle (b_n,\text{ }y_m)};
+    (-25,35)*{\dots};
+    (25,35)*{\dots};
+    (0,20)*{\dots\dots};
+    \endxy
+\end{equation}
+Si un shuffle $R_k$ se obtiene the otro shuffle $R_l$ mediante la norma de arriba, entonces decimos que $R_k$ se obtiene mediante \emph{un solo intercambio} y lo denotaremos por $R_l\le R_k$.
+As\'i, obtenemos un orden parcial en el conjunto de todos los shuffles.
+
+Falta mencior los casos cr\'iticos.
+\begin{ex}
+    Sea S y T
+\end{ex}
+
+
 \subsubsection{Injertos de \'arboles resultantes}
 \subsection{C\'alculo de \'arboles resultantes}
 \subsubsection{Conjunto de \'arboles resultantes}

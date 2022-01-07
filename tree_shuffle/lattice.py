@@ -38,8 +38,8 @@ class ShuffleLattice:
         
 
     def initialize(self):
-        self.dictionary["R1"] = set(self.i_tree.split("|"))
-        self.skeleton["R1"] = set()
+        self.dictionary["R_1"] = set(self.i_tree.split("|"))
+        self.skeleton["R_1"] = set()
         # self.dictionary[f"R{self.nb_percolations}"] = set(self.f_tree.split("|"))
         # self.skeleton[f"R{self.nb_percolations}"] = set()
 
@@ -65,7 +65,7 @@ class ShuffleLattice:
         if key := self.find_key(operations):
             self.skeleton[key].add(parent_key)
             return True
-        key = f"R{len(self.dictionary)+1}"
+        key = f"R_{len(self.dictionary)+1}"
         self.dictionary[key] = operations
         self.skeleton[key].add(parent_key)
         return False
@@ -78,20 +78,21 @@ class ShuffleLattice:
         return {key: "|".join(sorted(list(values))) for key, values in self.dictionary.items()}
 
     def print_result_skeleton(self):
-        print("Number of trees: ", len(self.dictionary))
+        print("Number of trees: ", self.nb_percolations)
+        print("Number of trees generated: ", len(self.dictionary))
         print("Dictionary of trees: ", dict(self.get_dictionary()))
         print("Skeleton of trees: ", dict(self.skeleton))
     
 
-    def print_latex(self, key=None, sort=True, size_f=(5, 5), labels=True, label_b=(3, (-2, 0)), between=10):
+    def print_latex(self, key=None, sort=True, size_f=(15, 10), labels=True, label_b=(3, (-2, 0)), between=10):
         sorted_dict = self.get_dictionary()
         if key:
             print(f"Tree {key}: {sorted_dict[key]}")
-            tree_to_latex(sorted_dict[key], sort=sort, size_f=size_f, labels=labels, label_b=label_b)
+            tree_to_latex(sorted_dict[key], sort=sort, size_f=size_f, labels=labels, label_b=label_b, tree_name=key)
         else:
             print("\\begin{equation}")
-            for i, value in enumerate(sorted_dict.values()):
-                tree_to_latex(value, sort=sort, size_f=size_f, labels=labels, label_b=label_b)
+            for i, (name, value) in enumerate(sorted_dict.items()):
+                tree_to_latex(value, sort=sort, size_f=size_f, labels=labels, label_b=label_b, tree_name=name)
                 separator(between)
                 if not (i+1)%5:
                     print("\\end{equation}")
