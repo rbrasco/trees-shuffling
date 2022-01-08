@@ -174,6 +174,7 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
 \end{defi}
 \begin{obs}
     La categor\'ia $\Omega_p$ extiende la categor\'ia simplicial $\Delta$. Para todo $n\ge 0$ se define un \emph{\'arbol lineal} $L_n$ como un \'arbol planar con $n+1$ aristas y $n$ v\'ertices $v_1,\dots,v_n$, donde la valencia de todos los v\'ertices es uno.
+    Es decir, es un \'arbol cuyos v\'ertices solo tienen una arista de entrada.
     % Figura del arbol L_n %
     \begin{equation}
         \xy
@@ -205,13 +206,13 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
         \endxy
     \end{equation}
 
-    Denotaremos este \'arbol por $[n]$. Toda apliaci\'on que mantiene el orden de manera que env\'ie $\{0,\dots,n\}$ a $\{0,\dots,m\}$, define un morfismo $[n] \to [m]$ en la categor\'ia $\Omega_p$. De esta manera obtenemos un funtor
-    \[
+    Denotaremos este \'arbol por $[n]$. Toda apliaci\'on que mantiene el orden de manera que env\'ie $\{0,\dots,n\}$ a $\{0,\dots,m\}$, define un morfismo $[n] \to [m]$ en la categor\'ia $\Omega_p$. De esta manera obtenemos un encaje
+    $$
         \begin{tikzcd}
-            \Delta \arrow[hook]{r}{i} & \Omega_p
+            \Delta \arrow[hook]{r}{u} & \Omega_p
         \end{tikzcd}
-    \]
-    Este funtor es plenamente fiel. Es decir, para toda flecha $S \to T$ en $\Omega_p$, si $T$ es lineal entonces $S$ tambi\'en lo es. (Falta demostraci\'on)
+    $$
+    Este encaje es un funtor plenamente fiel. Podemos observar que para toda flecha $S \to T$ en $\Omega_p$, si $T$ es lineal entonces $S$ tambi\'en lo es.
 \end{obs}
 
 \subsection{Morfismos en $\Omega_p$}
@@ -511,8 +512,9 @@ El siguiente lema es una generalizaci\'on en $\Omega_p$ del lema en la categor\'
     $$
     donde  $\sigma\colon S\to H$ es una composici\'on de degeneraciones y $\partial\colon H\to T$ es una composici\'on de caras.
 \end{lema}
-Demo: por hacer
-
+\begin{proof}
+    Es una demostraci\'on an\'aloga a la del lema 3.21.
+\end{proof}
 \subsubsection{Identidades dendroidales}
 En esta secci\'on vamos a dar las relaciones entre los morfismos generadores de $\Omega_p$. Las identidades que obtenemos generalizan las identidades simpliciales de la categor\'ia $\Delta$.
 
@@ -1217,7 +1219,24 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
     $$
     donde  $\sigma\colon S\to S'$ es una composici\'on de degeneraciones, $\varphi\colon S'\to T'$ es isomorfismo, y $\partial\colon T\to T'$ es una composici\'on de caras.
 \end{lema}
-Demo: por hacer
+\begin{proof}
+    Vamos a demostrar por inducci\'on sobre el n\'umero de v\'ertices de $S$ y $T$. Si $S$ y $T$ no tienen v\'ertices, entonces $S=T=\eta$ y $f$ es la identidad. Podemos asumir que $f$ env\'ia la ra\'iz de $S$ a la ra\'iz de $T$; de lo contrario podemos factorizar $f$ men una funci\'on $S\to T'$ que conserva la ra\'iz seguido de otra funci\'on $T'\to T$ que es una composici\'on de caras externas.
+    Tambi\'en podemos asumir que $f$ es un epimorfismo en las hojas, de lo contrario podemos factorizar $f$ en $S\to T/v\overset{\partial_d}{\longrightarrow}T$, donde $v$ es el v\'ertice que est\'a debajo de la hoja en $T$ pero no est\'a en la im\'agen de $f$.
+
+    Sean $a$ y $b$ son dos aristas de $S$ tales que $f(a)=f(b)$, entonces $a$ y $b$ deber\'ian estar en la misma rama de $S$ y $f$ env\'ia los v\'ertices intermediarios a sus identidades.
+
+    Podemos factorizar $f$ como una sobreyecci\'on segudia de una inyecci\'on con los colores, ya que $f$ es una funcion de op\'eradas coloreadas. Esto corresponde a una factorizaci\'on en $\Omega$,
+    $$
+        S\overset{\psi }{\longrightarrow} S' \overset{\xi}{\longrightarrow} T
+    $$
+    donde $\psi$ es una composici\'on de degeneraciones y $\xi$ es biyectiva en las hojas, env\'ia la ra\'iz de $S'$ a la ra\'iz de $T$ y es inyectiva en los colores.
+
+    Si $\xi$ es sobreyectiva en los colores, entonces $\xi$ es un isomorfismo. Si $\xi$ no es sobreyectiva, entonces existe una arista $e$ de $T$ que no est\'a en la im\'agen de $\xi$. Como $e$ debe ser una arista interna (no una hoja), podemos factorizar $\xi$ como
+    $$
+        S'\overset{\xi '}{\longrightarrow} T/e \overset{\partial_e}{\longrightarrow} T
+    $$
+    Ahora continuamos por inducci\'on sobre la funci\'on $\xi '$.
+\end{proof}
 
 \subsubsection{Prehaz de estructuras planares}
 Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de estructuras planares.

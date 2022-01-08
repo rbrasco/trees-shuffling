@@ -1,0 +1,34 @@
+\BOOKMARK [1][-]{section.1}{Nociones previas}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Categor\355as}{section.1}% 2
+\BOOKMARK [3][-]{subsubsection.1.1.1}{Funtores}{subsection.1.1}% 3
+\BOOKMARK [2][-]{subsection.1.2}{Op\351radas en conjuntos}{section.1}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.1}{Op\351radas coloreadas}{subsection.1.2}% 5
+\BOOKMARK [1][-]{section.2}{Conjuntos Simpliciales}{}% 6
+\BOOKMARK [2][-]{subsection.2.1}{Complejos simpliciales}{section.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Morfismos simpliciales}{subsection.2.1}% 8
+\BOOKMARK [2][-]{subsection.2.2}{Conjunto Delta}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.2.1}{Definici\363n categ\363rica del conjunto Delta}{subsection.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{Conjunto simplicial}{section.2}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.1}{Definici\363n categ\363rica del conjunto simplicial}{subsection.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.4}{Realizaci\363n geom\351trica}{section.2}% 13
+\BOOKMARK [1][-]{section.3}{Conjuntos Dendroidales}{}% 14
+\BOOKMARK [2][-]{subsection.3.1}{\301rboles como op\351radas}{section.3}% 15
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Formalismo de \341rboles}{subsection.3.1}% 16
+\BOOKMARK [3][-]{subsubsection.3.1.2}{\301rboles planares}{subsection.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.2}{Morfismos en p}{section.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Caras}{subsection.3.2}% 19
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Degeneraciones}{subsection.3.2}% 20
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Identidades dendroidales}{subsection.3.2}% 21
+\BOOKMARK [2][-]{subsection.3.3}{\301rboles no planares}{section.3}% 22
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Prehaz de estructuras planares}{subsection.3.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Relaci\363n con la categor\355a simplicial}{subsection.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.4}{Conjuntos Dendroidales}{section.3}% 25
+\BOOKMARK [2][-]{subsection.3.5}{Producto tensorial de conjuntos dendroidales}{section.3}% 26
+\BOOKMARK [3][-]{subsubsection.3.5.1}{Producto tensorial Boardman-Vogt}{subsection.3.5}% 27
+\BOOKMARK [3][-]{subsubsection.3.5.2}{Producto tensorial de conjuntos dendroidales}{subsection.3.5}% 28
+\BOOKMARK [1][-]{section.4}{Shuffle de \341rboles \(Naipear, Barajear o mezclar?\)}{}% 29
+\BOOKMARK [2][-]{subsection.4.1}{Producto tensorial de \341rboles lineales}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.2}{Producto tensorial de \341rboles}{section.4}% 31
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Conjunto de shuffles}{subsection.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.3}{Shuffle de \341rboles en Python}{section.4}% 33
+\BOOKMARK [1][-]{section.5}{Conclusiones}{}% 34
