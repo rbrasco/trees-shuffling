@@ -1,0 +1,209 @@
+\documentclass[../main.tex]{subfiles}
+\graphicspath{{\subfix{../images/}}}
+\begin{document}
+\section{Conjuntos Simpliciales}
+% Bibliografía Greg Friedman. (2011), An elementary illustrated introduction to simplicial sets (PDF)
+\subsection{Complejos simpliciales}
+\begin{defi}
+    N-simplex
+\end{defi}
+Un $n\text{-simplex}$ es un politopo de $n\ge 0$ dimensiones formando una envoltura convexa de $n+1$ vertices. Es decir, es un conjunto de puntos afines independientes en un espacio eucl\'ideo de dimensi\'on $n$.
+
+Una cara $m$ de un $n\text{-simplex}$ es una envolutra convexa de $m\le n$ vertices.
+
+\begin{defi}
+    Complejo simplicial
+\end{defi}
+Sea $n\in\mathbb{N}^{*}$, un complejo simplicial $X$ es un conjunto finito de $m\text{-simplex}$ con $m\le n$ que cumplen las condiciones:
+
+\begin{enumerate}[(1)]
+    \item Si $m\text{-simplex}\in X \Rightarrow \forall m'\le m\text{, }m'\text{-simplex}\in X$.
+    \item Si dos simplices de $X$ se cortan, entonces su intersecci\'on es una cara com\'un.
+\end{enumerate}
+
+Sea $X^k$ un complejo simplicial formado por todos los $k\text{-simplex}$ de $X$. Observamos que todo elemento de $X^k$ es un subconjunto de $X^0$ con cardinal $k+1$, donde $X^0=\{v_0,\dots ,v_n\}$.
+Generalmente, todo subconjunto de $X^k$ de $j+1$ elementos es un elemento de $X^j$.
+
+Sea $X_k$ un conjunto formado por $k\text{-simplices}$.
+
+\begin{defi}
+    N-simplex ordenado
+\end{defi}
+Un $n\text{-simplex}$ formado por los v\'ertices $v_0,\dots,v_n \in X^0$ es ordenado cuando cuando los v\'ertices estan ordenados, en ese caso nombramos cada v\'ertice por los n\'umeros $0,\dots,n$. Usaremos la notaci\'on $|\Delta^n| = [0,\dots,n]$ para simplificar.
+
+
+\subsubsection{Morfismos simpliciales}
+\begin{defi}
+    Morfismo simplicial
+\end{defi}
+Sea $K$ y $L$ complejos simpliciales. Sea un morfismo simplicial $F: K \longrightarrow L$ que envia los vertices de K a los vertices de L. Es decir, $\forall v \in K^0 \text{, } v \longmapsto F(v) \in L^0$.
+
+\begin{defi}
+    Cara
+\end{defi}
+Para todo $|\Delta^n|$ tenemos $n+1$ caras definidas por los morfismos $\delta_0,\dots,\delta_n$
+\begin{align*}
+    \delta_j: X_n & \longrightarrow X_{n-1} \\
+    [0,\dots,n]   & \longmapsto\!
+    \begin{aligned}[t]
+        [0,\dots,\hat{j},\dots,n]
+    \end{aligned}
+\end{align*}
+Donde $X_n$ y $X_{n-1}$ son conjuntos de simplices ordenados de $n$ y $n-1$ v\'ertices, respectivamente. Observamos que $\forall i<j$, $\delta_i\delta_j = \delta_{j-1}\delta_{i}$.
+
+\begin{defi}
+    Morifismo degenerativo
+\end{defi}
+Para todo $|\Delta^n|$ tenemos $n+1$ morfismos degenerativos $\sigma_0,\dots,\sigma_n$
+\begin{align*}
+    \sigma_j: X_n & \longrightarrow X_{n+1} \\
+    [0,\dots,n]   & \longmapsto\!
+    \begin{aligned}[t]
+        [0,\dots,j,j,\dots,n]
+    \end{aligned}
+\end{align*}
+Donde $X_n$ y $X_{n+1}$ son conjuntos de simplices ordenados de $n$ y $n+1$ v\'ertices, respectivamente. Observamos que $\forall i\le j$, $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}$.
+
+\subsection{Conjunto Delta}
+\begin{defi}
+    Conjunto Delta
+\end{defi}
+Definimos un conjunto Delta como una secuencia de conjuntos $X_0,X_1,\dots$ y para cada $n\ge 0$ las funciones $\delta_i: X_{n+1} \longrightarrow X_n$, $\forall 0\le i \le n+1$, que cumplen $\delta_i\delta_j = \delta_{j-1}\delta_{i}$, $\forall i\le j$.
+Formando el siguiente diagrama (Falta por hacer)
+
+$$ %Not working
+    \xymatrix{
+    X_0  \ar@/{}^{1pc}/[r]  & X_1  \ar@/{}^{1pc}/[r] & X_2  \dots
+    }
+$$
+
+\subsubsection{Definici\'on categ\'orica del conjunto Delta}
+\begin{defi}
+    Categor\'ia $\hat{\Delta}$
+\end{defi}
+Sea la categor\'ia $\hat{\Delta}$ cuyos objetos son los conjuntos estrictamente ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen el orden estrictamente, $f: [m] \longrightarrow [n]$, $m\le n$. Podemos pensar que sea la inclusi\'on de un $m\text{-simplex}$ como cara de un $n\text{-simplex}$.
+Para todo $0\le i \le n$ consideramos los morfismos:
+\begin{align*}
+    d_i: [n]      & \longrightarrow [n+1] \\
+    \{0,\dots,n\} & \longmapsto\!
+    \begin{aligned}[t]
+        \{0,\dots, \hat{i}, \dots,n+1\}
+    \end{aligned}
+\end{align*}
+
+\begin{defi}
+    Categor\'ia $\hat{\Delta}^{op}$
+\end{defi}
+Sea la categor\'ia $\hat{\Delta}^{op}$, la categor\'ia opuesta de $\hat{\Delta}$, cuyos objetos son los conjuntos estrictamente ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen el orden estrictamente, $f: [n] \longrightarrow [m]$, $m\le n$. Podemos pensar que sea la extracci\'on de la cara $m\text{-simplex}$ de un $n\text{-simplex}$.
+Para todo $0\le i \le n$ consideramos los morfismos:
+\begin{align*}
+    \delta_i: [n] & \longrightarrow [n-1] \\
+    \{0,\dots,n\} & \longmapsto\!
+    \begin{aligned}[t]
+        \{0,\dots, \hat{i}, \dots,n\}
+    \end{aligned}
+\end{align*}
+
+\begin{defi}
+    Conjunto Delta
+\end{defi}
+Un conjunto Delta es un functor covariante $X: \hat{\Delta}^{op} \longrightarrow \mathbf{Set}$, equivalentemente es un functor contravariante $X: \hat{\Delta} \longrightarrow \mathbf{Set}$.
+
+Faltan observaciones.
+
+\subsection{Conjunto simplicial}
+\begin{defi}
+    Conjunto simplicial
+\end{defi}
+Definimos un conjunto simplicial como una secuencia de conjuntos $X_0,X_1,\dots$ y para cada $n\ge 0$ las funciones $\delta_i: X_n \longrightarrow X_{n-1}$ y $\sigma_i: X_n \longrightarrow X_{n+1}$, $\forall 0\le i \le n$, que cumplen:
+
+\begin{enumerate}[(1)]
+    \item $\delta_i\delta_j = \delta_{j-1}\delta_{i}$, $i<j$
+    \item $\delta_i\sigma_j = \sigma_{j-1}\delta_{i}$, $i<j$
+    \item $\delta_j\sigma_j = \delta{j+1}\sigma_{j} = id$
+    \item $\delta_i\sigma_j = \sigma_{j}\delta_{i-1}$, $i>j+1$
+    \item $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}, i\le j$
+\end{enumerate}
+Formando el siguiente diagrama (Falta por hacer)
+
+$$ %Not working
+    \xymatrix{
+    X_0  \ar@/{}^{1pc}/[r]  & X_1  \ar@/{}^{1pc}/[r] & X_2  \dots
+    }
+$$
+
+\subsubsection{Definici\'on categ\'orica del conjunto simplicial}
+\begin{defi}
+    Categor\'ia $\Delta$
+\end{defi}
+Sea la categor\'ia $\Delta$ cuyos objetos son los conjuntos ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen solamente el orden, $f: [m] \longrightarrow [n]$.
+Para todo $0\le i \le n$ consideramos los morfismos:
+\begin{align*}
+    d_i: [n]      & \longrightarrow [n+1] \\
+    \{0,\dots,n\} & \longmapsto\!
+    \begin{aligned}[t]
+        \{0,\dots, \hat{i}, \dots,n+1\}
+    \end{aligned}
+\end{align*}
+\begin{align*}
+    s_i: [n+1]      & \longrightarrow [n] \\
+    \{0,\dots,n+1\} & \longmapsto\!
+    \begin{aligned}[t]
+        \{0,\dots,i,i, \dots,n\}
+    \end{aligned}
+\end{align*}
+
+\begin{defi}
+    Categor\'ia $\hat{\Delta}^{op}$
+\end{defi}
+Sea la categor\'ia $\Delta^{op}$, la categor\'ia opuesta de $\Delta$, cuyos objetos son los conjuntos ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen solamente el orden, $f: [m] \longrightarrow [n]$.
+Para todo $0\le i \le n$ consideramos los morfismos:
+\begin{align*}
+    \delta_i: [n] & \longrightarrow [n-1] \\
+    \{0,\dots,n\} & \longmapsto\!
+    \begin{aligned}[t]
+        \{0,\dots, \hat{i}, \dots,n\}
+    \end{aligned}
+\end{align*}
+\begin{align*}
+    \sigma_i: [n] & \longrightarrow [n+1] \\
+    \{0,\dots,n\} & \longmapsto\!
+    \begin{aligned}[t]
+        \{0,\dots, i,i, \dots,n\}
+    \end{aligned}
+\end{align*}
+
+\begin{defi}
+    Conjunto simplicial
+\end{defi}
+Un conjunto simplicial es un functor covariante $X: \Delta^{op} \longrightarrow \mathbf{Set}$, equivalentemente es un functor contravariante $X: \Delta \longrightarrow \mathbf{Set}$.
+Usaremos la notaci\'on $\Delta[n]=\Delta(\_,[n])$.
+\begin{align*}
+    \Delta[n]: \Delta^{op} & \longrightarrow \mathbf{Set} \\
+    [m]                    & \longmapsto\!
+    \begin{aligned}[t]
+        \Delta([m],[n])
+    \end{aligned}
+\end{align*}
+Faltan observaciones.
+
+\subsection{Realizaci\'on geom\'etrica}
+\begin{defi}
+    Realizaci\'on geom\'etrica
+\end{defi}
+Sea $X$ un conjunto simplicial. Dotamos cada $X_n$ con la topolog\'ia discreta y sea $|\Delta^n$ el $n\text{-simplex}$ dotado de su topolog\'ia estandard. Definimos la realizaci\'on geom\'etrica como
+$$
+    |X| = \coprod_{n=0}^{\infty}X_n \times |\Delta^n| / \sim
+$$
+Donde $\sim$ es la relaci\'on de equivalencia generada por las relaciones:
+
+\begin{enumerate}[(1)]
+    \item $(x, d_i(p)) \sim (\delta_i(x), p)$, $x\in X_{n+1}$ y $p\in|\Delta^n|$
+    \item $(x, s_i(p)) \sim (\sigma_i(x), p)$, $x\in X_{n-1}$ y $p\in|\Delta^n|$
+\end{enumerate}
+
+\begin{ex}
+    $\Delta[2] = \Delta(\_, [2])$
+\end{ex}
+Falta por escribir
+\end{document}
