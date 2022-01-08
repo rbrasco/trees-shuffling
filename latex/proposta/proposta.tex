@@ -2128,8 +2128,20 @@ Donde la uni\'on recorre todos los posibles $(n,m)$-shuffles.
 
 \subsubsection{Conjunto de shuffles}
 \begin{defi}
-    Sean $S$ y $T$ dos \'arboles. El \emph{conjunto de shuffles de $S$ y $T$} es la colecci\'on de todos los shuffles posibles entre $S$ y $T$.
+    Sean $S$ y $T$ dos \'arboles. El \emph{conjunto de shuffles de $S$ y $T$} es la colecci\'on de todos los shuffles posibles entre $S$ y $T$. La cardinalidad de este conjunto la denotaremos por $sh(S,\text{ }T)$.
 \end{defi}
+\begin{prop}
+    El n\'umero de shuffles $sh(S,\text{ }T)$ de dos \'arboles $S$ y $T$ satisface tres propiedades:
+    \begin{enumerate}
+        \item[{\rm (i)}] $sh(S, \text{ }T) = sh(T, \text{ }S)$
+        \item[{\rm (ii)}] Si $T$ es un \'arbol unitario $\eta$, entonces $sh(S, \text{ }\eta)=1$
+        \item[{\rm (iii)}] Si $S=C_n[S_1,\dots,S_n]$ y $T=C_m[T_1,\dots,T_m]$, entonces
+              $$
+                  sh(S, \text{ }T)  = \prod_{i=1}^n sh(S_i, \text{ }T) + \prod_{j=1}^m sh(S, \text{ }T_j)
+              $$
+    \end{enumerate}
+    Donde $C_n$ y $C_m$ son $n$ y $m$-corolas, respectivamente; y $C_n[S_1,\dots,S_n]$ es una $n$-corola que cada hoja $i$-esima la conectamos con la ra\'iz del \'arbol $S_i$.
+\end{prop}
 \begin{ex}
     Sean $S$ y $T$ los \'arboles
     $$
@@ -2179,7 +2191,7 @@ Donde la uni\'on recorre todos los posibles $(n,m)$-shuffles.
         (-13,0)*{T};
         \endxy
     $$
-    El conjunto de shuffles de $S$ y $T$ consiste de los siguientes 3 \'arboles:
+    El conjunto de shuffles de $S$ y $T$ consiste de los siguientes tres \'arboles:
     \begin{equation}
         \xy
         <0.08cm, 0cm>:
@@ -3134,9 +3146,7 @@ Finalmente, si $n=m=0$, entonces tenemos el intercambio
     $$
 \end{ex}
 
-\newpage
-\subsubsection*{Relaci\'on entre el conjunto de shuffles y el producto tensorial}
-En este apartado veremos como relacionamos el conjunto de shuffles con el producto tensorial de cualquier par de \'arboles.
+Ahora vamos a relacionar el conjunto de shuffles con el producto tensorial de conjuntos dendroidales de representables de dos \'arboles cualesquiera, de esta manera el c\'alculo del producto resulta ser m\'as f\'acil.
 \begin{lema}
     Para todo shuffle $R_i$ de $S$ y $T$ tenemos un monomorfismo
     $$
