@@ -703,10 +703,10 @@ En las siguientes secciones vamos a tratar con todos los tipos de morfismos en $
 \subsubsection{Caras}
 Sea $T$ un \'arbol planar con ra\'iz.
 \begin{defi}
-    Una \emph{cara interna} asociada a una arista interna $b$ en $T$ es una funci\'on $\partial_b \colon T/b\to T$ en $\Omega_p$, donde $T/b$ es el \'arbol que se obtiene al contraer la arista $b$.
+    Una \emph{cara interna} asociada a una arista interna $b$ en $T$ es una funci\'on $\partial_b \colon T/b\to T$ en $\Omega_p$, donde $T/b$ es el \'arbol que se obtiene al contraer la arista $b$ de $T$.
 
-    Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/b)$, excepto por la operaci\'on $u$, que se env\'ia a la composici\'on $r\circ_b v$.
-    Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tomamos la siguiente figura para visualizar la funci\'on.
+    A nivel de op\'eradas, esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/b)$, excepto por la operaci\'on $u$, que se env\'ia a la composici\'on $r\circ_b v$,
+    donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tomamos la siguiente figura para visualizar la funci\'on.
     % Figura de la funcion T/b -> T %
     \begin{equation}
         \xy
@@ -775,10 +775,10 @@ Sea $T$ un \'arbol planar con ra\'iz.
     \end{equation}
 \end{defi}
 \begin{defi}
-    Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adyacente, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ con todas sus aristas externas.
+    Una \emph{cara externa} asociada a un v\'ertice $v$ en $T$, con solo una arista interna adyacente, es una funci\'on $\partial_v \colon T/v\to T$ en $\Omega_p$, donde $T/v$ es el \'arbol que se obtiene al cortar el v\'ertice $v$ de $T$ con todas sus aristas externas.
 
-    Esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/v)$.
-    Donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tenemos dos tipos de cara externa que mostramos en las siguientes figuras.
+    A nivel de op\'eradas, esta funci\'on es una inclusi\'on de los colores y de las operaciones generadoras de $\Omega_p(T/v)$,
+    donde $r$ y $v$ son dos v\'ertices en $T$ con la arista $b$ entre ellos, y $u$ es el v\'ertice correspondiente en $T/b$. Tenemos dos tipos de cara externa que mostramos en las siguientes figuras.
     % Figura de la funcion T/v -> T con vertice con hojas y la funcion T/v -> T con vertice sin hojas %
     \begin{equation}
         \xy
@@ -881,14 +881,14 @@ Sea $T$ un \'arbol planar con ra\'iz.
     \end{equation}
 \end{defi}
 \begin{obs}
-    Con esta \'ultima definici\'on no queda exclu\'ida la posibilidad de cortar la ra\'iz. Esta situaci\'on solo sera posible si la ra\'iz tiene solamente una arista interna adyacente. Entonces, no todo \'arbol $T$ tiene una cara externa asociada a su ra\'iz.
+    Con esta \'ultima definici\'on no queda exclu\'ida la posibilidad de cortar la ra\'iz. Esta situaci\'on solo ser\'a posible si la ra\'iz tiene solamente una arista interna adyacente. Entonces, no todo \'arbol $T$ tiene una cara externa asociada a su ra\'iz.
 \end{obs}
 \begin{obs}
-    Vale la pena mencionar un caso en especial, la inclusi\'on de un \'arbol sin v\'ertices $\eta$ en un \'arbol con un v\'ertice, llamado \emph{corola}. En este caso tendremos $n+1$ caras si la corola tiene $n$ hojas.
-    La op\'erada $\Omega_p(\eta)$ consiste solamente de un color y la operaci\'on identidad de dicho color. Entonces, una funci\'on de op\'eradas $\Omega_p(\eta)\to\Omega(T)$ es simplemente un color de una corola $T$.
+    Vale la pena mencionar un caso en especial, la inclusi\'on del \'arbol sin v\'ertices $\eta$ en un \'arbol con un v\'ertice, llamado \emph{corola}. En este caso tendremos $n+1$ caras si la corola tiene $n$ hojas.
+    La op\'erada $\Omega_p(\eta)$ consiste solamente de un color y la operaci\'on identidad de dicho color. Entonces, una funci\'on de op\'eradas $\Omega_p(\eta)\to\Omega(T)$ es simplemente eligir un color de una corola $T$.
 \end{obs}
 
-Para concluir, llamaremos \emph{caras} tanto las caras internas como las caras externas.
+Para concluir, llamaremos \emph{caras} tanto a las caras internas como a las caras externas.
 
 \subsubsection{Degeneraciones}
 Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
@@ -2069,7 +2069,7 @@ Los $(n+m)$-simplices no degenerados de $\Delta[n]\times\Delta[m]$ corresponde a
 $$
     \Delta[n]\times\Delta[m] = \bigcup_{(n,m)}\Delta[n+m]
 $$
-Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
+Donde la uni\'on recorre todos los posibles $(n,m)$-shuffles.
 \begin{ex}
     Sea n... por hacer
 \end{ex}
@@ -2126,7 +2126,7 @@ Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
     Observamos que existe una biyecci\'on entre los shuffles de dos \'arboles lineales $L_n$ y $L_m$ con los $(n,\text{ }m)$-shuffles de $[n]\times[m]$.
 \end{defi}
 
-\subsection{Conjunto de shuffles}
+\subsubsection{Conjunto de shuffles}
 \begin{defi}
     Sean $S$ y $T$ dos \'arboles. El \emph{conjunto de shuffles de $S$ y $T$} es la colecci\'on de todos los shuffles posibles entre $S$ y $T$.
 \end{defi}
@@ -2207,22 +2207,22 @@ Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
         "5";"10" **\dir{-};
         "10";"11" **\dir{-};
         %Labels%
-        (-2.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
-        (-10.0, 18.75)*=0{\scriptstyle (b,\text{ }x)};
-        (-18.0, 31.25)*=0{\scriptstyle (b,\text{ }y)};
-        (6.0, 18.75)*=0{\scriptstyle (c,\text{ }x)};
-        (6.0, 31.25)*=0{\scriptstyle (d,\text{ }x)};
-        (-2.0, 43.75)*=0{\scriptstyle (d,\text{ }y)};
-        (14.0, 31.25)*=0{\scriptstyle (e,\text{ }x)};
-        (14.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
-        (22.0, 31.25)*=0{\scriptstyle (f,\text{ }x)};
-        (30.0, 43.75)*=0{\scriptstyle (f,\text{ }y)};
+        (-5, 6.25)*=0{\scriptstyle (a,\text{ }x)};
+        (-15, 18.75)*=0{\scriptstyle (b,\text{ }x)};
+        (-21.0, 31.25)*=0{\scriptstyle (b,\text{ }y)};
+        (15.0, 18.75)*=0{\scriptstyle (c,\text{ }x)};
+        (1.0, 31.25)*=0{\scriptstyle (d,\text{ }x)};
+        (-5, 43.75)*=0{\scriptstyle (d,\text{ }y)};
+        (16.0, 31.25)*=0{\scriptstyle (e,\text{ }x)};
+        (16.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
+        (31.0, 31.25)*=0{\scriptstyle (f,\text{ }x)};
+        (37, 43.75)*=0{\scriptstyle (f,\text{ }y)};
         (-13,0)*{R_1};
         \endxy
         \xy
         <0.08cm, 0cm>:
-        (-5, 0.0)*{}="1";
-        (5, 10.0)*{}="2";
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
         \endxy
         \xy
         <0.08cm, 0cm>:
@@ -2246,20 +2246,20 @@ Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
         "6";"8" **\dir{-};
         "6";"9" **\dir{-};
         %Labels%
-        (-2.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
-        (-6.0, 18.75)*=0{\scriptstyle (b,\text{ }x)};
-        (-10.0, 31.25)*=0{\scriptstyle (b,\text{ }y)};
-        (2.0, 18.75)*=0{\scriptstyle (c,\text{ }x)};
-        (6.0, 31.25)*=0{\scriptstyle (c,\text{ }y)};
-        (-2.0, 43.75)*=0{\scriptstyle (d,\text{ }y)};
-        (6.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
-        (14.0, 43.75)*=0{\scriptstyle (f,\text{ }y)};
+        (-5.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
+        (-9.5, 18.75)*=0{\scriptstyle (b,\text{ }x)};
+        (-13, 31.25)*=0{\scriptstyle (b,\text{ }y)};
+        (9.5, 18.75)*=0{\scriptstyle (c,\text{ }x)};
+        (13.0, 31.25)*=0{\scriptstyle (c,\text{ }y)};
+        (-7, 43.75)*=0{\scriptstyle (d,\text{ }y)};
+        (8, 43.75)*=0{\scriptstyle (e,\text{ }y)};
+        (23.0, 43.75)*=0{\scriptstyle (f,\text{ }y)};
         (-13,0)*{R_2};
         \endxy
         \xy
         <0.08cm, 0cm>:
-        (-5, 0.0)*{}="1";
-        (5, 10.0)*{}="2";
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
         \endxy
         \xy
         <0.08cm, 0cm>:
@@ -2281,13 +2281,13 @@ Donde la uni\'on debe recorrer todos los posibles $(n,m)$-shuffles.
         "5";"7" **\dir{-};
         "5";"8" **\dir{-};
         %Labels%
-        (-2.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
-        (-2.0, 18.75)*=0{\scriptstyle (a,\text{ }y)};
-        (-6.0, 31.25)*=0{\scriptstyle (b,\text{ }y)};
-        (2.0, 31.25)*=0{\scriptstyle (c,\text{ }y)};
-        (-2.0, 43.75)*=0{\scriptstyle (d,\text{ }y)};
-        (6.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
-        (14.0, 43.75)*=0{\scriptstyle (f,\text{ }y)};
+        (-5.0, 6.25)*=0{\scriptstyle (a,\text{ }x)};
+        (-5.0, 18.75)*=0{\scriptstyle (a,\text{ }y)};
+        (-9.5, 31.25)*=0{\scriptstyle (b,\text{ }y)};
+        (9.5, 31.25)*=0{\scriptstyle (c,\text{ }y)};
+        (-7, 43.75)*=0{\scriptstyle (d,\text{ }y)};
+        (8.0, 43.75)*=0{\scriptstyle (e,\text{ }y)};
+        (23, 43.75)*=0{\scriptstyle (f,\text{ }y)};
         (-13,0)*{R_3};
         \endxy
     \end{equation}
@@ -2410,10 +2410,754 @@ A una configuraci\'on de $R_k$
 Si un shuffle $R_k$ se obtiene the otro shuffle $R_l$ mediante la norma de arriba, entonces decimos que $R_k$ se obtiene mediante \emph{un solo intercambio} y lo denotaremos por $R_l\le R_k$.
 As\'i, obtenemos un orden parcial en el conjunto de todos los shuffles.
 
-Falta mencior los casos cr\'iticos.
+Tenemos que espicificar el caso de un intercambio con un \'arboles sin entradas, es decir, $n=0$ o $m=0$. Si $m=0$ y $n\ne 0$, entonces tenemos el intercambio
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+    %Edges%
+    "1";"2" **\dir{-};
+    %Labels%
+    (-5.0, 5.0)*=0{\scriptstyle (a,\text{ }x)};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-20, 0.0)*{}="1";
+    (20, 10.0)*{}="2";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-12.5, 20.0)*\cir<2pt>{}="3"; %1W
+    (12.5, 20.0)*\cir<2pt>{}="4"; %2W
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    (-5.0, 5.0)*=0{\scriptstyle (a,\text{ }x)};
+    (-14, 15.0)*=0{\scriptstyle (b_1,\text{ }x)};
+    (14, 15.0)*=0{\scriptstyle (b_n,\text{ }x)};
+    (0,13.5)*{\dots};
+    \endxy
+\end{equation}
+
+Si $n=0$ y $m\ne 0$, entonces tenemos el intercambio
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+    (-12.5, 20.0)*=0{\bullet}="3"; %1B
+    (12.5, 20.0)*=0{\bullet}="4"; %2B
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "2";"4" **\dir{-};
+    %Labels%
+    (-5.0, 5.0)*=0{\scriptstyle (a,\text{ }x)};
+    (-14, 15.0)*=0{\scriptstyle (a,\text{ }y_1)};
+    (14, 15.0)*=0{\scriptstyle (a,\text{ }y_m)};
+    (0,13.5)*{\dots};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-20, 0.0)*{}="1";
+    (20, 10.0)*{}="2";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+    %Edges%
+    "1";"2" **\dir{-};
+    %Labels%
+    (-5.0, 5.0)*=0{\scriptstyle (a,\text{ }x)};
+    \endxy
+\end{equation}
+
+Finalmente, si $n=m=0$, entonces tenemos el intercambio
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+    %Edges%
+    "1";"2" **\dir{-};
+    %Labels%
+    (-5.0, 5.0)*=0{\scriptstyle (a,\text{ }x)};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    (-20, 0.0)*{}="1";
+    (20, 10.0)*{}="2";
+    {\ar(-10, 10)*{};(10,10)*{}};
+    \endxy
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    %Edges%
+    "1";"2" **\dir{-};
+    %Labels%
+    (-5.0, 5.0)*=0{\scriptstyle (a,\text{ }x)};
+    \endxy
+\end{equation}
+
 \begin{ex}
-    Sea S y T
+    Sean $S$ y $T$ los \'arboles
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0
+        (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+        (0.0, 20.0)*\cir<2pt>{}="3"; %1W
+        (-7.5, 30.0)*{}="4"; %leaf_2
+        (7.5, 30.0)*{}="5"; %leaf_3
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        %Labels%
+        (-2.0, 5.0)*=0{\scriptstyle 0};
+        (-2.0, 15.0)*=0{\scriptstyle 1};
+        (-6, 25.0)*=0{\scriptstyle 2};
+        (1.5, 25.0)*=0{\scriptstyle 3};
+        (-13,0)*{S};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-20, 0.0)*{}="1";
+        (20, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %0B
+        (-7.5, 20.0)*=0{\bullet}="3"; %1B
+        (-7.5, 30.0)*{}="4"; %leaf_c
+        (7.5, 20.0)*=0{\bullet}="5"; %2B
+        (7.5, 30.0)*{}="6"; %leaf_e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "2";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        %Labels%
+        (-2.0, 5.0)*=0{\scriptstyle a};
+        (-5.75, 15.0)*=0{\scriptstyle b};
+        (-9.5, 25.0)*=0{\scriptstyle c};
+        (1.5, 15.0)*=0{\scriptstyle d};
+        (5.5, 25.0)*=0{\scriptstyle e};
+        (-13,0)*{T};
+        \endxy
+    $$
+    Existen catorce shuffles $R_1,\dots,R_{14}$ de $S$ y $T$. Mostramos una lista completa de ellos. Marcaremos los nombres de las aristas en los tres primeros shuffles.
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+        (0.0, 20.0)*\cir<2pt>{}="3"; %1W
+        (-15.0, 30.0)*=0{\bullet}="4"; %0B
+        (-22.5, 40.0)*=0{\bullet}="5"; %1B
+        (-22.5, 50.0)*{}="6"; %leaf_2-c
+        (-7.5, 40.0)*=0{\bullet}="7"; %2B
+        (-7.5, 50.0)*{}="8"; %leaf_2-e
+        (15.0, 30.0)*=0{\bullet}="9"; %0B
+        (7.5, 40.0)*=0{\bullet}="10"; %1B
+        (7.5, 50.0)*{}="11"; %leaf_3-c
+        (22.5, 40.0)*=0{\bullet}="12"; %2B
+        (22.5, 50.0)*{}="13"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "4";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "3";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "9";"12" **\dir{-};
+        "12";"13" **\dir{-};
+        %Labels%
+        (-5.0, 5.0)*=0{\scriptstyle (0,\text{ }a)};
+        (-5.0, 15.0)*=0{\scriptstyle (1,\text{ }a)};
+        (-14.5, 25.0)*=0{\scriptstyle (2,\text{ }a)};
+        (-24, 35.0)*=0{\scriptstyle (2,\text{ }b)};
+        (-27, 45.0)*=0{\scriptstyle (2,\text{ }c)};
+        (-6, 35.0)*=0{\scriptstyle (2,\text{ }d)};
+        (-12, 45.0)*=0{\scriptstyle (2,\text{ }e)};
+        (14.5, 25.0)*=0{\scriptstyle (3,\text{ }a)};
+        (6, 35.0)*=0{\scriptstyle (3,\text{ }b)};
+        (3, 45.0)*=0{\scriptstyle (3,\text{ }c)};
+        (24, 35.0)*=0{\scriptstyle (3,\text{ }d)};
+        (18, 45.0)*=0{\scriptstyle (3,\text{ }e)};
+        (-13,0)*{R_1};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-5, 0.0)*{}="1";
+        (5, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+        (0.0, 20.0)*=0{\bullet}="3"; %0B
+        (-15.0, 30.0)*\cir<2pt>{}="4"; %1W
+        (-22.5, 40.0)*=0{\bullet}="5"; %1B
+        (-22.5, 50.0)*{}="6"; %leaf_2-c
+        (-7.5, 40.0)*=0{\bullet}="7"; %1B
+        (-7.5, 50.0)*{}="8"; %leaf_3-c
+        (15.0, 30.0)*\cir<2pt>{}="9"; %1W
+        (7.5, 40.0)*=0{\bullet}="10"; %2B
+        (7.5, 50.0)*{}="11"; %leaf_2-e
+        (22.5, 40.0)*=0{\bullet}="12"; %2B
+        (22.5, 50.0)*{}="13"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "4";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "3";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "9";"12" **\dir{-};
+        "12";"13" **\dir{-};
+        %Labels%
+        (-5.0, 5.0)*=0{\scriptstyle (0,\text{ }a)};
+        (-5.0, 15.0)*=0{\scriptstyle (1,\text{ }a)};
+        (-14.5, 25.0)*=0{\scriptstyle (1,\text{ }b)};
+        (-24, 35.0)*=0{\scriptstyle (2,\text{ }b)};
+        (-27, 45.0)*=0{\scriptstyle (2,\text{ }c)};
+        (-6, 35.0)*=0{\scriptstyle (3,\text{ }b)};
+        (-12, 45.0)*=0{\scriptstyle (3,\text{ }c)};
+        (14.5, 25.0)*=0{\scriptstyle (1,\text{ }d)};
+        (6, 35.0)*=0{\scriptstyle (2,\text{ }d)};
+        (3, 45.0)*=0{\scriptstyle (2,\text{ }e)};
+        (24, 35.0)*=0{\scriptstyle (3,\text{ }d)};
+        (18, 45.0)*=0{\scriptstyle (3,\text{ }e)};
+        (-13,0)*{R_2};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-5, 0.0)*{}="1";
+        (5, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 10.0)*=0{\bullet}="2"; %0B
+        (-15.0, 20.0)*\cir<2pt>{}="3"; %0W
+        (-15.0, 30.0)*\cir<2pt>{}="4"; %1W
+        (-22.5, 40.0)*=0{\bullet}="5"; %1B
+        (-22.5, 50.0)*{}="6"; %leaf_2-c
+        (-7.5, 40.0)*=0{\bullet}="7"; %1B
+        (-7.5, 50.0)*{}="8"; %leaf_3-c
+        (15.0, 20.0)*\cir<2pt>{}="9"; %0W
+        (15.0, 30.0)*\cir<2pt>{}="10"; %1W
+        (7.5, 40.0)*=0{\bullet}="11"; %2B
+        (7.5, 50.0)*{}="12"; %leaf_2-e
+        (22.5, 40.0)*=0{\bullet}="13"; %2B
+        (22.5, 50.0)*{}="14"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "4";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "2";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "11";"12" **\dir{-};
+        "10";"13" **\dir{-};
+        "13";"14" **\dir{-};
+        %Labels%
+        (-5, 5.0)*=0{\scriptstyle (0,\text{ }a)};
+        (-14.5, 15.0)*=0{\scriptstyle (0,\text{ }b)};
+        (-19.5, 25.0)*=0{\scriptstyle (1,\text{ }b)};
+        (-24, 35.0)*=0{\scriptstyle (2,\text{ }b)};
+        (-27, 45.0)*=0{\scriptstyle (2,\text{ }c)};
+        (-6, 35.0)*=0{\scriptstyle (3,\text{ }b)};
+        (-12, 45.0)*=0{\scriptstyle (3,\text{ }c)};
+        (14.5, 15.0)*=0{\scriptstyle (0,\text{ }d)};
+        (19.5, 25.0)*=0{\scriptstyle (1,\text{ }d)};
+        (6, 35.0)*=0{\scriptstyle (2,\text{ }d)};
+        (3, 45.0)*=0{\scriptstyle (2,\text{ }e)};
+        (24, 35.0)*=0{\scriptstyle (3,\text{ }d)};
+        (18, 45.0)*=0{\scriptstyle (3,\text{ }e)};
+        (-13,0)*{R_3};
+        \endxy
+    $$
+
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*\cir<2pt>{}="2"; %0W
+        (0.0, 10.0)*=0{\bullet}="3"; %0B
+        (-10.0, 15.0)*=0{\bullet}="4"; %1B
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 15.0)*\cir<2pt>{}="8"; %1W
+        (5.0, 20.0)*=0{\bullet}="9"; %2B
+        (5.0, 25.0)*{}="10"; %leaf_2-e
+        (15.0, 20.0)*=0{\bullet}="11"; %2B
+        (15.0, 25.0)*{}="12"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "3";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "8";"11" **\dir{-};
+        "11";"12" **\dir{-};
+        (-13,0)*{R_{4}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*\cir<2pt>{}="2"; %0W
+        (0.0, 10.0)*=0{\bullet}="3"; %0B
+        (-10.0, 15.0)*\cir<2pt>{}="4"; %1W
+        (-15.0, 20.0)*=0{\bullet}="5"; %1B
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 20.0)*=0{\bullet}="7"; %1B
+        (-5.0, 25.0)*{}="8"; %leaf_3-c
+        (10.0, 15.0)*=0{\bullet}="9"; %2B
+        (10.0, 20.0)*\cir<2pt>{}="10"; %1W
+        (5.0, 25.0)*{}="11"; %leaf_2-e
+        (15.0, 25.0)*{}="12"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "4";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "3";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "10";"12" **\dir{-};
+        (-13,0)*{R_{5}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*\cir<2pt>{}="3"; %0W
+        (-10.0, 15.0)*=0{\bullet}="4"; %1B
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 10.0)*\cir<2pt>{}="8"; %0W
+        (10.0, 15.0)*\cir<2pt>{}="9"; %1W
+        (5.0, 20.0)*=0{\bullet}="10"; %2B
+        (5.0, 25.0)*{}="11"; %leaf_2-e
+        (15.0, 20.0)*=0{\bullet}="12"; %2B
+        (15.0, 25.0)*{}="13"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "2";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "9";"12" **\dir{-};
+        "12";"13" **\dir{-};
+        (-13,0)*{R_{6}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+    $$
+
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*\cir<2pt>{}="3"; %0W
+        (-10.0, 15.0)*\cir<2pt>{}="4"; %1W
+        (-15.0, 20.0)*=0{\bullet}="5"; %1B
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 20.0)*=0{\bullet}="7"; %1B
+        (-5.0, 25.0)*{}="8"; %leaf_3-c
+        (10.0, 10.0)*\cir<2pt>{}="9"; %0W
+        (10.0, 15.0)*=0{\bullet}="10"; %2B
+        (10.0, 20.0)*\cir<2pt>{}="11"; %1W
+        (5.0, 25.0)*{}="12"; %leaf_2-e
+        (15.0, 25.0)*{}="13"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "4";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "2";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "11";"12" **\dir{-};
+        "11";"13" **\dir{-};
+        (-13,0)*{R_{7}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*\cir<2pt>{}="2"; %0W
+        (0.0, 10.0)*=0{\bullet}="3"; %0B
+        (-10.0, 15.0)*=0{\bullet}="4"; %1B
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 15.0)*=0{\bullet}="8"; %2B
+        (10.0, 20.0)*\cir<2pt>{}="9"; %1W
+        (5.0, 25.0)*{}="10"; %leaf_2-e
+        (15.0, 25.0)*{}="11"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "3";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "9";"11" **\dir{-};
+        (-13,0)*{R_{8}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*=0{\bullet}="3"; %1B
+        (-10.0, 15.0)*\cir<2pt>{}="4"; %0W
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 10.0)*\cir<2pt>{}="8"; %0W
+        (10.0, 15.0)*\cir<2pt>{}="9"; %1W
+        (5.0, 20.0)*=0{\bullet}="10"; %2B
+        (5.0, 25.0)*{}="11"; %leaf_2-e
+        (15.0, 20.0)*=0{\bullet}="12"; %2B
+        (15.0, 25.0)*{}="13"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "2";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "9";"12" **\dir{-};
+        "12";"13" **\dir{-};
+        (-13,0)*{R_{9}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+    $$
+
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*\cir<2pt>{}="3"; %0W
+        (-10.0, 15.0)*=0{\bullet}="4"; %1B
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 10.0)*\cir<2pt>{}="8"; %0W
+        (10.0, 15.0)*=0{\bullet}="9"; %2B
+        (10.0, 20.0)*\cir<2pt>{}="10"; %1W
+        (5.0, 25.0)*{}="11"; %leaf_2-e
+        (15.0, 25.0)*{}="12"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "2";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "10";"12" **\dir{-};
+        (-13,0)*{R_{10}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*\cir<2pt>{}="3"; %0W
+        (-10.0, 15.0)*\cir<2pt>{}="4"; %1W
+        (-15.0, 20.0)*=0{\bullet}="5"; %1B
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 20.0)*=0{\bullet}="7"; %1B
+        (-5.0, 25.0)*{}="8"; %leaf_3-c
+        (10.0, 10.0)*=0{\bullet}="9"; %2B
+        (10.0, 15.0)*\cir<2pt>{}="10"; %0W
+        (10.0, 20.0)*\cir<2pt>{}="11"; %1W
+        (5.0, 25.0)*{}="12"; %leaf_2-e
+        (15.0, 25.0)*{}="13"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "4";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "2";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "11";"12" **\dir{-};
+        "11";"13" **\dir{-};
+        (-13,0)*{R_{11}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*=0{\bullet}="3"; %1B
+        (-10.0, 15.0)*\cir<2pt>{}="4"; %0W
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 10.0)*\cir<2pt>{}="8"; %0W
+        (10.0, 15.0)*=0{\bullet}="9"; %2B
+        (10.0, 20.0)*\cir<2pt>{}="10"; %1W
+        (5.0, 25.0)*{}="11"; %leaf_2-e
+        (15.0, 25.0)*{}="12"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "2";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "10";"12" **\dir{-};
+        (-13,0)*{R_{12}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+    $$
+
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*\cir<2pt>{}="3"; %0W
+        (-10.0, 15.0)*=0{\bullet}="4"; %1B
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 10.0)*=0{\bullet}="8"; %2B
+        (10.0, 15.0)*\cir<2pt>{}="9"; %0W
+        (10.0, 20.0)*\cir<2pt>{}="10"; %1W
+        (5.0, 25.0)*{}="11"; %leaf_2-e
+        (15.0, 25.0)*{}="12"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "2";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "10";"12" **\dir{-};
+        (-13,0)*{R_{13}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_0-a
+        (0.0, 5.0)*=0{\bullet}="2"; %0B
+        (-10.0, 10.0)*=0{\bullet}="3"; %1B
+        (-10.0, 15.0)*\cir<2pt>{}="4"; %0W
+        (-10.0, 20.0)*\cir<2pt>{}="5"; %1W
+        (-15.0, 25.0)*{}="6"; %leaf_2-c
+        (-5.0, 25.0)*{}="7"; %leaf_3-c
+        (10.0, 10.0)*=0{\bullet}="8"; %2B
+        (10.0, 15.0)*\cir<2pt>{}="9"; %0W
+        (10.0, 20.0)*\cir<2pt>{}="10"; %1W
+        (5.0, 25.0)*{}="11"; %leaf_2-e
+        (15.0, 25.0)*{}="12"; %leaf_3-e
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "5";"6" **\dir{-};
+        "5";"7" **\dir{-};
+        "2";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "9";"10" **\dir{-};
+        "10";"11" **\dir{-};
+        "10";"12" **\dir{-};
+        (-13,0)*{R_{14}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-10, 0.0)*{}="1";
+        (10, 10.0)*{}="2";
+        \endxy
+    $$
+
+    Tenemos la siguiente estructura dentro del conjunto ordenado parcialmente.
+    $$
+        \begin{tikzpicture}
+            \node (max) at (0,0) {$R_{14}$};
+            \node (12) at (-1,1) {$R_{12}$};
+            \node (13) at (1,1) {$R_{13}$};
+            \node (9) at (-2,2) {$R_{9}$};
+            \node (10) at (0,2) {$R_{10}$};
+            \node (11) at (2,2) {$R_{11}$};
+            \node (6) at (-2,3) {$R_{6}$};
+            \node (8) at (0,3) {$R_{8}$};
+            \node (7) at (2,3) {$R_{7}$};
+            \node (4) at (-2,4) {$R_{4}$};
+            \node (3) at (0,4) {$R_{3}$};
+            \node (5) at (2,4) {$R_{5}$};
+            \node (2) at (0,5) {$R_{2}$};
+            \node (min) at (0,6) {$R_{1}$};
+            \draw (min) -- (2) -- (4) -- (6) -- (9) -- (12) -- (max)
+            (2) -- (5) -- (7) -- (11) -- (13) -- (max)
+            (2) -- (3) -- (6) -- (10) -- (12)
+            (3) -- (7) -- (10) -- (13)
+            (8) -- (10);
+            \draw[preaction={draw=white, -,line width=6pt}] (4) -- (8) -- (5);
+        \end{tikzpicture}
+    $$
 \end{ex}
+
+\newpage
+\subsubsection*{Relaci\'on entre el conjunto de shuffles y el producto tensorial}
+En este apartado veremos como relacionamos el conjunto de shuffles con el producto tensorial de cualquier par de \'arboles.
+\begin{lema}
+    Para todo shuffle $R_i$ de $S$ y $T$ tenemos un monomorfismo
+    $$
+        \xymatrix{
+            m\colon\Omega[R_i] \ar@{>->}[r] & \Omega[S]\otimes\Omega[T]
+        }
+    $$
+    El subconjunto dendroidal, que viene dado por la im\'agen de este monomorfismo, lo denotaremos $m(R_i)$.
+\end{lema}
+\begin{proof}
+    Los v\'erties del conjunto dendroidal $\Omega[R_i]$ son las aristas del \'arbol $R_i$. La funci\'on $m$ env\'ia aristas nombradas como $(a,\text{ }x)$ en $R_i$ a la arista con el mismo nombre en $\Omega[S]\otimes\Omega[T]$.
+    Vemos que es un monomorfismo.
+    No entiendo.
+\end{proof}
+\begin{corol}
+    Para todo objeto $T$ y $S$ en $\Omega$, tenemos que
+    $$
+        \Omega[S]\otimes\Omega[T] = \bigcup_{i=1}^{N} m(R_i)
+    $$
+    donde la uni\'on recorre todos los posibles shuffles de $S$ y $T$.
+\end{corol}
 
 
 \subsection{Shuffle de \'arboles en Python}

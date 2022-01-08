@@ -38,8 +38,8 @@ class ShuffleLattice:
         
 
     def initialize(self):
-        self.dictionary["R_1"] = set(self.i_tree.split("|"))
-        self.skeleton["R_1"] = set()
+        self.dictionary["R_{1}"] = set(self.i_tree.split("|"))
+        self.skeleton["R_{1}"] = set()
         # self.dictionary[f"R{self.nb_percolations}"] = set(self.f_tree.split("|"))
         # self.skeleton[f"R{self.nb_percolations}"] = set()
 
@@ -48,7 +48,7 @@ class ShuffleLattice:
         queue.append(self.i_tree)
 
         while len(queue):
-            tree = queue.pop()
+            tree = queue.pop(0)
             manipulator = TreeManipulator(tree, *self.operations, Operad())
 
             tree_key=self.find_key(set(tree.split("|")))
@@ -65,7 +65,7 @@ class ShuffleLattice:
         if key := self.find_key(operations):
             self.skeleton[key].add(parent_key)
             return True
-        key = f"R_{len(self.dictionary)+1}"
+        key = "R_{"+str(len(self.dictionary)+1)+"}"
         self.dictionary[key] = operations
         self.skeleton[key].add(parent_key)
         return False
@@ -84,18 +84,20 @@ class ShuffleLattice:
         print("Skeleton of trees: ", dict(self.skeleton))
     
 
-    def print_latex(self, key=None, sort=True, size_f=(15, 10), labels=True, label_b=(3, (-2, 0)), between=10):
+    def print_latex(self, key=None, sort=True, size_f=(15, 10), labels=True, label_b=(3, (-2, 0)), between=10, every=5, slice=slice(None)):
         sorted_dict = self.get_dictionary()
         if key:
             print(f"Tree {key}: {sorted_dict[key]}")
             tree_to_latex(sorted_dict[key], sort=sort, size_f=size_f, labels=labels, label_b=label_b, tree_name=key)
         else:
-            print("\\begin{equation}")
-            for i, (name, value) in enumerate(sorted_dict.items()):
+            print("$$")
+            li = list(sorted_dict.items())
+            for i, (name, value) in enumerate(li[slice]):
                 tree_to_latex(value, sort=sort, size_f=size_f, labels=labels, label_b=label_b, tree_name=name)
                 separator(between)
-                if not (i+1)%5:
-                    print("\\end{equation}")
-                    print("\\begin{equation}")
-            print("\\end{equation}")
+                if not (i+1)%every:
+                    print("$$")
+                    print("")
+                    print("$$")
+            print("$$")
             
