@@ -10,8 +10,7 @@
 \contentsline {subsection}{\numberline {2.2}Conjuntos Delta}{5}{subsection.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.1}Definici\'on categ\'orica de los conjuntos Delta}{5}{subsubsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.3}Conjuntos simpliciales y sus morfismos}{6}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Definici\'on categ\'orica del conjunto simplicial}{7}{subsubsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.4}Realizaci\'on geom\'etrica}{8}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.3.1}Definici\'on categ\'orica de los conjuntos simpliciales}{7}{subsubsection.2.3.1}%
 \contentsline {section}{\numberline {3}Conjuntos Dendroidales}{9}{section.3}%
 \contentsline {subsection}{\numberline {3.1}\'Arboles como op\'eradas}{9}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Formalismo de \'arboles}{9}{subsubsection.3.1.1}%
