@@ -3,134 +3,156 @@
 \begin{document}
 \section{Conjuntos Simpliciales}
 % Bibliografía Greg Friedman. (2011), An elementary illustrated introduction to simplicial sets (PDF)
+Los conjuntos simpliciales son esencialmente una generalizaci\'on de los complejos simpliciales geom\'etricos con una topolog\'ia elemental. En esta secci\'on daremos la base para llegar a entender como se forman los conjuntos simpliciales.
 \subsection{Complejos simpliciales}
 \begin{defi}
-    N-simplex
-\end{defi}
-Un $n\text{-simplex}$ es un politopo de $n\ge 0$ dimensiones formando una envoltura convexa de $n+1$ vertices. Es decir, es un conjunto de puntos afines independientes en un espacio eucl\'ideo de dimensi\'on $n$.
+    Un \emph{n-simplex geom\'etrico} es una envoltura convexa de $n+1$ puntos geom\'etricamente independientes $\{v_0,\dots,v_n\}$ en un espacio euclideo cualquiera. Es decir, colecci\'on de $n$ vectores $v_1-v_0,\dots,v_n-v_o$ son linealmente independientes.
+    Los puntos $v_i$ los llamaremos \emph{v\'ertices}.
 
-Una cara $m$ de un $n\text{-simplex}$ es una envolutra convexa de $m\le n$ vertices.
+    Observamos que un $n$-simplex es homeomorfo a una esfera de $n$ dimensiones.
+\end{defi}
+\begin{defi}
+    Una \emph{cara geom\'etrica} de un $n$-simplex formado por los v\'ertices $\{v_0,\dots,v_n\}$ es la envoltura convexa formada por un subconjunto de dichos v\'ertices.
+\end{defi}
+\begin{defi}
+    Un \emph{complejo simplicial geom\'etrico X en $\mathbb{R}^n$} es una colecci\'on de simplices de varias dimensiones en $\mathbb{R}^n$ tales que
+    \begin{itemize}
+        \item Toda cara de un simplex en $X$ tambi\'en est\'a en $X$.
+        \item La intersecci\'on de dos cualesquiera simplices de $X$, es una cara en ambos, si no es vac\'ia.
+    \end{itemize}
+\end{defi}
+
+Sea $X$ un complejo simplicial geom\'etrico, denotaremos por  $X^k$ al complejo simplicial geom\'etrico formado por todos los $k\text{-simplex}$ de $X$.
+Observamos que $X^0 = \{v_i\}_{i\in I}$ donde $I$ es un conjunto de \'indices. Entonces, podemos pensar como todo elemento de $X^k$ como un subconjunto de $X^0$ de cardinalidad $k+1$.
+Es decir, un subconjunto $\{v_{i_0},\dots,v_{i_k}\}\subset X^0$ es un \emph{elemento} de $X^k$.
+Para toda colecci\'on contable de v\'ertices $\{v_0,\dots v_n\}$ que forma un simplex lo denotaremos como el simplex $[v_0,\dots,v_n]$.
 
 \begin{defi}
-    Complejo simplicial
+    Un \emph{complejo simplicial abstracto X} es un conjunto de v\'ertices de $X^0$ juntos los conjuntos $X^k$ formados por subconjuntos de $X^0$ de cardinalidad $k+1$, para todo $k\in\mathbb{N}$.
+    Estos conjuntos deben cumplir que todo subconjunto de cardinalidad $j+1\le k$ de un elemento de $X^k$ es un elemento de $X^j$. Es decir, para todo elemento de $X^k$ es un $k$-simplex abstracto y que todas sus caras son simplices en X.
 \end{defi}
-Sea $n\in\mathbb{N}^{*}$, un complejo simplicial $X$ es un conjunto finito de $m\text{-simplex}$ con $m\le n$ que cumplen las condiciones:
 
-\begin{enumerate}[(1)]
-    \item Si $m\text{-simplex}\in X \Rightarrow \forall m'\le m\text{, }m'\text{-simplex}\in X$.
-    \item Si dos simplices de $X$ se cortan, entonces su intersecci\'on es una cara com\'un.
-\end{enumerate}
 
-Sea $X^k$ un complejo simplicial formado por todos los $k\text{-simplex}$ de $X$. Observamos que todo elemento de $X^k$ es un subconjunto de $X^0$ con cardinal $k+1$, donde $X^0=\{v_0,\dots ,v_n\}$.
-Generalmente, todo subconjunto de $X^k$ de $j+1$ elementos es un elemento de $X^j$.
-
-Sea $X_k$ un conjunto formado por $k\text{-simplices}$.
-
-\begin{defi}
-    N-simplex ordenado
-\end{defi}
-Un $n\text{-simplex}$ formado por los v\'ertices $v_0,\dots,v_n \in X^0$ es ordenado cuando cuando los v\'ertices estan ordenados, en ese caso nombramos cada v\'ertice por los n\'umeros $0,\dots,n$. Usaremos la notaci\'on $|\Delta^n| = [0,\dots,n]$ para simplificar.
 
 
 \subsubsection{Morfismos simpliciales}
+En este apartado definiremos el morfismo entre dos complejos simpliciales geom\'etricos. Este morfismo ser\'a una herramienta clave para pasar de los complejos simpliciales a los conjuntos simpliciales.
 \begin{defi}
-    Morfismo simplicial
+    Sea $K$ y $L$ dos complejos simpliciales geom\'etricos. Un \emph{morfismo simplicial} $f\colon K \to L$ los vertices $\{v_i\}$ de K a los vertices $\{f(v_i)\}$ de L; de manera que si $[v_{i_0},\dots,v_{i_k}]$ es un simplex de $K$, entonces $f(v_{i_0}),\dots,f(v_{i_k})$ son v\'ertices (no todos \'unicos) de un simplex en $L$.
 \end{defi}
-Sea $K$ y $L$ complejos simpliciales. Sea un morfismo simplicial $F: K \longrightarrow L$ que envia los vertices de K a los vertices de L. Es decir, $\forall v \in K^0 \text{, } v \longmapsto F(v) \in L^0$.
+\begin{ex}
+    Sea $[v_0,v_1,v_2]$ un 2-simplex y $[v_0,v_1]$ una de sus 1-cara. Consideramos el morfismo simplicial $f\colon[v_0,v_1,v_2]\to[v_0,v_1]$ determinado por $f(v_0)=v_0$, $f(v_1)=v_1$, $f(v_2)=v_1$. Observamos en la siguiente figura que el morfismo colapsa el 2-simplex a un 1-simplex.
+    % figura del triangula que colapsa a una arista
+\end{ex}
 
+Observamos que tal definici\'on de morfismos simpliciales prevalece para los complejos simpliciales abstractos. De ahora en adelante simplemente usaremos el t\'ermino complejo simplicial.
+
+\subsubsection{Complejos simpliciales ordenados y sus caras}
 \begin{defi}
-    Cara
+    Un \emph{complejo simplicial ordenado X} es un complejo simplicial cuyo conjunto de v\'ertices $X^0$ est\'a totalmente ordenado. Es decir, la notaci\'on $[v_{i_0},\dots,v_{i_k}]$ es un simplex si y solo si $v_{i_j} < v_{i_l}$ para todo $j<l$.
 \end{defi}
-Para todo $|\Delta^n|$ tenemos $n+1$ caras definidas por los morfismos $\delta_0,\dots,\delta_n$
-\begin{align*}
-    \delta_j: X_n & \longrightarrow X_{n-1} \\
-    [0,\dots,n]   & \longmapsto\!
-    \begin{aligned}[t]
-        [0,\dots,\hat{j},\dots,n]
-    \end{aligned}
-\end{align*}
-Donde $X_n$ y $X_{n-1}$ son conjuntos de simplices ordenados de $n$ y $n-1$ v\'ertices, respectivamente. Observamos que $\forall i<j$, $\delta_i\delta_j = \delta_{j-1}\delta_{i}$.
-
 \begin{defi}
-    Morifismo degenerativo
+    Un \emph{n-simplex ordenado} es un n-simplex con los v\'ertices ordenados. Denotaremos el $n$-simplex ordenado por $|\Delta^n|$. Para simplificar, normalmente se renombran los v\'ertices con los n\'umeros 0, 1,$\dots$, n, de tal manera que $|\Delta^n|=[0,\dots,n]$.
 \end{defi}
-Para todo $|\Delta^n|$ tenemos $n+1$ morfismos degenerativos $\sigma_0,\dots,\sigma_n$
-\begin{align*}
-    \sigma_j: X_n & \longrightarrow X_{n+1} \\
-    [0,\dots,n]   & \longmapsto\!
-    \begin{aligned}[t]
-        [0,\dots,j,j,\dots,n]
-    \end{aligned}
-\end{align*}
-Donde $X_n$ y $X_{n+1}$ son conjuntos de simplices ordenados de $n$ y $n+1$ v\'ertices, respectivamente. Observamos que $\forall i\le j$, $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}$.
-
-\subsection{Conjunto Delta}
-\begin{defi}
-    Conjunto Delta
-\end{defi}
-Definimos un conjunto Delta como una secuencia de conjuntos $X_0,X_1,\dots$ y para cada $n\ge 0$ las funciones $\delta_i: X_{n+1} \longrightarrow X_n$, $\forall 0\le i \le n+1$, que cumplen $\delta_i\delta_j = \delta_{j-1}\delta_{i}$, $\forall i\le j$.
-Formando el siguiente diagrama (Falta por hacer)
-
-$$ %Not working
-    \xymatrix{
-    X_0  \ar@/{}^{1pc}/[r]  & X_1  \ar@/{}^{1pc}/[r] & X_2  \dots
-    }
-$$
-
-\subsubsection{Definici\'on categ\'orica del conjunto Delta}
-\begin{defi}
-    Categor\'ia $\hat{\Delta}$
-\end{defi}
-Sea la categor\'ia $\hat{\Delta}$ cuyos objetos son los conjuntos estrictamente ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen el orden estrictamente, $f: [m] \longrightarrow [n]$, $m\le n$. Podemos pensar que sea la inclusi\'on de un $m\text{-simplex}$ como cara de un $n\text{-simplex}$.
-Para todo $0\le i \le n$ consideramos los morfismos:
-\begin{align*}
-    d_i: [n]      & \longrightarrow [n+1] \\
-    \{0,\dots,n\} & \longmapsto\!
-    \begin{aligned}[t]
-        \{0,\dots, \hat{i}, \dots,n+1\}
-    \end{aligned}
-\end{align*}
 
 \begin{defi}
-    Categor\'ia $\hat{\Delta}^{op}$
+    Sea $X$ un complejo simplicial ordenado. Las \emph{caras} son una colecci\'on de morfismos $\delta_0,\dots,\delta_n\colon X^n\to X^{n-1}$ determinados por $[0,\dots,n] \mapsto [0,\dots,\hat{j},\dots,n]$. Es decir, env\'ian un $n$-simplejo a su $(n-1)$-cara asociada al v\'ertice $j$.
+    Para complejos simpliciales ordenados en general, $0\le j \le n$
+    \begin{align*}
+        \delta_j: X^n           & \longrightarrow X^{n-1} \\
+        [v_{i_0},\dots,v_{i_n}] & \longmapsto\!
+        \begin{aligned}[t]
+            [v_{i_0},\dots,\hat{v_{i_j}},\dots,v_{i_n}]
+        \end{aligned}
+    \end{align*}
+    Observamos que si $i<j$, $\delta_i\delta_j = \delta_{j-1}\delta_{i}$. En efecto, $\delta_i\delta_j[0,\dots,n] = [0,\dots,\hat{i},\dots,\hat{j},\dots,n] = \delta_{j-1}\delta_{i}[0,\dots,n]$
 \end{defi}
-Sea la categor\'ia $\hat{\Delta}^{op}$, la categor\'ia opuesta de $\hat{\Delta}$, cuyos objetos son los conjuntos estrictamente ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen el orden estrictamente, $f: [n] \longrightarrow [m]$, $m\le n$. Podemos pensar que sea la extracci\'on de la cara $m\text{-simplex}$ de un $n\text{-simplex}$.
-Para todo $0\le i \le n$ consideramos los morfismos:
-\begin{align*}
-    \delta_i: [n] & \longrightarrow [n-1] \\
-    \{0,\dots,n\} & \longmapsto\!
-    \begin{aligned}[t]
-        \{0,\dots, \hat{i}, \dots,n\}
-    \end{aligned}
-\end{align*}
+
+
+\subsection{Conjuntos Delta}
+En este apartado veremos que los conjuntos Delta $\Delta$-sets son un intermediario entre complejos simpliciales y conjuntos simpliciales.
+\begin{defi}
+    Un \emph{conjunto Delta} consiste de una secuencia de conjuntos de $i$-simplices $X_0,X_1,\dots,X_i,\dots$ y, para cada $n\ge 0$, las funciones $\delta_i: X_{n+1} \to X_n$, $\forall 0\le i \le n+1$, que cumplen $\delta_i\delta_j = \delta_{j-1}\delta_{i}$, si $i\le j$.
+    Formando el siguiente diagrama
+    $$
+        \xymatrix{
+        X_0  & & X_1  \ar@/{}_{1pc}/[ll]_{\delta_0} \ar@/{}^{1pc}/[ll]^{\delta_1} & & X_2 \ar@/{}_{1pc}/[ll]_{\delta_0} \ar@/{}^{1pc}/[ll]^{\delta_2} \ar[ll]_{\delta_1} \dots
+        }
+    $$
+\end{defi}
+
+\subsubsection{Definici\'on categ\'orica de los conjuntos Delta}
+En este apartado introduciremos la definici\'on de los conjuntos Delta como categor\'ias cuyos objetos son simplices y los morfismos son morfismos simpliciales.
+\begin{defi}
+    La categor\'ia $\hat{\Delta}$ es una categor\'ia cuyos objetos son los conjuntos estrictamente ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen el orden estrictamente, $f\colon [m] \to [n]$, $m\le n$. Podemos pensar que sea la inclusi\'on de un $m\text{-simplex}$ como cara de un $n\text{-simplex}$.
+    Para todo $0\le i \le n$ consideramos los morfismos:
+    \begin{align*}
+        d_i: [n]      & \longrightarrow [n+1] \\
+        \{0,\dots,n\} & \longmapsto\!
+        \begin{aligned}[t]
+            \{0,\dots, \hat{i}, \dots,n+1\}
+        \end{aligned}
+    \end{align*}
+\end{defi}
 
 \begin{defi}
-    Conjunto Delta
+    La categor\'ia $\hat{\Delta}^{op}$, es la categor\'ia opuesta de $\hat{\Delta}$, cuyos objetos son los conjuntos estrictamente ordenados finitos $[n] = \{0,\dots,n\}$ y los morfismos son las funciones, que mantienen el orden estrictamente, $f: [n] \longrightarrow [m]$, $m\le n$. Podemos pensar que sea la extracci\'on de la cara $m\text{-simplex}$ de un $n\text{-simplex}$.
+    Para todo $0\le i \le n$ consideramos los morfismos:
+    \begin{align*}
+        d_i: [n]      & \longrightarrow [n-1] \\
+        \{0,\dots,n\} & \longmapsto\!
+        \begin{aligned}[t]
+            \{0,\dots, \hat{i}, \dots,n\}
+        \end{aligned}
+    \end{align*}
 \end{defi}
-Un conjunto Delta es un functor covariante $X: \hat{\Delta}^{op} \longrightarrow \mathbf{Set}$, equivalentemente es un functor contravariante $X: \hat{\Delta} \longrightarrow \mathbf{Set}$.
 
-Faltan observaciones.
-
-\subsection{Conjunto simplicial}
 \begin{defi}
-    Conjunto simplicial
+    Un \emph{conjunto Delta} es un functor covariante $X\colon \hat{\Delta}^{op} \to \mathbf{Set}$, equivalentemente es un functor contravariante $X\colon \hat{\Delta} \to \mathbf{Set}$.
+    Es decir, un funtor contravariante $\hat{\Delta} \to \mathbf{Set}$ asigna un objeto $[n]$ de $\hat{\Delta}$ a un conjunto de simplices $X_n$ de $\mathbf{Set}$, y asigna cada funci\'on que mantiene el orden escrictamente $[m]\to[n]$ de $\hat{\Delta}$ a una cara $X_n \to X_m$, haciendo una inclusi\'on de una $m$-cara de cada simplex en $X_n$ a un simplex de $X_m$.
 \end{defi}
-Definimos un conjunto simplicial como una secuencia de conjuntos $X_0,X_1,\dots$ y para cada $n\ge 0$ las funciones $\delta_i: X_n \longrightarrow X_{n-1}$ y $\sigma_i: X_n \longrightarrow X_{n+1}$, $\forall 0\le i \le n$, que cumplen:
+\begin{ex}
+    Sean $[2]$ y $[3]$ objetos de $\hat{\Delta}$ y sea $d_1\colon [2] \to [3]$ una funci\'on que mantiene el orden estrictamente, determinada por $d_1(0)=0$, $d_1(1)=2$ y $d_1(2)=3$. Ahora, aplicando el funtor contravariante obtenemos los conjuntos de 2 y 3-simplices $X_2$ y $X_3$, y la cara $\delta_1\colon X_3 \to X_2$.
+\end{ex}
 
-\begin{enumerate}[(1)]
-    \item $\delta_i\delta_j = \delta_{j-1}\delta_{i}$, $i<j$
-    \item $\delta_i\sigma_j = \sigma_{j-1}\delta_{i}$, $i<j$
-    \item $\delta_j\sigma_j = \delta{j+1}\sigma_{j} = id$
-    \item $\delta_i\sigma_j = \sigma_{j}\delta_{i-1}$, $i>j+1$
-    \item $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}, i\le j$
-\end{enumerate}
-Formando el siguiente diagrama (Falta por hacer)
 
-$$ %Not working
-    \xymatrix{
-    X_0  \ar@/{}^{1pc}/[r]  & X_1  \ar@/{}^{1pc}/[r] & X_2  \dots
-    }
-$$
+\subsection{Conjuntos simpliciales y sus morfismos}
+Antes de poder definir como se forman los conjuntos simpliciales, tenemos que introducir la noci\'on de degeneraciones de simplices y sus degeneraciones como morfismos.
+
+\begin{defi}
+    Un \emph{n-simplex degenerado} es un $n$-simplex $[v_0,\dots,v_n]$ cuyos v\'ertices pueden estar repetidos, es decir, exite alg\'un $i$ y $j$ tal que $v_i=v_j$. Por ejemplo, el simplex $[0,1,1]$.
+\end{defi}
+\begin{defi}
+    Sea $X$ un complejo simplicial ordenado. Las \emph{degeneraciones} son una colecci\'on de morfismos $\sigma_0,\dots,\sigma_n\colon X^n\to X^{n+1}$ determinados por $[0,\dots,n] \mapsto [0,\dots,j,j,\dots,n]$. Es decir, env\'ian un $n$-simplejo a su $(n+1)$-simplejo degenerado asociado al v\'ertice $j$.
+    Para complejos simpliciales ordenados en general, $0\le j \le n$
+    \begin{align*}
+        \sigma_j: X^n           & \longrightarrow X^{n+1} \\
+        [v_{i_0},\dots,v_{i_n}] & \longmapsto\!
+        \begin{aligned}[t]
+            [v_{i_0},\dots,v_{i_j},v_{i_j},\dots,v_{i_n}]
+        \end{aligned}
+    \end{align*}
+    Observamos que si $i<j$, $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}$. En efecto, $\sigma_i\sigma_j[0,\dots,n] = [0,\dots,i,i,\dots,j,j,\dots,n] = \sigma_{j+1}\sigma_{i}[0,\dots,n]$
+\end{defi}
+
+
+\begin{defi}
+    Un \emph{conjunto simplicial} es una secuencia de conjuntos de $i$-simplices $X_0,X_1,\dots,X_i,\dots$, y para cada $n\ge 0$, las funciones $\delta_i: X_n \longrightarrow X_{n-1}$ y $\sigma_i: X_n \longrightarrow X_{n+1}$, $\forall 0\le i \le n$, que cumplen:
+
+    \begin{enumerate}[(1)]
+        \item $\delta_i\delta_j = \delta_{j-1}\delta_{i}$, $i<j$
+        \item $\delta_i\sigma_j = \sigma_{j-1}\delta_{i}$, $i<j$
+        \item $\delta_j\sigma_j = \delta{j+1}\sigma_{j} = id$
+        \item $\delta_i\sigma_j = \sigma_{j}\delta_{i-1}$, $i>j+1$
+        \item $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}, i\le j$
+    \end{enumerate}
+    Formando el siguiente diagrama
+    $$
+        \xymatrix{
+        X_0 \ar@/{}_{1pc}/[rr]_{\sigma_0} & & X_1 \ar@/{}_{1pc}/[rr]_{\sigma_0} \ar@/{}_{2pc}/[rr]_{\sigma_1} \ar@/{}_{1pc}/[ll]_{\delta_1} \ar[ll]_{\delta_0} & & X_2 \ar@/{}_{2pc}/[ll]_{\delta_2} \ar@/{}_{1pc}/[ll]_{\delta_1} \ar[ll]_{\delta_0} \dots
+        }
+    $$
+\end{defi}
 
 \subsubsection{Definici\'on categ\'orica del conjunto simplicial}
 \begin{defi}
