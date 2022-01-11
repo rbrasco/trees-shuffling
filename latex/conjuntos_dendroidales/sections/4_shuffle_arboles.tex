@@ -2,8 +2,10 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 \section{Shuffle de \'arboles (Naipear, Barajear o mezclar?)}
-En esta seci\'on describiremos el producto tensorial $\Omega[S]\otimes\Omega[T]$ para todo par de \'arboles $S$ y $T$ de $\Omega$, y as\'i conseguir que se entienda el resultado del producto tensorial de conjuntos dendroidales.
+En esta seci\'on describiremos el producto tensorial $\Omega[S]\otimes\Omega[T]$ para todo par de \'arboles $S$ y $T$ de $\Omega$. Para ello deberemos introducir la noci\'on del conjunto de shuffles de $S$ y $T$, que ser\'a una gran ayuda para encontrar el producto tensorial. As\'i podremos entender que es el producto tensorial de conjuntos dendroidales.
 \subsection{Producto tensorial de \'arboles lineales}
+Antes de ver el producto tensorial para \'arboles en general, estudiaremos el caso de \'arboles lineales ya que resulta una tarea m\'as sencilla y la podemos relacionar con el producto cartesiano de conjuntos simpliciales.
+
 Sean $S=L_n$ y $T=L_m$ dos \'arboles lineales, entonces por la proposici\'on 3.30(i),
 $$
     \Omega[L_n]\otimes\Omega[L_m]=i_!(\Delta[n])\otimes i_!(\Delta[m])\cong i_!(\Delta[n]\times\Delta[m])
@@ -15,9 +17,92 @@ $$
 $$
 Donde la uni\'on recorre todos los posibles $(n,m)$-shuffles.
 \begin{ex}
-    Sea n... por hacer
+    Sean $n=2$ y $m=1$. Existen tres (2, 1)-shuffles en $[2]\times[1]$, (00,01,02,12), (00,01,11,12) y (00,10,11,12). Tenemos la siguiente figura que representa $\Delta[2]\times\Delta[1]$
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        (2.0, 0.0)*{}="1"; %01
+        (2.0, 15.0)*{}="2"; %11
+        (15.0, 30.0)*{}="3"; %12
+        (15.0, 15.0)*{}="4"; %02
+        (-20.0, 15.0)*{}="5"; %10
+        (-20.0, 0.0)*{}="6"; %00
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"1" **\dir{-};
+        "1";"6" **\dir{-};
+        "5";"6" **\dir{-};
+        "3";"5" **\dir{-};
+        "5";"2" **\dir{-};
+        "6";"4" **\dir{.};
+        (6.0, 0.0)*=0{\scriptstyle 01};
+        (6.0, 15.0)*=0{\scriptstyle 11};
+        (19.0, 30.0)*=0{\scriptstyle 12};
+        (19.0, 15.0)*=0{\scriptstyle 02};
+        (-24.0, 15.0)*=0{\scriptstyle 10};
+        (-24.0, 0.0)*=0{\scriptstyle 00};
+        \endxy
+    $$
+    Podemos ver que cada (2, 1)-shuffle corresponde a un tetraedro, y hacen una descomposici\'on de $\Delta[2]\times\Delta[1]$ como la uni\'on de tres copias de $\Delta[3]$:
+    $$
+        \xy<0.08cm, 0cm>:
+        (-50,0)*{
+                \xy
+                <0.08cm, 0cm>:
+                (2.0, 0.0)*{}="1"; %01
+                (15.0, 30.0)*{}="3"; %12
+                (15.0, 15.0)*{}="4"; %02
+                (-20.0, 0.0)*{}="6"; %00
+                "3";"4" **\dir{-};
+                "4";"1" **\dir{-};
+                "1";"6" **\dir{-};
+                "6";"4" **\dir{.};
+                "3";"6" **\dir{-};
+                "3";"1" **\dir{-};
+                (-3,-5)*{\text{(00, 01, 02, 12)}}
+                \endxy
+            };
+        (0,0)*{
+                \xy
+                <0.08cm, 0cm>:
+                (2.0, 0.0)*{}="1"; %01
+                (2.0, 15.0)*{}="2"; %11
+                (15.0, 30.0)*{}="3"; %12
+                (-20.0, 0.0)*{}="6"; %00
+                "1";"2" **\dir{-};
+                "2";"3" **\dir{-};
+                "1";"6" **\dir{-};
+                "3";"6" **\dir{-};
+                "2";"6" **\dir{-};
+                "3";"1" **\dir{-};
+                (-3,-5)*{\text{(00, 01, 11, 12)}}
+                \endxy
+            };
+        (50,0)*{
+                \xy
+                <0.08cm, 0cm>:
+                (2.0, 15.0)*{}="2"; %11
+                (15.0, 30.0)*{}="3"; %12
+                (-20.0, 15.0)*{}="5"; %10
+                (-20.0, 0.0)*{}="6"; %00
+                "2";"3" **\dir{-};
+                "5";"6" **\dir{-};
+                "3";"5" **\dir{-};
+                "5";"2" **\dir{-};
+                "5";"2" **\dir{-};
+                "6";"2" **\dir{-};
+                "6";"3" **\dir{.};
+                (-3,-5)*{\text{(00, 10, 11, 12)}}
+                \endxy
+            };
+        \endxy
+    $$
 \end{ex}
 \subsection{Producto tensorial de \'arboles}
+\subsubsection{Shuffles y conjuntos de shuffles}
+En este apartado vamos a introducir la noci\'on de un shuffle entre dos \'arboles y la coleci\'on de todos ellos. Tambi\'en daremos ejemplos extensos de como calcular dichos shuffles.
+
 \begin{defi}
     Sea $S$ y $T$ dos objetos de $\Omega$. Un \emph{shuffle} de $S$ y $T$ es un \'arbol $R$ cuyo conjunto de aristas es un subconjunto de $E(S)\times E(T)$. La ra\'iz de $R$ es $(a,\text{ }x)$, donde $a$ es la ra\'iz de $S$ y $x$ es la ra\'iz de $T$,
     y sus hojas son todos los pares $(l_S,\text{ }l_T)$, donde $l_S$ es una hoja de $S$ y $l_T$ es una hoja de $T$. Los v\'ertices son de la forma
@@ -70,7 +155,6 @@ Donde la uni\'on recorre todos los posibles $(n,m)$-shuffles.
     Observamos que existe una biyecci\'on entre los shuffles de dos \'arboles lineales $L_n$ y $L_m$ con los $(n,\text{ }m)$-shuffles de $[n]\times[m]$.
 \end{defi}
 
-\subsubsection{Conjunto de shuffles}
 \begin{defi}
     Sean $S$ y $T$ dos \'arboles. El \emph{conjunto de shuffles de $S$ y $T$} es la colecci\'on de todos los shuffles posibles entre $S$ y $T$. La cardinalidad de este conjunto la denotaremos por $sh(S,\text{ }T)$.
 \end{defi}
@@ -1090,7 +1174,8 @@ Finalmente, si $n=m=0$, entonces tenemos el intercambio
     $$
 \end{ex}
 
-Ahora vamos a relacionar el conjunto de shuffles con el producto tensorial de conjuntos dendroidales de representables de dos \'arboles cualesquiera, de esta manera el c\'alculo del producto resulta ser m\'as f\'acil.
+\subsubsection*{Producto tensorial de \'arboles}
+Ahora podemos dar una descripci\'on completa del producto tensorial entre dos objetos representables en $\Omega$ mediante el c\'omputo de su conjunto de shuffles.
 \begin{lema}
     Para todo shuffle $R_i$ de $S$ y $T$ tenemos un monomorfismo
     $$
@@ -1114,7 +1199,7 @@ Ahora vamos a relacionar el conjunto de shuffles con el producto tensorial de co
 \end{corol}
 
 \subsection{Shuffle de \'arboles en Python}
-No es complicado ver que tanto encontrar el producto tensorial de conjuntos dendroidales o calcular el conjunto de shuffles para dos \'arboles cualesquiera, resulta una tarea tediosa si los \'arboles son grandes. Para tal problema, el uso de un programa inform\'atico, capaz de almanezar grandes cantidades de informaci\'on al momento de ejecuci\'on, nos resulta c\'omodo, f\'acil y r\'apido.
+No es complicado ver que tanto encontrar el producto tensorial de conjuntos dendroidales o, equivalentemente, calcular el conjunto de shuffles para dos \'arboles cualesquiera, resulta una tarea tediosa si los \'arboles son grandes. Para tal problema, el uso de un programa inform\'atico, capaz de almanezar grandes cantidades de informaci\'on al momento de ejecuci\'on, nos resulta c\'omodo, f\'acil y r\'apido.
 
 En esta secci\'on describir\'e de manera breve el c\'odigo que he escrito para poder tratar con op\'eradas, \'arboles, shuffles y finalmente con el conjunto de shuffles. Tambi\'en, el c\'odigo incluye una funci\'on para formar figuras con el paquete \textit{xy} de \textit{Latex} de un \'arbol mediante una descripci\'on b\'asica.
 

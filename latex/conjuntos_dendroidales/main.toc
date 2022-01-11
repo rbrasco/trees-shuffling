@@ -29,6 +29,6 @@
 \contentsline {section}{\numberline {4}Shuffle de \'arboles (Naipear, Barajear o mezclar?)}{22}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Producto tensorial de \'arboles lineales}{22}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Producto tensorial de \'arboles}{22}{subsection.4.2}%
-\contentsline {subsubsection}{\numberline {4.2.1}Conjunto de shuffles}{22}{subsubsection.4.2.1}%
-\contentsline {subsection}{\numberline {4.3}Shuffle de \'arboles en Python}{26}{subsection.4.3}%
+\contentsline {subsubsection}{\numberline {4.2.1}Shuffles y conjuntos de shuffles}{22}{subsubsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.3}Shuffle de \'arboles en Python}{27}{subsection.4.3}%
 \contentsline {section}{\numberline {5}Conclusiones}{28}{section.5}%
