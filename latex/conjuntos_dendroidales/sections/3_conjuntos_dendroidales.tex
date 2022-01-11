@@ -2,7 +2,9 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 \section{Conjuntos Dendroidales}
+En esta secci\'on vamos a introducir las nociones necesarias para poder describir los conjuntos dendroidales mediante el uso de \'arboles. Para ello tendremos que hablar sobre la formalizaci\'on de \'arboles como op\'eradas coloreadas y los morfismos posibles entre \'arboles. Finalmente, podremos definir un conjunto dendroidal como una categor\'ia.
 \subsection{\'Arboles como op\'eradas}
+Antes de nada, vamos a definir una terminolog\'ia para los \'arboles como op\'eradas coloreadas que la usaremos a lo largo del trabajo.
 \subsubsection{Formalismo de \'arboles}
 Un \emph{\'arbol} es un grafo no vac\'io, finito, conexo y sin lazos. Llamaremos \emph{v\'ertices exteriores} a los v\'ertices que tienen solamente una arista adyacente.
 Todos los \'arboles que consideraremos tendr\'an \emph{ra\'iz}, es decir, para cada \'arbol existe un v\'ertice exterior, llamado \emph{output} o \emph{salida}. El conjunto de v\'ertices exteriores restantes lo llamaremos \emph{inputs} o \emph{entradas}. Este \'ultimo conjunto puede ser vac\'io y no contiene el v\'ertice output.
@@ -54,6 +56,7 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
 
 
 \subsubsection{\'Arboles planares}
+Los \'arboles planares sirven para simplificar y poder definir los morfismos que vienen a continuaci\'on de manera m\'as sencilla, pero todo lo que vamos a definir ahora ser\'a v\'alido en el caso de \'arboles no planares.
 \begin{defi}
     Un \emph{\'arbol planar con ra\'iz} es un \'arbol con ra\'iz $T$ dotado con un orden lineal del conjunto in$(v)$ para cada $v$ de $T$.
 \end{defi}
@@ -216,7 +219,7 @@ Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. 
 \end{obs}
 
 \subsection{Morfismos en $\Omega_p$}
-En las siguientes secciones vamos a tratar con todos los tipos de morfismos en $\Omega_p$ y dar una descripci\'on m\'as expl\'icita.
+En los siguientes apartados vamos a tratar con todos los tipos de morfismos en $\Omega_p$ y dar una descripci\'on m\'as expl\'icita.
 \subsubsection{Caras}
 Sea $T$ un \'arbol planar con ra\'iz.
 \begin{defi}
@@ -516,7 +519,7 @@ El siguiente lema es una generalizaci\'on en $\Omega_p$ del lema en la categor\'
     Es una demostraci\'on an\'aloga a la del lema 3.21.
 \end{proof}
 \subsubsection{Identidades dendroidales}
-En esta secci\'on vamos a dar las relaciones entre los morfismos generadores de $\Omega_p$. Las identidades que obtenemos generalizan las identidades simpliciales de la categor\'ia $\Delta$.
+En este apartado vamos a dar las relaciones entre los morfismos generadores de $\Omega_p$. Las identidades que obtenemos generalizan las identidades simpliciales de la categor\'ia $\Delta$.
 
 \subsubsection*{Relaciones elementales de caras}
 Sea $\partial_a \colon T/a\to T$ y $\partial_b \colon T/b\to T$ dos caras internas distintas de $T$.
@@ -1152,6 +1155,7 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
 
 
 \subsection{\'Arboles no planares}
+Una vez dada la definici\'on de los morfismos en $\Omega_p$, vamos a dar un generalizaci\'on de dichos morfismos en $\Omega$.
 \begin{defi}
     Sea $T$ un \'arbol no-planar. Denotaremos la op\'erada coloreada sim\'etrica generada por $T$ como $\Omega(T)$. El conjunto de colores de $\Omega(T)$ es el conjunto de aristas $E(T)$ de $T$.
     Las operaciones est\'an generadas por los v\'ertices del \'arbol, y el grupo sim\'etrico de $n$ letras $\Sigma_n$ act\'ua en cada operaci\'on de $n$ entradas permutando el orden de las entradas.
@@ -1239,7 +1243,9 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
 \end{proof}
 
 \subsubsection{Prehaz de estructuras planares}
-Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de estructuras planares.
+Para poder relacionar la categor\'ia $\Delta$ con las categor\'ias $\Omega_p$ y $\Omega$, necesitamos un morfismo que env\'ia \'arboles a su conjunto de representaciones planares. 
+
+Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de representaciones planares.
 Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por el morfismo $f\colon T\to S$ en $\Omega$, tal que $P(f)(y) = x$.
 Entonces, tenemos que $\Omega\backslash P = \Omega_p$ y existe una proyecci\'on $v\colon\Omega_p\to\Omega$. Tenemos el siguiente tri\'angulo conmutativo:
 $$
@@ -1250,14 +1256,13 @@ $$
     }
 $$
 Donde $i$ es un encaje plenamente fiel de $\Delta$ en $\Omega$, que env\'ia el objeto $[n]$ de $\Delta$ al \'arbol lineal $L_n$ de $\Omega$, para todo $n\ge 0$.
-\subsubsection{Relaci\'on con la categor\'ia simplicial}
-
+\subsubsection*{Relaci\'on con la categor\'ia simplicial}
 Hemos podido ver que las dos categor\'ias, $\Omega_p$ y $\Omega$, extienden la categor\'ia $\Delta$, gracias a ver los objetos de $\Delta$ como \'arboles lineales. Adem\'as, se puede obtener $\Delta$ como la categor\'ia coma de $\Omega_p$ o $\Omega$.
 Sea $\eta$ un \'arbol en $\Omega$ que no contiene ning\'un v\'ertice y tan solo una arista, y sea $\eta_p$ su representaci\'on planar en $\Omega_p$.
 Si $T$ es un \'arbol cualquiera en $\Omega$, entonces $\Omega(T,\eta)$ consiste en un solo morfismo o es el conjunto vac\'io, dependiendo si $T$ es un \'arbol lineal o no. Pasa lo mismo con $\Omega_p$ y $\eta_p$. Entonces, $\Omega\backslash\eta = \Omega_p\backslash\eta_p = \Delta$.
 
 \subsection{Conjuntos Dendroidales}
-En esta secci\'on vamos a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de prehaces en $\Omega$ y $\Omega_p$, respectivamente.
+En este apartado a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de prehaces en $\Omega$ y $\Omega_p$, respectivamente.
 Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante una adjunci\'on natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales.
 
 \begin{defi}
@@ -1391,13 +1396,14 @@ $$
     &Oper \ar@<0.5ex>[u]^{N_d} \ar@<0.5ex>[l]^{j^{*}}
     }
 $$
-Tenemos las siguientes relaciones conmutativas salvo isomorf\'ias:
+Tenemos las siguientes relaciones conmutativas salvo isomorfismos:
 \begin{align*}
     \tau N  & = \text{id,  } \tau_d N_d = \text{id,    } i^{*}i_! = \text{id,  } j^{*}j_! = \text{id} \\
     j_!\tau & = \tau_d i_! \text{,   } N j^{*} = i^{*}N_d\text{,    } i_!N = N_d j_!
 \end{align*}
 \subsection{Producto tensorial de conjuntos dendroidales}
-\subsubsection{Producto tensorial Boardman-Vogt}
+En este apartado podemos introducir y entender el producto tensorial entre conjuntos dendroidales gracias al producto tensorial de Boardman--Vogt.
+\subsubsection{Producto tensorial Boardman--Vogt}
 \begin{defi}
     Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial de Boardman--Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de generadores y relaciones de la siguiente manera.
     Para cada color $d\in D$ y cada operaci\'on $p\in P(c_1,\dots,c_n;c)$ existe un generador
@@ -1541,7 +1547,7 @@ $$
     Para cada par $X$ e $Y$ de conjuntos dendroidales y para cada \'arbol $T$ en $\Omega$.
 \end{defi}
 \begin{teo}
-    La categor\'ia de conjuntos dendroidales admite una estructura cerrada, monoidal y sim\'etrica. Esta estructura monoidal es \'unicamente determinada (salvando isomorf\'ias) por la propiedad de que existe un isomorfismo natural
+    La categor\'ia de conjuntos dendroidales admite una estructura cerrada, monoidal y sim\'etrica. Esta estructura monoidal es \'unicamente determinada (salvando isomorfismos) por la propiedad de que existe un isomorfismo natural
     $$
         \Omega[T]\otimes\Omega[S] \cong N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
