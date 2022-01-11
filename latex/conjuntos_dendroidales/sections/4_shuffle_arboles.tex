@@ -378,6 +378,51 @@ $$
     (-13,0)*{R_N};
     \endxy
 $$
+\usetikzlibrary{shapes}
+$$
+    \begin{tikzpicture}
+        [tri/.style = {align=center, regular polygon, regular polygon sides=3,
+                    draw, fill=white, text width=1em,
+                    inner sep=1mm, outer sep=0mm,
+                    shape border rotate=180}]
+        \node (1) at (0,0) {};
+        \node (2) at (0, 2) {};
+        \node (3) at (0,4) {};
+        \node (4) at (2, 4) {};
+        \node (5) at (-2, 4) {};
+        \draw (1) -- (2) -- (3)
+        (2) -- (4)
+        (2) -- (5);
+        \node (tri1) [tri] at (0,2.3) {$S$};
+        \node (label) at (-1,0) {$R_1$};
+        \node (tri2) [tri, inner sep=0.1mm] at (1.86,4.433) {$T$};
+        \node (tri3) [tri, inner sep=0.1mm] at (0,4.433) {$T$};
+        \node (tri4) [tri, inner sep=0.1mm] at (-1.86,4.433) {$T$};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        \node (1) at (-1,0) {};
+        \node (1) at (1,0) {};
+    \end{tikzpicture}
+    \begin{tikzpicture}
+        [tri/.style = {align=center, regular polygon, regular polygon sides=3,
+                    draw, fill=white, text width=1em,
+                    inner sep=1mm, outer sep=0mm,
+                    shape border rotate=180}]
+        \node (1) at (0,0) {};
+        \node (2) at (0, 2) {};
+        \node (3) at (0,4) {};
+        \node (4) at (2, 4) {};
+        \node (5) at (-2, 4) {};
+        \draw (1) -- (2) -- (3)
+        (2) -- (4)
+        (2) -- (5);
+        \node (tri1) [tri] at (0,2.3) {$S$};
+        \node (label) at (-1,0) {$R_N$};
+        \node (tri2) [tri, inner sep=0.1mm] at (1.86,4.433) {$T$};
+        \node (tri3) [tri, inner sep=0.1mm] at (0,4.433) {$T$};
+        \node (tri4) [tri, inner sep=0.1mm] at (-1.86,4.433) {$T$};
+    \end{tikzpicture}
+$$
 Existen los \emph{shuffles intermediarios} $R_k$ $(1 < k < N)$ entre $R_1$ y $R_N$ obtenidos filtrando los v\'ertices negros en $R_1$ hacia la ra\'iz del \'arbol mediante intercambios con los v\'ertices blancos.
 Todo $R_k$ se obtiene desde un $R_l$ anterior. Es decir, cada intercambio se basa en transformar una configuraci\'on de $R_l$
 \begin{equation}
