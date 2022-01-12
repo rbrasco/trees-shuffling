@@ -1,0 +1,1701 @@
+\chapter{Tensor product of dendroidal sets}
+\label{lecture04}
+Like any category of presheaves, the category of dendroidal sets is cartesian closed. In this lecture, we will discuss another monoidal
+structure, which is also closed, and seems more relevant than the cartesian structure. It is closely related to the tensor product of
+operads introduced by Boardman and Vogt, and it makes the embedding of simplicial sets into dendroidal sets into a strong monoidal functor.
+\section{The Boardman--Vogt tensor product}
+\label{bvtensor}
+The category of small categories $\Cat$ is a cartesian closed category for which the internal hom $\Hom_{\Cat}(\C, \D)$ between two categories $\C$ and $\D$ is defined as the category whose objects are functors from $\C$ to $\D$ and whose morphisms are natural transformations between them. In this section, we show that the category of coloured operads is a closed symmetric monoidal category with the so-called Boardman--Vogt tensor product \cite[Definition 2.14]{BV73}.
+
+We recall the definition of the Boardman--Vogt tensor product for coloured operads.
+
+\begin{defn}
+Let $P$ be a symmetric $C$-coloured operad and let $Q$ be a symmetric $D$-coloured operad. The \emph{Boardman--Vogt tensor product} $P\otimes_{BV}Q$ is a $(C\times D)$-coloured operad defined in terms of generators and relations in the following way. For each $d\in D$ and each operation $p\in P(c_1,\ldots, c_n;c)$ there is a generator
+$$
+p\otimes d\in P\otimes_{BV}Q ((c_1, d),\ldots, (c_n,d); (c,d)).
+$$
+Similarly, for each $c\in C$ and each $q\in Q(d_1,\ldots, d_m;d)$ there is a generator
+$$
+c\otimes q\in P\otimes_{BV}Q ((c,d_1), \ldots, (c, d_m); (c,d)).
+$$
+These generators are subject to the following relations:
+\begin{itemize}
+\item[(i)] $(p\otimes d)\circ ((p_1\otimes d),\ldots, (p_n\otimes d))=(p\circ (p_1,\ldots, p_n))\otimes d$.
+\item[(ii)] $\sigma^*(p\otimes d)=(\sigma^*p)\otimes d$ for every $\sigma\in \Sigma_n$.
+\item[(iii)] $(c\otimes q)\circ ((c\otimes q_1),\ldots, (c\otimes q_m))=c\otimes (q\circ (q_1,\ldots, q_m))$.
+\item[(iv)] $\sigma^*(c\otimes q)=c\otimes (\sigma^*q)$ for every $\sigma\in \Sigma_m$.
+\item[(v)] $\sigma_{n,m}^*((p\otimes d)\circ((c_1\otimes q),\ldots, (c_n\otimes q)))=
+(c\otimes q)\circ ((p\otimes d_1),\ldots, (p\otimes d_m))$, where
+$\sigma_{n,m}\in \Sigma_{nm}$ is the permutation described as
+follows. Consider $\Sigma_{nm}$ as the set of bijections of
+the set $\{0,1,\ldots, nm-1\}$. Each element of this set can
+be written uniquely in the form $kn+j$ where $0\le k<m$ and $0\le
+j<n$ as well as in the form $km+j$ where $0\le k<n$ and $0\le j<m$.
+The permutation $\sigma_{n,m}$ is then defined by
+$\sigma_{n,m}(kn+j)=jm+k$.
+\end{itemize}
+\end{defn}
+
+Observe that relations (i) and (ii) imply that for every $d\in D$ the map $P\longrightarrow P\otimes_{BV}Q$ given by $p\longmapsto p\otimes d$ is a map of operads. Similarly, relations (iii) and (iv) ensure that for every $c\in C$ the map $Q\longrightarrow P\otimes_{BV}Q$ given by $q\longmapsto c\otimes q$ is a map of operads.
+
+\begin{exmp} We illustrate relation (v), called the \emph{interchange relation}, with the following examples.
+Suppose that $n=2$ and $m=3$. The left-hand operation of relation~(v), before applying $\sigma^*_{2,3}$, can be represented by the tree
+$$
+\xymatrix{
+*{}\ar@{-}[dr]_{(c_1,d_1)} & *{}\ar@{-}[d]|(0.3){(c_1,d_2)}  & *{}\ar@{-}[dl]^{(c_1,d_3)}  &  & *{}\ar@{-}[dr]_{(c_2,d_1)}  & *{}\ar@{-}[d]|(0.3){(c_2,d_2)}  & *=0{}\ar@{-}[dl]^{(c_2,d_3)} \\
+\ar@{}[r]|{\,\,c_1\otimes q} & *=0{\bullet}\ar@{-}[drr]_{(c_1,d)}  &  &  &  & *=0{\bullet}\ar@{-}[dll]^{(c_2,d)} & \ar@{}[l]|{c_2\otimes q}\\
+ &  &  & *=<3.1pt>{\circ} \ar@{-}[d]^{(c,d)} & \ar@{}[l]|{p\otimes d} \\
+ &  &  & *{}
+}
+$$
+The right-hand operation can be represented by the tree
+$$
+\xymatrix @C=20pt{
+*{}\ar@{-}[dr]_{(c_1, d_1)} &  & *{}\ar@{-}[dl]^{(c_2, d_1)} &  & *{}\ar@{-}[dr]_{(c_1, d_2)} &  & {}\ar@{-}[dl]^{(c_2, d_2)} &  & *{}\ar@{-}[dr]_{(c_1, d_3)} &  & *{}\ar@{-}[dl]^{(c_2, d_3)}\\
+\ar@{}[r]|{\,\, p\otimes d_1} & *=<3.1pt>{\circ}\ar@{-}[drrrr]_{(c, d_1)}  &  &  &  \ar@{}[r]|{\,\,p\otimes d_2}& *=<3.1pt>{\circ}\ar@{-}[d]_{(c, d_2)} &  &  &  & *=<3.1pt>{\circ}\ar@{-}[dllll]^{(c, d_3)} & \ar@{}[l]|{p\otimes d_3}\\
+ &  &  &  &  & *=0{\bullet}\ar@{-}[d]_{(c, d)} & \ar@{}[l]|(0.3){c\otimes q}\\
+ &  &  &  &  & *{}
+}
+$$
+And the permutation $\sigma_{2,3}$ corresponds to the permutation $(2\,\; 4\,\; 5\,\; 3)$ of $\Sigma_6$. We represent the vertices coming from operations in $P$ by a white dot $\circ$ and the vertices coming from operations in $Q$ by a black dot $\bullet$.
+\end{exmp}
+
+The Boardman--Vogt tensor product preserves colimits in each variable separately. In fact, there is a corresponding internal hom making the category of coloured operads closed monoidal.
+
+\begin{thm}
+The category $\Oper$ with the Boardman--Vogt tensor product $\otimes_{BV}$ is a closed symmetric monoidal category.
+\end{thm}
+\begin{proof}
+The unit for the tensor product is the initial operad $I$ on one colour, i.e., $I(*,*)=\{*\}$ and the empty set otherwise. It follows from the definition that this tensor product is associative, commutative and unital. This proves that $\Oper$ is symmetric monoidal.
+
+We define the internal hom for coloured operads as follows. Let $P$ be a $C$\nobreakdash-coloured operad and $Q$ a $D$-coloured operad. Then $\Hom_{\Oper}(P,Q)$ is the operad whose colours are the maps of operads $P\longrightarrow Q$, and if $\alpha_1,\ldots, \alpha_n,\beta$ are $n+1$ such maps, then the elements of
+$$
+\Hom\nolimits_{\Oper}(P,Q)(\alpha_1,\ldots, \alpha_n;\beta)
+$$
+are maps $f$ assigning to each colour $c\in C$ an element $f_c\in Q(\alpha_1 c, \dots, \alpha_n c; \beta c)$.
+The maps $f_c$ should be natural with respect to all the operations in $P$. For example, if $p\in P(c_1, c_2; c)$, then
+$$
+\beta(p)(f_{c_1}, f_{c_2})\in Q(\alpha_1 c_1,\dots, \alpha_n c_1, \alpha_1 c_2,\ldots, \alpha_n c_2; \beta c)
+$$
+is the image under a suitable permutation of
+$$
+f_c(\alpha_1(p), \ldots, \alpha_n(p))\in Q(\alpha_1 c_1,\alpha_1 c_2, \dots, \alpha_n c_1,\alpha_n c_2; \beta c).
+$$
+We need to construct a bijection
+$$
+\Oper(P\otimes_{BV} Q, R)\cong \Oper(P, \Hom\nolimits_{\Oper}(Q, R))
+$$
+natural in $P$, $Q$ and $R$.
+
+Let $\varphi\colon P\otimes_{BV} Q\longrightarrow R$ be a map of coloured operads. For each $c\in C$ we have a map of operads $\varphi_c$ defined by the composition
+$$
+Q\longrightarrow P\otimes_{BV} Q\stackrel{\varphi}{\longrightarrow} R
+$$
+where the first map sends $q$ to $c\otimes q$. This defines a map from the colours of $P$ to the colours of $\Hom_{\Oper}(Q, R)$. Now, if we have an operation $p\in P(c_1, \dots, c_n;c)$, we define
+$$
+f_d=\varphi(p\otimes d)\in R(\varphi_{c_1} d, \dots, \varphi_{c_n}d; \varphi_c d)
+$$
+for every $d\in D$.
+
+Conversely,  let $\psi\colon P\longrightarrow \Hom_{\Oper}(Q,R)$ be a map of coloured operads. To construct a map $\overline{\psi}\colon P\otimes_{BV} Q\longrightarrow R$, we need to define it on the colours and the generators of $P\otimes_{BV} Q$. If $(c,d)\in C\times D$, then $\overline{\psi}(c,d)=\psi(c)(d)$. For a generator of the form $c\otimes q$, where $q\in Q(d_1,\ldots, d_n;d)$, we define
+$$
+\overline{\psi}(c\otimes q)=\psi(c)(q).
+$$
+For a generator of the form $p\otimes d$, where $p\in P(c_1,\ldots, c_n;c)$, we define
+$$
+\overline{\psi}(p\otimes d)=\psi(p)_d.
+$$
+It is now easy to check that $\overline{\psi}$ thus defined is compatible with the relations of the Boardman--Vogt tensor product.
+\end{proof}
+
+\begin{rem}
+Note that in the definition of the Boardman--Vogt tensor product it is crucial that the coloured operads involved are symmetric. However, the tensor product
+still makes sense without the symmetries when one of the operads involved has only unary operations.
+\label{remBV}
+\end{rem}
+
+\section{Tensor product of dendroidal sets}
+The category of dendroidal sets is a category of presheaves, hence cartesian closed. The cartesian product of dendroidal sets extends the cartesian product of simplicial sets, i.e.,
+$$
+i_!(X\times Y)\cong i_!(X)\times i_!(Y)
+$$
+for every two simplicial sets $X$ and $Y$. (Note, however, that $i_!$ does not preserve the terminal object.)
+
+As mentioned before, there is another closed monoidal structure on $\dSets$, strongly related with the Boardman--Vogt
+tensor product of coloured operads. For any two trees $T$ and $S$ in $\Omega$, the tensor product of the representables
+$\Omega[T]$ and $\Omega[S]$ is defined as
+$$
+\Omega[T]\otimes \Omega[S]= N_d(\Omega(T)\otimes_{BV}\Omega(S)),
+$$
+where $N_d$ is the dendroidal nerve functor (see Example~\ref{dnerve}), $\Omega(T)$ and $\Omega(S)$ are the coloured operads associated to the trees $T$ and $S$ respectively (see Section~\ref{nonplanartrees}), and $\otimes_{BV}$ is the Boardman--Vogt tensor product.
+
+This defines a tensor product in the whole category of dendroidal sets, since, being a category of presheaves, every object is a canonical colimit of representables and $\otimes$ preserves colimits in each variable.
+
+\begin{defn}
+Let $X$ and $Y$ be two dendroidal sets and let $X=\varinjlim \Omega[T]$ and $Y=\varinjlim\Omega[S]$ be their canonical
+expressions as colimits of representables. Then the \emph{tensor product} $X\otimes Y$ is defined as
+$$
+X\otimes Y=\varinjlim \Omega[T]\otimes \varinjlim \Omega[S] = \varinjlim N_d(\Omega(T)\otimes_{BV} \Omega(S)).
+$$
+\end{defn}
+
+It follows from general category theory \cite{Kel82} that this tensor product is automatically closed, and that the
+set of $T$-dendrices of the internal hom is defined by
+$$
+\Hom\nolimits_{\dSets}(X, Y)_T=\dSets(\Omega[T]\otimes X, Y),
+$$
+for every two dendroidal sets $X$ and $Y$ and every $T$ in $\Omega$. The dendroidal structure of $\Hom_{\dSets}(X, Y)$ is given in the obvious way.
+
+\begin{thm}
+The category of dendroidal sets admits a closed symmetric mo\-noi\-dal structure. This monoidal structure
+is uniquely determined (up to isomorphism) by the property that there is a natural isomorphism
+$$
+\Omega[T]\otimes \Omega[S]\cong N_d((\Omega(T)\otimes_{BV}\Omega(S))
+$$
+for any two objects $T$ and $S$ of $\Omega$. The unit of the tensor product is the representable dendroidal set $\Omega[\eta]=i_!(\Delta[0])=U$. $\hfill\qed$
+\label{dsetsismonoidal}
+\end{thm}
+
+The following are some basic properties of the tensor product of dendroidal sets in relation to the Boardman--Vogt tensor product of coloured operads and to the cartesian product of simplicial sets.
+
+\begin{prop}
+The following properties hold:
+\begin{itemize}
+\item[{\rm (i)}] For any two simplicial sets $X$ and $Y$, there is a natural isomorphism
+$$
+i_!(X)\otimes i_!(Y)\cong i_!(X\times Y).
+$$
+\item[{\rm (ii)}] For any two dendroidal sets $X$ and $Y$, there is a natural isomorphism
+$$
+\tau_d(X\otimes Y)\cong \tau_d(X)\otimes_{BV} \tau_d (Y).
+$$
+\item[{\rm (iii)}] For any two coloured operads $P$ and $Q$, there is a natural isomorphism
+$$
+\tau_d(N_d(P)\otimes N_d(Q))\cong P\otimes_{BV} Q.
+$$
+\end{itemize}
+\label{proptensor}
+\end{prop}
+\begin{proof}
+To prove (i), it is enough to check that it holds for the representables in~$\sSets$. Note first that, if we view $[n]$ and $[m]$ in $\Delta$ as categories, then by using the linear order one has that
+$$
+j_!([n]\times [m])\cong j_!([n])\otimes_{BV} j_!([m]).
+$$
+Therefore, there is a chain of natural isomorphisms
+\begin{multline}\notag
+ i_!(\Delta[n]\times \Delta[m])\cong i_!(N([n])\times N([m]))\cong i_!(N([n]\times [m])) \\ \notag
+\cong N_d j_!([n]\times [m]) \cong N_d(j_!([n])\otimes_{BV} j_!([m]))\cong N_d(\Omega(L_n)\otimes_{BV}\Omega(L_m))\\ \notag
+\cong \Omega[L_n]\otimes \Omega[L_m] \cong i_!(\Delta[n])\otimes i_!(\Delta[m]),
+\end{multline}
+where $L_n$ and $L_m$ denote the linear tree with $n$ and $m$ vertices and $n+1$ and $m+1$ edges respectively.
+
+Again, to prove (ii) it suffices to do it for representables in $\dSets$. But this is clear by using the natural isomorphism $\tau_d N_d \cong {\rm id}$. More precisely,
+\begin{multline}
+\tau_d(\Omega[T]\otimes \Omega[S])\cong \tau_d N_d(\Omega(T)\otimes_{BV}\Omega(S)) \\ \notag
+\cong \Omega(T)\otimes_{BV} \Omega(S)\cong \tau_d(\Omega[T])\otimes_{BV}\tau_d(\Omega[S]).
+\end{multline}
+Part (iii) follows from part (ii) by using again that $\tau_d N_d \cong {\rm id}$ and replacing $X$ by $N_d(P)$ and $Y$ by $N_d(Q)$.
+\end{proof}
+
+\begin{rem}
+There is no tensor product in the category of planar dendroidal sets coming from the Boardman--Vogt tensor product,
+since the latter is defined only for symmetric operads. However, as we have seen in Remark~\ref{remBV}, the
+Boardman--Vogt tensor product still makes sense for non-symmetric operads when at least one of them has only unary operations. This means that, although we cannot define $X\otimes Y$ for planar dendroidal sets $X$ and $Y$ in general, we can define $u_!(K)\otimes Y$ where $K$ is any simplicial set and $Y$ is any planar dendroidal set. In fact, $\pdSets$ is a simplicial category with tensors and cotensors.
+\label{tensornonsym}
+\end{rem}
+
+\begin{thm}
+The category $\pdSets$ of planar dendroidal sets is enriched, tensored and cotensored over simplicial sets.
+\label{pdsetsenriched}
+\end{thm}
+\begin{proof}
+Given two planar dendroidal sets $X$ and $Y$, the simplicial enrichment $\Hom(X,Y)$ is defined by
+$$
+\Hom(X,Y)_n=\pdSets(u_!(\Delta[n])\otimes X, Y)
+$$
+where $u_!\colon \sSets\longrightarrow \pdSets$ is the left adjoint to the functor $u^*$ induced by the inclusion $u\colon \Delta\longrightarrow \Omega_p$. If $K$ is any simplicial set, we define a tensor
+$$
+K\otimes Y=u_!(K)\otimes Y
+$$
+and a cotensor
+$$
+(Y^K)_T=\pdSets(\Omega_p[T]\otimes u_!(K), Y)
+$$
+for every planar dendroidal set $Y$.
+\end{proof}
+
+Thus, the Boardman--Vogt tensor product makes $\sSets$ into a cartesian closed category, $\pdSets$ into a simplicial category with tensors and cotensors, and $\dSets$ into a closed symmetric monoidal category. In fact, if we consider the cartesian structures on $\Cat$ and $\sSets$, the Boardman--Vogt tensor product on $\Oper$ and the tensor product of dendroidal sets, then in the commutative diagram
+$$
+\xymatrix{
+\sSets \ar@<.75ex>[r]^{i_!}\ar@<-.75ex>[d]_{\tau}  & \dSets \ar@<.75ex>[l]^{i^*}\ar@<-.75ex>[d]_{\tau_d}  \\
+\Cat  \ar@<-.75ex>[u]_{N}  \ar@<.75ex>[r]^{j_!} & \Oper \ar@<.75ex>[l]^{j^*}  \ar@<-.75ex>[u]_{N_d}
+}
+$$
+the functors $i_!$, $N$, $\tau$, $j_!$ and $\tau_d$ are strong monoidal. However, $i^*$ and $j^*$ are not strong monoidal functors.
+For example, if we denote by $T_1$, $T_2$ and $T_3$ the following trees:
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-10,20)*=0{}="3";
+(10,20)*=0{}="4";
+(-10,0)*=0{T_1};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+(50,0)*=0{}="1";
+(50,10)*=0{\bullet}="2";
+(40,0)*=0{T_2};
+"1";"2" **\dir{-};
+(100,0)*=0{}="1";
+(100,10)*=0{\bullet}="2";
+(90,20)*=0{\bullet}="3";
+(110,20)*=0{\bullet}="4";
+(90,0)*=0{T_3};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+\endxy
+$$
+then $i^*(\Omega[T_1])=\emptyset$ and $i^*(\Omega[T_2])=\Delta[0]$, but $\Omega[T_1]\otimes\Omega[T_2]=\Omega[T_3]$ and
+$$
+i^*(\Omega[T_3])=\Delta[1]\cup_{\Delta[0]}\Delta[1].
+$$
+\begin{rem}
+If $\E$ is a complete and cocomplete monoidal category, then the category $\E^{\Omega^{\rm op}}$ of dendroidal objects in $\E$ also has a Boardman--Vogt
+type tensor product. For any two objects $X$ and $Y$ in $\E^{\Omega^{\rm op}}$, their tensor product is defined by the following formula:
+$$
+(X\otimes Y)_T=\varinjlim_{\Omega[T]\rightarrow \Omega[R]\otimes\Omega[S]} X_R\otimes_{\E} Y_S,
+$$
+where $\otimes_{\E}$ is the tensor product of $\E$. If $\E$ is closed, then so is $\E^{\Omega^{\rm op}}$ (see \cite[Appendix A]{MW07} and
+\cite[\S 7]{BM08}).
+\label{dobjectsismonoidal}
+\end{rem}
+
+\section{Shuffles of trees}
+
+In this section, we describe the tensor product $\Omega[S]\otimes\Omega[T]$ for any two trees in~$\Omega$, in order to give a better understanding of the tensor product of dendroidal sets. Suppose first that $S=L_n$ and $T=L_m$ are linear trees. Then, by Proposition~\ref{proptensor}(i),
+$$
+\Omega[L_n]\otimes\Omega[L_m]=i_!(\Delta[n])\otimes i_!(\Delta[m])\cong i_!(\Delta[n]\times \Delta[m]).
+$$
+The non-degenerate simplices of a product of two representables in simplicial sets are computed by means of
+\emph{shuffles}. An $(n,m)$-shuffle is a path of maximal length in the partially ordered set $[n]\times [m]$.
+The non-degenerate $(n+m)$-simplices of $\Delta[n]\times \Delta[m]$ correspond to $(n+m)$-shuffles. In fact,
+$$
+\Delta[n]\times\Delta[m]=\bigcup_{(n,m)}\Delta[n+m],
+$$
+where the union is taken over all possible $(n,m)$-shuffles.
+\begin{exmp}
+Let $n=2$ and $m=1$. There are three $(2,1)$-shuffles in $[2]\times [1]$, namely $(00, 01, 02, 12)$,
+$(00, 01, 11, 12)$ and $(00, 10, 11, 12)$. If we picture $\Delta[2]\times \Delta[1]$ as the following prism
+$$
+\xy<0.06cm, 0cm>:
+(0,0)*=0{}="00";
+(30,0)*=0{}="01";
+(0,20)*=0{}="10";
+(30,20)*=0{}="11";
+(50,20)*=0{}="02";
+(50,40)*=0{}="12";
+"00";"01" **\dir{-};
+"00";"10" **\dir{-};
+"00";"02" **\dir{--};
+"01";"11" **\dir{-};
+"01";"02" **\dir{-};
+"02";"12" **\dir{-};
+"10";"11" **\dir{-};
+"10";"12" **\dir{-};
+"11";"12" **\dir{-};
+(-5,0)*{\scriptstyle{00}};
+(35,0)*{\scriptstyle{01}};
+(-5,20)*{\scriptstyle{10}};
+(35,20)*{\scriptstyle{11}};
+(55,40)*{\scriptstyle{12}};
+(55,20)*{\scriptstyle{02}};
+\endxy
+$$
+we can see that each $(2,1)$-shuffle corresponds to a tetrahedron, and that they give a decomposition of $\Delta[2]\times\Delta[1]$ as the union of three copies of $\Delta[3]$:
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="00";
+(30,0)*=0{}="01";
+(0,20)*=0{}="10";
+(30,20)*=0{}="11";
+(50,20)*=0{}="02";
+(50,40)*=0{}="12";
+"00";"01" **\dir{-};
+"01";"02" **\dir{-};
+"02";"12" **\dir{-};
+"00";"12" **\dir{-};
+"01";"12" **\dir{-};
+"00";"02" **\dir{--};
+(15,-8)*{(00,01,02,12)}
+\endxy
+};
+(45,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="00";
+(30,0)*=0{}="01";
+(0,20)*=0{}="10";
+(30,20)*=0{}="11";
+(50,20)*=0{}="02";
+(50,40)*=0{}="12";
+"00";"01" **\dir{-};
+"01";"11" **\dir{-};
+"11";"12" **\dir{-};
+"01";"12" **\dir{-};
+"00";"12" **\dir{-};
+"00";"11" **\dir{-};
+(15,-8)*{(00,01,11,12)}
+\endxy
+};
+(90,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="00";
+(30,0)*=0{}="01";
+(0,20)*=0{}="10";
+(30,20)*=0{}="11";
+(50,20)*=0{}="02";
+(50,40)*=0{}="12";
+"00";"10" **\dir{-};
+"10";"11" **\dir{-};
+"11";"12" **\dir{-};
+"00";"11" **\dir{-};
+"10";"12" **\dir{-};
+"00";"12" **\dir{--};
+(15,-8)*{(00,10,11,12)}
+\endxy
+};
+\endxy
+$$
+\end{exmp}
+
+To give an explicit description of the tensor product of any two representables in $\Omega$, we need to introduce shuffles of trees. Recall that we denote by $E(T)$ the set of edges of a given tree $T$.
+
+\begin{defn}
+Let $T$ and $S$ be two objects of $\Omega$. A \emph{shuffle} of $S$ and $T$ is a tree $R$ whose set of edges is a subset of $E(T)\times E(S)$. The root of $R$ is $(a,x)$ where $a$ is the root of $S$ and $x$ is the root of $T$, and its leaves are labelled by all pairs of the form $(l_S, l_T)$, where $l_S$ is a leaf of $S$ and $l_T$ is a leaf of $T$. Its vertices are either or the form
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(-10,20)*=0{}="3";
+(10,20)*=0{}="4";
+(0,15)*=0{\cdots};
+(2.5,10)*=0{\scriptstyle u};
+(-10,12.5)*=0{\scriptstyle (a_1,x)};
+(10,12.5)*=0{\scriptstyle (a_n,x)};
+(5,5)*=0{\scriptstyle (b,x)};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+(25,10)*=0{\mbox{or}};
+(50,0)*=0{}="5";
+(50,10)*=0{\bullet}="6";
+(40,20)*=0{}="7";
+(60,20)*=0{}="8";
+(50,15)*=0{\cdots};
+(52.5,10)*=0{\scriptstyle v};
+(40,12.5)*=0{\scriptstyle (a,x_1)};
+(60,12.5)*=0{\scriptstyle (a,x_m)};
+(55,5)*=0{\scriptstyle (a,y)};
+"5";"6" **\dir{-};
+"6";"7" **\dir{-};
+"6";"8" **\dir{-};
+\endxy
+$$
+where $u$ is a vertex of $S$ with input edges $a_1,\ldots, a_n$ and output $b$, and $v$ is a vertex of $T$ with input
+edges $x_1,\ldots, x_m$ and output~$y$. We will refer to the first type of vertices as \emph{white vertices} and to the
+second type of vertices as \emph{black vertices}. To make this distinction clear, we picture them as $\circ$ and
+$\bullet$ respectively.
+\end{defn}
+
+Note that there is a bijection between the shuffles of two linear trees $L_n$ and $L_m$ and the $(n,m)$-shuffles of $[n]\times [m]$.
+
+\begin{exmp}
+Let $S$ and $T$ be the trees
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(-10,20)*=0{}="3";
+(10,20)*\cir<2pt>{}="4";
+(0,30)*=0{}="5";
+(10,30)*=0{}="6";
+(20,30)*=0{}="7";
+(-8,15)*=0{\scriptstyle b};
+(8,15)*=0{\scriptstyle c};
+(2,5)*=0{\scriptstyle a};
+(2,25)*=0{\scriptstyle d};
+(18,25)*=0{\scriptstyle f};
+(-10,0)*=0{S};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"4";"5" **\dir{-};
+{\ar@{-}(10,21)*{}; (10,23.5)*{}};
+(10,25)*=0{\scriptstyle e};
+{\ar@{-}(10,26.5)*{}; (10,30)*{}};
+%\makebox(0.2cm,6pt){}
+"4";"7" **\dir{-};
+(50,0)*=0{}="1";
+(50,10)*=0{\bullet}="2";
+(50,20)*=0{}="3";
+(52,5)*=0{\scriptstyle x};
+(52,15)*=0{\scriptstyle y};
+(40,0)*=0{T};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+\endxy
+$$
+Then the set of shuffles of $S$ and $T$ consists of the following three trees:
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(-10,20)*=0{\bullet}="3";
+(-10,30)*=0{}="4";
+(10,20)*\cir<2pt>{}="5";
+(0,30)*=0{\bullet}="6";
+(10,30)*=0{\bullet}="7";
+(20,30)*=0{\bullet}="8";
+(0,40)*=0{}="9";
+(10,40)*=0{}="10";
+(20,40)*=0{}="11";
+(5,5)*=0{\scriptstyle (a,x)};
+(-5,35)*=0{\scriptstyle (d,y)};
+(10,42)*=0{\scriptstyle (e,y)};
+(25,35)*=0{\scriptstyle (f,y)};
+(-15,25)*=0{\scriptstyle (b,y)};
+(-11,15)*=0{\scriptstyle (b,x)};
+(11,15)*=0{\scriptstyle (c,x)};
+(21,25)*=0{\scriptstyle (f,x)};
+(-1,25)*=0{\scriptstyle (d,x)};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"2";"5" **\dir{-};
+"5";"6" **\dir{-};
+{\ar@{-}|{(e,x)}(10,21)*{}; (10,30)*{}};
+"5";"8" **\dir{-};
+"6";"9" **\dir{-};
+"7";"10" **\dir{-};
+"8";"11" **\dir{-};
+(50,0)*=0{}="1";
+(50,10)*\cir<2pt>{}="2";
+(40,20)*=0{\bullet}="3";
+(40,30)*=0{}="4";
+(60,20)*=0{\bullet}="5";
+(60,30)*\cir<2pt>{}="6";
+(50,40)*=0{}="7";
+(60,40)*=0{}="8";
+(70,40)*=0{}="9";
+(55,5)*=0{\scriptstyle (a,x)};
+(60,42)*=0{\scriptstyle (e,y)};
+(35,25)*=0{\scriptstyle (b,y)};
+(65,25)*=0{\scriptstyle (c,y)};
+(39,15)*=0{\scriptstyle (b,x)};
+(61,15)*=0{\scriptstyle (c,x)};
+(71,35)*=0{\scriptstyle (f,y)};
+(49,35)*=0{\scriptstyle (d,y)};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"2";"5" **\dir{-};
+"5";"6" **\dir{-};
+"6";"7" **\dir{-};
+"6";"8" **\dir{-};
+"6";"9" **\dir{-};
+(100,0)*=0{}="1";
+(100,10)*=0{\bullet}="2";
+(100,20)*\cir<2pt>{}="3";
+(90,30)*=0{}="4";
+(110,30)*\cir<2pt>{}="5";
+(100,40)*=0{}="6";
+(110,40)*=0{}="7";
+(120,40)*=0{}="8";
+(105,15)*=0{\scriptstyle (a,y)};
+(105,5)*=0{\scriptstyle (a,x)};
+(89,25)*=0{\scriptstyle (b,y)};
+(111,25)*=0{\scriptstyle (c,y)};
+(99,35)*=0{\scriptstyle (d,y)};
+(110,42)*=0{\scriptstyle (e,y)};
+(121,35)*=0{\scriptstyle (f,y)};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"6" **\dir{-};
+"5";"7" **\dir{-};
+"5";"8" **\dir{-};
+(-10,0)*=0{R_1};
+(40,0)*=0{R_2};
+(90,0)*=0{R_3};
+\endxy
+$$
+\end{exmp}
+%$$
+%\xy<0.08cm, 0cm>:
+%(0,0)*=0{}="1";
+%(0,10)*=0{\bullet}="2";
+%(0,20)*\cir<2pt>{}="3";
+%(-10,30)*=0{}="4";
+%(0,30)*=0{}="5";
+%(10,30)*=0{}="6";
+%(5,15)*=0{\scriptstyle (c, y)};
+%(5,5)*=0{\scriptstyle (c,x)};
+%(0,32)*=0{\scriptstyle (e,y)};
+%(-11,25)*=0{\scriptstyle (d,y)};
+%(11,25)*=0{\scriptstyle (f,y)};
+%"1";"2" **\dir{-};
+%"2";"3" **\dir{-};
+%"3";"4" **\dir{-};
+%"3";"5" **\dir{-};
+%"3";"6" **\dir{-};
+%(40,0)*=0{}="1";
+%(40,10)*\cir<2pt>{}="2";
+%(30,20)*==0{\bullet}="3";
+%(50,20)*=0{}="4";
+%(30,30)*=0{}="5";
+%(45,5)*=0{\scriptstyle (a,x)};
+%(25,25)*=0{\scriptstyle (b,y)};
+%(29,15)*=0{\scriptstyle (b,x)};
+%(51,15)*=0{\scriptstyle (c,x)};
+%"1";"2" **\dir{-};
+%"2";"3" **\dir{-};
+%"2";"4" **\dir{-};
+%"3";"5" **\dir{-};
+%(80,0)*=0{}="1";
+%(80,10)*=0{\bullet}="2";
+%(80,20)*\cir<2pt>{}="3";
+%(70,30)*=0{}="4";
+%(90,30)*\cir<2pt>{}="5";
+%(80,40)*=0{}="6";
+%(90,40)*=0{}="7";
+%(100,40)*=0{}="8";
+%(85,15)*=0{\scriptstyle (a,y)};
+%(85,5)*=0{\scriptstyle (a,x)};
+%(69,25)*=0{\scriptstyle (b,y)};
+%(91,25)*=0{\scriptstyle (c,y)};
+%(79,35)*=0{\scriptstyle (d,y)};
+%(90,42)*=0{\scriptstyle (e,y)};
+%(101,35)*=0{\scriptstyle (f,y)};
+%"1";"2" **\dir{-};
+%"2";"3" **\dir{-};
+%"3";"4" **\dir{-};
+%"3";"5" **\dir{-};
+%"5";"6" **\dir{-};
+%"5";"7" **\dir{-};
+%"5";"8" **\dir{-};
+%\endxy
+%$$
+
+The set of shuffles of two trees $S$ and $T$ has a natural partial order. The minimal tree $R_1$ in this poset is the one obtained by stacking a copy of the black tree $T$ on top of each of the inputs of the white tree $S$. More precisely, on the bottom of $R_1$ there is a copy $S\otimes r_T$ of the tree $S$ all whose edges are renamed $(a, r_T)$ where $r_T$ is the output edge at the root of $T$. For each input edge $b$ of $S$, a copy of $T$ is grafted on the edge $(b,r_T)$ of $S\otimes r_T$, with edges $x$ in $T$ renamed $(b,x)$. The maximal tree $R_N$ in the poset is the similar tree with copies of the white tree $S$ grafted on each of the input edges of the black tree. Schematically, the trees $R_1$ and $R_N$ look like
+$$
+\xy<0.1cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{}="2";
+(-0,20)*=0{}="a";
+(-5,20)*=0{}="3";
+(5,20)*=0{}="4";
+(-20,30)*=0{}="5";
+(20,30)*=0{}="6";
+(0,30)*=0{}="b";
+(0,16)*=0{S};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+"a";"b" **\dir{-};
+(-25,35)*=0{}="9";
+(-15,35)*=0{}="10";
+(-5,35)*=0{}="11";
+(5,35)*=0{}="12";
+(15,35)*=0{}="15";
+(25,35)*=0{}="16";
+"5";"9" **\dir{-};
+"5";"10" **\dir{-};
+"9";"10" **\dir{-};
+"b";"11" **\dir{-};
+"b";"12" **\dir{-};
+"11";"12" **\dir{-};
+"6";"15" **\dir{-};
+"6";"16" **\dir{-};
+"15";"16" **\dir{-};
+(-20,33)*=0{T};
+(0,33)*=0{T};
+(20,33)*=0{T};
+(-10,0)*=0{R_1};
+\endxy
+\qquad
+\qquad
+\xy<0.1cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{}="2";
+(-2.5,20)*=0{}="a";
+(2.5,20)*=0{}="b";
+(-5,20)*=0{}="3";
+(5,20)*=0{}="4";
+(-20,30)*=0{}="5";
+(20,30)*=0{}="6";
+(-5,30)*=0{}="c";
+(5,30)*=0{}="d";
+(0,16)*=0{T};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+"a";"c" **\dir{-};
+"b";"d" **\dir{-};
+(-25,35)*=0{}="9";
+(-15,35)*=0{}="10";
+(-10,35)*=0{}="11";
+(-2,35)*=0{}="12";
+(2,35)*=0{}="13";
+(10,35)*=0{}="14";
+(15,35)*=0{}="15";
+(25,35)*=0{}="16";
+"5";"9" **\dir{-};
+"5";"10" **\dir{-};
+"9";"10" **\dir{-};
+"c";"11" **\dir{-};
+"c";"12" **\dir{-};
+"11";"12" **\dir{-};
+"d";"13" **\dir{-};
+"d";"14" **\dir{-};
+"13";"14" **\dir{-};
+"6";"15" **\dir{-};
+"6";"16" **\dir{-};
+"15";"16" **\dir{-};
+(-20,33)*=0{S};
+(-5.5,33)*=0{S};
+(5.5,33)*=0{S};
+(20,33)*=0{S};
+(-10,0)*=0{R_N};
+\endxy
+$$
+
+There are intermediate shuffles $R_k$ $(1<k<N)$ between $R_1$ and $R_N$ obtained by letting the black vertices in $R_1$ slowly percolate in all possible ways towards the root of the tree. Shuffles are also called \emph{percolation schemes}. The \emph{percolation rule} or \emph{percolation relation} can be made explicit as follows. Each $R_k$ is obtained from an earlier $R_l$ by replacing a configuration
+\begin{equation}
+\xy<0.08cm, 0cm>:
+(0,-15)*=0{}="1";
+(0,-5)*\cir<2pt>{}="2";
+(-20,5)*=0{\bullet}="3";
+(-40,15)*=0{}="5";
+(20,5)*=0{\bullet}="4";
+(40,15)*=0{}="8";
+(-15,15)*=0{}="6";
+(15,15)*=0{}="7";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"3";"6" **\dir{-};
+"4";"7" **\dir{-};
+"4";"8" **\dir{-};
+(0,3)*=0{\ldots\ldots\ldots};
+(-23,10)*=0{\ldots};
+(23,10)*=0{\ldots};
+(5,-10)*=0{\scriptstyle (a,x)};
+(16,-2)*=0{\scriptstyle (a, y_m)};
+(-16,-2)*=0{\scriptstyle (a, y_1)};
+(-36,8)*=0{\scriptstyle (b_1, y_1)};
+(36,8)*=0{\scriptstyle (b_n, y_m)};
+(-11,8)*=0{\scriptstyle (b_n, y_1)};
+(11,8)*=0{\scriptstyle (b_1, y_m)};
+\endxy
+\label{percrel01}
+\end{equation}
+in $R_l$ by a configuration
+\begin{equation}
+\xy<0.08cm, 0cm>:
+(0,-15)*=0{}="1";
+(0,-5)*=0{\bullet}="2";
+(-20,5)*\cir<2pt>{}="3";
+(-40,15)*=0{}="5";
+(20,5)*\cir<2pt>{}="4";
+(40,15)*=0{}="8";
+(-15,15)*=0{}="6";
+(15,15)*=0{}="7";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"3";"6" **\dir{-};
+"4";"7" **\dir{-};
+"4";"8" **\dir{-};
+(0,3)*=0{\ldots\ldots\ldots};
+(-23,10)*=0{\ldots};
+(23,10)*=0{\ldots};
+(5,-10)*=0{\scriptstyle (a,x)};
+(16,-2)*=0{\scriptstyle (b_n, x)};
+(-16,-2)*=0{\scriptstyle (b_1, x)};
+(-36,8)*=0{\scriptstyle (b_1, y_1)};
+(36,8)*=0{\scriptstyle (b_n, y_m)};
+(-11,8)*=0{\scriptstyle (b_1, y_m)};
+(11,8)*=0{\scriptstyle (b_n, y_1)};
+\endxy
+\label{percrel02}
+\end{equation}
+in $R_k$. If a shuffle $R_k$ is obtained from another $R_l$ by means of the above rule, then we say that $R_k$ is obtained by a \emph{single percolation step} and denote this by $R_l\le R_k$. This generates a partial order on the set of all shuffles.
+
+It is important to make explicit the percolation relation above for trees with no input edges, i.e., $n=0$ or $m=0$.
+If $m=0$ and $n\ne 0$, then we have the relation
+$$
+\xy<0.08cm, 0cm>:
+(0,-5)*{
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+"1";"2" **\dir{-};
+(5,5)*=0{\scriptstyle (a,x)};
+\endxy
+};
+(75,0)*{
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*\cir<2pt>{}="3";
+(20,20)*\cir<2pt>{}="4";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+(0,18)*=0{\ldots\ldots\ldots};
+(5,5)*=0{\scriptstyle (a,x)};
+(16,13)*=0{\scriptstyle (b_n, x)};
+(-16,13)*=0{\scriptstyle (b_1, x)};
+\endxy
+};
+\ar@{<-}(15,0)*{};(50,0)*{};
+\endxy
+$$
+If $n=0$ and $m\ne 0$, then we have the relation
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(-20,20)*=0{\bullet}="3";
+(20,20)*=0{\bullet}="4";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+(0,18)*=0{\ldots\ldots\ldots};
+(5,5)*=0{\scriptstyle (a,x)};
+(16,13)*=0{\scriptstyle (a, y_m)};
+(-16,13)*=0{\scriptstyle (a, y_1)};
+\endxy
+};
+(75,-5)*{
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+"1";"2" **\dir{-};
+(5,5)*=0{\scriptstyle (a,x)};
+\endxy
+};
+\ar@{<-}(25,0)*{};(60,0)*{};
+\endxy
+$$
+And if $n=m=0$, we have the relation
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+"1";"2" **\dir{-};
+(5,5)*=0{\scriptstyle (a,x)};
+\endxy
+};
+(70,0)*{
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+"1";"2" **\dir{-};
+(5,5)*=0{\scriptstyle (a,x)};
+\endxy
+};
+\ar@{<-}(15,0)*{};(55,0)*{};
+\endxy
+$$
+\begin{exmp}[Taken from {\cite[Example 9.4]{MW09}}]
+Let $S$ and $T$ be the following two trees; here, we have singled out
+one particular edge $e$ in $S$, we have numbered the edges of $T$
+as $1,\ldots,5$, and denoted the colour $(e,i)$ in $R_{j}$ by $e_{i}$.
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(0,20)*\cir<2pt>{}="3";
+(-10,30)*=0{}="4";
+(10,30)*=0{}="6";
+(2.5,15)*=0{\scriptstyle e};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"3";"6" **\dir{-};
+(50,0)*=0{}="1";
+(50,10)*=0{\bullet}="2";
+(40,20)*=0{\bullet}="3";
+(60,20)*=0{\bullet}="4";
+(40,30)*=0{}="5";
+(60,30)*=0{}="6";
+(52.5,5)*=0{\scriptstyle 1};
+(41,15)*=0{\scriptstyle 2};
+(58,15)*=0{\scriptstyle 4};
+(37.5,25)*=0{\scriptstyle 3};
+(62.5,25)*=0{\scriptstyle 5};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+(-10,0)*=0{S};
+(40,0)*=0{T};
+\endxy
+$$
+
+There are fourteen shuffles $R_1,\ldots,R_{14}$  of $S$ and $T$ in this case. Here is the complete list of them:
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(0,20)*\cir<2pt>{}="3";
+(-20,30)*=0{\bullet}="4";
+(20,30)*=0{\bullet}="5";
+(-30,40)*=0{\bullet}="6";
+(30,40)*=0{\bullet}="9";
+(-30,50)*=0{}="10";
+(30,50)*=0{}="13";
+(-10,40)*=0{\bullet}="7";
+(10,40)*=0{\bullet}="8";
+(-10,50)*=0{}="11";
+(10,50)*=0{}="12";
+(4,15)*=0{\scriptstyle e_1};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+"4";"7" **\dir{-};
+"6";"10" **\dir{-};
+"7";"11" **\dir{-};
+"5";"8" **\dir{-};
+"5";"9" **\dir{-};
+"8";"12" **\dir{-};
+"9";"13" **\dir{-};
+(-10,0)*=0{R_1};
+\endxy
+};
+(50,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(0,20)*=0{\bullet}="3";
+(-20,30)*\cir<2pt>{}="4";
+(20,30)*\cir<2pt>{}="5";
+(-30,40)*=0{\bullet}="6";
+(30,40)*=0{\bullet}="9";
+(-30,50)*=0{}="10";
+(30,50)*=0{}="13";
+(-10,40)*=0{\bullet}="7";
+(10,40)*=0{\bullet}="8";
+(-10,50)*=0{}="11";
+(10,50)*=0{}="12";
+(4,15)*=0{\scriptstyle e_1};
+(16,23)*=0{\scriptstyle e_4};
+(-16,23)*=0{\scriptstyle e_2};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+"4";"7" **\dir{-};
+"6";"10" **\dir{-};
+"7";"11" **\dir{-};
+"5";"8" **\dir{-};
+"5";"9" **\dir{-};
+"8";"12" **\dir{-};
+"9";"13" **\dir{-};
+(-10,0)*=0{R_2};
+\endxy
+};
+(100,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(0,20)*=0{\bullet}="3";
+(-20,30)*\cir<2pt>{}="4";
+(20,30)*=0{\bullet}="5";
+(-30,40)*=0{\bullet}="6";
+(-30,50)*=0{}="10";
+(30,50)*=0{}="13";
+(-10,40)*=0{\bullet}="7";
+(20,40)*\cir<2pt>{}="8";
+(10,50)*=0{}="8a";
+(30,50)*=0{}="8b";
+(-10,50)*=0{}="11";
+(10,50)*=0{}="12";
+(4,15)*=0{\scriptstyle e_1};
+(16,23)*=0{\scriptstyle e_4};
+(-16,23)*=0{\scriptstyle e_2};
+(24,35)*=0{\scriptstyle e_5};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+"4";"7" **\dir{-};
+"6";"10" **\dir{-};
+"7";"11" **\dir{-};
+"5";"8" **\dir{-};
+"8";"8a" **\dir{-};
+"8";"8b" **\dir{-};
+(-10,0)*=0{R_3};
+\endxy
+};
+\endxy
+$$
+
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(0,20)*=0{\bullet}="3";
+(-20,30)*=0{\bullet}="4";
+(20,30)*\cir<2pt>{}="5";
+(-20,40)*\cir<2pt>{}="6";
+(-30,50)*=0{}="6a";
+(-10,50)*=0{}="6b";
+(30,40)*=0{\bullet}="9";
+(-30,50)*=0{}="10";
+(30,50)*=0{}="13";
+(10,40)*=0{\bullet}="8";
+(-10,50)*=0{}="11";
+(10,50)*=0{}="12";
+(4,15)*=0{\scriptstyle e_1};
+(16,23)*=0{\scriptstyle e_4};
+(-16,23)*=0{\scriptstyle e_2};
+(-24,35)*=0{\scriptstyle e_3};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+"6";"6a" **\dir{-};
+"6";"6b" **\dir{-};
+"5";"8" **\dir{-};
+"5";"9" **\dir{-};
+"8";"12" **\dir{-};
+"9";"13" **\dir{-};
+(-10,0)*=0{R_4};
+\endxy
+};
+(50,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(0,20)*=0{\bullet}="3";
+(-20,30)*=0{\bullet}="4";
+(20,30)*=0{\bullet}="5";
+(-20,40)*\cir<2pt>{}="6";
+(-30,50)*=0{}="6a";
+(-10,50)*=0{}="6b";
+(20,40)*\cir<2pt>{}="8";
+(10,50)*=0{}="8a";
+(30,50)*=0{}="8b";
+(4,15)*=0{\scriptstyle e_1};
+(16,23)*=0{\scriptstyle e_4};
+(-16,23)*=0{\scriptstyle e_2};
+(-24,35)*=0{\scriptstyle e_3};
+(24,35)*=0{\scriptstyle e_5};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"3";"5" **\dir{-};
+"4";"6" **\dir{-};
+"6";"6a" **\dir{-};
+"6";"6b" **\dir{-};
+"5";"8" **\dir{-};
+"8";"8a" **\dir{-};
+"8";"8b" **\dir{-};
+(-10,0)*=0{R_5};
+\endxy
+};
+(100,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*\cir<2pt>{}="3";
+(20,20)*\cir<2pt>{}="4";
+(-20,30)*\cir<2pt>{}="5";
+(20,30)*\cir<2pt>{}="6";
+(-30,40)*=0{\bullet}="7";
+(30,40)*=0{\bullet}="10";
+(-30,50)*=0{}="11";
+(30,50)*=0{}="14";
+(-10,40)*=0{\bullet}="8";
+(10,40)*=0{\bullet}="9";
+(-10,50)*=0{}="12";
+(10,50)*=0{}="13";
+(-24,25)*=0{\scriptstyle e_2};
+(24,25)*=0{\scriptstyle e_4};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"5";"8" **\dir{-};
+"7";"11" **\dir{-};
+"8";"12" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"6";"10" **\dir{-};
+"9";"13" **\dir{-};
+"10";"14" **\dir{-};
+(-10,0)*=0{R_6};
+\endxy
+};
+\endxy
+$$
+
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*\cir<2pt>{}="3";
+(20,20)*\cir<2pt>{}="4";
+(-20,30)*\cir<2pt>{}="5";
+(20,30)*=0{\bullet}="6";
+(-30,40)*=0{\bullet}="7";
+(-30,50)*=0{}="11";
+(30,50)*=0{}="9b";
+(-10,40)*=0{\bullet}="8";
+(20,40)*\cir<2pt>{}="9";
+(-10,50)*=0{}="12";
+(10,50)*=0{}="9a";
+(-24,25)*=0{\scriptstyle e_2};
+(24,35)*=0{\scriptstyle e_5};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"5";"8" **\dir{-};
+"7";"11" **\dir{-};
+"8";"12" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"9";"9a" **\dir{-};
+"9";"9b" **\dir{-};
+(-10,0)*=0{R_7};
+\endxy
+};
+(50,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*\cir<2pt>{}="3";
+(20,20)*=0{\bullet}="4";
+(-20,30)*\cir<2pt>{}="5";
+(20,30)*\cir<2pt>{}="6";
+(-30,40)*=0{\bullet}="7";
+(-30,50)*=0{}="11";
+(30,50)*=0{}="9b";
+(-10,40)*=0{\bullet}="8";
+(20,40)*\cir<2pt>{}="9";
+(-10,50)*=0{}="12";
+(10,50)*=0{}="9a";
+(-24,25)*=0{\scriptstyle e_2};
+(24,35)*=0{\scriptstyle e_5};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"5";"8" **\dir{-};
+"7";"11" **\dir{-};
+"8";"12" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"9";"9a" **\dir{-};
+"9";"9b" **\dir{-};
+(-10,0)*=0{R_8};
+\endxy
+};
+(100,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*\cir<2pt>{}="3";
+(20,20)*\cir<2pt>{}="4";
+(-20,30)*=0{\bullet}="5";
+(20,30)*\cir<2pt>{}="6";
+(-20,40)*\cir<2pt>{}="7";
+(30,40)*=0{\bullet}="10";
+(-30,50)*=0{}="7a";
+(30,50)*=0{}="14";
+(10,40)*=0{\bullet}="9";
+(-10,50)*=0{}="7b";
+(10,50)*=0{}="13";
+%(-24,25)*=0{\scriptstyle e_2};
+%(24,25)*=0{\scriptstyle e_4};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"7";"7a" **\dir{-};
+"7";"7b" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"6";"10" **\dir{-};
+"9";"13" **\dir{-};
+"10";"14" **\dir{-};
+(-10,0)*=0{R_9};
+\endxy
+};
+\endxy
+$$
+
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*\cir<2pt>{}="3";
+(20,20)*\cir<2pt>{}="4";
+(-20,30)*=0{\bullet}="5";
+(20,30)*=0{\bullet}="6";
+(-20,40)*\cir<2pt>{}="7";
+(-30,50)*=0{}="7a";
+(30,50)*=0{}="9b";
+(20,40)*\cir<2pt>{}="9";
+(-10,50)*=0{}="7b";
+(10,50)*=0{}="9a";
+%(-24,25)*=0{\scriptstyle e_2};
+%(24,35)*=0{\scriptstyle e_5};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"7";"7a" **\dir{-};
+"7";"7b" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"9";"9a" **\dir{-};
+"9";"9b" **\dir{-};
+(-10,0)*=0{R_{10}};
+\endxy
+};
+(50,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*\cir<2pt>{}="3";
+(20,20)*=0{\bullet}="4";
+(-20,30)*=0{\bullet}="5";
+(20,30)*\cir<2pt>{}="6";
+(-20,40)*\cir<2pt>{}="7";
+(-30,50)*=0{}="7a";
+(30,50)*=0{}="9b";
+(20,40)*\cir<2pt>{}="9";
+(-10,50)*=0{}="7b";
+(10,50)*=0{}="9a";
+(-24,25)*=0{\scriptstyle e_2};
+(-24,35)*=0{\scriptstyle e_3};
+(24,35)*=0{\scriptstyle e_5};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"7";"7a" **\dir{-};
+"7";"7b" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"9";"9a" **\dir{-};
+"9";"9b" **\dir{-};
+(-10,0)*=0{R_{11}};
+\endxy
+};
+(100,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*=0{\bullet}="3";
+(20,20)*\cir<2pt>{}="4";
+(-20,30)*\cir<2pt>{}="5";
+(20,30)*\cir<2pt>{}="6";
+(-20,40)*\cir<2pt>{}="7";
+(30,40)*=0{\bullet}="10";
+(-30,50)*=0{}="7a";
+(30,50)*=0{}="14";
+(10,40)*=0{\bullet}="9";
+(-10,50)*=0{}="7b";
+(10,50)*=0{}="13";
+(-24,35)*=0{\scriptstyle e_3};
+(24,25)*=0{\scriptstyle e_4};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"7";"7a" **\dir{-};
+"7";"7b" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"6";"10" **\dir{-};
+"9";"13" **\dir{-};
+"10";"14" **\dir{-};
+(-10,0)*=0{R_{12}};
+\endxy
+};
+\endxy
+$$
+
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*=0{\bullet}="3";
+(20,20)*\cir<2pt>{}="4";
+(-20,30)*\cir<2pt>{}="5";
+(20,30)*=0{\bullet}="6";
+(-20,40)*\cir<2pt>{}="7";
+(-30,50)*=0{}="7a";
+(30,50)*=0{}="9b";
+(20,40)*\cir<2pt>{}="9";
+(-10,50)*=0{}="7b";
+(10,50)*=0{}="9a";
+(-24,35)*=0{\scriptstyle e_3};
+(24,35)*=0{\scriptstyle e_5};
+(24,25)*=0{\scriptstyle e_4};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"7";"7a" **\dir{-};
+"7";"7b" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"9";"9a" **\dir{-};
+"9";"9b" **\dir{-};
+(-10,0)*=0{R_{13}};
+\endxy
+};
+(50,0)*{
+\xy<0.05cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-20,20)*=0{\bullet}="3";
+(20,20)*=0{\bullet}="4";
+(-20,30)*\cir<2pt>{}="5";
+(20,30)*\cir<2pt>{}="6";
+(-20,40)*\cir<2pt>{}="7";
+(-30,50)*=0{}="7a";
+(30,50)*=0{}="9b";
+(20,40)*\cir<2pt>{}="9";
+(-10,50)*=0{}="7b";
+(10,50)*=0{}="9a";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"5";"7" **\dir{-};
+"7";"7a" **\dir{-};
+"7";"7b" **\dir{-};
+"4";"6" **\dir{-};
+"6";"9" **\dir{-};
+"9";"9a" **\dir{-};
+"9";"9b" **\dir{-};
+(-10,0)*=0{R_{14}};
+\endxy
+};
+\endxy
+$$
+The poset structure on the shuffles above is:
+$$
+\xymatrixrowsep{2.5pt}
+\xymatrixcolsep{5pt}
+\xymatrix{ &  & R_{1}\ar@{-}[dd]\\
+\\ &  & R_{2}\ar@{-}[ddrr]\ar@{-}[dd]\ar@{-}[ddll]\\
+\\R_{3}\ar@{-}[dd]\ar@{-}[ddrr] &  & R_{6}\ar@{-}'[dl][ddll]\ar@{-}'[dr][ddrr] &  & R_{4}\ar@{-}[dd]\ar@{-}[ddll]\\
+ & \, &  & \,\\
+R_{7}\ar@{-}[ddrr]\ar@{-}[dd] &  & R_{5}\ar@{-}[dd] &  & R_{9}\ar@{-}[ddll]\ar@{-}[dd]\\
+ & \,\\
+R_{8}\ar@{-}[ddr] &  & R_{10}\ar@{-}[ddr]\ar@{-}[ddl] &  & R_{12}\ar@{-}[ddl]\\
+\\ & R_{11}\ar@{-}[ddr] &  & R_{13}\ar@{-}[ddl]\\
+\\ &  & R_{14}}
+$$
+\end{exmp}
+
+\begin{lem}
+Every shuffle $R_i$ of $S$ and $T$ is equipped with a canonical monomorphism
+$$
+\xymatrix@C-0.3cm{m\colon \Omega[R_i]\;\ar@{>->}[r] & \,\Omega[S]\otimes \Omega[T].}
+%m\colon \Omega[R_i]\rightarrowtail \Omega[S]\otimes \Omega[T].
+$$
+The dendroidal subset given by the image of this monomorphism will be denoted by $m(R_i)$.
+\end{lem}
+\begin{proof}
+The vertices of the dendroidal set $\Omega[R_i]$ are the edges of the tree $R_i$. The map $m$ is completely determined by asking it to map an edge named $(a,x)$ in $R_i$ to the vertex with the same name in $\Omega[S]\otimes \Omega[T]$. This map is a monomorphism. Indeed, any map
+$$
+\Omega[R]\longrightarrow X
+$$
+from a representable dendroidal set to an arbitrary one is a monomorphism as soon as the map $\Omega[R]_{|}\longrightarrow X_{|}$ on vertices is.
+\end{proof}
+\begin{cor}
+For any two objects $T$ and $S$ in $\Omega$, we have that
+\begin{equation}
+\Omega[S]\otimes\Omega[T]=\bigcup_{i=1}^N m(R_i),
+\label{shufflesformula}
+\end{equation}
+where the union is taken over all possible shuffles of $S$ and $T$.
+\end{cor}
+
+The Boardman--Vogt relation says that if $R_k$ is obtained from $R_l$ by a single percolation step as above, then the image
+under $m$ of the face of $\Omega[R_k]$ obtained by contracting all the edges $(b_1, x),\ldots, (b_n,x)$ in~(\ref{percrel02})
+above coincides (as a subobject of $\Omega[S]\otimes\Omega[T]$) with the image of the face of $\Omega[R_l]$ obtained by contracting
+the edges $(a,y_1),\ldots, (a,y_m)$ in~(\ref{percrel01}).
+
+The following example illustrates that in the set of shuffles appearing in (\ref{shufflesformula}) some of them can be faces of others
+when one of the trees has vertices of valence zero. Thus, not all the shuffles are always needed in the union~(\ref{shufflesformula}).
+
+\begin{exmp}
+Let $S$ and $T$ be the following two trees and observe that the tree $S$ has a vertex of valence zero.
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(0,20)*\cir<2pt>{}="3";
+(-10,20)*=0{}="4";
+(10,20)*=0{}="5";
+(2.5,5)*=0{\scriptstyle a};
+(-5.5,13)*=0{\scriptstyle b};
+(6.5,13)*=0{\scriptstyle d};
+(2,16)*=0{\scriptstyle c};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"2";"5" **\dir{-};
+(50,0)*=0{}="1";
+(50,10)*=0{\bullet}="2";
+(40,20)*=0{}="3";
+(60,20)*=0{\bullet}="4";
+(60,30)*=0{}="5";
+(52.5,5)*=0{\scriptstyle 1};
+(44.5,13)*=0{\scriptstyle 2};
+(56.5,13)*=0{\scriptstyle 3};
+(62.5,25)*=0{\scriptstyle 4};
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"4";"5" **\dir{-};
+(-10,0)*=0{S};
+(40,0)*=0{T};
+\endxy
+$$
+There are six shuffles $R_1,\ldots, R_6$ of $S$ and $T$. The colours $(e,k)$ of the edges in $R_i$ are denoted by $e_k$.
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.06cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(-30,20)*=0{\bullet}="3";
+(0,20)*\cir<2pt>{}="4";
+(30,20)*=0{\bullet}="5";
+(-40,30)*=0{}="6";
+(-20,30)*=0{\bullet}="7";
+(20,30)*=0{}="8";
+(40,30)*=0{\bullet}="9";
+(-20,40)*=0{}="10";
+(40,40)*=0{}="11";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"2";"5" **\dir{-};
+"3";"6" **\dir{-};
+"3";"7" **\dir{-};
+"5";"8" **\dir{-};
+"5";"9" **\dir{-};
+"7";"10" **\dir{-};
+"9";"11" **\dir{-};
+(4.5,5)*=0{\scriptstyle a_1};
+(15,12)*=0{\scriptstyle d_1};
+(-15,12)*=0{\scriptstyle b_1};
+(4,15)*=0{\scriptstyle c_1};
+(-38,23)*=0{\scriptstyle b_2};
+(-22,23)*=0{\scriptstyle b_3};
+(22,23)*=0{\scriptstyle d_2};
+(38,23)*=0{\scriptstyle d_3};
+(-16,35)*=0{\scriptstyle b_4};
+(44,35)*=0{\scriptstyle d_4};
+(-10,0)*=0{R_1};
+\endxy
+};
+(80,0)*{
+\xy<0.06cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(-30,20)*=0{\bullet}="3";
+(0,20)*=0{\bullet}="4";
+(-10,30)*\cir<2pt>{}="4a";
+(10,30)*\cir<2pt>{}="4b";
+(30,20)*=0{\bullet}="5";
+(-40,30)*=0{}="6";
+(-20,30)*=0{\bullet}="7";
+(20,30)*=0{}="8";
+(40,30)*=0{\bullet}="9";
+(-20,40)*=0{}="10";
+(40,40)*=0{}="11";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"4";"4a" **\dir{-};
+"4";"4b" **\dir{-};
+"2";"5" **\dir{-};
+"3";"6" **\dir{-};
+"3";"7" **\dir{-};
+"5";"8" **\dir{-};
+"5";"9" **\dir{-};
+"7";"10" **\dir{-};
+"9";"11" **\dir{-};
+(4.5,5)*=0{\scriptstyle a_1};
+(15,12)*=0{\scriptstyle d_1};
+(-15,12)*=0{\scriptstyle b_1};
+(4,15)*=0{\scriptstyle c_1};
+(8,23)*=0{\scriptstyle c_3};
+(-8,23)*=0{\scriptstyle c_2};
+(-38,23)*=0{\scriptstyle b_2};
+(-22,23)*=0{\scriptstyle b_3};
+(22,23)*=0{\scriptstyle d_2};
+(38,23)*=0{\scriptstyle d_3};
+(-16,35)*=0{\scriptstyle b_4};
+(44,35)*=0{\scriptstyle d_4};
+(-10,0)*=0{R_2};
+\endxy
+};
+\endxy
+$$
+
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.06cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-30,20)*\cir<2pt>{}="3";
+(30,20)*\cir<2pt>{}="4";
+(-40,30)*=0{}="5";
+(-30,30)*\cir<2pt>{}="6";
+(-20,30)*=0{}="7";
+(20,30)*=0{\bullet}="8";
+(30,30)*\cir<2pt>{}="9";
+(40,30)*=0{\bullet}="10";
+(20,40)*=0{}="11";
+(40,40)*=0{}="12";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"3";"6" **\dir{-};
+"3";"7" **\dir{-};
+"4";"8" **\dir{-};
+"4";"9" **\dir{-};
+"4";"10" **\dir{-};
+"8";"11" **\dir{-};
+"10";"12" **\dir{-};
+(4.5,5)*=0{\scriptstyle a_1};
+(15,12)*=0{\scriptstyle a_3};
+(-15,12)*=0{\scriptstyle a_2};
+(-38,23)*=0{\scriptstyle b_2};
+(-22,23)*=0{\scriptstyle d_2};
+(22,23)*=0{\scriptstyle b_3};
+(38,23)*=0{\scriptstyle d_3};
+(44,35)*=0{\scriptstyle d_4};
+(-27,27)*=0{\scriptstyle c_2};
+(33,27)*=0{\scriptstyle c_3};
+(16,35)*=0{\scriptstyle b_4};
+(-10,0)*=0{R_3};
+\endxy
+};
+(80,0)*{
+\xy<0.06cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*\cir<2pt>{}="2";
+(-30,20)*=0{\bullet}="3";
+(0,20)*=0{\bullet}="4";
+(-10,30)*\cir<2pt>{}="4a";
+(10,30)*=0{\bullet}="4b";
+(10,40)*\cir<2pt>{}="4b1";
+(30,20)*=0{\bullet}="5";
+(-40,30)*=0{}="6";
+(-20,30)*=0{\bullet}="7";
+(20,30)*=0{}="8";
+(40,30)*=0{\bullet}="9";
+(-20,40)*=0{}="10";
+(40,40)*=0{}="11";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"4";"4a" **\dir{-};
+"4";"4b" **\dir{-};
+"4b";"4b1" **\dir{-};
+"2";"5" **\dir{-};
+"3";"6" **\dir{-};
+"3";"7" **\dir{-};
+"5";"8" **\dir{-};
+"5";"9" **\dir{-};
+"7";"10" **\dir{-};
+"9";"11" **\dir{-};
+(4.5,5)*=0{\scriptstyle a_1};
+(15,12)*=0{\scriptstyle d_1};
+(-15,12)*=0{\scriptstyle b_1};
+(4,15)*=0{\scriptstyle c_1};
+(8,23)*=0{\scriptstyle c_3};
+(-8,23)*=0{\scriptstyle c_2};
+(-38,23)*=0{\scriptstyle b_2};
+(-22,23)*=0{\scriptstyle b_3};
+(22,23)*=0{\scriptstyle d_2};
+(38,23)*=0{\scriptstyle d_3};
+(-16,35)*=0{\scriptstyle b_4};
+(14,35)*=0{\scriptstyle c_4};
+(44,35)*=0{\scriptstyle d_4};
+(-10,0)*=0{R_4};
+\endxy
+};
+\endxy
+$$
+
+$$
+\xy<0.08cm, 0cm>:
+(0,0)*{
+\xy<0.06cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-30,20)*\cir<2pt>{}="3";
+(30,20)*\cir<2pt>{}="4";
+(-40,30)*=0{}="5";
+(-30,30)*\cir<2pt>{}="6";
+(-20,30)*=0{}="7";
+(20,30)*=0{\bullet}="8";
+(30,30)*=0{\bullet}="9";
+(30,40)*\cir<2pt>{}="9a";
+(40,30)*=0{\bullet}="10";
+(20,40)*=0{}="11";
+(40,40)*=0{}="12";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"3";"6" **\dir{-};
+"3";"7" **\dir{-};
+"4";"8" **\dir{-};
+"4";"9" **\dir{-};
+"9";"9a" **\dir{-};
+"4";"10" **\dir{-};
+"8";"11" **\dir{-};
+"10";"12" **\dir{-};
+(4.5,5)*=0{\scriptstyle a_1};
+(15,12)*=0{\scriptstyle a_3};
+(-15,12)*=0{\scriptstyle a_2};
+(-38,23)*=0{\scriptstyle b_2};
+(-22,23)*=0{\scriptstyle d_2};
+(22,23)*=0{\scriptstyle b_3};
+(38,23)*=0{\scriptstyle d_3};
+(44,35)*=0{\scriptstyle d_4};
+(-27,27)*=0{\scriptstyle c_2};
+(33,27)*=0{\scriptstyle c_3};
+(16,35)*=0{\scriptstyle b_4};
+(34,35)*=0{\scriptstyle c_4};
+(-10,0)*=0{R_5};
+\endxy
+};
+(80,0)*{
+\xy<0.06cm, 0cm>:
+(0,0)*=0{}="1";
+(0,10)*=0{\bullet}="2";
+(-30,20)*\cir<2pt>{}="3";
+(30,20)*=0{\bullet}="4";
+(-40,30)*=0{}="5";
+(-30,30)*\cir<2pt>{}="6";
+(-20,30)*=0{}="7";
+(30,30)*\cir<2pt>{}="8";
+(20,40)*=0{}="9";
+(30,40)*\cir<2pt>{}="10";
+(40,40)*=0{}="11";
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"2";"4" **\dir{-};
+"3";"5" **\dir{-};
+"3";"6" **\dir{-};
+"3";"7" **\dir{-};
+"4";"8" **\dir{-};
+"8";"9" **\dir{-};
+"8";"10" **\dir{-};
+"8";"11" **\dir{-};
+(4.5,5)*=0{\scriptstyle a_1};
+(15,12)*=0{\scriptstyle a_3};
+(-15,12)*=0{\scriptstyle a_2};
+(-38,23)*=0{\scriptstyle b_2};
+(-22,23)*=0{\scriptstyle d_2};
+(-27,27)*=0{\scriptstyle c_2};
+(34,25)*=0{\scriptstyle a_4};
+(22,33)*=0{\scriptstyle b_4};
+(38,33)*=0{\scriptstyle d_4};
+(33,37)*=0{\scriptstyle c_4};
+(-10,0)*=0{R_6};
+\endxy
+};
+\endxy
+$$
+
+Observe that, in this case, $R_1$ is a face of $R_2$, which is a face of $R_4$. Similarly, $R_3$ is a face of $R_5$. Hence,
+$$
+\Omega[S]\otimes\Omega[T]=m(R_4)\cup m(R_5)\cup m(R_6).
+$$
+The poset structure on the shuffles above is the following:
+$$
+\xymatrixrowsep{15pt}
+\xymatrixcolsep{15pt}
+\xymatrix{
+ & R_1\ar@{-}[d] & \\
+ & R_2\ar@{-}[dl] \ar@{-}[dr] & \\
+R_3 \ar@{-}[dr] & & R_4 \ar@{-}[dl] \\
+ & R_5 \ar@{-}[d] & \\
+ & R_6 &
+}
+$$
+
+\end{exmp}
+
+%\bigskip
+%\bigskip
+%--------------------------------------------
+%\begin{itemize}
+%\item Introduce the tensor product of two coloured operads and emphasize the use of the symmetries, except if
+%one of the operads has unary operations only.
+%\item $dSets$ is a symmetric monoidal category with this tensor product. $pdSets$ is a simplicial category
+%and $sSets$ is a cartesian closed category.
+%\item Discuss behavior of the functor with respect to tensor product. Preservation of tensor product.
+%\item Examples.
+%\end{itemize}

@@ -339,89 +339,93 @@ Luego hacemos una copia del \'arbol $T$ de la forma $l\otimes T$, para toda hoja
 Finalmente, obtenemos el \'arbol $R_1$ encajando las \'ultimas copias encima de las hojas de la forma $(l,\text{ }r_T)$ de la primera copia.
 El \'arbol maximal $R_N$ en el conjunto ordenado parcialmente se obtiene mediante la inserci\'on de una copia del \'arbol blanco $S$ en cada entrada del \'arbol negro $T$.
 Los \'arboles $R_1$ y $R_n$ deber\'ian lucir de la siguiente manera
+
 $$
-    \xy
-    <0.08cm, 0cm>:
-    %Vertices%
-    (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 20.0)*\cir<2pt>{}="2"; %0W
-    (-25.0, 40.0)*{}="3"; %leaf_b
-    (0.0, 40.0)*{}="4"; %leaf_c
-    (25.0, 40.0)*{}="5"; %leaf_d
-    %Edges%
+    \xy<0.1cm, 0cm>:
+    (0,0)*=0{}="1";
+    (0,10)*=0{}="2";
+    (-0,20)*=0{}="a";
+    (-5,20)*=0{}="3";
+    (5,20)*=0{}="4";
+    (-20,30)*=0{}="5";
+    (20,30)*=0{}="6";
+    (0,30)*=0{}="b";
+    (0,16)*=0{S};
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "2";"4" **\dir{-};
-    "2";"5" **\dir{-};
-    (-13,0)*{R_1};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "4";"6" **\dir{-};
+    "a";"b" **\dir{-};
+    (-25,35)*=0{}="9";
+    (-15,35)*=0{}="10";
+    (-5,35)*=0{}="11";
+    (5,35)*=0{}="12";
+    (15,35)*=0{}="15";
+    (25,35)*=0{}="16";
+    "5";"9" **\dir{-};
+    "5";"10" **\dir{-};
+    "9";"10" **\dir{-};
+    "b";"11" **\dir{-};
+    "b";"12" **\dir{-};
+    "11";"12" **\dir{-};
+    "6";"15" **\dir{-};
+    "6";"16" **\dir{-};
+    "15";"16" **\dir{-};
+    (-20,33)*=0{T};
+    (0,33)*=0{T};
+    (20,33)*=0{T};
+    (-10,0)*=0{R_1};
     \endxy
-    \xy
-    <0.08cm, 0cm>:
-    (-10, 0.0)*{}="1";
-    (10, 10.0)*{}="2";
-    \endxy
-    \xy
-    <0.08cm, 0cm>:
-    %Vertices%
-    (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 20.0)*=0{\bullet}="2"; %1B
-    (-37.5, 40.0)*{}="3"; %leaf_b
-    (-12.5, 40.0)*{}="4"; %leaf_c
-    (12.5, 40.0)*{}="5"; %leaf_d
-    (37.5, 40.0)*{}="6"; %leaf_e
-    %Edges%
+    \qquad
+    \qquad
+    \xy<0.1cm, 0cm>:
+    (0,0)*=0{}="1";
+    (0,10)*=0{}="2";
+    (-2.5,20)*=0{}="a";
+    (2.5,20)*=0{}="b";
+    (-5,20)*=0{}="3";
+    (5,20)*=0{}="4";
+    (-20,30)*=0{}="5";
+    (20,30)*=0{}="6";
+    (-5,30)*=0{}="c";
+    (5,30)*=0{}="d";
+    (0,16)*=0{T};
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "2";"4" **\dir{-};
-    "2";"5" **\dir{-};
-    "2";"6" **\dir{-};
-    (-13,0)*{R_N};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "4";"6" **\dir{-};
+    "a";"c" **\dir{-};
+    "b";"d" **\dir{-};
+    (-25,35)*=0{}="9";
+    (-15,35)*=0{}="10";
+    (-10,35)*=0{}="11";
+    (-2,35)*=0{}="12";
+    (2,35)*=0{}="13";
+    (10,35)*=0{}="14";
+    (15,35)*=0{}="15";
+    (25,35)*=0{}="16";
+    "5";"9" **\dir{-};
+    "5";"10" **\dir{-};
+    "9";"10" **\dir{-};
+    "c";"11" **\dir{-};
+    "c";"12" **\dir{-};
+    "11";"12" **\dir{-};
+    "d";"13" **\dir{-};
+    "d";"14" **\dir{-};
+    "13";"14" **\dir{-};
+    "6";"15" **\dir{-};
+    "6";"16" **\dir{-};
+    "15";"16" **\dir{-};
+    (-20,33)*=0{S};
+    (-5.5,33)*=0{S};
+    (5.5,33)*=0{S};
+    (20,33)*=0{S};
+    (-10,0)*=0{R_N};
     \endxy
-$$
-\usetikzlibrary{shapes}
-$$
-    \begin{tikzpicture}
-        [tri/.style = {align=center, regular polygon, regular polygon sides=3,
-                    draw, fill=white, text width=1em,
-                    inner sep=1mm, outer sep=0mm,
-                    shape border rotate=180}]
-        \node (1) at (0,0) {};
-        \node (2) at (0, 2) {};
-        \node (3) at (0,4) {};
-        \node (4) at (2, 4) {};
-        \node (5) at (-2, 4) {};
-        \draw (1) -- (2) -- (3)
-        (2) -- (4)
-        (2) -- (5);
-        \node (tri1) [tri] at (0,2.3) {$S$};
-        \node (label) at (-1,0) {$R_1$};
-        \node (tri2) [tri, inner sep=0.1mm] at (1.86,4.433) {$T$};
-        \node (tri3) [tri, inner sep=0.1mm] at (0,4.433) {$T$};
-        \node (tri4) [tri, inner sep=0.1mm] at (-1.86,4.433) {$T$};
-    \end{tikzpicture}
-    \begin{tikzpicture}
-        \node (1) at (-1,0) {};
-        \node (1) at (1,0) {};
-    \end{tikzpicture}
-    \begin{tikzpicture}
-        [tri/.style = {align=center, regular polygon, regular polygon sides=3,
-                    draw, fill=white, text width=1em,
-                    inner sep=1mm, outer sep=0mm,
-                    shape border rotate=180}]
-        \node (1) at (0,0) {};
-        \node (2) at (0, 2) {};
-        \node (3) at (0,4) {};
-        \node (4) at (2, 4) {};
-        \node (5) at (-2, 4) {};
-        \draw (1) -- (2) -- (3)
-        (2) -- (4)
-        (2) -- (5);
-        \node (tri1) [tri] at (0,2.3) {$S$};
-        \node (label) at (-1,0) {$R_N$};
-        \node (tri2) [tri, inner sep=0.1mm] at (1.86,4.433) {$T$};
-        \node (tri3) [tri, inner sep=0.1mm] at (0,4.433) {$T$};
-        \node (tri4) [tri, inner sep=0.1mm] at (-1.86,4.433) {$T$};
-    \end{tikzpicture}
 $$
 Existen los \emph{shuffles intermediarios} $R_k$ $(1 < k < N)$ entre $R_1$ y $R_N$ obtenidos filtrando los v\'ertices negros en $R_1$ hacia la ra\'iz del \'arbol mediante intercambios con los v\'ertices blancos.
 Todo $R_k$ se obtiene desde un $R_l$ anterior. Es decir, cada intercambio se basa en transformar una configuraci\'on de $R_l$
