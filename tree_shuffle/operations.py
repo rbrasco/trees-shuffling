@@ -60,7 +60,7 @@ class TreeManipulator:
         if not S:
             S = self.tree
         if S.node in self.S_og_operations.keys():
-            if any(
+            if all(
                 branch.node in self.T_og_operations.keys()
                 for branch in S.branches.values()
             ):

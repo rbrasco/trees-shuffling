@@ -1,4 +1,5 @@
 from tree import Tree, uTree
+from operad import Operad
 import re
 
 
@@ -56,3 +57,23 @@ def sorted(operations):
         else:
             i += 1
     return list(map(lambda x: x[1], items))
+
+
+def prod(array):
+    if not len(array):
+        print("hey")
+        return 0
+    x = 1
+    for e in array:
+        x *= e
+    return x
+
+
+def print_tree(tree, mode, sort=True):
+    if mode in ["self", "nodes", "edges"]:
+        T = string_to_tree_space(tree, Operad(), sort)
+        print(eval(f"T[0].print_{mode}()"))
+    else:
+        raise RuntimeError(
+            f"Print tree mode {mode} does not exist, try: self, nodes or edges"
+        )

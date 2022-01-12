@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1641490535 "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.pdf" "proves" 1641490535
+["pdflatex"] 1642007772 "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.pdf" "proves" 1642007795
   "/etc/texmf/web2c/texmf.cnf" 1632223638 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.aux" 1641490535 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" 1641490535 12812 a65cecb61abf94cb17b842cf4f9ef9f9 ""
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.aux" 1642007795 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" 1642007772 5071081 c1dd090e1f10507bd07bae9d9cd6b08e ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -34,7 +34,9 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/xypic/xydash10.tfm" 1381187214 984 5c01c46b93e3ba8369f3f8edc6e62aef ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/xypic/xyluat10.tfm" 1381187214 608 a3a3bc08980c5126ff2a7a68fb5a64ff ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/xypic/xylubt10.tfm" 1381187214 608 a3a3bc08980c5126ff2a7a68fb5a64ff ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texlive/texmf-dist/tex/generic/iftex/ifpdf.sty" 1572645307 480 5778104efadad304ced77548ca2184b1 ""
@@ -168,11 +170,11 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1632224000 131035 efcb10a2e27152a282b9ad10f532e04c ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1632224028 6480793 1612c887bd5b409f759ce119333c9b5e ""
-  "proves.aux" 1641490535 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "proves.tex" 1641490535 12812 a65cecb61abf94cb17b842cf4f9ef9f9 ""
+  "proves.aux" 1642007795 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "proves.tex" 1642007772 5071081 c1dd090e1f10507bd07bae9d9cd6b08e ""
   (generated)
-  "proves.log"
   "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.pdf"
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.log"
-  "proves.pdf"
   "proves.aux"
+  "proves.log"
+  "proves.pdf"
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.log"
