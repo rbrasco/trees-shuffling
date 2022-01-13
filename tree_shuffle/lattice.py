@@ -1,10 +1,11 @@
 from operations import TreeMerger, TreeManipulator
 from operad import Operad
 from tree import uTree
-from utils import sorted, print_tree, sh
+from utils import sorted, print_tree
 from latex_gen import tree_to_latex, separator
 from copy import deepcopy
 from collections import defaultdict
+from math import prod
 
 
 class ShuffleLattice:
@@ -14,7 +15,7 @@ class ShuffleLattice:
         # self.f_tree, *_ = TreeMerger(deepcopy(T), deepcopy(S)).get_result()
         self.skeleton = defaultdict(set)
         self.dictionary = defaultdict(str)
-        self.nb_percolations = sh(S[0], T[0])
+        self.nb_percolations = self.sh(S[0], T[0])
         self.initialize()
         self.generate_shuffles()
 
@@ -23,6 +24,15 @@ class ShuffleLattice:
         self.skeleton["R_{1}"] = set()
         # self.dictionary[f"R{self.nb_percolations}"] = set(self.f_tree.split("|"))
         # self.skeleton[f"R{self.nb_percolations}"] = set()
+
+    def sh(self, S, T):
+        if isinstance(S, uTree) or (S.root and not S.node):
+            return 1
+        if isinstance(T, uTree) or (T.root and not T.node):
+            return 1
+        return prod([self.sh(Si, T) for Si in S.branches.values()]) + prod(
+            [self.sh(S, Ti) for Ti in T.branches.values()]
+        )
 
     def generate_shuffles(self):
         queue = []
