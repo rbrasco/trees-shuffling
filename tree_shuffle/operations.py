@@ -56,18 +56,18 @@ class TreeManipulator:
         self.T_og_operations = T_og_operations
         self.tree, self.operad = string_to_tree_space(tree_str, operad)
 
-    def find_percolant_branches(self, S=None, found=[]):
-        if not S:
-            S = self.tree
-        if S.node in self.S_og_operations.keys():
+    def find_percolant_branches(self, found, X=None):
+        if not X:
+            X = self.tree
+        if X.node in self.S_og_operations.keys():
             if all(
                 branch.node in self.T_og_operations.keys()
-                for branch in S.branches.values()
+                for branch in X.branches.values()
             ):
-                found.append(S)
+                found.append(X)
 
-        for Si in S.branches.values():
-            self.find_percolant_branches(Si, found)
+        for Xi in X.branches.values():
+            self.find_percolant_branches(found, X=Xi)
         return found
 
     def make_percolation(self, location):

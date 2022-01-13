@@ -1,7 +1,7 @@
 \documentclass[../main.tex]{subfiles}
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
-\section{Shuffle de \'arboles (Naipear, Barajear o mezclar?)}
+\section{Shuffle de \'arboles}
 En esta seci\'on describiremos el producto tensorial $\Omega[S]\otimes\Omega[T]$ para todo par de \'arboles $S$ y $T$ de $\Omega$. Para ello deberemos introducir la noci\'on del conjunto de shuffles de $S$ y $T$, que ser\'a una gran ayuda para encontrar el producto tensorial. As\'i podremos entender que es el producto tensorial de conjuntos dendroidales.
 \subsection{Producto tensorial de \'arboles lineales}
 Antes de ver el producto tensorial para \'arboles en general, estudiaremos el caso de \'arboles lineales ya que resulta una tarea m\'as sencilla y la podemos relacionar con el producto cartesiano de conjuntos simpliciales.
@@ -1265,4 +1265,107 @@ Siguiendo tal definici\'on, tenemos las siguientes clases b\'asicas:
     \item Arbol
 \end{itemize}
 Falta por hacer...
+
+
+
+\begin{algorithm}
+    \caption{Pseudoc\'odigo del algoritmo para generar todos los shuffles entre $S$ y $T$. Pod\'eis encontrar el c\'odigo completo en el anexo.}
+    \begin{algorithmic}[1]
+        \Require Requires the class instance of \emph{ShuffleLattice}
+        \Function{generate\_shuffles}{$self$}
+            \State $queue\leftarrow$ Append initial tree
+            \State $dictionary\leftarrow$ Save initial tree
+            \While{$queue$ not empty}
+            \State $tree \leftarrow$ Pop the first tree in $queue$
+            \For {$location$ in $tree.find\_percolations()$}
+                \State $new\_tree \leftarrow$ Apply the percolation on $location$ of the $tree$
+                \If {$new\_tree$ not in $dictionary$}
+                    \State $queue\leftarrow new\_tree$ Append new tree
+                    \State $dictionary\leftarrow$ Save new tree
+                \EndIf
+            \EndFor
+            \EndWhile
+            \State\Return $dictionary$
+        \EndFunction
+        \Ensure Returns $dictionary$ with all the shuffles found
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Pseudoc\'odigo del algoritmo para computar el n\'umero de shuffles entre $S$ y $T$. Pod\'eis encontrar el c\'odigo completo en el anexo.}
+    \begin{algorithmic}[1]
+        \Require Requires two trees $S$ and $T$
+        \Function{sh}{$S$, $T$}
+            \If{$S$ is a unitary Tree}
+                \State\Return 1
+            \EndIf
+            \If{$T$ is a unitary Tree}
+                \State\Return 1
+            \EndIf
+            \State $prod_S\leftarrow$ 1
+            \For{$branch$ in $S.get\_branches()$}
+                \State $prod_S \leftarrow prod_S * sh(branch, T)$ \Comment{Note that every $branch$ is a Tree}
+            \EndFor
+            \State $prod_T\leftarrow$ 1
+            \For{$branch$ in $T.get\_branches()$}
+                \State $prod_T \leftarrow prod_T * sh(S, branch)$ \Comment{Note that every $branch$ is a Tree}
+            \EndFor
+            \State\Return $prod_S+prod_T$
+        \EndFunction
+        \Ensure Returns the sum of the products
+    \end{algorithmic}
+\end{algorithm}
+
+
+\begin{algorithm}
+    \caption{Pseudoc\'odigo del algoritmo para ordenar las operaciones de un \'arbol $T$. Pod\'eis encontrar el c\'odigo completo en el anexo.}
+    \begin{algorithmic}[1]
+        \Require Requires an array of operations of a tree
+        \Function{sorted}{$operations$}
+            \State $n\leftarrow$ Length of $operations$
+            \State $i\leftarrow 0$ Starting index
+            \While{$i<n$}
+                \For{$j$ in $[i+1,\dots,n)$}
+                    \If{$operations[i].trunk$ in $operations[j].branches$}
+                        \State $operation\leftarrow$ Pop operation on index $i$ from $operations$
+                        \State $opertations[j]\leftarrow operation$ Insert $operation$ on new index
+                        \State\Break
+                    \EndIf
+                \EndFor
+                \ForElse \Comment{Note that this else only occurs when the \textbf{for} hasn't been broken}
+                    \State $i \leftarrow i+1$
+                \EndForElse
+            \EndWhile
+            \State\Return $operations$
+        \EndFunction
+        \Ensure Returns the list of operations sorted
+    \end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+    \caption{Pseudoc\'odigo del algoritmo para encontrar los v\'ertices para hacer un intercambio en un \'arbol $T$. Pod\'eis encontrar el c\'odigo completo en el anexo.}
+    \begin{algorithmic}[1]
+        \Require Requires the class instance of \emph{ShuffleLattice}, an optional tree $X$ and an empty array $found$
+        \Function{find\_percolations}{$self$, $X$, $found$}
+        \If{$X$ is empty}
+            \State $X\leftarrow self.tree$ \Comment{Note that $self.tree$ refers to $T$ on top of $S$}
+        \EndIf
+        \If{$X.node$ is from $self.S.operations$}
+            \For{$branch$ in $X.branches$} \Comment{Note that $branch$ is a Tree}
+                \If{$branch.node$ not in $self.T.operations$}
+                    \State\Break
+                \EndIf
+            \EndFor
+            \ForElse \Comment{Note that this else only occurs when the \textbf{for} hasn't been broken}
+                \State $found\leftarrow$ Append $x$
+            \EndForElse
+        \EndIf
+        \For{$X_i$ in $X.branches$}
+            $find\_percolations(self, X_i, found)$
+        \EndFor
+        \State\Return found
+        \EndFunction
+        \Ensure Returns the list $found$ of locations
+    \end{algorithmic}
+\end{algorithm}
 \end{document}

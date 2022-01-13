@@ -1,7 +1,7 @@
 from operations import TreeMerger, TreeManipulator
 from operad import Operad
 from tree import uTree
-from utils import sorted, prod, string_to_tree_space, print_tree
+from utils import sorted, print_tree, sh
 from latex_gen import tree_to_latex, separator
 from copy import deepcopy
 from collections import defaultdict
@@ -14,7 +14,7 @@ class ShuffleLattice:
         # self.f_tree, *_ = TreeMerger(deepcopy(T), deepcopy(S)).get_result()
         self.skeleton = defaultdict(set)
         self.dictionary = defaultdict(str)
-        self.nb_percolations = self.sh(S[0], T[0])
+        self.nb_percolations = sh(S[0], T[0])
         self.initialize()
         self.generate_shuffles()
 
@@ -31,13 +31,11 @@ class ShuffleLattice:
         while len(queue):
             tree = queue.pop(0)
             manipulator = TreeManipulator(tree, *self.operations, Operad())
-            # print_tree(tree, "self")
+
             tree_key = self.find_key(set(tree.split("|")))
             if not tree_key:
                 raise RuntimeError(f"Parent key should be present on dict {tree}")
 
-            # print(manipulator.find_percolant_branches(found=[]))
-            # breakpoint()
             for location in manipulator.find_percolant_branches(found=[]):
                 fingerprint = manipulator.make_percolation(location)
                 if not self.fingerprint_in_skeleton(fingerprint, tree_key):
@@ -58,16 +56,6 @@ class ShuffleLattice:
             lambda key: operations == self.dictionary[key], self.dictionary.keys()
         )
         return next(re, None)
-
-    def sh(self, S, T):
-        if isinstance(S, uTree) or (S.root and not S.node):
-            return 1
-        if isinstance(T, uTree) or (T.root and not T.node):
-            return 1
-        # breakpoint()
-        return prod([self.sh(Si, T) for Si in S.branches.values()]) + prod(
-            [self.sh(S, Ti) for Ti in T.branches.values()]
-        )
 
     def get_dictionary(self):
         return {

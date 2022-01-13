@@ -1,5 +1,6 @@
 from tree import Tree, uTree
 from operad import Operad
+import math
 import re
 
 
@@ -59,14 +60,24 @@ def sorted(operations):
     return list(map(lambda x: x[1], items))
 
 
-def prod(array):
-    if not len(array):
-        print("hey")
-        return 0
-    x = 1
-    for e in array:
-        x *= e
-    return x
+def sh(S, T):
+    if isinstance(S, uTree) or (S.root and not S.node):
+        return 1
+    if isinstance(T, uTree) or (T.root and not T.node):
+        return 1
+    return math.prod([sh(Si, T) for Si in S.branches.values()]) + math.prod(
+        [sh(S, Ti) for Ti in T.branches.values()]
+    )
+
+
+# def prod(array):
+#     if not len(array):
+#         print("hey")
+#         return 0
+#     x = 1
+#     for e in array:
+#         x *= e
+#     return x
 
 
 def print_tree(tree, mode, sort=True):

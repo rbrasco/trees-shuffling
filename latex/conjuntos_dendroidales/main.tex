@@ -2,6 +2,9 @@
 \usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate, tikz-cd}
 \usepackage{hyperref}
 \usepackage[all]{xy}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
 
 \SelectTips{cm}{} %to change the tips and tail of the arrows 
 % \usepackage[spanish]{babel}
@@ -50,6 +53,12 @@
 \newcommand{\Grp}{\mathop{\rm Grp}}
 \newcommand{\Top}{\mathop{\rm Top}}
 \newcommand{\Oper}{\mathop{\rm Oper}}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\Break}{\textbf{break}}
+\algblockdefx[ForElse]{ForElse}{EndForElse}{\textbf{else}}{}
+\algtext*{EndForElse}
 
 \lhead{}
 \lfoot{}
