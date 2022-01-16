@@ -1410,24 +1410,24 @@ Seguidamente podemos ver el pseudoc\'odigo.
     \begin{algorithmic}[1]
         \Require Requires the class instance of \emph{ShuffleLattice}
         \Function{generate\_shuffles}{$\emph{self}$}
-        \State $queue\leftarrow$ Append $R_1$
-        \State $\emph{self}.dictionary\leftarrow$ Save initial tree
+        \State $queue\leftarrow$ Append $R_1$ \Comment{Note that $R_1$ is the first shuffle}
+        \State $\emph{self}.dictionary\leftarrow$ Save initial shuffle
         \While{$queue$ not empty}
-        \State $tree \leftarrow$ Pop the first tree in $queue$
-        \For {$location$ in $tree.find\_percolations()$}
-        \State $new\_tree \leftarrow$ Apply \emph{make\_percolation} on $location$
-        \If {$new\_tree$ not in $\emph{self}.dictionary$}
-        \State $queue\leftarrow new\_tree$ Append new tree
-        \State $\emph{self}.dictionary\leftarrow$ Save new tree
+        \State $\emph{shuffle} \leftarrow$ Pop the first shuffle in $queue$
+        \For {$location$ in $find\_percolations(\emph{shuffle})$}
+        \State $new\_\emph{shuffle} \leftarrow$ Apply \emph{make\_percolation} on $location$
+        \If {$new\_\emph{shuffle}$ not in $\emph{self}.dictionary$}
+        \State $queue\leftarrow new\_\emph{shuffle}$ Append new shuffle
+        \State $\emph{self}.dictionary\leftarrow$ Save new shuffle
         \EndIf
         \EndFor
         \EndWhile
         \EndFunction
-        \Ensure The algorithm does not return anything because the shuffles have been stored on the \emph{dictionary}
+        \Ensure The algorithm does not return anything because the shuffles have been stored on the class property \emph{dictionary}
     \end{algorithmic}
 \end{algorithm}
 
-Finalmente, comentaremos el algoritmo $sh$ que usa la proposici\'on 4.4. Este algoritmo devuelve el n\'umero de shuffles entre dos \'arboles $S$ y $T$. Seguidamente podemos ver el pseudoc\'odigo.
+Finalmente para esta clase, comentaremos el algoritmo $sh$ que usa la proposici\'on 4.4. Este algoritmo devuelve el n\'umero de shuffles entre dos \'arboles $S$ y $T$. Seguidamente podemos ver el pseudoc\'odigo.
 \begin{algorithm}
     \caption{Pseudoc\'odigo del algoritmo para computar el n\'umero de shuffles entre $S$ y $T$. Pod\'eis encontrar el c\'odigo completo en el anexo.}
     \begin{algorithmic}[1]
@@ -1452,9 +1452,38 @@ Finalmente, comentaremos el algoritmo $sh$ que usa la proposici\'on 4.4. Este al
         \Ensure Returns the sum of the products
     \end{algorithmic}
 \end{algorithm}
+\newpage
+\subsubsection*{Figuras en Latex}
+Como habr\'eis podido observar, es necesario usar representaciones gr\'aficas de los \'arboles durante todo el trabajo, ya que facilita entender como act\'uan los morfismos o que son los shuffles, entre otros.
 
+Hemos usado el paquete \emph{xypic} para hacer las figuras. Dichas figuras se forman mediante la descripci\'on de puntos en el plano cartesiano y segmentos que unen dichos puntos. Hemos creado un fichero \emph{latex\_gen.py} que es una colecci\'on de funciones para poder convertir una descripci\'on completa de un \'arbol cualquiera a la descripci\'on necesaria del paquete \emph{xypic}, ya que la clase \emph{Tree} que genera una estructura de grafo.
+La funci\'on principal es \emph{tree\_to\_latex}.
 
-
+La descripci\'on completa de un \'arbol admite s\'imbolos de Latex para que sean compilados. Por ejemplo, sea $S=$\emph{"c$\backslash\backslash$otimes qB(b\_1,b\_2;b)$|$wW($\backslash\backslash$Omega;b\_1)"}, si us\'amos la funci\'on obtendremos la siguiente figura
+$$
+\xy
+<0.08cm, 0cm>:
+%Vertices%
+(0.0, 0.0)*{}="1"; %root_b
+(0.0, 15.0)*=0{\bullet}="2"; %c\otimes qB
+(-10.0, 30.0)*\cir<2pt>{}="3"; %wW
+(-10.0, 45.0)*{}="4"; %leaf_\Omega
+(10.0, 30.0)*{}="5"; %leaf_b_2
+%Edges%
+"1";"2" **\dir{-};
+"2";"3" **\dir{-};
+"3";"4" **\dir{-};
+"2";"5" **\dir{-};
+%Labels%
+(5.0, 15.0)*=0{\scriptstyle c\otimes q};
+(-7.0, 30.0)*=0{\scriptstyle w};
+(-2.0, 7.5)*=0{\scriptstyle b};
+(-7.0, 22.5)*=0{\scriptstyle b_1};
+(-12.0, 37.5)*=0{\scriptstyle \Omega};
+(2, 22.5)*=0{\scriptstyle b_2};
+(-13,0)*{S};
+\endxy
+$$
 
 
 \end{document}

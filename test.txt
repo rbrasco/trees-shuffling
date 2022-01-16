@@ -1,28 +1,22 @@
 \xy
 <0.08cm, 0cm>:
 %Vertices%
-(0.0, 0.0)*{}="1"; %root_a
-(0.0, 10.0)*\cir<2pt>{}="2"; %0W
-(-7.5, 20.0)*{}="3"; %leaf_b
-(7.5, 20.0)*\cir<2pt>{}="4"; %1W
-(-7.5, 30.0)*{}="5"; %leaf_d
-(7.5, 30.0)*{}="6"; %leaf_e
-(22.5, 30.0)*{}="7"; %leaf_f
+(0.0, 0.0)*{}="1"; %root_b
+(0.0, 15.0)*=0{\bullet}="2"; %c\otimes qB
+(-10.0, 30.0)*\cir<2pt>{}="3"; %wW
+(-10.0, 45.0)*{}="4"; %leaf_\Omega
+(10.0, 30.0)*{}="5"; %leaf_b_2
 %Edges%
 "1";"2" **\dir{-};
 "2";"3" **\dir{-};
-"2";"4" **\dir{-};
-"4";"5" **\dir{-};
-"4";"6" **\dir{-};
-"4";"7" **\dir{-};
+"3";"4" **\dir{-};
+"2";"5" **\dir{-};
 %Labels%
-(3.0, 10.0)*=0{\scriptstyle 0};
-(10.5, 20.0)*=0{\scriptstyle 1};
-(-2.0, 5.0)*=0{\scriptstyle a};
-(-5.75, 15.0)*=0{\scriptstyle b};
-(1.75, 15.0)*=0{\scriptstyle c};
-(-2.0, 25.0)*=0{\scriptstyle d};
-(5.5, 25.0)*=0{\scriptstyle e};
-(13.0, 25.0)*=0{\scriptstyle f};
+(3.0, 15.0)*=0{\scriptstyle c\otimes q};
+(-7.0, 30.0)*=0{\scriptstyle w};
+(-2.0, 7.5)*=0{\scriptstyle b};
+(-7.0, 22.5)*=0{\scriptstyle b_1};
+(-12.0, 37.5)*=0{\scriptstyle \Omega};
+(3.0, 22.5)*=0{\scriptstyle b_2};
 (-13,0)*{S};
 \endxy

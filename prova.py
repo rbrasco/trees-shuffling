@@ -17,6 +17,6 @@ from tree_shuffle.latex_gen import tree_to_latex, separator
 # print(space[0].print_self())
 # shl.print_latex(labels=False, between=10, size_f=(5,5), sort=False, every=4)
 
-tree_to_latex("0W(b,c;a)|1W(d,e,f;c)", tree_name="S")
+tree_to_latex("c\\otimes qB(b_1,b_2;b)|wW(\\Omega;b_1)", tree_name="S", size_f=(20,15))
 # separator(20)
 # tree_to_latex("0B(b_1-x,b_n-x;a-x)|1W(;b_1-x)|2W(;b_n-x)", size_f=(25,10))
