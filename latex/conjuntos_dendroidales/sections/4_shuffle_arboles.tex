@@ -161,15 +161,23 @@ En este apartado vamos a introducir la noci\'on de un shuffle entre dos \'arbole
 \begin{prop}
     El n\'umero de shuffles $sh(S,\text{ }T)$ de dos \'arboles $S$ y $T$ satisface tres propiedades:
     \begin{enumerate}
-        \item[{\rm (i)}] $sh(S, \text{ }T) = sh(T, \text{ }S)$
-        \item[{\rm (ii)}] Si $T$ es un \'arbol unitario $\eta$, entonces $sh(S, \text{ }\eta)=1$
-        \item[{\rm (iii)}] Si $S=C_n[S_1,\dots,S_n]$ y $T=C_m[T_1,\dots,T_m]$, entonces
+        \item[{\rm (i)}] Sim\'etrico: $sh(S, \text{ }T) = sh(T, \text{ }S)$
+        \item[{\rm (ii)}] Unitario: Si $T$ es un \'arbol unitario $\eta$, entonces $sh(S, \text{ }\eta)=1$
+        \item[{\rm (iii)}] Inducci\'on: Si $S=C_n[S_1,\dots,S_n]$ y $T=C_m[T_1,\dots,T_m]$, entonces
               $$
                   sh(S, \text{ }T)  = \prod_{i=1}^n sh(S_i, \text{ }T) + \prod_{j=1}^m sh(S, \text{ }T_j),
               $$
     \end{enumerate}
     donde $C_n$ y $C_m$ son $n$ y $m$-corolas, respectivamente; y $C_n[S_1,\dots,S_n]$ es una $n$-corola que cada hoja $i$-esima la conectamos con la ra\'iz del \'arbol $S_i$.
 \end{prop}
+\begin{proof}
+    Las propiedades (1) y (ii) son obvias. La propiedad (iii) viene de que el conjunto de nombres de las hojas de un shuffle del tipo $(s, t)$, donde $s$ y $t$ son aristas de $S$ y $T$ respectivamente, es el producto cartesiano de las hojas de $S$ y $T$.
+\end{proof}
+
+Observamos que el n\'umero de shuffles entre dos \'arboles cualesquiera augmenta mucho seg\'un el tama\~no de los \'arboles y tambi\'en parece dif\'icil encontrar una f\'ormula cerrada que d\'e una aproximaci\'on precisa del n\'umero, excepto en \'arboles especiales.
+
+Sean $S=L_m$ y $T=L_n$ \'arboles lineales con $m$ y $n$ v\'ertices, respectivamente. Denotamos $\lambda(m,n)$ por $sh(L_m, L_n)$. De la Proposici\'on 4.4 tenemos que $\lambda(m,0) = 1 = \lambda(0,n)$ y $\lambda(m,n) = \lambda(m-1,n) + \lambda(m,n-1)$, que es la relaci\'on inductiva que define el coeficiente binomial $\binom{m+n}{n} = \binom{m-1+n}{n} + \binom{m+n-1}{n-1}$. Entonces, el n\'umero de shuffles para \'arboles lineales es $sh(L_m, L_n) = \binom{m+n}{n}$.
+
 \begin{ex}
     Sean $S$ y $T$ los \'arboles
     $$
@@ -565,7 +573,7 @@ Si $n=0$ y $m\ne 0$, entonces tenemos el intercambio
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a-x
-    (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+    (0.0, 10.0)*=0{\bullet}="2"; %0W
     %Edges%
     "1";"2" **\dir{-};
     %Labels%
@@ -602,7 +610,7 @@ Finalmente, si $n=m=0$, entonces tenemos el intercambio
     (-5.0, 5.0)*=0{\scriptstyle (a,\text{ }x)};
     \endxy
 \end{equation}
-
+\newpage
 \begin{ex}
     Sean $S$ y $T$ los \'arboles
     $$
@@ -1235,9 +1243,9 @@ Ahora podemos dar una descripci\'on completa del producto tensorial entre dos ob
     El subconjunto dendroidal, que viene dado por la im\'agen de este monomorfismo, lo denotaremos $m(R_i)$.
 \end{lema}
 \begin{proof}
-    Los v\'ertices del conjunto dendroidal $\Omega[R_i]$ son las aristas del \'arbol $R_i$. La funci\'on $m$ env\'ia aristas nombradas como $(a,\text{ }x)$ en $R_i$ a la arista con el mismo nombre en $\Omega[S]\otimes\Omega[T]$.
-    Vemos que es un monomorfismo.
-    No entiendo.
+    Los v\'ertices del conjunto dendroidal $\Omega[R_i]$ son las aristas del \'arbol $R_i$. La funci\'on $m$ env\'ia aristas nombradas como $(a, x)$ en $R_i$ a la arista con el mismo nombre en $\Omega[S]\otimes\Omega[T]$.
+    Un morfismo $\Omega[R]\to X$, de un representable de un conjunto dendroidal a un conjunto dendroidal arbitrario, es un monomorfismo desde que el morfismo $\Omega[R]_\eta \to X_\eta$ lo es en los v\'ertices.
+
 \end{proof}
 \begin{corol}
     Para todo objeto $T$ y $S$ en $\Omega$, tenemos que
@@ -1247,13 +1255,14 @@ Ahora podemos dar una descripci\'on completa del producto tensorial entre dos ob
     donde la uni\'on recorre todos los posibles shuffles de $S$ y $T$.
 \end{corol}
 
+\newpage
 \subsection{Shuffle de \'arboles en Python}
 No es complicado ver que tanto encontrar el producto tensorial de conjuntos dendroidales o, equivalentemente, calcular el conjunto de shuffles para dos \'arboles cualesquiera, resulta una tarea tediosa si los \'arboles son grandes. Para tal problema, el uso de un programa inform\'atico, capaz de almanezar grandes cantidades de informaci\'on al momento de ejecuci\'on, nos resulta c\'omodo, f\'acil y r\'apido.
 
-En este apartado describir\'e de manera breve el c\'odigo que he escrito para poder tratar con op\'eradas, \'arboles, shuffles y finalmente con el conjunto de shuffles. Tambi\'en, el c\'odigo incluye una funci\'on para formar figuras con el paquete \textit{xypic} de LaTex de un \'arbol mediante una descripci\'on b\'asica.
+En este apartado vamos a describir de manera breve el c\'odigo del paquete que hemos desarrollado para poder tratar con op\'eradas, \'arboles, shuffles y finalmente con el conjunto de shuffles. Tambi\'en, el c\'odigo incluye una funci\'on para formar figuras con el paquete \textit{xypic} de LaTex de un \'arbol mediante una descripci\'on completa.
 
 Finalmente, dicho c\'odigo se puede encontrar tanto en el Anexo 1 como en el repositorio p\'ublico de c\'odigo de Github: \href{https://github.com/rbrasco/trees-shuffling}{Trees Shuffling}.
-Hace falta comentar que habr\'an diferencias entre el c\'odigo completo que podr\'eis encontrar en el anexo y los pseudoc\'odigos usados a continuaci\'on, ya que nos quedamos con la estructura fundamental del algoritmo para una facilitar la lectura.
+Hace falta comentar que habr\'an diferencias entre el c\'odigo completo que podr\'eis encontrar en el anexo y los pseudoc\'odigos usados a continuaci\'on, ya que nos hemos quedado con la estructura fundamental del algoritmo para facilitar la lectura.
 
 \subsubsection*{Clases del paquete}
 \begin{defi}
@@ -1269,9 +1278,9 @@ Hace falta comentar que habr\'an diferencias entre el c\'odigo completo que podr
 \end{defi}
 
 \subsubsection*{Utilidades}
-Antes de describir las clases que se pueden encontrar en el paquete, debemos comentar que existe un fichero llamado $utils.py$ donde hay una colecci\'on de funciones y algoritmos \'utiles que usaremos a lo largo del c\'odigo.
+Antes de describir las clases que forman el paquete, debemos comentar que existe un fichero llamado $utils.py$ donde hay una colecci\'on de funciones y algoritmos \'utiles que usaremos a lo largo del c\'odigo.
 
-Vale la pena mencionar la funci\'on que servir\'a como la puerta de entrarda a los \'arboles, nombrada: \emph{string\_to\_tree\_space}. Tiene como entrada una descripci\'on completa de un \'arbol y devuelve una inst\'ancia de la clase \emph{Tree}. Por ejemplo,
+La funci\'on \emph{string\_to\_tree\_space} servir\'a como la puerta de entrarda a los \'arboles. Tiene como entrada una descripci\'on completa de un \'arbol y devuelve una inst\'ancia de la clase \emph{Tree}. Por ejemplo,
 la cadena de c\'aracteres $"vW(b,c;a)|wB(d,e,f;c)"$ describe el \'arbol $S$
 $$
     \xy
@@ -1306,8 +1315,8 @@ $$
 donde el v\'ertice $v$ de color blanco ($W$) tiene como entradas $b$ y $c$, y salida $a$; y el v\'ertice $w$ de color negro ($B$) tiene como entradas $d$, $e$ y $f$, y salida $c$.
 Durante la explicaci\'on vamos llamar \emph{operaciones} a $"vW(b,c;a)"$ o $"wB(d,e,f;c)"$.
 
-En esta colecc\'ion se encuentra el algoritmo \emph{sorted} que nos va a ordenar las operaciones que generan un \'arbol. El orden que vamos a describir nos asegura que todo color de salida en cada operaci\'on, aparezca como entrada de otra operaci\'on en la izquierda, salvo el color correspondiente a la ra\'iz ya que esa operaci\'on en concreto ser\'a la primera.
-Hemos realizado un pseudoc\'odigo para que se entienda mejor el algoritmo \emph{sorted}.
+El algoritmo \emph{sorted} servir\'a para ordenar las operaciones que generan un \'arbol. El orden que vamos a describir nos asegura que todo color de salida en cada operaci\'on, aparezca como entrada de otra operaci\'on en la izquierda, salvo el color correspondiente a la ra\'iz ya que esa operaci\'on en concreto ser\'a la primera.
+Seguidamente podemos ver el pseudoc\'odigo.
 
 \begin{algoritmo}
     \caption{Pseudoc\'odigo del algoritmo para ordenar las operaciones de un \'arbol $T$. Pod\'eis encontrar el c\'odigo completo en el anexo.}
@@ -1340,7 +1349,7 @@ Por ejemplo, todas las siguientes descripciones hablan de un mismo \'arbol $S$:
     \item $"1W(2,4,6;1)|2W(3;2)|3W(5;4)|0W(1;0)|4W(7;6)"$
     \item $"3W(5;4)|2W(3;2)|4W(7;6)|0W(1;0)|1W(2,4,6;1)"$
 \end{enumerate}
-Si aplicamos el algoritmo \emph{sorted} a estas entradas obtendremos la siguiente cadena de car\'acteres $"0W(1;0)|1W(2,4,6;1)|4W(7;6)|3W(5;4)|2W(3;2)"$ que describe el \'arbol $S$ de manera est\'andar.
+Si aplicamos el algoritmo \emph{sorted} a estas entradas, obtendremos la siguiente cadena de car\'acteres $"0W(1;0)|1W(2,4,6;1)|4W(7;6)|3W(5;4)|2W(3;2)"$ que describe el \'arbol $S$ de manera est\'andar.
 
 
 
@@ -1353,19 +1362,21 @@ La clase \emph{Tree} tiene las propiedades que define un \'arbol como una op\'er
     \item \emph{node}: Nombre de la operaci\'on.
 \end{itemize}
 
-Sea $S$ un \'arbol con m\'as de una operaci\'on, cada operaci\'on ser\'a una instancia de \emph{Tree} y estar\'an relacionadas entre si mediante las ramas (\emph{branches}) y los troncos (\emph{trunk}).
+Por ejemplo, sea $S="vW(b,c;a)"$, entonces el tronco (\emph{trunk}) es el color $a$, las ramas (\emph{branches}) son los colores $b$ y $c$; y el \emph{node} es el nombre $vW$.
+
+Sea $S$ un \'arbol con m\'as de una operaci\'on, cada operaci\'on ser\'a una instancia de \emph{Tree} y estar\'an relacionadas entre si mediante los colores de las ramas (\emph{branches}) y los troncos (\emph{trunk}).
 Es decir, sea $S="vW(b,c;a)|wB(d,e,f;c)"$, la rama $c$ de la operaci\'on $"vW(b,c;a)"$ esta relacionada con el tronco $c$ de la operaci\'on $"wB(d,e,f;c)"$.
 
-De esta manera tenemos una estructura de \'arbol en forma de grafo, que podremos explotar con los algoritmos que vienen a continuaci\'on. Y adem\'as, tendremos todo el \'arbol a mano mediante la operaci\'on que contienen la ra\'iz.
+De esta manera tendremos una estructura de \'arbol en forma de grafo, que podremos explotar con los algoritmos que vienen a continuaci\'on. Y adem\'as, tendremos todo el \'arbol a mano mediante la operaci\'on que contienen la ra\'iz.
 Falta mencionar que usaremos la clase \emph{uTree} que describe un \'arbol sin $node$ ni $branches$.
 
 \subsubsection*{Clase \emph{TreeMerger}}
-Esta clase tiene unos algoritmos, que no describiremos, para poder unir dos \'arboles de la misma manera descrita en el apartado 4.2.1. Es decir, la clase genera el shuffle $R_1$ si usamos los dos \'arboles $S$ y $T$ de entrada; y a la inversa, la clase genera el shuffle $R_N$ si usamos los \'arboles $T$ y $S$ de entrada.
+Esta clase esta formada de unos algoritmos, que no describiremos, para poder unir dos \'arboles de la misma manera descrita en el apartado 4.2.1. Es decir, esta clase genera el shuffle $R_1$ si usamos los dos \'arboles $S$ y $T$ de entrada; y a la inversa, genera el shuffle $R_N$ si usamos los \'arboles $T$ y $S$ de entrada.
 
 \subsubsection*{Clase \emph{TreeManipulator}}
-Esta clase es importante para la clase que explicaremos a contiunaci\'on \emph{ShuffleLattice}, ya que ser\'a su alimento. Es decir, esta clase nos busca en un shuffle $R$ los v\'ertices disponibles para realizar un intercambio, explicado en el apartado 4.2.1; y tambi\'en la funci\'on necesaria para realizar tal intercambio.
+Esta clase es importante para la clase que explicaremos a contiunaci\'on \emph{ShuffleLattice}, ya que ser\'a su alimento. Es decir, esta clase nos busca en un shuffle $R$ los v\'ertices disponibles para realizar un intercambio y nos realiza tal intercambio.
 
-El algoritmo de b\'usqueda se llama \emph{find\_percolations}. Es el encargado de buscar los v\'ertices disponibles para realizar un intercambio en un shuffle $R$ cualquiera.
+El algoritmo de b\'usqueda se llama \emph{find\_percolations}. Es el encargado de buscar los v\'ertices disponibles para realizar un intercambio en un shuffle $R$ cualquiera, de la misma manera descrita en el apartado 4.2.1.
 Es un algoritmo recursivo donde va acumulando las operaciones donde se encuentran los intercambios posibles. Seguidamente podemos ver el pseudoc\'odigo.
 
 \begin{algoritmo}
@@ -1398,7 +1409,7 @@ Es un algoritmo recursivo donde va acumulando las operaciones donde se encuentra
 La funci\'on de acci\'on se llama \emph{make\_percolation}. Es la encargada de realizar el intercambio, pr\'eviamiente encontrado por el algoritmo \emph{find\_percolations}. Es decir, realiza un cambio de operaciones y un cambio de los nombres de las aristas afectadas siguiendo la norma de intercambios.
 
 \subsubsection*{Clase \emph{ShuffleLattice}}
-Finalmente, la clase \emph{ShuffleLattice} es la clase m\'as importante del paquete que usa directamente o indirecatamente todas las clases que hemos comentado anteriormente. Esta clase va a generar todos los shuffles $R_i$ entre dos \'arboles cualesquiera $S$ y $T$.
+Finalmente, la clase \emph{ShuffleLattice} es la clase m\'as importante del paquete que usa directamente o indirecatamente todas las clases que hemos comentado anteriormente. Esta clase genera todos los shuffles $R_i$ entre dos \'arboles cualesquiera $S$ y $T$.
 
 La clase tiene una propiedad llamada \emph{dictionary} donde vamos acumulando todos los shuffles encontrados. Tambi\'en tiene una propiedad llamada \emph{skeleton} donde guardamos las relaciones entre shuffles $R_l < R_k$ y as\'i poder tener la estructura del conjunto de shuffles parcialmente ordenado.
 
@@ -1454,42 +1465,43 @@ Finalmente para esta clase, comentaremos el algoritmo $sh$ que usa la Proposici\
 \end{algoritmo}
 \newpage
 \begin{obs}
-    Para usar el paquete tendremos que cortar los v\'ertices que no tienen entradas, ya que para generar los shuffles no a\~naden posibles shuffles. Por ejemplo,
+    Para usar el paquete tendremos que cortar los v\'ertices que no tienen entradas, ya que simplifica el c\'odigo de buscar los intercambios y hacerlos. Adem\'as, tener o no dichos v\'ertices no var\'ia la cardinalidad del conjunto de shuffles. Por ejemplo,
     $$
-    \xy
-<0.08cm, 0cm>:
-%Vertices%
-(0.0, 0.0)*{}="1"; %root_a
-(0.0, 10.0)*\cir<2pt>{}="2"; %0W
-(-7.5, 20.0)*{}="3"; %leaf_b
-(7.5, 20.0)*\cir<2pt>{}="4"; %2W
-%Edges%
-"1";"2" **\dir{-};
-"2";"3" **\dir{-};
-"2";"4" **\dir{-};
-(-13,0)*{S};
-\endxy
-\xy
-<0.08cm, 0cm>:
-(-20, 0.0)*{}="1";
-(20, 10.0)*{}="2";
-{\ar(-20, 10)*{};(20,10)*{}};
-\endxy
-\xy
-<0.08cm, 0cm>:
-%Vertices%
-(0.0, 0.0)*{}="1"; %root_a
-(0.0, 10.0)*\cir<2pt>{}="2"; %0W
-(-7.5, 20.0)*{}="3"; %leaf_b
-(7.5, 20.0)*{}="4"; %leaf_c
-%Edges%
-"1";"2" **\dir{-};
-"2";"3" **\dir{-};
-"2";"4" **\dir{-};
-(-13,0)*{S'};
-\endxy
-$$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+        (-7.5, 20.0)*{}="3"; %leaf_b
+        (7.5, 20.0)*\cir<2pt>{}="4"; %2W
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"4" **\dir{-};
+        (-13,0)*{S};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-20, 0.0)*{}="1";
+        (20, 10.0)*{}="2";
+        {\ar(-20, 10)*{};(20,10)*{}};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+        (-7.5, 20.0)*{}="3"; %leaf_b
+        (7.5, 20.0)*{}="4"; %leaf_c
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "2";"4" **\dir{-};
+        (-13,0)*{S'};
+        \endxy
+    $$
 \end{obs}
+
 \subsubsection*{Figuras en LaTex}
 Como se ha podido observar, es necesario usar representaciones gr\'aficas de los \'arboles durante todo el trabajo, ya que facilita entender como act\'uan los morfismos o que son los shuffles, entre otros casos.
 

@@ -29,6 +29,6 @@
 \contentsline {subsection}{\numberline {4.1}Producto tensorial de \'arboles lineales}{23}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Producto tensorial de \'arboles}{23}{subsection.4.2}%
 \contentsline {subsubsection}{\numberline {4.2.1}Shuffles y conjuntos de shuffles}{23}{subsubsection.4.2.1}%
-\contentsline {subsubsection}{\numberline {4.2.2}Producto tensorial de \'arboles}{27}{subsubsection.4.2.2}%
-\contentsline {subsection}{\numberline {4.3}Shuffle de \'arboles en Python}{28}{subsection.4.3}%
-\contentsline {section}{\numberline {5}Conclusiones}{34}{section.5}%
+\contentsline {subsubsection}{\numberline {4.2.2}Producto tensorial de \'arboles}{28}{subsubsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.3}Shuffle de \'arboles en Python}{29}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Conclusiones}{35}{section.5}%
