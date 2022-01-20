@@ -1,8 +1,8 @@
 # Fdb version 3
-["pdflatex"] 1642007772 "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.pdf" "proves" 1642007795
+["pdflatex"] 1642630177 "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.pdf" "proves" 1642630180
   "/etc/texmf/web2c/texmf.cnf" 1632223638 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.aux" 1642007795 8 a94a2480d3289e625eea47cd1b285758 ""
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" 1642007772 5071081 c1dd090e1f10507bd07bae9d9cd6b08e ""
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.aux" 1642630180 8 a94a2480d3289e625eea47cd1b285758 ""
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.tex" 1642630176 794419 9647aad9ed233705d0591e4d66a36b98 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -168,13 +168,13 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1463002160 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1632224000 131035 efcb10a2e27152a282b9ad10f532e04c ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1632224028 6480793 1612c887bd5b409f759ce119333c9b5e ""
-  "proves.aux" 1642007795 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
-  "proves.tex" 1642007772 5071081 c1dd090e1f10507bd07bae9d9cd6b08e ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1642069366 168019 d0b2fb2698f4f8f4bd6c491fe3f67376 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1642069372 6562800 5adac35681bb26ae15ba13656d572fbd ""
+  "proves.aux" 1642630180 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "proves.tex" 1642630176 794419 9647aad9ed233705d0591e4d66a36b98 ""
   (generated)
-  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.pdf"
   "proves.aux"
   "proves.log"
+  "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.pdf"
   "proves.pdf"
   "/home/rbrasco/Documents/GitHub/trees-shuffling/latex/proves/proves.log"

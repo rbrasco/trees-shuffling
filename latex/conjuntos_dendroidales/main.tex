@@ -54,6 +54,10 @@
 \newcommand{\Top}{\mathop{\rm Top}}
 \newcommand{\Oper}{\mathop{\rm Oper}}
 
+\newenvironment{algoritmo}[1][htb]{%
+    \floatname{algorithm}{Algoritmo}% Update algorithm name
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
 \renewcommand{\algorithmicrequire}{\textbf{Input:}}
 \renewcommand{\algorithmicensure}{\textbf{Output:}}
 \newcommand{\Break}{\textbf{break}}

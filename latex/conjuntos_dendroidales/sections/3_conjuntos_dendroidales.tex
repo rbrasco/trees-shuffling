@@ -2,7 +2,7 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 \section{Conjuntos Dendroidales}
-En esta secci\'on vamos a introducir las nociones necesarias para poder describir los conjuntos dendroidales mediante el uso de \'arboles. Para ello tendremos que hablar sobre la formalizaci\'on de \'arboles como op\'eradas coloreadas y los morfismos posibles entre \'arboles. Finalmente, podremos definir un conjunto dendroidal como una categor\'ia.
+En esta secci\'on vamos a introducir las nociones necesarias para poder describir los conjuntos dendroidales mediante el uso de \'arboles. Para ello tendremos que hablar sobre la formalizaci\'on de \'arboles como op\'eradas coloreadas y los morfismos posibles entre \'arboles. Finalmente, podremos definir los conjuntos dendroidales como una categor\'ia de prehaces.
 \subsection{\'Arboles como op\'eradas}
 Antes de nada, vamos a definir una terminolog\'ia para los \'arboles como op\'eradas coloreadas que la usaremos a lo largo del trabajo.
 \subsubsection{Formalismo de \'arboles}
@@ -1224,12 +1224,12 @@ Una vez dada la definici\'on de los morfismos en $\Omega_p$, vamos a dar un gene
     donde  $\sigma\colon S\to S'$ es una composici\'on de degeneraciones, $\varphi\colon S'\to T'$ es isomorfismo, y $\partial\colon T\to T'$ es una composici\'on de caras.
 \end{lema}
 \begin{proof}
-    Vamos a demostrar por inducci\'on sobre el n\'umero de v\'ertices de $S$ y $T$. Si $S$ y $T$ no tienen v\'ertices, entonces $S=T=\eta$ y $f$ es la identidad. Podemos asumir que $f$ env\'ia la ra\'iz de $S$ a la ra\'iz de $T$; de lo contrario podemos factorizar $f$ men una funci\'on $S\to T'$ que conserva la ra\'iz seguido de otra funci\'on $T'\to T$ que es una composici\'on de caras externas.
-    Tambi\'en podemos asumir que $f$ es un epimorfismo en las hojas, de lo contrario podemos factorizar $f$ en $S\to T/v\overset{\partial_d}{\longrightarrow}T$, donde $v$ es el v\'ertice que est\'a debajo de la hoja en $T$ pero no est\'a en la im\'agen de $f$.
+    Vamos a demostrarlo por inducci\'on sobre el n\'umero de v\'ertices de $S$ y $T$. Si $S$ y $T$ no tienen v\'ertices, entonces $S=T=\eta$ y $f$ es la identidad. Podemos asumir que $f$ env\'ia la ra\'iz de $S$ a la ra\'iz de $T$; de lo contrario podemos factorizar $f$ como una funci\'on $S\to T'$ que conserva la ra\'iz seguido de otra funci\'on $T'\to T$ que es una composici\'on de caras externas.
+    Tambi\'en podemos asumir que $f$ es un epimorfismo en las hojas, de lo contrario podemos factorizar $f$ como $S\to T/v\overset{\partial_d}{\longrightarrow}T$, donde $v$ es el v\'ertice que est\'a debajo de la hoja en $T$ pero no est\'a en la im\'agen de $f$.
 
-    Sean $a$ y $b$ son dos aristas de $S$ tales que $f(a)=f(b)$, entonces $a$ y $b$ deber\'ian estar en la misma rama de $S$ y $f$ env\'ia los v\'ertices intermediarios a sus identidades.
+    Sean $a$ y $b$ son dos aristas de $S$ tales que $f(a)=f(b)$, entonces $a$ y $b$ deber\'ian estar en la misma rama de $S$ y $f$ env\'ia los v\'ertices intermedios a sus identidades.
 
-    Podemos factorizar $f$ como una sobreyecci\'on segudia de una inyecci\'on con los colores, ya que $f$ es una funcion de op\'eradas coloreadas. Esto corresponde a una factorizaci\'on en $\Omega$,
+    Podemos factorizar $f$ como una sobreyecci\'on seguido de una inyecci\'on en los colores, ya que $f$ es una funcion de op\'eradas coloreadas. Esto corresponde a una factorizaci\'on en $\Omega$,
     $$
         S\overset{\psi }{\longrightarrow} S' \overset{\xi}{\longrightarrow} T
     $$
@@ -1246,7 +1246,7 @@ Una vez dada la definici\'on de los morfismos en $\Omega_p$, vamos a dar un gene
 Para poder relacionar la categor\'ia $\Delta$ con las categor\'ias $\Omega_p$ y $\Omega$, necesitamos un morfismo que env\'ia \'arboles a su conjunto de representaciones planares. 
 
 Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de representaciones planares.
-Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por el morfismo $f\colon T\to S$ en $\Omega$, tal que $P(f)(y) = x$.
+Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por un morfismo $f\colon T\to S$ en $\Omega$, tal que $P(f)(y) = x$.
 Entonces, tenemos que $\Omega\backslash P = \Omega_p$ y existe una proyecci\'on $v\colon\Omega_p\to\Omega$. Tenemos el siguiente tri\'angulo conmutativo:
 $$
     \xymatrix{
@@ -1262,20 +1262,20 @@ Sea $\eta$ un \'arbol en $\Omega$ que no contiene ning\'un v\'ertice y tan solo 
 Si $T$ es un \'arbol cualquiera en $\Omega$, entonces $\Omega(T,\eta)$ consiste en un solo morfismo o es el conjunto vac\'io, dependiendo si $T$ es un \'arbol lineal o no. Pasa lo mismo con $\Omega_p$ y $\eta_p$. Entonces, $\Omega\backslash\eta = \Omega_p\backslash\eta_p = \Delta$.
 
 \subsection{Conjuntos Dendroidales}
-En este apartado a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de prehaces en $\Omega$ y $\Omega_p$, respectivamente.
+En este apartado vamos a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de prehaces en $\Omega$ y $\Omega_p$, respectivamente.
 Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante una adjunci\'on natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales.
 
 \begin{defi}
     La categor\'ia $dSets$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtores $\Omega^{\rm op}\to\Set$ y los morfismos vienen dados por las transformaciones naturales. La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
 
-    Entonces, un conjunto dendroidal $X$ viene definido como un conjunto $X(T)$, denotado por $X_T$, para cada \'arbol $T$, conjuntamente con una funci\'on $\alpha^{*}\colon X_T \to X_S$ para cada morfismo $\alpha\colon S\to T$ en $\Omega$. Como $X$ es un funtor, entonces $(id)^{*}=id$ y si $\alpha\colon S\to T$ y $\beta\colon R\to S$ son morfismos en $\Omega$, entonces $(\alpha\circ\beta)^{*}=\beta^{*}\circ\alpha^{*}$. El conjunto $X_T$ lo llamaremos conjunto de \emph{dendrices con forma T}, o simplemente conjunto de $T$-dendrices.
+    Un conjunto dendroidal $X$ viene definido como un conjunto $X(T)$, denotado por $X_T$, para cada \'arbol $T$, conjuntamente con una funci\'on $\alpha^{*}\colon X_T \to X_S$ para cada morfismo $\alpha\colon S\to T$ en $\Omega$. Como $X$ es un funtor, entonces $(id)^{*}=id$ y si $\alpha\colon S\to T$ y $\beta\colon R\to S$ son morfismos en $\Omega$, entonces $(\alpha\circ\beta)^{*}=\beta^{*}\circ\alpha^{*}$. El conjunto $X_T$ lo llamaremos conjunto de \emph{d\'endrices con forma T}, o simplemente conjunto de $T$-dendrices.
 
     Sean $X$ y $Y$ dos conjuntos dendroidales, un \emph{morfismo de conjuntos dendroidales} $f\colon X \to Y$ viene definido por funciones $f\colon X_T\to Y_T$, para cada \'arbol $T$, conmutando con las funciones de estructura. Es decir, si $\alpha\colon S\to T$ es cualquier morfismo en $\Omega$ y $x\in X_T$, entonces $f(\alpha^{*}x)=\alpha^{*}f(x)$.
 
     Decimos que $Y$ es un \emph{subconjunto dendroidal} de $X$ si para cada \'arbol $T$ tenemos que $Y_T\subseteq X_T$ y la inclusi\'on $Y \hookrightarrow X$ es un morfismo de conjuntos dendroidales.
 \end{defi}
 \begin{defi}
-    Un dendrex $x\in X_T$ se llama \emph{degenerado} si existe otro dendrex $y\in X_S$ y una degeneraci\'on $\sigma\colon T\to S$ tal que $\sigma^{*}(y)=x$.
+    Un d\'endrice $x\in X_T$ se llama \emph{degenerado} si existe otro d\'endrice $y\in X_S$ y una degeneraci\'on $\sigma\colon T\to S$ tal que $\sigma^{*}(y)=x$.
 \end{defi}
 
 Existen inclusiones can\'onicas y restricciones evidentes
@@ -1284,6 +1284,9 @@ $$
         \Delta \ar[rd]_{i} \ar[r]^u
         &\Omega_p \ar[d]^v\\
         &\Omega
+    }
+    \xymatrix{
+        & &
     }
     \xymatrix{
     sSets
@@ -1300,6 +1303,9 @@ $$
     & &  dSets \ar@<0.5ex>[lluu]^{i^{*}} \ar@<0.5ex>[uu]^{v^{*}}
     }
     \xymatrix{
+        & &
+    }
+    \xymatrix{
     sSets \ar@<0.5ex>[rr]^{u_{*}} \ar@<0.5ex>[rrdd]^{i_{*}}
     & & pdSets \ar@<0.5ex>[ll]^{u^{*}} \ar@<0.5ex>[dd]^{v^{*}} \\
     & & \\
@@ -1310,7 +1316,7 @@ Que vienen dados por las extensiones de Kan correspondientes. Por ejemplo, el fu
 $$
     i^{*}(X)_n = X_{i([n])}
 $$
-Su adjunto por la izquierda $i_{!}\colon sSets \to dSets$ es una extensi\'on por el zero, y env\'ia un conjunto simplicial $X$ a un conjunto dendroidal dado por
+Su adjunto por la izquierda $i_{!}\colon sSets \to dSets$ es la extensi\'on por cero, y env\'ia un conjunto simplicial $X$ a un conjunto dendroidal dado por
 \[
     i_{!}(X)_T =
     \begin{cases}
@@ -1320,14 +1326,14 @@ Su adjunto por la izquierda $i_{!}\colon sSets \to dSets$ es una extensi\'on por
 \]
 Podemos ver que $i_!$ es plenamente fiel y que $i^{*}i_{!}$ es el funtor identidad en los conjuntos simpliciales.
 
-El funtor $\Omega \to Oper$ que env\'ia un \'arbol $T$ a la op\'erada coloreada $\Omega(T)$ induce la siguiente adjunci\'on
+El funtor $\Omega \to Oper$ que env\'ia un \'arbol $T$ a la op\'erada coloreada $\Omega(T)$ induce, por extensi\'on de Kan, la siguiente adjunci\'on
 \[
     \xymatrix{
         \tau_d\colon dSets\ar@<0.5ex>[r] &  Oper\colon N_d \ar@<0.5ex>[l]
     }
 \]
 
-El funtor $N_d$ se llama \emph{nervio dendroidal}. Para toda op\'erada $P$ su nervio dendroidal es el conjunto dendroidal
+El funtor $N_d$ se llama \emph{nervio dendroidal}. Para toda op\'erada $P$, su nervio dendroidal es el conjunto dendroidal
 $$
     N_d(P)_T = Oper(\Omega(T), P)
 $$
@@ -1337,8 +1343,8 @@ $$
     i^{*}(N_d(\underline{\mathcal{C}})) = N(\mathcal{C})
 $$
 
-Sea $X$ un conjunto dendroidal, nos referimos a la adjunci\'on por la izquierda $\tau_d(X)$ como la \emph{op\'erada genreada por X}.
-Sabemos que el conjunto de colores de $\tau_d(X)$ es igual que el conjunto $X_\eta$. Las operaciones de las op\'eradas son generadas por los elementos de $X_{C_n}$, donde $C_n$ es la $n$-\'esima corola, con las siguientes relaciones:
+Sea $X$ un conjunto dendroidal. Nos referimos a la adjunci\'on por la izquierda $\tau_d(X)$ como la \emph{op\'erada generada por X}.
+Sabemos que el conjunto de colores de $\tau_d(X)$ es igual que el conjunto $X_\eta$. Las operaciones de la op\'erada son generadas por los elementos de $X_{C_n}$, donde $C_n$ es la $n$-\'esima corola, con las siguientes relaciones:
 \begin{enumerate}
     \item[{\rm (i)}] $s(x_a) = \text{id}_{x_a} \in \tau_d(X)(x_a;a_a)$ si $x_a\in X_\eta$ y $s=\sigma^{*}$, donde $\sigma$ es la degeneraci\'on $\sigma\colon C_1 \to\eta$.
     \item[{\rm (ii)}] Si $T$ es un \'arbol de la forma
@@ -1383,7 +1389,7 @@ Sabemos que el conjunto de colores de $\tau_d(X)$ es igual que el conjunto $X_\e
           \end{align*}
           y $d_w = \partial_w^{*}$ viene inducido por la cara asociada al v\'ertice de la ra\'iz $w$; $d_v = \partial_v^{*}$ viene inducido por la cara externa asociada al v\'ertice $v$; y $d_{x_{a_i}}= \partial_{x_{a_i}}^{*}$ viene inducido por la cara interna asociada a la arista $x_{a_i}$.
 \end{enumerate}
-Entonces, $\tau_d(\Omega[T])=\Omega(T)$ para todo \'arbol $T$ en $\Omega$. Tambi\'en extiene el funtor $\tau\colon sSets \to Cat$ al nervio simplicial, es decir, para todo conjunto simplicial $X$
+Entonces, $\tau_d(\Omega[T])=\Omega(T)$ para todo \'arbol $T$ en $\Omega$. Tambi\'en extiende el funtor $\tau\colon sSets \to Cat$ adjunto al nervio simplicial, es decir, para todo conjunto simplicial $X$
 $$
     \tau(X) = j^{*}\tau_d(i_{!}(X))
 $$
@@ -1402,8 +1408,8 @@ Tenemos las siguientes relaciones conmutativas salvo isomorfismos:
     j_!\tau & = \tau_d i_! \text{,   } N j^{*} = i^{*}N_d\text{,    } i_!N = N_d j_!
 \end{align*}
 \subsection{Producto tensorial de conjuntos dendroidales}
-En este apartado podemos introducir y entender el producto tensorial entre conjuntos dendroidales gracias al producto tensorial de Boardman--Vogt.
-\subsubsection{Producto tensorial Boardman--Vogt}
+En este apartado vamos a introducir el producto tensorial entre conjuntos dendroidales gracias al producto tensorial de Boardman--Vogt.
+\subsubsection{Producto tensorial de Boardman--Vogt}
 \begin{defi}
     Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial de Boardman--Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de generadores y relaciones de la siguiente manera.
     Para cada color $d\in D$ y cada operaci\'on $p\in P(c_1,\dots,c_n;c)$ existe un generador
@@ -1414,22 +1420,22 @@ En este apartado podemos introducir y entender el producto tensorial entre conju
     $$
         c \otimes q \in P\otimes_{BV}Q((c,d_1),\dots,(c,d_m);(c,d))
     $$
-    Estos generadores estan sujetos a las siguientes relaciones:
+    Estos generadores est\'an sujetos a las siguientes relaciones:
     \begin{enumerate}
-        \item[{\rm (i)}] $(p\otimes d) \circ ((p_1\otimes d),\dots,(p_n\otimes d)) = (p\circ(p_1,\dots,p_n))\otimes d$
-        \item[{\rm (ii)}] $\sigma^{*}(p\otimes d) = (\sigma^{*}p)\otimes d$, para cada $\sigma\in\Sigma_n$
-        \item[{\rm (iii)}] $(c\otimes q) \circ ((c\otimes q_1),\dots,(c\otimes q_m)) = c\otimes (q\circ(q_1,\dots,q_m))$
-        \item[{\rm (iv)}] $\sigma^{*}(c\otimes q) = c\otimes (\sigma^{*}q)$, para cada $\sigma\in\Sigma_m$
+        \item[{\rm (i)}] $(p\otimes d) \circ ((p_1\otimes d),\dots,(p_n\otimes d)) = (p\circ(p_1,\dots,p_n))\otimes d$.
+        \item[{\rm (ii)}] $\sigma^{*}(p\otimes d) = (\sigma^{*}p)\otimes d$, para cada $\sigma\in\Sigma_n$.
+        \item[{\rm (iii)}] $(c\otimes q) \circ ((c\otimes q_1),\dots,(c\otimes q_m)) = c\otimes (q\circ(q_1,\dots,q_m))$.
+        \item[{\rm (iv)}] $\sigma^{*}(c\otimes q) = c\otimes (\sigma^{*}q)$, para cada $\sigma\in\Sigma_m$.
         \item[{\rm (v)}] $\sigma_{n,m}^{*}((p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))) = (c\otimes q)\circ((p\otimes d_1),\dots,(p\otimes d_m))$, donde $\sigma_{n,m}\in\Sigma_{nm}$ es una permutaci\'on que descibimos a continuaci\'on.
               Consideramos el conjunto $\Sigma_{nm}$ como el conjunto de biyecciones del conjunto $\{0,1,\dots,nm-1\}$. Cada elemento de dicho conjunto se puede escribir como $kn+j$ de manera \'unica para $0\le k<m$ y $0\le j<n$; y, an\'alogamente, se puede escribir como $km+j$ para $0\le k<n$ y $0\le j<m$.
               Finalmente, la permutaci\'on $\sigma_{n,m}$ la definimos de tal manera que $\sigma_{n,m}(kn+j) = jm+k$.
     \end{enumerate}
 \end{defi}
 \begin{obs}
-    Tenemos que las relaciones (i) y (ii) implican que para cada color $d\in D$ la funci\'on $P\to P\otimes_{BV}Q$ es una funci\'on de op\'eradas, que viene dada por $p\mapsto p\otimes d$. De manera an\'aloga, tenemos que las relaciones (iii) y (iv) implican que para cada color $c\in C$ la funci\'on $Q\to P\otimes_{BV}Q$ es una funci\'on de op\'eradas, que viene dada por $q\mapsto c\otimes q$.
+    Tenemos que las relaciones (i) y (ii) implican que para cada color $d\in D$ la funci\'on $P\to P\otimes_{BV}Q$ es un morfismo de op\'eradas, que viene dada por $p\mapsto p\otimes d$. De manera an\'aloga, tenemos que las relaciones (iii) y (iv) implican que para cada color $c\in C$ la funci\'on $Q\to P\otimes_{BV}Q$ es un morfismo de op\'eradas, que viene dada por $q\mapsto c\otimes q$.
 \end{obs}
 \begin{ex}
-    Vamos a ilustrar la relaci\'on (v), tambi\'en llamada como la \emph{relaci\'on del intercambio} con las siguientes figuras. Suponemos que $n=2$ y $m=3$.
+    Vamos a ilustrar la relaci\'on (v), tambi\'en llamada como la \emph{relaci\'on de intercambio} con las siguientes figuras. Suponemos que $n=2$ y $m=3$.
     Representamos mediante el siguiente \'arbol la operaci\'on de la izquierda de la relaci\'on (v), antes de aplicar la permutaci\'on $\sigma_{2,3}^{*}$
     % Dibujo del arbol (p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))%
     \begin{equation}
@@ -1517,21 +1523,21 @@ En este apartado podemos introducir y entender el producto tensorial entre conju
         \endxy
     \end{equation}
     Observamos que la permutaci\'on $\sigma_{2,3}$ corresponde a la permutaci\'on (2 4 5 3) de $\Sigma_6$.
-    Hemos pintado los v\'ertices de las operaciones en $P$ de color blanco y para los v\'ertices de las operaciones en $Q$ de color negro.
+    Hemos pintado los v\'ertices de las operaciones en $P$ de color blanco y los v\'ertices de las operaciones en $Q$ de color negro.
 \end{ex}
 
 \subsubsection{Producto tensorial de conjuntos dendroidales}
-La categor\'ia de los conjuntos dendroidales es una categor\'ia de prehaces, y por lo tanto cartesiano.
-El producto cartesiano de los conjuntos dendroidales extiende el producto cartesiano de conjuntos simpliciales, es decir, para cada par de conjuntos simpliciales $X$ e $Y$
+La categor\'ia de los conjuntos dendroidales es una categor\'ia de prehaces, y por lo tanto cartesiana con el producto definido en cada nivel $(X\times Y)_T = X_T\times Y_T$.
+El producto cartesiano de los conjuntos dendroidales extiende el producto cartesiano de conjuntos simpliciales, es decir, para cada par de conjuntos simpliciales $X$ e $Y$, tenemos que
 $$
-    i_!(X\times Y) \cong i_!(X)\times i_!(Y)
+    i_!(X\times Y) \cong i_!(X)\times i_!(Y).
 $$
 \begin{defi}
     Para todo par de \'arboles $T$ y $S$ en $\Omega$, el \emph{producto tensorial} de los representables $\Omega[T]$ y $\Omega[S]$ se define como
     $$
         \Omega[T]\otimes\Omega[S] = N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
-    Donde $N_d$ es el nervio dendroidal, $\Omega(T)$ y $\Omega(S)$ son las op\'eradas coloreadas asociadas a los \'arboles $T$ y $S$, respectivamente; y $\otimes_{BV}$ es el producto tensorial Boardman--Vogt.
+    Donde $N_d$ es el nervio dendroidal, $\Omega(T)$ y $\Omega(S)$ son las op\'eradas coloreadas asociadas a los \'arboles $T$ y $S$, respectivamente; y $\otimes_{BV}$ es el producto tensorial de Boardman--Vogt.
 
     Esto define un producto tensorial en toda la categor\'ia de conjuntos dendroidales, ya que es una categor\'ia de prehaces y entonces cada objeto es un col\'imite can\'onico de representables y $\otimes$ conserva col\'imites en cada variable.
 \end{defi}
@@ -1540,18 +1546,18 @@ $$
     $$
         X\otimes Y = \lim_{\to}\Omega[T]\otimes\lim_{\to}\Omega[S] = \lim_{\to} N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
-    Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias [Kel82], y el conjunto de $T$-dendrices de la hom interna viene definida por
+    Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias [Kel82], y el conjunto de $T$-d\\endrices del hom interno viene definido por
     $$
         {\rm Hom}_{dSets}(X,Y)_T = dSets(\Omega[T]\otimes X, Y)
     $$
     Para cada par $X$ e $Y$ de conjuntos dendroidales y para cada \'arbol $T$ en $\Omega$.
 \end{defi}
 \begin{teo}
-    La categor\'ia de conjuntos dendroidales admite una estructura cerrada, monoidal y sim\'etrica. Esta estructura monoidal es \'unicamente determinada (salvando isomorfismos) por la propiedad de que existe un isomorfismo natural
+    La categor\'ia de conjuntos dendroidales admite una estructura monoidal, sim\'etrica y cerrada. Esta estructura monoidal est\'a \'unicamente determinada (salvo isomorfismo) por la propiedad de que existe un isomorfismo natural
     $$
         \Omega[T]\otimes\Omega[S] \cong N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
-    Para cada par $T$ y $S$ de objetos de $\Omega$. La unidad del producto tensorial es el conjunto dendroidal representable $\Omega[\eta]=i_!(\Delta[0]) = U$.
+    para cada par $T$ y $S$ de objetos de $\Omega$. La unidad del producto tensorial es el conjunto dendroidal representable $\Omega[\eta]=i_!(\Delta[0]) = U$.
 \end{teo}
 \begin{prop}
     Tenemos las siguientes propiedades:
@@ -1570,7 +1576,7 @@ $$
               $$
     \end{enumerate}
     \begin{proof}
-        (i) Basta con ver que la propiedad se mantiene en los representables en $sSets$. Si vemos que $[n]$ y $[m]$ de $\Delta$ como categor\'ias, entonces tenemos
+        (i) Basta con ver que la propiedad se mantiene en los representables en $sSets$. Si vemos $[n]$ y $[m]$ de $\Delta$ como categor\'ias, entonces tenemos
         $$
             j_!([n]\times [m]) \cong j_!([n]) \otimes_{BV} j_!([m])
         $$
