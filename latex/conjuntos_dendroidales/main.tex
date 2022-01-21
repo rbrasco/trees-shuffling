@@ -184,19 +184,46 @@ Y para recalcar, toda mi familia y amigos por acompa\~narme en este proceso.
 \newpage
 \section{Conclusiones}
 
-Idea del trabajo: 
+La idea principal de este trabajo era poder entender el producto tensorial de conjuntos dendroidales, para ello hemos ido siguiendo un hilo que parte de las nociones b\'asicas de categor\'ias y op\'eradas y acaba con una t\'ecnica alternativa para encontrar dicho producto tensorial.
 
-Proceso y nociones:
+Una vez dadas las nociones b\'asicas, el trabajo sigue con la definici\'on la categor\'ia simplicial $\Delta$. Dicha categor\'ia se forma mediante los simplex como objetos y las caras y degeneraciones como los morfismos.
 
-Resultados pr\'acticos:
+El trabajo se basa de un formalismo de \'arboles como op\'eradas coloreadas. Este formalismo nos permite tener una definici\'on estricta de que es un \'arbol, formado de sus entradas y salida.
+Y as\'i, quedan bien definidos los morfismos de \'arboles como las caras y las degeneraciones. Con estos morfismos de op\'eradas coloreadas y con los \'arboles planares como objetos obtenemos la categor\'ia $\Omega_p$.
+Tenemos que la categor\'ia de \'arboles no planares $\Omega$ viene de la categor\'ia $\Omega_p$ considerando que ahora los \'arboles admiten la acci\'on del grupo sim\'etrico en sus entradas.
 
+Para poder introducir la definici\'on de la categor\'ia de conjuntos dendroidales, tenemos que introducir la noci\'on de prehaces en $\Omega$. Para ello necesitamos un morfismo que env\'ia \'arboles a su conjunto de representaciones planares, de esta manera tenemos el prehaz $P$ en $\Omega$. Entonces, tenemos que $\Omega\backslash P = \Omega_p$ y en consecuencia, existe una proyecci\'on de $\Omega_p$ a $\Omega$.
+De esta manera podemos ver que las categor\'ias dendroidales extienden la categor\'ia simplicial mediante el encaje de $\Delta$ en $\Omega_p$ y la anterior proyecci\'on. 
+Finalmente, un conjunto dendroidal $X$ es una conjunto de d\'endrices con forma $T$ para todo \'arbol $T$ en $\Omega$ junto las funciones asociadas a los morfismos de $\Omega$.
 
-The main goal of this project is to understand the tensor product operation in the category of dendroidals sets.
-To do so, we introduce the notion of shuffles between two trees, and show how they are used in order to describe the tensor product.
-We begin with a quick review about categories, functors and operads, focusing on the basic definitions and constructions.
-Then, we introduce the formalism of trees, its relation to coloured operad and the definition of the dendroidal category $\Omega$, which serves as the indexing category for defining dendroidal sets as a presheaf category.
-We also show how the dendroidal category $\Delta$ extends the simplicial category $\Delta$ via the inclusion of linear trees, and the relation between simplicial sets and dendroidal sets.
-Finally, we develop a Python algorithm that generates the complete set of shuffles between two trees and prints their planar representations.
+El producto tensorial de Boardman--Vogt introduce un producto distinto al producto cartesiano dentro de las op\'eradas coloreadas y gracias al nervio dendroidal podemos enviar un \'arbol como op\'erada coloreada a su representable en los conjuntos dendroidales.
+De esta manera, si definimos dos conjuntos dendroidales como los colimites de representables, podemos encontrar el producto tensorial de dichos conjuntos dendroidales encontrando el producto tensorial de Boardman--Vogt de dos op\'eradas coloreadas y luego aplicar el nervio dendroidal.
+
+Falta la parte de conjunto de shuffles y para acabar decir que generar todos los shuffles no es f\'acil y que el paquete de python es \'util.
+
+% Idea del trabajo: el producto tensorial de conjuntos dendroidales
+
+% Proceso y nociones: 
+% 1. Conjuntos Dendroidales
+% 1.1. formalismo de \'arboles
+% 1.2. Cateogria $\Omega_p$
+% 1.3. Categoria $\Omega$
+% Para poder hilar la primera parte del trabajo 
+% 2. Conjuntos simpliciales
+% 3. Prehaz
+% 4. conjunto dendroidal deficion categorica
+% 4.1 nervio dendroidal
+% 5. producto tensorial
+% 5.1. Boardman-vogt
+% 5.2. producto tensorial en conjuntos dendroidales
+% 6. shuffle de arboles
+% 6.1. conjunto de shuffles
+% 6.2. cardinal
+% 6.3. estructura de orden parcial
+% 6.4. equivalencia de union de shuffles
+
+% Resultados pr\'acticos: shuffle de arboles en Python
+
 % ------------------------------------------
 
 % --- Acaban las secciones -----------------

@@ -1256,7 +1256,7 @@ $$
     }
 $$
 Donde $i$ es un encaje plenamente fiel de $\Delta$ en $\Omega$, que env\'ia el objeto $[n]$ de $\Delta$ al \'arbol lineal $L_n$ de $\Omega$, para todo $n\ge 0$.
-\subsubsection*{Relaci\'on con la categor\'ia simplicial}
+
 Hemos podido ver que las dos categor\'ias, $\Omega_p$ y $\Omega$, extienden la categor\'ia $\Delta$, gracias a ver los objetos de $\Delta$ como \'arboles lineales. Adem\'as, se puede obtener $\Delta$ como la categor\'ia coma de $\Omega_p$ o $\Omega$.
 Sea $\eta$ un \'arbol en $\Omega$ que no contiene ning\'un v\'ertice y tan solo una arista, y sea $\eta_p$ su representaci\'on planar en $\Omega_p$.
 Si $T$ es un \'arbol cualquiera en $\Omega$, entonces $\Omega(T,\eta)$ consiste en un solo morfismo o es el conjunto vac\'io, dependiendo si $T$ es un \'arbol lineal o no. Pasa lo mismo con $\Omega_p$ y $\eta_p$. Entonces, $\Omega\backslash\eta = \Omega_p\backslash\eta_p = \Delta$.
@@ -1278,6 +1278,7 @@ Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjunt
     Un d\'endrice $x\in X_T$ se llama \emph{degenerado} si existe otro d\'endrice $y\in X_S$ y una degeneraci\'on $\sigma\colon T\to S$ tal que $\sigma^{*}(y)=x$.
 \end{defi}
 
+\newpage
 Existen inclusiones can\'onicas y restricciones evidentes
 $$
     \xymatrix{
@@ -1325,6 +1326,8 @@ Su adjunto por la izquierda $i_{!}\colon sSets \to dSets$ es la extensi\'on por 
     \end{cases}
 \]
 Podemos ver que $i_!$ es plenamente fiel y que $i^{*}i_{!}$ es el funtor identidad en los conjuntos simpliciales.
+
+Sea $T$ un \'arbol. El \emph{T-d\'endrice est\'andar} es el prehaz del representable $\Omega(-, T)$. Lo denotaremos por $\Omega[T]$.
 
 El funtor $\Omega \to Oper$ que env\'ia un \'arbol $T$ a la op\'erada coloreada $\Omega(T)$ induce, por extensi\'on de Kan, la siguiente adjunci\'on
 \[
@@ -1546,7 +1549,7 @@ $$
     $$
         X\otimes Y = \lim_{\to}\Omega[T]\otimes\lim_{\to}\Omega[S] = \lim_{\to} N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
-    Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias [Kel82], y el conjunto de $T$-d\\endrices del hom interno viene definido por
+    Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias [Kel82], y el conjunto de $T$-d\'endrices del hom interno viene definido por
     $$
         {\rm Hom}_{dSets}(X,Y)_T = dSets(\Omega[T]\otimes X, Y)
     $$

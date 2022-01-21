@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {3.4}Conjuntos Dendroidales}{17}{subsection.3.4}%
 \contentsline {subsection}{\numberline {3.5}Producto tensorial de conjuntos dendroidales}{19}{subsection.3.5}%
 \contentsline {subsubsection}{\numberline {3.5.1}Producto tensorial de Boardman--Vogt}{19}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Producto tensorial de conjuntos dendroidales}{20}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.2}Producto tensorial de conjuntos dendroidales}{21}{subsubsection.3.5.2}%
 \contentsline {section}{\numberline {4}Shuffles de \'arboles}{23}{section.4}%
 \contentsline {subsection}{\numberline {4.1}Producto tensorial de \'arboles lineales}{23}{subsection.4.1}%
 \contentsline {subsection}{\numberline {4.2}Producto tensorial de \'arboles}{23}{subsection.4.2}%
