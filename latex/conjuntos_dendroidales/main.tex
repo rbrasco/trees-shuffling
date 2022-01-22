@@ -199,7 +199,15 @@ Finalmente, un conjunto dendroidal $X$ es una conjunto de d\'endrices con forma 
 El producto tensorial de Boardman--Vogt introduce un producto distinto al producto cartesiano dentro de las op\'eradas coloreadas y gracias al nervio dendroidal podemos enviar un \'arbol como op\'erada coloreada a su representable en los conjuntos dendroidales.
 De esta manera, si definimos dos conjuntos dendroidales como los colimites de representables, podemos encontrar el producto tensorial de dichos conjuntos dendroidales encontrando el producto tensorial de Boardman--Vogt de dos op\'eradas coloreadas y luego aplicar el nervio dendroidal.
 
-Falta la parte de conjunto de shuffles y para acabar decir que generar todos los shuffles no es f\'acil y que el paquete de python es \'util.
+Encontrar el producto tensorial no es tarea f\'acil, as\'i que necesitamos introducir la noci\'on del conjunto de shuffles, donde un shuffle es simplemente un \'arbol como op\'erada coloreada generado por dos iniciales manteniendo la configuraci\'on de cada uno de ellos a nivel de v\'ertices. Es decir, la c\'opia de un v\'ertice blanco de la primera \'operada en un shuffle tendr\'a las mismas entradas que ten\'ia en su op\'erada original pero con la diferencia que estas entradas estar\'an conectadas al output de las c\'opias de un v\'ertice negro de la segunda op\'erada.
+Luego, podemos generar todo el conjunto de shuffles distintos siguiendo la norma de intercambio. Una vez que encontramos el conjuntos de shuffles de dos \'arboles cualesquiera podemos definir el producto tensorial de sus representables en conjuntos dendroidales como la un\'ion de todos los shuffles encontrados.
+
+Tenemos una funci\'on recursiva que nos calcula cuantos shuffles hay entre dos \'arboles sin generarlos en s\'i. Nos preguntamos si es posible encontrar una f\'ormula general de dicha funci\'on recursiva. Si trabajamos con los \'arboles lineales tenemos un caso especial donde s\'i existe una f\'ormula cerrada, resulta que el problema se reduce a una relaci\'on inductiva muy conocida, el coficiente binomial.
+
+Finalmente, generar todos los shuffles es una tarea relativamente f\'acil pero costosa de tiempo ya que el n\'umero de shuffles augmenta mucho seg\'un el tama\~no de los \'arboles. Por eso hemos decidido de desarrollar un paquete en Python para que genere el conjunto de shuffles entre dos \'arboles cualesquiera.
+Para realizar el paquete hemos abstra\'ido las nociones de op\'eradas coloreadas, de \'arboles como op\'eradas coloreadas y de los shuffles de \'arboles.
+Gracias al paquete hemos podido ilustrar todas las figuras que representan los \'arboles y los ejemplos de los conjuntos de shuffles.
+
 
 % Idea del trabajo: el producto tensorial de conjuntos dendroidales
 
