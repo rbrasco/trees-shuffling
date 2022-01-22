@@ -2,7 +2,7 @@
 \graphicspath{{\subfix{../images/}}}
 \begin{document}
 \section{Shuffles de \'arboles}
-En esta seci\'on describiremos el producto tensorial $\Omega[S]\otimes\Omega[T]$ para todo par de \'arboles $S$ y $T$ de $\Omega$. Para ello deberemos introducir la noci\'on de conjunto de shuffles de $S$ y $T$, que ser\'a una gran ayuda para encontrar el producto tensorial. As\'i podremos entender qu\'e es el producto tensorial de conjuntos dendroidales.
+En esta seci\'on describiremos el producto tensorial $\Omega[S]\otimes\Omega[T]$ para todo par de \'arboles $S$ y $T$ de $\Omega$. Para ello deberemos introducir la noci\'on de conjunto de shuffles de $S$ y $T$, que ser\'a una gran ayuda para encontrar el producto tensorial. As\'i podremos entender qu\'e es el producto tensorial de conjuntos dendroidales. Este secci\'on usa las definiciones y ejemplos de \cite[Cap\'itulo 4.3]{DS}.
 \subsection{Producto tensorial de \'arboles lineales}
 Antes de ver el producto tensorial para \'arboles en general, estudiaremos el caso de \'arboles lineales ya que resulta una tarea m\'as sencilla y la podemos relacionar con el producto cartesiano de conjuntos simpliciales.
 
@@ -99,6 +99,8 @@ Donde la uni\'on recorre todos los posibles $(n,m)$-shuffles.
         \endxy
     $$
 \end{ex}
+
+\newpage
 \subsection{Producto tensorial de \'arboles}
 \subsubsection{Shuffles y conjuntos de shuffles}
 En este apartado vamos a introducir la noci\'on de un shuffle entre dos \'arboles y la coleci\'on de todos ellos. Tambi\'en daremos ejemplos extensos de como calcular dichos shuffles.
@@ -168,13 +170,13 @@ En este apartado vamos a introducir la noci\'on de un shuffle entre dos \'arbole
                   sh(S, \text{ }T)  = \prod_{i=1}^n sh(S_i, \text{ }T) + \prod_{j=1}^m sh(S, \text{ }T_j),
               $$
     \end{enumerate}
-    donde $C_n$ y $C_m$ son $n$ y $m$-corolas, respectivamente; y $C_n[S_1,\dots,S_n]$ es una $n$-corola que cada hoja $i$-esima la conectamos con la ra\'iz del \'arbol $S_i$.
+    donde $C_n$ y $C_m$ son $n$ y $m$-corolas, respectivamente; y $C_n[S_1,\dots,S_n]$ es una $n$-corola que cada hoja $i$-esima la conectamos con la ra\'iz del \'arbol $S_i$. \cite[Proposici\'on 3.1]{SoT}.
 \end{prop}
 \begin{proof}
     Las propiedades (1) y (ii) son obvias. La propiedad (iii) viene de que el conjunto de nombres de las hojas de un shuffle del tipo $(s, t)$, donde $s$ y $t$ son aristas de $S$ y $T$ respectivamente, es el producto cartesiano de las hojas de $S$ y $T$.
 \end{proof}
 
-Observamos que el n\'umero de shuffles entre dos \'arboles cualesquiera augmenta mucho seg\'un el tama\~no de los \'arboles y tambi\'en parece dif\'icil encontrar una f\'ormula cerrada que d\'e una aproximaci\'on precisa del n\'umero, excepto en \'arboles especiales.
+Observamos que el n\'umero de shuffles entre dos \'arboles cualesquiera augmenta mucho seg\'un el tama\~no de los \'arboles y tambi\'en parece dif\'icil encontrar una f\'ormula cerrada que d\'e una aproximaci\'on precisa del n\'umero, excepto en \'arboles especiales. \cite[Observaci\'on 3.2]{SoT}.
 
 Sean $S=L_m$ y $T=L_n$ \'arboles lineales con $m$ y $n$ v\'ertices, respectivamente. Denotamos $\lambda(m,n)$ por $sh(L_m, L_n)$. De la Proposici\'on 4.4 tenemos que $\lambda(m,0) = 1 = \lambda(0,n)$ y $\lambda(m,n) = \lambda(m-1,n) + \lambda(m,n-1)$, que es la relaci\'on inductiva que define el coeficiente binomial $\binom{m+n}{n} = \binom{m-1+n}{n} + \binom{m+n-1}{n-1}$. Entonces, el n\'umero de shuffles para \'arboles lineales es $sh(L_m, L_n) = \binom{m+n}{n}$.
 
@@ -1261,7 +1263,7 @@ No es complicado ver que tanto encontrar el producto tensorial de conjuntos dend
 
 En este apartado vamos a describir de manera breve el c\'odigo del paquete que hemos desarrollado para poder tratar con op\'eradas, \'arboles, shuffles y finalmente con el conjunto de shuffles. Tambi\'en, el c\'odigo incluye una funci\'on para formar figuras con el paquete \textit{xypic} de LaTex de un \'arbol mediante una descripci\'on completa.
 
-Finalmente, dicho c\'odigo se puede encontrar tanto en el Anexo 1 como en el repositorio p\'ublico de c\'odigo de Github: \href{https://github.com/rbrasco/trees-shuffling}{Trees Shuffling}.
+Finalmente, dicho c\'odigo se puede encontrar tanto en el Anexo B como en el repositorio p\'ublico de c\'odigo de Github: \href{https://github.com/rbrasco/trees-shuffling}{Trees Shuffling}.
 Hace falta comentar que habr\'an diferencias entre el c\'odigo completo que podr\'eis encontrar en el anexo y los pseudoc\'odigos usados a continuaci\'on, ya que nos hemos quedado con la estructura fundamental del algoritmo para facilitar la lectura.
 
 \subsubsection*{Clases del paquete}
@@ -1444,17 +1446,14 @@ Finalmente para esta clase, comentaremos el algoritmo $sh$ que usa la Proposici\
     \begin{algorithmic}[1]
         \Require Requires two trees $S$ and $T$
         \Function{sh}{$S$, $T$}
-        \If{$S$ is a unitary Tree}
-        \State\Return 1
+        \If{$S$ is a unitary Tree or $T$ is a unitary Tree}
+        \Return 1
         \EndIf
-        \If{$T$ is a unitary Tree}
-        \State\Return 1
-        \EndIf
-        \State $prod_S\leftarrow$ 1
+        \State $prod_S\leftarrow$ 1 $\&$ $prod_T\leftarrow$ 1
         \For{$branch$ in $S.get\_branches()$}
         \State $prod_S \leftarrow prod_S * sh(branch, T)$ \Comment{Note that every $branch$ is a Tree}
         \EndFor
-        \State $prod_T\leftarrow$ 1
+        % \State $prod_T\leftarrow$ 1
         \For{$branch$ in $T.get\_branches()$}
         \State $prod_T \leftarrow prod_T * sh(S, branch)$ \Comment{Note that every $branch$ is a Tree}
         \EndFor
@@ -1463,7 +1462,7 @@ Finalmente para esta clase, comentaremos el algoritmo $sh$ que usa la Proposici\
         \Ensure Returns the sum of the products
     \end{algorithmic}
 \end{algoritmo}
-\newpage
+
 \begin{obs}
     Para usar el paquete tendremos que cortar los v\'ertices que no tienen entradas, ya que simplifica el c\'odigo de buscar los intercambios y hacerlos. Adem\'as, tener o no dichos v\'ertices no var\'ia la cardinalidad del conjunto de shuffles. Por ejemplo,
     $$
@@ -1534,8 +1533,9 @@ $$
     \endxy
 $$
 
+\newpage
 \begin{ex}
-    Par acabar esta secci\'on, pondremos un ejemplo para ense\~nar la utilidad del paquete. Sean $S$ y $T$ los \'arboles
+    Para acabar esta secci\'on, pondremos un ejemplo para ense\~nar la utilidad del paquete. Sean $S$ y $T$ los \'arboles
     $$
         \xy
         <0.08cm, 0cm>:
@@ -1807,7 +1807,7 @@ $$
         (-13,0)*{R_{157}};
         \endxy
     $$
-    Se pueden encontrar todos los shuffles de este ejemplo en el anexo 2.
+    Se pueden encontrar todos los shuffles de este ejemplo en el Anexo A.
 \end{ex}
 
 \end{document}

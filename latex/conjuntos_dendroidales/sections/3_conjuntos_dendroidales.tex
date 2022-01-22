@@ -4,7 +4,7 @@
 \section{Conjuntos Dendroidales}
 En esta secci\'on vamos a introducir las nociones necesarias para poder describir los conjuntos dendroidales mediante el uso de \'arboles. Para ello tendremos que hablar sobre la formalizaci\'on de \'arboles como op\'eradas coloreadas y los morfismos posibles entre \'arboles. Finalmente, podremos definir los conjuntos dendroidales como una categor\'ia de prehaces.
 \subsection{\'Arboles como op\'eradas}
-Antes de nada, vamos a definir una terminolog\'ia para los \'arboles como op\'eradas coloreadas que la usaremos a lo largo del trabajo.
+Antes de nada, vamos a definir una terminolog\'ia para los \'arboles como op\'eradas coloreadas que la usaremos a lo largo del trabajo. Este apartado usa las definiciones de \cite[Cap\'itulo 2.1]{DS}.
 \subsubsection{Formalismo de \'arboles}
 Un \emph{\'arbol} es un grafo no vac\'io, finito, conexo y sin lazos. Llamaremos \emph{v\'ertices exteriores} a los v\'ertices que tienen solamente una arista adyacente.
 Todos los \'arboles que consideraremos tendr\'an \emph{ra\'iz}, es decir, para cada \'arbol existe un v\'ertice exterior, llamado \emph{output} o \emph{salida}. El conjunto de v\'ertices exteriores restantes lo llamaremos \emph{inputs} o \emph{entradas}. Este \'ultimo conjunto puede ser vac\'io y no contiene el v\'ertice output.
@@ -54,7 +54,7 @@ Finalmente, la siguiente figura es un \'arbol de ejemplo:
 Observamos que hemos eliminado el v\'ertice output de la arista $a$ y los v\'ertices inputs en las aristas $e$, $f$ y $c$. Este \'arbol tiene tres v\'ertices $r$, $v$ y $w$ con valencia 3, 2 y 0, respectivamente.
 Este \'arbol tiene tres hojas $e$, $f$ y $c$, y dos aristas internas $b$ y $d$. Finalmente, la ra\'iz es la arista $a$.
 
-
+\newpage
 \subsubsection{\'Arboles planares}
 Los \'arboles planares sirven para simplificar y poder definir los morfismos que vienen a continuaci\'on de manera m\'as sencilla, pero todo lo que vamos a definir ahora ser\'a v\'alido en el caso de \'arboles no planares.
 \begin{defi}
@@ -219,7 +219,7 @@ Los \'arboles planares sirven para simplificar y poder definir los morfismos que
 \end{obs}
 
 \subsection{Morfismos en $\Omega_p$}
-En los siguientes apartados vamos a tratar con todos los tipos de morfismos en $\Omega_p$ y dar una descripci\'on m\'as expl\'icita.
+En los siguientes apartados vamos a tratar con todos los tipos de morfismos en $\Omega_p$ y dar una descripci\'on m\'as expl\'icita. Este apartado usa las definiciones de \cite[Cap\'itulo 2.2]{DS}.
 \subsubsection{Caras}
 Sea $T$ un \'arbol planar con ra\'iz.
 \begin{defi}
@@ -504,6 +504,7 @@ Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
 \end{obs}
 El siguiente lema es una generalizaci\'on en $\Omega_p$ del lema en la categor\'ia $\Delta$, diciendo que toda flecha en dicha categor\'ia se puede escribir como composici\'on de degeneraciones seguidas por caras.
 
+\newpage
 \begin{lema}
     Toda flecha $f\colon S \to T$ en $\Omega_p$ descompone, salvo isomorfismos, como
     $$
@@ -1155,7 +1156,7 @@ $    T\backslash v \overset{\partial}{\longrightarrow} T \overset{\sigma_v}{\lon
 
 
 \subsection{\'Arboles no planares}
-Una vez dada la definici\'on de los morfismos en $\Omega_p$, vamos a dar un generalizaci\'on de dichos morfismos en $\Omega$.
+Una vez dada la definici\'on de los morfismos en $\Omega_p$, vamos a dar un generalizaci\'on de dichos morfismos en $\Omega$. Este apartado usa las definiciones de \cite[Cap\'itulo 2.3]{DS}.
 \begin{defi}
     Sea $T$ un \'arbol no-planar. Denotaremos la op\'erada coloreada sim\'etrica generada por $T$ como $\Omega(T)$. El conjunto de colores de $\Omega(T)$ es el conjunto de aristas $E(T)$ de $T$.
     Las operaciones est\'an generadas por los v\'ertices del \'arbol, y el grupo sim\'etrico de $n$ letras $\Sigma_n$ act\'ua en cada operaci\'on de $n$ entradas permutando el orden de las entradas.
@@ -1242,6 +1243,7 @@ Una vez dada la definici\'on de los morfismos en $\Omega_p$, vamos a dar un gene
     Ahora continuamos por inducci\'on sobre la funci\'on $\xi '$.
 \end{proof}
 
+\newpage
 \subsubsection{Prehaz de estructuras planares}
 Para poder relacionar la categor\'ia $\Delta$ con las categor\'ias $\Omega_p$ y $\Omega$, necesitamos un morfismo que env\'ia \'arboles a su conjunto de representaciones planares. 
 
@@ -1263,7 +1265,7 @@ Si $T$ es un \'arbol cualquiera en $\Omega$, entonces $\Omega(T,\eta)$ consiste 
 
 \subsection{Conjuntos Dendroidales}
 En este apartado vamos a introducir nociones b\'asicas y terminolog\'ia para la categor\'ia de los conjuntos dendroidales. Describiremos la categor\'ia de los conjuntos dendroidales y los conjuntos dendroidales planares como categor\'ias de prehaces en $\Omega$ y $\Omega_p$, respectivamente.
-Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante una adjunci\'on natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales.
+Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjuntos simpliciales y la categor\'ia de las op\'eradas, mediante una adjunci\'on natural de funtores entre ellas. M\'as adelante definiremos un nervio dendroidal, desde op\'eradas hacia conjuntos dendroidales, generalizando as\'i la construcci\'on cl\'asica del nervio, desde categor\'ias peque\~{n}as hacia conjuntos simplicales. Este apartado usa las definiciones de \cite[Cap\'itulo 3.1]{DS}.
 
 \begin{defi}
     La categor\'ia $dSets$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtores $\Omega^{\rm op}\to\Set$ y los morfismos vienen dados por las transformaciones naturales. La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
@@ -1278,7 +1280,6 @@ Hemos visto la relaci\'on entre estas categor\'ias con la categor\'ia de conjunt
     Un d\'endrice $x\in X_T$ se llama \emph{degenerado} si existe otro d\'endrice $y\in X_S$ y una degeneraci\'on $\sigma\colon T\to S$ tal que $\sigma^{*}(y)=x$.
 \end{defi}
 
-\newpage
 Existen inclusiones can\'onicas y restricciones evidentes
 $$
     \xymatrix{
@@ -1313,7 +1314,7 @@ $$
     & & dSets \ar@<0.5ex>[lluu]^{i^{*}} \ar@<0.5ex>[uu]^{v_{*}}
     }
 $$
-Que vienen dados por las extensiones de Kan correspondientes. Por ejemplo, el funtor $i^{*}$ env\'ia un conjunto dendroidal $X$ al conjunto simplicial
+Que vienen dados por las extensiones de Kan correspondientes \cite[Cap\'itulo X, Apartado 3]{CWM}. Por ejemplo, el funtor $i^{*}$ env\'ia un conjunto dendroidal $X$ al conjunto simplicial
 $$
     i^{*}(X)_n = X_{i([n])}
 $$
@@ -1410,8 +1411,10 @@ Tenemos las siguientes relaciones conmutativas salvo isomorfismos:
     \tau N  & = \text{id,  } \tau_d N_d = \text{id,    } i^{*}i_! = \text{id,  } j^{*}j_! = \text{id} \\
     j_!\tau & = \tau_d i_! \text{,   } N j^{*} = i^{*}N_d\text{,    } i_!N = N_d j_!
 \end{align*}
+
+\newpage
 \subsection{Producto tensorial de conjuntos dendroidales}
-En este apartado vamos a introducir el producto tensorial entre conjuntos dendroidales gracias al producto tensorial de Boardman--Vogt.
+En este apartado vamos a introducir el producto tensorial entre conjuntos dendroidales gracias al producto tensorial de Boardman--Vogt. Este apartado usa las definiciones de \cite[Cap\'itulo 4.1 y 4.2]{DS}.
 \subsubsection{Producto tensorial de Boardman--Vogt}
 \begin{defi}
     Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial de Boardman--Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de generadores y relaciones de la siguiente manera.
@@ -1549,7 +1552,7 @@ $$
     $$
         X\otimes Y = \lim_{\to}\Omega[T]\otimes\lim_{\to}\Omega[S] = \lim_{\to} N_d(\Omega(T)\otimes_{BV}\Omega(S))
     $$
-    Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias [Kel82], y el conjunto de $T$-d\'endrices del hom interno viene definido por
+    Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias \cite{BCEC}, y el conjunto de $T$-d\'endrices del hom interno viene definido por
     $$
         {\rm Hom}_{dSets}(X,Y)_T = dSets(\Omega[T]\otimes X, Y)
     $$

@@ -1,3 +1,3 @@
-\contentsline {section}{Annexos}{1}{section*.1}%
+\contentsline {section}{Anexos}{1}{section*.1}%
 \contentsline {section}{\numberline {A}Ejemplo de conjunto de shuffles}{2}{appendix.A}%
 \contentsline {section}{\numberline {B}C\'odigo Python}{24}{appendix.B}%

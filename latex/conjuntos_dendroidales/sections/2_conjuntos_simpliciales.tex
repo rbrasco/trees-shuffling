@@ -3,7 +3,7 @@
 \begin{document}
 \section{Conjuntos Simpliciales}
 % Bibliografía Greg Friedman. (2011), An elementary illustrated introduction to simplicial sets (PDF)
-Los conjuntos simpliciales son esencialmente una generalizaci\'on de los complejos simpliciales geom\'etricos con una topolog\'ia elemental. En esta secci\'on daremos la base para llegar a entender como se forman los conjuntos simpliciales.
+Los conjuntos simpliciales son esencialmente una generalizaci\'on de los complejos simpliciales geom\'etricos con una topolog\'ia elemental. En esta secci\'on daremos la base para llegar a entender como se forman los conjuntos simpliciales. Esta secci\'on usa las definiciones de \cite[Cap\'itulo 2 y 3]{SS}
 \subsection{Complejos simpliciales}
 \begin{defi}
     Un \emph{n-simplex geom\'etrico} es una envoltura convexa de $n+1$ puntos geom\'etricamente independientes $\{v_0,\dots,v_n\}$ en un espacio euclideo cualquiera. Es decir, colecci\'on de $n$ vectores $v_1-v_0,\dots,v_n-v_o$ son linealmente independientes.
@@ -81,6 +81,7 @@ En este apartado veremos que los conjuntos Delta $\Delta$-sets son un intermedia
     $$
 \end{defi}
 
+\newpage
 \subsubsection{Definici\'on categ\'orica de los conjuntos Delta}
 En este apartado introduciremos la definici\'on de los conjuntos Delta como categor\'ias cuyos objetos son simplices y los morfismos son morfismos simpliciales.
 \begin{defi}
@@ -132,10 +133,10 @@ Antes de poder definir como se forman los conjuntos simpliciales, tenemos que in
             [v_{i_0},\dots,v_{i_j},v_{i_j},\dots,v_{i_n}]
         \end{aligned}
     \end{align*}
-    Observamos que si $i<j$, $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}$. En efecto, $\sigma_i\sigma_j[0,\dots,n] = [0,\dots,i,i,\dots,j,j,\dots,n] = \sigma_{j+1}\sigma_{i}[0,\dots,n]$
+    Observamos que si $i<j$, $\sigma_i\sigma_j = \sigma_{j+1}\sigma_{i}$. En efecto, $$\sigma_i\sigma_j[0,\dots,n] = [0,\dots,i,i,\dots,j,j,\dots,n] = \sigma_{j+1}\sigma_{i}[0,\dots,n]$$
 \end{defi}
 
-
+\newpage
 \begin{defi}
     Un \emph{conjunto simplicial} es una secuencia de conjuntos de $i$-simplices $X_0,X_1,\dots,X_i,\dots$, y para cada $n\ge 0$, las funciones $\delta_i: X_n \to X_{n-1}$ y $\sigma_i: X_n \to X_{n+1}$, $\forall 0\le i \le n$, que cumplen:
 
