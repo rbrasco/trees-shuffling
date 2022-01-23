@@ -431,6 +431,7 @@ Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
         (11.25, 20.0)*=0{\bullet}="7"; %wB
         (3.75, 30.0)*{}="8"; %leaf_c
         (18.75, 30.0)*{}="9"; %leaf_d
+        (0.0, 20.0)*{}="10";
         %Edges%
         "1";"2" **\dir{-};
         "2";"3" **\dir{-};
@@ -438,8 +439,9 @@ Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
         "4";"5" **\dir{-};
         "4";"6" **\dir{-};
         "2";"7" **\dir{-};
-        "7";"8" **\dir{-};
-        "7";"9" **\dir{-};
+        "2";"10" **\dir{-};
+        % "7";"8" **\dir{-};
+        % "7";"9" **\dir{-};
         %Labels%
         % (3.0, 10.0)*=0{\scriptstyle r};
         (-8.25, 20.0)*=0{\scriptstyle v};
@@ -468,32 +470,29 @@ Sea $T$ un \'arbol planar con ra\'iz y $v$ un v\'ertice de valencia uno en $T$.
         <0.08cm, 0cm>:
         %Vertices%
         (0.0, 0.0)*{}="1"; %root_a
-        (0.0, 10.0)*=0{\bullet}="2"; %rB
-        (-15.0, 20.0)*=0{\bullet}="3"; %uB
-        (-22.5, 30.0)*{}="4"; %leaf_f
-        (-7.5, 30.0)*{}="5"; %leaf_g
-        (15.0, 20.0)*=0{\bullet}="6"; %vB
-        (7.5, 30.0)*{}="7"; %leaf_c
-        (22.5, 30.0)*{}="8"; %leaf_d
+        (0.0, 10.0)*=0{\bullet}="2"; %uB
+        (-15.0, 20.0)*=0{\bullet}="3"; %vB
+        (-22.5, 30.0)*{}="4"; %leaf_e
+        (-7.5, 30.0)*{}="5"; %leaf_f
+        (0.0, 20.0)*{}="6"; %leaf_c
+        (15.0, 20.0)*=0{\bullet}="7"; %wB
         %Edges%
         "1";"2" **\dir{-};
         "2";"3" **\dir{-};
         "3";"4" **\dir{-};
         "3";"5" **\dir{-};
         "2";"6" **\dir{-};
-        "6";"7" **\dir{-};
-        "6";"8" **\dir{-};
+        "2";"7" **\dir{-};
         %Labels%
-        % (3.0, 10.0)*=0{\scriptstyle r};
-        % (-12.0, 20.0)*=0{\scriptstyle u};
-        % (18.0, 20.0)*=0{\scriptstyle v};
+        % (3.0, 9.5)*=0{\scriptstyle r};
+        % (-11.5, 20.0)*=0{\scriptstyle v};
         % (-2.0, 5.0)*=0{\scriptstyle a};
         (-9.5, 14.0)*=0{\scriptstyle e};
-        % (-20.75, 25.0)*=0{\scriptstyle f};
-        % (-13.25, 25.0)*=0{\scriptstyle g};
-        % (5.5, 15.0)*=0{\scriptstyle b};
-        % (9.25, 25.0)*=0{\scriptstyle c};
-        % (16.75, 25.0)*=0{\scriptstyle d};
+        % (-21.3, 25.0)*=0{\scriptstyle e};
+        % (-9, 25.0)*=0{\scriptstyle f};
+        % (-2.0, 15.0)*=0{\scriptstyle c};
+        % (10.4, 15.0)*=0{\scriptstyle d};
+        % (18.0, 20.0)*=0{\scriptstyle w};
         (-13,0)*{T\backslash v};
         \endxy
     \end{equation}
@@ -539,24 +538,21 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %rB
-    (-22.5, 20.0)*{}="3"; %leaf_f
-    (-7.5, 20.0)*{}="4"; %leaf_g
-    (7.5, 20.0)*{}="5"; %leaf_c
-    (22.5, 20.0)*{}="6"; %leaf_d
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-15.0, 20.0)*{}="3"; %leaf_b
+    (0.0, 20.0)*{}="4"; %leaf_c
+    (15.0, 20.0)*{}="5"; %leaf_d
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "2";"4" **\dir{-};
     "2";"5" **\dir{-};
-    "2";"6" **\dir{-};
     %Labels%
-    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (3.0, 10.0)*=0{\scriptstyle 0};
     % (-2.0, 5.0)*=0{\scriptstyle a};
-    % (-13.25, 15.0)*=0{\scriptstyle f};
-    % (-5.75, 15.0)*=0{\scriptstyle g};
-    % (1.75, 15.0)*=0{\scriptstyle c};
-    % (9.25, 15.0)*=0{\scriptstyle d};
+    % (-9.5, 15.0)*=0{\scriptstyle b};
+    % (-2.0, 15.0)*=0{\scriptstyle c};
+    % (5.5, 15.0)*=0{\scriptstyle d};
     (-13,0)*{(T/a)/b};
     \endxy
     \xy
@@ -572,28 +568,25 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %rB
-    (-15.0, 20.0)*{}="3"; %leaf_f
-    (0.0, 20.0)*{}="4"; %leaf_g
-    (15.0, 20.0)*=0{\bullet}="5"; %vB
-    (7.5, 30.0)*{}="6"; %leaf_c
-    (22.5, 30.0)*{}="7"; %leaf_d
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-22.5, 20.0)*{}="3"; %leaf_b
+    (-7.5, 20.0)*{}="4"; %leaf_c
+    (7.5, 20.0)*{}="5"; %leaf_d
+    (22.5, 20.0)*=0{\bullet}="6"; %1B
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "2";"4" **\dir{-};
     "2";"5" **\dir{-};
-    "5";"6" **\dir{-};
-    "5";"7" **\dir{-};
+    "2";"6" **\dir{-};
     %Labels%
-    % (3.0, 10.0)*=0{\scriptstyle r};
-    % (18.0, 20.0)*=0{\scriptstyle v};
+    % (3.0, 10.0)*=0{\scriptstyle 0};
+    % (25.5, 20.0)*=0{\scriptstyle 1};
     % (-2.0, 5.0)*=0{\scriptstyle a};
-    % (-9.5, 15.0)*=0{\scriptstyle f};
-    % (-2.0, 15.0)*=0{\scriptstyle g};
-    (11.5, 15.0)*=0{\scriptstyle b};
-    % (9.25, 25.0)*=0{\scriptstyle c};
-    % (16.75, 25.0)*=0{\scriptstyle d};
+    % (-13.25, 15.0)*=0{\scriptstyle b};
+    % (-5.75, 15.0)*=0{\scriptstyle c};
+    % (1.75, 15.0)*=0{\scriptstyle d};
+    (15.5, 15.0)*=0{\scriptstyle b};
     (-13,0)*{T/a};
     \endxy
     \xy
@@ -609,32 +602,29 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %rB
-    (-15.0, 20.0)*=0{\bullet}="3"; %uB
-    (-22.5, 30.0)*{}="4"; %leaf_f
-    (-7.5, 30.0)*{}="5"; %leaf_g
-    (15.0, 20.0)*=0{\bullet}="6"; %vB
-    (7.5, 30.0)*{}="7"; %leaf_c
-    (22.5, 30.0)*{}="8"; %leaf_d
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
+    (-22.5, 30.0)*{}="4"; %leaf_e
+    (-7.5, 30.0)*{}="5"; %leaf_f
+    (0.0, 20.0)*{}="6"; %leaf_c
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "3";"4" **\dir{-};
     "3";"5" **\dir{-};
     "2";"6" **\dir{-};
-    "6";"7" **\dir{-};
-    "6";"8" **\dir{-};
+    "2";"7" **\dir{-};
     %Labels%
-    % (3.0, 10.0)*=0{\scriptstyle r};
-    % (-12.0, 20.0)*=0{\scriptstyle u};
-    % (18.0, 20.0)*=0{\scriptstyle v};
+    % (3.0, 9.5)*=0{\scriptstyle r};
+    % (-11.5, 20.0)*=0{\scriptstyle v};
     % (-2.0, 5.0)*=0{\scriptstyle a};
     (-9.5, 14.0)*=0{\scriptstyle a};
-    % (-20.75, 25.0)*=0{\scriptstyle f};
-    % (-13.25, 25.0)*=0{\scriptstyle g};
-    (11.5, 15.0)*=0{\scriptstyle b};
-    % (9.25, 25.0)*=0{\scriptstyle c};
-    % (16.75, 25.0)*=0{\scriptstyle d};
+    % (-21.3, 25.0)*=0{\scriptstyle e};
+    % (-9, 25.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle c};
+    (10.4, 15.0)*=0{\scriptstyle b};
+    % (18.0, 20.0)*=0{\scriptstyle w};
     (-13,0)*{T};
     \endxy
 \end{equation}
@@ -643,24 +633,21 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %rB
-    (-22.5, 20.0)*{}="3"; %leaf_f
-    (-7.5, 20.0)*{}="4"; %leaf_g
-    (7.5, 20.0)*{}="5"; %leaf_c
-    (22.5, 20.0)*{}="6"; %leaf_d
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-15.0, 20.0)*{}="3"; %leaf_b
+    (0.0, 20.0)*{}="4"; %leaf_c
+    (15.0, 20.0)*{}="5"; %leaf_d
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "2";"4" **\dir{-};
     "2";"5" **\dir{-};
-    "2";"6" **\dir{-};
     %Labels%
-    % (3.0, 10.0)*=0{\scriptstyle r};
+    % (3.0, 10.0)*=0{\scriptstyle 0};
     % (-2.0, 5.0)*=0{\scriptstyle a};
-    % (-13.25, 15.0)*=0{\scriptstyle f};
-    % (-5.75, 15.0)*=0{\scriptstyle g};
-    % (1.75, 15.0)*=0{\scriptstyle c};
-    % (9.25, 15.0)*=0{\scriptstyle d};
+    % (-9.5, 15.0)*=0{\scriptstyle b};
+    % (-2.0, 15.0)*=0{\scriptstyle c};
+    % (5.5, 15.0)*=0{\scriptstyle d};
     (-13,0)*{(T/b)/a};
     \endxy
     \xy
@@ -687,7 +674,7 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     "2";"3" **\dir{-};
     "3";"4" **\dir{-};
     "3";"5" **\dir{-};
-    "2";"6" **\dir{-};
+    % "2";"6" **\dir{-};
     "2";"7" **\dir{-};
     %Labels%
     % (3.0, 10.0)*=0{\scriptstyle r};
@@ -713,32 +700,29 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %rB
-    (-15.0, 20.0)*=0{\bullet}="3"; %uB
-    (-22.5, 30.0)*{}="4"; %leaf_f
-    (-7.5, 30.0)*{}="5"; %leaf_g
-    (15.0, 20.0)*=0{\bullet}="6"; %vB
-    (7.5, 30.0)*{}="7"; %leaf_c
-    (22.5, 30.0)*{}="8"; %leaf_d
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
+    (-22.5, 30.0)*{}="4"; %leaf_e
+    (-7.5, 30.0)*{}="5"; %leaf_f
+    (0.0, 20.0)*{}="6"; %leaf_c
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "3";"4" **\dir{-};
     "3";"5" **\dir{-};
     "2";"6" **\dir{-};
-    "6";"7" **\dir{-};
-    "6";"8" **\dir{-};
+    "2";"7" **\dir{-};
     %Labels%
-    % (3.0, 10.0)*=0{\scriptstyle r};
-    % (-12.0, 20.0)*=0{\scriptstyle u};
-    % (18.0, 20.0)*=0{\scriptstyle v};
+    % (3.0, 9.5)*=0{\scriptstyle r};
+    % (-11.5, 20.0)*=0{\scriptstyle v};
     % (-2.0, 5.0)*=0{\scriptstyle a};
     (-9.5, 14.0)*=0{\scriptstyle a};
-    % (-20.75, 25.0)*=0{\scriptstyle f};
-    % (-13.25, 25.0)*=0{\scriptstyle g};
-    (11.5, 15.0)*=0{\scriptstyle b};
-    % (9.25, 25.0)*=0{\scriptstyle c};
-    % (16.75, 25.0)*=0{\scriptstyle d};
+    % (-21.3, 25.0)*=0{\scriptstyle e};
+    % (-9, 25.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle c};
+    (10.4, 15.0)*=0{\scriptstyle b};
+    % (18.0, 20.0)*=0{\scriptstyle w};
     (-13,0)*{T};
     \endxy
 \end{equation}
@@ -934,15 +918,14 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %uB
-    (-15.0, 20.0)*=0{\bullet}="3"; %vB
-    (-15.0, 30.0)*=0{\bullet}="4"; %rB
-    (-22.5, 40.0)*{}="5"; %leaf_e
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-15.0, 20.0)*=0{\bullet}="3"; %3B
+    (-15.0, 30.0)*=0{\bullet}="4"; %4B
+    (-22.5, 40.0)*{}="5"; %leaf_d
     (-7.5, 40.0)*{}="6"; %leaf_f
-    (15.0, 20.0)*=0{\bullet}="7"; %wB
-    (15.0, 30.0)*=0{\bullet}="8"; %sB
-    (7.5, 40.0)*{}="9"; %leaf_g
-    (22.5, 40.0)*{}="10"; %leaf_h
+    (0.0, 20.0)*{}="7"; %leaf_b
+    (15.0, 20.0)*=0{\bullet}="8"; %1B
+    (15.0, 30.0)*=0{\bullet}="9"; %2B
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
@@ -950,16 +933,22 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     "4";"5" **\dir{-};
     "4";"6" **\dir{-};
     "2";"7" **\dir{-};
-    "7";"8" **\dir{-};
+    "2";"8" **\dir{-};
     "8";"9" **\dir{-};
-    "8";"10" **\dir{-};
     %Labels%
-    (-18.0, 20.0)*=0{\scriptstyle v};
+    % (3.0, 10.0)*=0{\scriptstyle 0};
+    % (-12.0, 30.0)*=0{\scriptstyle 4};
+    % (18.0, 30.0)*=0{\scriptstyle 2};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-20.75, 35.0)*=0{\scriptstyle d};
+    % (-13.25, 35.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle b};
+    (-11.5, 20.0)*=0{\scriptstyle v};
     (18.0, 20.0)*=0{\scriptstyle w};
+    (-18.0, 25.0)*=0{\scriptstyle e_2};
     (-11.5, 15.0)*=0{\scriptstyle e_1};
-    (-17.5, 25.0)*=0{\scriptstyle e_2};
     (11.5, 15.0)*=0{\scriptstyle c_1};
-    (18, 25.0)*=0{\scriptstyle c_2};
+    (18.0, 25.0)*=0{\scriptstyle c_2};
     (-13,0)*{T};
     \endxy
     \xy
@@ -975,28 +964,33 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %uB
-    (-11.25, 20.0)*=0{\bullet}="3"; %rB
-    (-18.75, 30.0)*{}="4"; %leaf_e
-    (-3.75, 30.0)*{}="5"; %leaf_f
-    (11.25, 20.0)*=0{\bullet}="6"; %wB
-    (11.25, 30.0)*=0{\bullet}="7"; %sB
-    (3.75, 40.0)*{}="8"; %leaf_g
-    (18.75, 40.0)*{}="9"; %leaf_h
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-15.0, 20.0)*=0{\bullet}="3"; %3B
+    (-22.5, 30.0)*{}="4"; %leaf_b
+    (-7.5, 30.0)*{}="5"; %leaf_f
+    (0.0, 20.0)*{}="6"; %leaf_d
+    (15.0, 20.0)*=0{\bullet}="7"; %1B
+    (15.0, 30.0)*=0{\bullet}="8"; %2B
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "3";"4" **\dir{-};
     "3";"5" **\dir{-};
     "2";"6" **\dir{-};
-    "6";"7" **\dir{-};
+    "2";"7" **\dir{-};
     "7";"8" **\dir{-};
-    "7";"9" **\dir{-};
     %Labels%
-    (14.25, 20.0)*=0{\scriptstyle w};
-    (-9, 15.0)*=0{\scriptstyle e};
-    (10, 15.0)*=0{\scriptstyle c_1};
-    (14, 25.0)*=0{\scriptstyle c_2};
+    % (3.0, 10.0)*=0{\scriptstyle 0};
+    % (-12.0, 20.0)*=0{\scriptstyle 3};
+    (18.0, 20.0)*=0{\scriptstyle w};
+    % (18.0, 30.0)*=0{\scriptstyle 2};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    (-11.5, 15.0)*=0{\scriptstyle e};
+    (11.5, 15.0)*=0{\scriptstyle c_1};
+    (18.0, 25.0)*=0{\scriptstyle c_2};
+    % (-20.75, 25.0)*=0{\scriptstyle b};
+    % (-13.25, 25.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle d};
     (-13,0)*{T\backslash v};
     \endxy
     \xy
@@ -1013,23 +1007,28 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
     (0.0, 10.0)*=0{\bullet}="2"; %uB
-    (-15.0, 20.0)*=0{\bullet}="3"; %rB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
     (-22.5, 30.0)*{}="4"; %leaf_e
     (-7.5, 30.0)*{}="5"; %leaf_f
-    (15.0, 20.0)*=0{\bullet}="6"; %sB
-    (7.5, 30.0)*{}="7"; %leaf_g
-    (22.5, 30.0)*{}="8"; %leaf_h
+    (0.0, 20.0)*{}="6"; %leaf_c
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "3";"4" **\dir{-};
     "3";"5" **\dir{-};
     "2";"6" **\dir{-};
-    "6";"7" **\dir{-};
-    "6";"8" **\dir{-};
+    "2";"7" **\dir{-};
     %Labels%
-    (-11.5, 15.0)*=0{\scriptstyle e};
-    (10.5, 15.0)*=0{\scriptstyle c};
+    % (3.0, 9.5)*=0{\scriptstyle r};
+    % (-11.5, 20.0)*=0{\scriptstyle v};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    (-9.5, 14.0)*=0{\scriptstyle e};
+    % (-21.3, 25.0)*=0{\scriptstyle e};
+    % (-9, 25.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle c};
+    (10.4, 15.0)*=0{\scriptstyle c};
+    % (18.0, 20.0)*=0{\scriptstyle w};
     (-13,0)*{(T\backslash v)\backslash w};
     \endxy
 \end{equation}
@@ -1038,15 +1037,14 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %uB
-    (-15.0, 20.0)*=0{\bullet}="3"; %vB
-    (-15.0, 30.0)*=0{\bullet}="4"; %rB
-    (-22.5, 40.0)*{}="5"; %leaf_e
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-15.0, 20.0)*=0{\bullet}="3"; %3B
+    (-15.0, 30.0)*=0{\bullet}="4"; %4B
+    (-22.5, 40.0)*{}="5"; %leaf_d
     (-7.5, 40.0)*{}="6"; %leaf_f
-    (15.0, 20.0)*=0{\bullet}="7"; %wB
-    (15.0, 30.0)*=0{\bullet}="8"; %sB
-    (7.5, 40.0)*{}="9"; %leaf_g
-    (22.5, 40.0)*{}="10"; %leaf_h
+    (0.0, 20.0)*{}="7"; %leaf_b
+    (15.0, 20.0)*=0{\bullet}="8"; %1B
+    (15.0, 30.0)*=0{\bullet}="9"; %2B
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
@@ -1054,16 +1052,22 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     "4";"5" **\dir{-};
     "4";"6" **\dir{-};
     "2";"7" **\dir{-};
-    "7";"8" **\dir{-};
+    "2";"8" **\dir{-};
     "8";"9" **\dir{-};
-    "8";"10" **\dir{-};
     %Labels%
-    (-18.0, 20.0)*=0{\scriptstyle v};
-    (-11.5, 15.0)*=0{\scriptstyle e_1};
-    (-17.5, 25.0)*=0{\scriptstyle e_2};
+    % (3.0, 10.0)*=0{\scriptstyle 0};
+    % (-12.0, 30.0)*=0{\scriptstyle 4};
+    % (18.0, 30.0)*=0{\scriptstyle 2};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-20.75, 35.0)*=0{\scriptstyle d};
+    % (-13.25, 35.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle b};
+    (-11.5, 20.0)*=0{\scriptstyle v};
     (18.0, 20.0)*=0{\scriptstyle w};
+    (-18.0, 25.0)*=0{\scriptstyle e_2};
+    (-11.5, 15.0)*=0{\scriptstyle e_1};
     (11.5, 15.0)*=0{\scriptstyle c_1};
-    (18, 25.0)*=0{\scriptstyle c_2};
+    (18.0, 25.0)*=0{\scriptstyle c_2};
     (-13,0)*{T};
     \endxy
     \xy
@@ -1079,14 +1083,13 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     <0.08cm, 0cm>:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
-    (0.0, 10.0)*=0{\bullet}="2"; %uB
-    (-11.25, 20.0)*=0{\bullet}="3"; %vB
-    (-11.25, 30.0)*=0{\bullet}="4"; %rB
-    (-18.75, 40.0)*{}="5"; %leaf_e
-    (-3.75, 40.0)*{}="6"; %leaf_f
-    (11.25, 20.0)*=0{\bullet}="7"; %sB
-    (3.75, 30.0)*{}="8"; %leaf_g
-    (18.75, 30.0)*{}="9"; %leaf_h
+    (0.0, 10.0)*=0{\bullet}="2"; %0B
+    (-15.0, 20.0)*=0{\bullet}="3"; %3B
+    (-15.0, 30.0)*=0{\bullet}="4"; %4B
+    (-22.5, 40.0)*{}="5"; %leaf_d
+    (-7.5, 40.0)*{}="6"; %leaf_f
+    (0.0, 20.0)*{}="7"; %leaf_b
+    (15.0, 20.0)*=0{\bullet}="8"; %1B
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
@@ -1094,14 +1097,21 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     "4";"5" **\dir{-};
     "4";"6" **\dir{-};
     "2";"7" **\dir{-};
-    "7";"8" **\dir{-};
-    "7";"9" **\dir{-};
+    "2";"8" **\dir{-};
+    % "8";"9" **\dir{-};
     %Labels%
-    (-14.0, 20.0)*=0{\scriptstyle v};
-    (-9, 15.0)*=0{\scriptstyle e_1};
-    (-14, 25.0)*=0{\scriptstyle e_2};
-    (8.5, 15.0)*=0{\scriptstyle c};
-    (-13,0)*{T\backslash w};
+    % (3.0, 10.0)*=0{\scriptstyle 0};
+    % (-12.0, 30.0)*=0{\scriptstyle 4};
+    % (18.0, 30.0)*=0{\scriptstyle 2};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    % (-20.75, 35.0)*=0{\scriptstyle d};
+    % (-13.25, 35.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle b};
+    (-11.5, 20.0)*=0{\scriptstyle v};
+    (-18.0, 25.0)*=0{\scriptstyle e_2};
+    (-11.5, 15.0)*=0{\scriptstyle e_1};
+    (10.4, 15.0)*=0{\scriptstyle c};
+    (-13,0)*{T};
     \endxy
     \xy
     <0.08cm, 0cm>:
@@ -1117,23 +1127,28 @@ Mostramos esta relaci\'on mediante las siguientes figuras:
     %Vertices%
     (0.0, 0.0)*{}="1"; %root_a
     (0.0, 10.0)*=0{\bullet}="2"; %uB
-    (-15.0, 20.0)*=0{\bullet}="3"; %rB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
     (-22.5, 30.0)*{}="4"; %leaf_e
     (-7.5, 30.0)*{}="5"; %leaf_f
-    (15.0, 20.0)*=0{\bullet}="6"; %sB
-    (7.5, 30.0)*{}="7"; %leaf_g
-    (22.5, 30.0)*{}="8"; %leaf_h
+    (0.0, 20.0)*{}="6"; %leaf_c
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
     %Edges%
     "1";"2" **\dir{-};
     "2";"3" **\dir{-};
     "3";"4" **\dir{-};
     "3";"5" **\dir{-};
     "2";"6" **\dir{-};
-    "6";"7" **\dir{-};
-    "6";"8" **\dir{-};
+    "2";"7" **\dir{-};
     %Labels%
-    (-11.5, 15.0)*=0{\scriptstyle e};
-    (10.5, 15.0)*=0{\scriptstyle c};
+    % (3.0, 9.5)*=0{\scriptstyle r};
+    % (-11.5, 20.0)*=0{\scriptstyle v};
+    % (-2.0, 5.0)*=0{\scriptstyle a};
+    (-9.5, 14.0)*=0{\scriptstyle e};
+    % (-21.3, 25.0)*=0{\scriptstyle e};
+    % (-9, 25.0)*=0{\scriptstyle f};
+    % (-2.0, 15.0)*=0{\scriptstyle c};
+    (10.4, 15.0)*=0{\scriptstyle c};
+    % (18.0, 20.0)*=0{\scriptstyle w};
     (-13,0)*{(T\backslash w)\backslash v};
     \endxy
 \end{equation}
@@ -1245,7 +1260,7 @@ Una vez dada la definici\'on de los morfismos en $\Omega_p$, vamos a dar un gene
 
 \newpage
 \subsubsection{Prehaz de estructuras planares}
-Para poder relacionar la categor\'ia $\Delta$ con las categor\'ias $\Omega_p$ y $\Omega$, necesitamos un morfismo que env\'ia \'arboles a su conjunto de representaciones planares. 
+Para poder relacionar la categor\'ia $\Delta$ con las categor\'ias $\Omega_p$ y $\Omega$, necesitamos un morfismo que env\'ia \'arboles a su conjunto de representaciones planares.
 
 Sea $P:\Omega^{\rm op} \to \Set$ el prehaz en $\Omega$ que env\'ia cada \'arbol a su conjunto de representaciones planares.
 Recordamos que la categor\'ia $\Omega\backslash P$ es la categor\'ia cuyos objetos son pares $(T,x)$ con $x\in P(T)$. Sean $(T,x)$ y $(S,y)$ dos objetos, un morfismo entre ellos es dado por un morfismo $f\colon T\to S$ en $\Omega$, tal que $P(f)(y) = x$.

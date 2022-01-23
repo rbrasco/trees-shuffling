@@ -65,7 +65,7 @@ def tree_to_latex(tree, sort=False, size_f=(15, 10), labels=True, label_b=(3, (-
             )
             print(str(pos) + "*=0{\\scriptstyle " + label + "};")
     if tree_name:
-        print("(-13,0)*{\large "+tree_name+"};")
+        print("(-13,0)*{"+tree_name+"};")
     print("\\endxy")
 
 
