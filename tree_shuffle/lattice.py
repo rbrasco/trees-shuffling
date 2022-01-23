@@ -92,7 +92,7 @@ class ShuffleLattice:
     ):
         sorted_dict = self.get_dictionary()
         if key:
-            # print(f"Tree {key}: {sorted_dict[key]}")
+            print(f"Tree {key}: {sorted_dict[key]}")
             print("$$")
             tree_to_latex(
                 sorted_dict[key],

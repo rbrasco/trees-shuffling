@@ -59,19 +59,6 @@ def sorted(operations):
     return list(map(lambda x: x[1], items))
 
 
-
-
-
-# def prod(array):
-#     if not len(array):
-#         print("hey")
-#         return 0
-#     x = 1
-#     for e in array:
-#         x *= e
-#     return x
-
-
 def print_tree(tree, mode, sort=True):
     if mode in ["self", "nodes", "edges"]:
         T = string_to_tree_space(tree, Operad(), sort)
