@@ -7,8 +7,8 @@
 \contentsline {subsection}{\numberline {2.1}Complejos simpliciales}{5}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Morfismos simpliciales}{5}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Complejos simpliciales ordenados y sus caras}{6}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}Conjuntos Delta}{6}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Definici\'on categ\'orica de los conjuntos Delta}{7}{subsubsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2}$\Delta $--$\mathop {\rm Set}$}{6}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Definici\'on categ\'orica de los $\Delta $--$\mathop {\rm Set}$}{7}{subsubsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.3}Conjuntos simpliciales y sus morfismos}{7}{subsection.2.3}%
 \contentsline {subsubsection}{\numberline {2.3.1}Definici\'on categ\'orica de los conjuntos simpliciales}{8}{subsubsection.2.3.1}%
 \contentsline {section}{\numberline {3}Conjuntos Dendroidales}{10}{section.3}%

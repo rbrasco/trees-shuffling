@@ -176,7 +176,7 @@ En este apartado vamos a introducir la noci\'on de un shuffle entre dos \'arbole
     Las propiedades (1) y (ii) son obvias. La propiedad (iii) viene de que el conjunto de nombres de las hojas de un shuffle del tipo $(s, t)$, donde $s$ y $t$ son aristas de $S$ y $T$ respectivamente, es el producto cartesiano de las hojas de $S$ y $T$.
 \end{proof}
 
-Observamos que el n\'umero de shuffles entre dos \'arboles cualesquiera augmenta mucho seg\'un el tama\~no de los \'arboles y tambi\'en parece dif\'icil encontrar una f\'ormula cerrada que d\'e una aproximaci\'on precisa del n\'umero, excepto en \'arboles especiales. \cite[Observaci\'on 3.2]{SoT}.
+Observamos que el n\'umero de shuffles entre dos \'arboles cualesquiera aumenta mucho seg\'un el tama\~no de los \'arboles y tambi\'en parece dif\'icil encontrar una f\'ormula cerrada que de una aproximaci\'on precisa del n\'umero, excepto en \'arboles especiales. En general, es un problema abierto encotrar esta f\'ormula cerrada.\cite[Observaci\'on 3.2]{SoT}.
 
 Sean $S=L_m$ y $T=L_n$ \'arboles lineales con $m$ y $n$ v\'ertices, respectivamente. Denotamos $\lambda(m,n)$ por $sh(L_m, L_n)$. De la Proposici\'on 4.4 tenemos que $\lambda(m,0) = 1 = \lambda(0,n)$ y $\lambda(m,n) = \lambda(m-1,n) + \lambda(m,n-1)$, que es la relaci\'on inductiva que define el coeficiente binomial $\binom{m+n}{n} = \binom{m-1+n}{n} + \binom{m+n-1}{n-1}$. Entonces, el n\'umero de shuffles para \'arboles lineales es $sh(L_m, L_n) = \binom{m+n}{n}$.
 
@@ -1593,7 +1593,7 @@ $$
         (-13,0)*{T};
         \endxy
     $$
-    Este ser\'ia un ejemplo tedioso de calcular el conjunto de shuffles ya que seg\'un la funci\'on $sh$ existen 296 shuffles diferentes. Encontramos todos ellos mediante la clase \emph{ShuffleLattice}, mostramos los shuffles $R_{44}$ y $R_{157}$
+    Este ser\'ia un ejemplo tedioso de calcular el conjunto de shuffles ya que seg\'un la funci\'on $sh$ existen 296 shuffles diferentes. Encontramos todos ellos mediante la clase \emph{ShuffleLattice}. Mostramos los shuffles $R_{44}$ y $R_{157}$
     $$
         \xy
         <0.08cm, 0cm>:

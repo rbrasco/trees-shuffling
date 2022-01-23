@@ -126,8 +126,8 @@
 The main goal of this project is to understand the tensor product operation in the category of dendroidals sets.
 To do so, we introduce the notion of shuffles between two trees, and show how they are used in order to describe the tensor product.
 We begin with a quick review about categories, functors and operads, focusing on the basic definitions and constructions.
-Then, we introduce the formalism of trees, its relation to coloured operad and the definition of the dendroidal category $\Omega$, which serves as the indexing category for defining dendroidal sets as a presheaf category.
-We also show how the dendroidal category $\Delta$ extends the simplicial category $\Delta$ via the inclusion of linear trees, and the relation between simplicial sets and dendroidal sets.
+Then, we introduce the formalism of trees, its relation to coloured operads and the definition of the dendroidal category $\Omega$, which serves as the indexing category for defining dendroidal sets as a presheaf category.
+We also show how the dendroidal category $\Omega$ extends the simplicial category $\Delta$ via the inclusion of linear trees, and the relation between simplicial sets and dendroidal sets.
 Finally, we develop a Python algorithm that generates the complete set of shuffles between two trees and prints their planar representations.
 
  {\let\thefootnote\relax\footnote{2010 Mathematics Subject Classification. 18A05, 18A25, 18A40, 18M05, 18M60, 18N50}}
@@ -186,27 +186,27 @@ Y para recalcar, toda mi familia y amigos por acompa\~narme en este proceso.
 
 La idea principal de este trabajo era poder entender el producto tensorial de conjuntos dendroidales, para ello hemos ido siguiendo un hilo que parte de las nociones b\'asicas de categor\'ias y op\'eradas y acaba con una t\'ecnica alternativa para encontrar dicho producto tensorial.
 
-Una vez dadas las nociones b\'asicas, el trabajo sigue con la definici\'on la categor\'ia simplicial $\Delta$. Dicha categor\'ia se forma mediante los simplex como objetos y las caras y degeneraciones como los morfismos.
+Una vez dadas las nociones b\'asicas, el trabajo sigue con la definici\'on de la categor\'ia simplicial $\Delta$ y la categor\'ia de los conjuntos simpliciales. Dicha categor\'ia es una categor\'ia de prehaces sobre $\Delta$.
 
-El trabajo se basa de un formalismo de \'arboles como op\'eradas coloreadas. Este formalismo nos permite tener una definici\'on estricta de que es un \'arbol, formado de sus entradas y salida.
-Y as\'i, quedan bien definidos los morfismos de \'arboles como las caras y las degeneraciones. Con estos morfismos de op\'eradas coloreadas y con los \'arboles planares como objetos obtenemos la categor\'ia $\Omega_p$.
-Tenemos que la categor\'ia de \'arboles no planares $\Omega$ viene de la categor\'ia $\Omega_p$ considerando que ahora los \'arboles admiten la acci\'on del grupo sim\'etrico en sus entradas.
+Para definir la categor\'ia dendroidal el trabajo se basa en un formalismo de \'arboles como op\'eradas coloreadas. Este formalismo nos permite tener una definici\'on estricta de qu\'e es un \'arbol y los morfismos entre \'arboles.
+Con estos morfismos de op\'eradas coloreadas y con los \'arboles planares como objetos obtenemos la categor\'ia $\Omega_p$.
+La categor\'ia de \'arboles no planares $\Omega$ viene de la categor\'ia $\Omega_p$ considerando que ahora los \'arboles admiten la acci\'on del grupo sim\'etrico en sus entradas.
 
 Para poder introducir la definici\'on de la categor\'ia de conjuntos dendroidales, tenemos que introducir la noci\'on de prehaces en $\Omega$. Para ello necesitamos un morfismo que env\'ia \'arboles a su conjunto de representaciones planares, de esta manera tenemos el prehaz $P$ en $\Omega$. Entonces, tenemos que $\Omega\backslash P = \Omega_p$ y en consecuencia, existe una proyecci\'on de $\Omega_p$ a $\Omega$.
-De esta manera podemos ver que las categor\'ias dendroidales extienden la categor\'ia simplicial mediante el encaje de $\Delta$ en $\Omega_p$ y la anterior proyecci\'on. 
+De esta manera podemos ver que las categor\'ias dendroidales extienden la categor\'ia simplicial mediante el encaje de $\Delta$ en $\Omega_p$ viendo los objetos de $\Delta$ como \'arbolse lineales y la anterior proyecci\'on. 
 Finalmente, un conjunto dendroidal $X$ es una conjunto de d\'endrices con forma $T$ para todo \'arbol $T$ en $\Omega$ junto las funciones asociadas a los morfismos de $\Omega$.
 
 El producto tensorial de Boardman--Vogt introduce un producto distinto al producto cartesiano dentro de las op\'eradas coloreadas y gracias al nervio dendroidal podemos enviar un \'arbol como op\'erada coloreada a su representable en los conjuntos dendroidales.
-De esta manera, si definimos dos conjuntos dendroidales como los colimites de representables, podemos encontrar el producto tensorial de dichos conjuntos dendroidales encontrando el producto tensorial de Boardman--Vogt de dos op\'eradas coloreadas y luego aplicar el nervio dendroidal.
+De esta manera, si definimos dos conjuntos dendroidales como los colimites de representables, podemos encontrar el producto tensorial de dichos conjuntos dendroidales encontrando el producto tensorial de Boardman--Vogt de dos op\'eradas coloreadas y luego aplicando el nervio dendroidal.
 
-Encontrar el producto tensorial no es tarea f\'acil, as\'i que necesitamos introducir la noci\'on del conjunto de shuffles, donde un shuffle es simplemente un \'arbol como op\'erada coloreada generado por dos iniciales manteniendo la configuraci\'on de cada uno de ellos a nivel de v\'ertices. Es decir, la c\'opia de un v\'ertice blanco de la primera \'operada en un shuffle tendr\'a las mismas entradas que ten\'ia en su op\'erada original pero con la diferencia que estas entradas estar\'an conectadas al output de las c\'opias de un v\'ertice negro de la segunda op\'erada.
-Luego, podemos generar todo el conjunto de shuffles distintos siguiendo la norma de intercambio. Una vez que encontramos el conjuntos de shuffles de dos \'arboles cualesquiera podemos definir el producto tensorial de sus representables en conjuntos dendroidales como la un\'ion de todos los shuffles encontrados.
+Encontrar el producto tensorial no es tarea f\'acil, as\'i que necesitamos introducir la noci\'on del conjunto de shuffles, donde un shuffle es simplemente un \'arbol como op\'erada coloreada generado por dos iniciales, manteniendo la configuraci\'on de cada uno de ellos a nivel de v\'ertices. Es decir, la c\'opia de un v\'ertice blanco de la primera \'operada en un shuffle tendr\'a las mismas entradas que ten\'ia en su op\'erada original pero con la diferencia que estas entradas estar\'an conectadas al output de las c\'opias de un v\'ertice negro de la segunda op\'erada.
+Luego, podemos generar todo el conjunto de shuffles distintos siguiendo la norma de intercambio. Una vez que encontramos el conjuntos de shuffles de dos \'arboles cualesquiera podemos definir el producto tensorial de sus representables en conjuntos dendroidales como la uni\'on de los representables de todos los shuffles encontrados.
 
-Tenemos una funci\'on recursiva que nos calcula cuantos shuffles hay entre dos \'arboles sin generarlos en s\'i. Nos preguntamos si es posible encontrar una f\'ormula general de dicha funci\'on recursiva. Si trabajamos con los \'arboles lineales tenemos un caso especial donde s\'i existe una f\'ormula cerrada, resulta que el problema se reduce a una relaci\'on inductiva muy conocida, el coficiente binomial.
+Tenemos una funci\'on recursiva que nos calcula cuantos shuffles hay entre dos \'arboles sin tener que generarlos. Nos preguntamos si es posible encontrar una f\'ormula general de dicha funci\'on recursiva. Si trabajamos con los \'arboles lineales tenemos un caso especial donde s\'i existe una f\'ormula cerrada, resulta que el problema se reduce a una relaci\'on inductiva muy conocida, el coficiente binomial. En general, es un problema abierto.
 
-Finalmente, generar todos los shuffles es una tarea relativamente f\'acil pero costosa de tiempo ya que el n\'umero de shuffles augmenta mucho seg\'un el tama\~no de los \'arboles. Por eso hemos decidido de desarrollar un paquete en Python para que genere el conjunto de shuffles entre dos \'arboles cualesquiera.
-Para realizar el paquete hemos abstra\'ido las nociones de op\'eradas coloreadas, de \'arboles como op\'eradas coloreadas y de los shuffles de \'arboles.
-Gracias al paquete hemos podido ilustrar todas las figuras que representan los \'arboles y los ejemplos de los conjuntos de shuffles.
+Finalmente, generar todos los shuffles es una tarea relativamente f\'acil pero costosa de tiempo ya que el n\'umero de shuffles aumenta mucho seg\'un el tama\~no de los \'arboles. Por eso hemos desarrollado un paquete en Python para que genere el conjunto de shuffles entre dos \'arboles cualesquiera.
+Para realizar el paquete hemos abstraido las nociones de op\'eradas coloreadas, de \'arboles como op\'eradas coloreadas y de los shuffles de \'arboles.
+Gracias al paquete hemos podido ilustrar todas las figuras que aparecen en el trabajo que representan los \'arboles y los ejemplos de los conjuntos de shuffles.
 
 
 % Idea del trabajo: el producto tensorial de conjuntos dendroidales
