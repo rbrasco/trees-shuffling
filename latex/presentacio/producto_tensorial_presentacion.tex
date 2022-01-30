@@ -1,0 +1,312 @@
+\documentclass[12pt,aspectratio=169]{beamer}
+
+\usetheme[progressbar=frametitle, numbering=fraction]{metropolis}
+\usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate, tikz-cd}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[latin1]{inputenc}
+\usepackage{epsfig}
+\SelectTips{cm}{}
+
+\parskip=5pt
+\parindent=15pt
+\usepackage{graphicx}
+\usepackage{listings}
+\numberwithin{equation}{section}
+\newtheorem{teo}{Teorema}[section]
+\newtheorem*{teo*}{Teorema}
+\newtheorem{prop}[teo]{Proposici\'on}
+\newtheorem{corol}[teo]{Corolario}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{nota}[teo]{Notaci\'on}
+
+\theoremstyle{definition}
+\newtheorem{defi}[teo]{Definici\'on}
+\newtheorem{prob}[teo]{Problema}
+\newtheorem*{sol}{Soluci\'on}
+\newtheorem{ex}[teo]{Ejemplo}
+\newtheorem{exs}[teo]{Ejemplos}
+\newtheorem{obs}[teo]{Observaci\'on}
+\newtheorem{obss}[teo]{Observaciones}
+\newcommand{\Set}{\mathop{\rm Set}}
+\newcommand{\Grp}{\mathop{\rm Grp}}
+\newcommand{\Top}{\mathop{\rm Top}}
+\newcommand{\Oper}{\mathop{\rm Oper}}
+
+\newenvironment{algoritmo}[1][htb]{%
+    \floatname{algorithm}{Algoritmo}% Update algorithm name
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\Break}{\textbf{break}}
+\algblockdefx[ForElse]{ForElse}{EndForElse}{\textbf{else}}{}
+\algtext*{EndForElse}
+
+\usepackage{xcolor}
+\definecolor{DarkGrey}{HTML}{353535}
+\definecolor{ECNURed}{RGB}{164,31,53}
+\definecolor{ECNUBrown}{RGB}{134,117,77}
+\setbeamercolor{normal text}{ fg= DarkGrey  }
+\setbeamercolor{alerted text}{ fg= ECNURed  }
+\setbeamercolor{example text}{ fg= ECNUBrown  }
+% \setbeamercolor{background canvas}{bg=white}{\rm Ob}
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{footline}[page number]
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\setbeamertemplate{enumerate items}[default]
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+% \textbf{\LARGE GRADO EN MATEM\'{A}TICAS }
+\title[short title]{El producto tensorial de conjuntos dendroidales} % The short title appears at the bottom of every slide, the full title is only on the title page
+% \subtitle{Trabajo final de grado}
+
+\author[Roger Brasco] {Roger Brasc\'o Garc\'es}
+
+\institute[NTU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+    Departamento de Matem\'aticas e Inform\'atica \\
+    Universidad de Barcelona % Your institution for the title page
+}
+\date{9 de Febrero de 2022} % Date, can be changed to a custom date
+
+\titlegraphic{\hfill\includegraphics[height=1.2cm]{statics/matematiquesinformatica-pos-rgb.png}}
+
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Introducci\'on}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    \tableofcontents
+\end{frame}
+
+%------------------------------------------------
+\section{Nociones previas}
+%------------------------------------------------
+
+\begin{frame}{Categor\'ias}
+    \begin{defi}
+        Una \emph{categor\'{\i}a} $\mathcal{C}$ consiste en:
+        $$
+            \mathcal{C} = ({\rm Ob}(\mathcal{C}), {\rm hom}(\mathcal{C}), \circ, {\rm id})
+        $$
+        % \begin{itemize}
+        %     \item \emph{Objetos}: ${\rm Ob}(\mathcal{C})$.
+        %     % \item Para cada par de objectos $A, B\in{\rm Ob}(\mathcal{C})$ un conjunto $\mathcal{C}(A,B)$ de \emph{morfismos} o \emph{flechas} de $A$ a $B$.
+        %     % \item Para cada tres objectos $A, B, C\in{\rm Ob}(\mathcal{C})$ una \emph{funci\'on de composici\'on}
+        %           $$
+        %               \mathcal{C}(B,C)\times \mathcal{C}(A,B)\stackrel{\circ}{\longrightarrow} \mathcal{C}(A,C)
+        %           $$
+        %           que env\'{\i}a el par $(g,f)$ a $g\circ f$.
+        %     \item Para cada objeto $A$, un elemento ${\rm id}_A\in\mathcal{C}(A,A)$ que llamaremos la \emph{identidad} en $A$.
+        % \end{itemize}
+        Adem\'as, esta estructura cumple los siguientes axiomas:
+        \begin{itemize}
+            \item \emph{Asociatividad}. %La funci\'on de composici\'on es asociativa, esto es, dados $f\in\mathcal{C}(A,B)$, $g\in\mathcal{C}(B,C)$ y $h\in\mathcal{C}(C,D)$, se cumple que $(h\circ g)\circ f=h\circ(g\circ f)$.
+            \item \emph{Unidad}. %La identidad es un elemento neutro para la composici\'on, es decir, para toda $f\in\mathcal{C}(A,B)$ tenemos que $f\circ {\rm id}_A=f={\rm id}_B\circ f$.
+        \end{itemize}
+    \end{defi}
+
+\end{frame}
+
+\begin{frame}{Funtores}
+    \begin{defi}
+        Sean $\mathcal{C}$ y $\mathcal{D}$ dos categor\'{\i}as. Un \emph{funtor} $F$ de $\mathcal{C}$ en $\mathcal{D}$, que denotaremos por $F\colon\mathcal{C}\to \mathcal{D}$ consiste en:
+        \begin{itemize}
+            \item Una aplicaci\'on ${\rm Ob}(\mathcal{C})\to {\rm Ob}(\mathcal{D})$. % La imagen de un objeto $A$ de $\mathcal{C}$ la denotaremos por $F(A)$
+            \item Para cada par de objetos $A,B\in\mathcal{C}$ una aplicaci\'on
+                  $$
+                      \mathcal{C}(A,B)\longrightarrow\mathcal{D}(F(A), F(B)).
+                  $$
+                %   La imagen de un morfismo $f\colon A\to B$ por esta aplicaci\'on la denotaremos por $F(f)\colon F(A)\to F(B)$.
+        \end{itemize}
+        Adem\'as, estas aplicaciones son compatibles con la composici\'on y la unidad. %, esto es, se cumplen los siguientes axiomas:
+        % \begin{itemize}
+        %     \item Dados $f\in\mathcal{C}(A,B)$ y $g\in\mathcal{C}(B,C)$ se cumple que $F(g\circ f)=F(g)\circ F(f)$.
+        %     \item Para todo objeto $A\in\mathcal{C}$ se cumple que $F({\rm id}_A)={\rm id}_{F(A)}$.
+        % \end{itemize}
+    \end{defi}
+
+\end{frame}
+
+\begin{frame}{Op\'eradas}
+\begin{defi}
+    Una \emph{op\'erada} $P$ consiste en una sucesi\'on de conjuntos $\{P(n)\}_{n\ge 0}$ junto con la siguiente estructura:
+    \begin{itemize}
+        \item Un elemento \emph{unidad} $1\in P(1)$.
+        \item Un \emph{producto composici\'on}
+              $$
+                  P(n)\times P(k_1) \times\cdots\times P(k_n)\longrightarrow P(k)
+              $$
+              para cada $n$ y $k_1,\dots,k_n$ tal que $k=\sum_{i=1}^{n}{k_i}$.
+        \item Para cada $\sigma\in\Sigma_n$ una \emph{acci\'on por la derecha} $\sigma^*\colon P(n)\to P(n)$.
+    \end{itemize}
+    Adem\'as el producto composici\'on es asociativo, equivariante y compatible con la unidad.
+\end{defi}
+
+\end{frame}
+
+\begin{frame}{Op\'eradas coloreadas}
+    \begin{defi}
+        Sea $C$ un conjunto. Una op\'erada $C$-coloreada $P$ consiste en, para cada $(n+1)$-tupla de colores $(c_1,\ldots,c_n,c)$ con $n\ge 0$, un conjunto $P(c_1,\ldots, c_n;c)$, junto con la siguiente estructura:
+        \begin{itemize}
+            \item Un elemento \emph{unidad} $1_c\in P(c;c)$ para cada $c\in C$.
+            \item Un \emph{producto composici\'on} con $n$ $(n+1)$-tuplas de colores $(c_1,\dots,c_n;c)$.
+                %   \begin{align*}
+                %       P(c_1,\dots,c_n;c) & \otimes P(d_{1,1},\dots,d_{1,k_1};c_1) \otimes\dots\otimes P(d_{n,1},\dots,d_{n,k_n};c_n) \\
+                %                          & \longrightarrow P(d_{1,1},\dots,d_{1,k_1},\dots,d_{n,1},\dots,d_{n,k_n};c)
+                %   \end{align*}
+                %   para cada $(n+1)$-tupla de colores $(c_1,\dots,c_n;c)$ y $n$ tuplas cualesquiera
+                %   $$
+                %       (d_{1,1},\dots,d_{1,k_1};c_1),\dots,(d_{n,1},\dots,d_{n,k_n};c_n)
+                %   $$
+            \item Para cada elemento $\sigma\in\Sigma_n$ una \emph{acci\'on por la derecha} en sus entradas.
+        \end{itemize}
+        Adem\'as el producto composici\'on es asociativo, equivariante y compatible con las unidades.
+    \end{defi}
+    \begin{defi}
+        Sea $P$ una op\'erada $C$-coloreada y $Q$ una op\'erada $D$-coloreada. Un \emph{morfismo de op\'eradas} $f\colon P\to Q$ consiste en una aplicaciones entre los conjuntos de colores $f\colon C\to D$ y aplicaciones
+        $$
+            f_{c_1,\dots,c_n;c}: P(c_1,\dots,c_n;c) \longrightarrow Q(f(c_1),\dots,f(c_n);c)
+        $$
+        compatibles con el producto composici\'on, las unidades y la acci\'on del grupo sim\'etrico.
+    \end{defi}
+    
+\end{frame}
+
+%------------------------------------------------
+\section{\'Arboles como op\'eradas coloreadas}
+%------------------------------------------------
+
+\begin{frame}{Formalismo de \'arboles}
+    Sea $T$ el siguiente \'arbol:
+% Figura arbol + explicación de sus partes %
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a
+    (0.0, 10.0)*=0{\bullet}="2"; %uB
+    (-15.0, 20.0)*=0{\bullet}="3"; %vB
+    (-22.5, 30.0)*{}="4"; %leaf_e
+    (-7.5, 30.0)*{}="5"; %leaf_f
+    (0.0, 20.0)*{}="6"; %leaf_c
+    (15.0, 20.0)*=0{\bullet}="7"; %wB
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "2";"7" **\dir{-};
+    %Labels%
+    (3.0, 9.5)*=0{\scriptstyle r};
+    (-11.5, 20.0)*=0{\scriptstyle v};
+    (-2.0, 5.0)*=0{\scriptstyle a};
+    (-9.5, 14.0)*=0{\scriptstyle b};
+    (-21.3, 25.0)*=0{\scriptstyle e};
+    (-9, 25.0)*=0{\scriptstyle f};
+    (-2.0, 15.0)*=0{\scriptstyle c};
+    (10.4, 15.0)*=0{\scriptstyle d};
+    (18.0, 20.0)*=0{\scriptstyle w};
+    (-13,0)*{T};
+    \endxy
+\end{equation}
+
+\end{frame}
+\begin{frame}{\'Arboles como op\'eradas coloreadas}
+    \begin{defi}
+        Sea $T$ un \'arbol planar con ra\'iz. Denotaremos la op\'erada coloreada no-sim\'etrica generada por $T$ como $\Omega_p(T)$. 
+        % El conjunto de colores de $\Omega_p(T)$ es el conjunto de aristas $E(T)$ de $T$ y las operaciones est\'an generadas por los v\'ertices del \'arbol.
+        % Es decir, para cada v\'ertice $v$ con entradas $e_1,\dots,e_n$ y salida $e$, definimos una operaci\'on $v\in \Omega_p(T)(e_1,\dots,e_n;e)$. Las otras operaciones son las operaciones unitarias y las operaciones obtenidas por composici\'on.
+    \end{defi}
+\end{frame}
+
+\begin{frame}{Categor\'ias \pmb{$\Omega_p$} y \pmb{$\Omega$}}
+    \begin{defi}
+        La \emph{categor\'ia de \'arboles planares con ra\'iz} $\Omega_p$ es la subcategor\'ia plena de la categor\'ia de op\'eradas coloreadas no-sim\'etricas cuyos objetos son $\Omega_p(T)$ para cada \'arbol $T$.
+    
+        % Podemos pensar que $\Omega_p$ es una categor\'ia cuyos objetos son \'arboles planares con ra\'iz.
+        % Sean $S$ y $T$ dos \'arboles planares con ra\'iz, el conjunto de morfismos $\Omega_p(S, T)$ es dado por los morfismos entre op\'eradas coloreadas no-sim\'etricas de $\Omega_p(S)$ a $\Omega_p(T)$.
+    \end{defi}
+    \begin{defi}
+        La \emph{categor\'ia de \'arboles con ra\'iz} $\Omega$ es la subcategor\'ia plena de la categor\'ia de op\'eradas coloreadas cuyos objetos son $\Omega(T)$ para todo \'arbol $T$.
+    
+        % Podemos pensar que $\Omega$ es una categor\'ia cuyos objetos son \'arboles con ra\'iz.
+        % Sean $S$ y $T$ dos \'arboles con ra\'iz, el conjunto de morfismos $\Omega(S, T)$ es dado por los morfismos entre op\'eradas coloreadas de $\Omega(S)$ a $\Omega(T)$.
+    \end{defi}
+\end{frame}
+%------------------------------------------------
+\section{Conjuntos Dendroidales}
+%------------------------------------------------
+\begin{frame}{Conjuntos Dendroidales}
+    \begin{defi}
+        La categor\'ia $dSets$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtores $\Omega^{\rm op}\to\Set$ y los morfismos vienen dados por las transformaciones naturales. % La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
+    
+        % Un conjunto dendroidal $X$ viene definido como un conjunto $X(T)$, denotado por $X_T$, para cada \'arbol $T$, conjuntamente con una funci\'on $\alpha^{*}\colon X_T \to X_S$ para cada morfismo $\alpha\colon S\to T$ en $\Omega$. Como $X$ es un funtor, entonces $(id)^{*}=id$ y si $\alpha\colon S\to T$ y $\beta\colon R\to S$ son morfismos en $\Omega$, entonces $(\alpha\circ\beta)^{*}=\beta^{*}\circ\alpha^{*}$.
+        
+        El conjunto $X_T$ lo llamaremos conjunto de \emph{d\'endrices con forma T}. %, o simplemente conjunto de $T$-dendrices.
+    
+        % Sean $X$ y $Y$ dos conjuntos dendroidales, un \emph{morfismo de conjuntos dendroidales} $f\colon X \to Y$ viene definido por funciones $f\colon X_T\to Y_T$, para cada \'arbol $T$, conmutando con las funciones de estructura. Es decir, si $\alpha\colon S\to T$ es cualquier morfismo en $\Omega$ y $x\in X_T$, entonces $f(\alpha^{*}x)=\alpha^{*}f(x)$.
+    
+        % Decimos que $Y$ es un \emph{subconjunto dendroidal} de $X$ si para cada \'arbol $T$ tenemos que $Y_T\subseteq X_T$ y la inclusi\'on $Y \hookrightarrow X$ es un morfismo de conjuntos dendroidales.
+    \end{defi}
+\end{frame}
+%------------------------------------------------
+\section{Producto Tensorial}
+%------------------------------------------------
+
+\begin{frame}{Producto Tensorial de Boardman--Vogt}
+
+\end{frame}
+
+\begin{frame}{Producto Tensorial de Conjuntos Dendroidales}
+
+\end{frame}
+
+%------------------------------------------------
+\section{Conjunto de Shuffles}
+%------------------------------------------------
+
+\begin{frame}{Shuffles}
+    H
+\end{frame}
+
+\begin{frame}{Estructura de orden parcial}
+    H
+\end{frame}
+
+\begin{frame}{Generar Shuffles en Python}
+
+\end{frame}
+%------------------------------------------------
+\section{Conclusiones}
+%------------------------------------------------
+
+\begin{frame}{Conclusiones}
+    H
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \Huge{\centerline{\textbf{Gracias por vuestra atenci\'on}}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

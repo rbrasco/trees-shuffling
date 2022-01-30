@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Nociones previas}{3}{0}{1}
+\beamer@sectionintoc {2}{\'Arboles como op\'eradas coloreadas}{7}{0}{2}
+\beamer@sectionintoc {3}{Producto Tensorial}{10}{0}{3}
+\beamer@sectionintoc {4}{Conjunto de Shuffles}{13}{0}{4}
+\beamer@sectionintoc {5}{Conclusiones}{17}{0}{5}

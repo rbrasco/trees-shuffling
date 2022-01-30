@@ -1,0 +1,189 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND THEMES
+%----------------------------------------------------------------------------------------
+\documentclass[aspectratio=169,xcolor=dvipsnames]{beamer}
+% \usefolder{theme}
+\usetheme{SimplePlus}
+\usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate, tikz-cd}
+\usepackage{hyperref}
+\usepackage[all]{xy}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage{hyperref}
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage[latin1]{inputenc}
+\usepackage{epsfig}
+\SelectTips{cm}{}
+
+\parskip=5pt
+\parindent=15pt
+\usepackage{graphicx}
+\usepackage{listings}
+\numberwithin{equation}{section}
+\newtheorem{teo}{Teorema}[section]
+\newtheorem*{teo*}{Teorema}
+\newtheorem{prop}[teo]{Proposici\'on}
+\newtheorem{corol}[teo]{Corolario}
+\newtheorem{lema}[teo]{Lema}
+\newtheorem{nota}[teo]{Notaci\'on}
+
+\theoremstyle{definition}
+\newtheorem{defi}[teo]{Definici\'on}
+\newtheorem{prob}[teo]{Problema}
+\newtheorem*{sol}{Soluci\'on}
+\newtheorem{ex}[teo]{Ejemplo}
+\newtheorem{exs}[teo]{Ejemplos}
+\newtheorem{obs}[teo]{Observaci\'on}
+\newtheorem{obss}[teo]{Observaciones}
+\newcommand{\Set}{\mathop{\rm Set}}
+\newcommand{\Grp}{\mathop{\rm Grp}}
+\newcommand{\Top}{\mathop{\rm Top}}
+\newcommand{\Oper}{\mathop{\rm Oper}}
+
+\newenvironment{algoritmo}[1][htb]{%
+    \floatname{algorithm}{Algoritmo}% Update algorithm name
+   \begin{algorithm}[#1]%
+  }{\end{algorithm}}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\Break}{\textbf{break}}
+\algblockdefx[ForElse]{ForElse}{EndForElse}{\textbf{else}}{}
+\algtext*{EndForElse}
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+% \textbf{\LARGE GRADO EN MATEM\'{A}TICAS }
+\title[short title]{El producto tensorial de conjuntos dendroidales} % The short title appears at the bottom of every slide, the full title is only on the title page
+\subtitle{Trabajo final de grado}
+
+\author[Roger Brasco] {Roger Brasc\'o Garc\'es}
+
+\institute[NTU] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
+{
+    Departamento de Matem\'aticas e Inform\'atica \\
+    Universidad de Barcelona % Your institution for the title page
+}
+\date{9 de Febrero de 2022} % Date, can be changed to a custom date
+
+\titlegraphic{\hfill\includegraphics[height=1cm]{statics/matematiquesinformatica-pos-rgb.png}}
+
+%----------------------------------------------------------------------------------------
+%	PRESENTATION SLIDES
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{frame}
+    % Print the title page as the first slide
+    \titlepage
+\end{frame}
+
+\begin{frame}{Introducci\'on}
+    % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
+    \tableofcontents
+\end{frame}
+
+%------------------------------------------------
+\section{Nociones previas}
+%------------------------------------------------
+
+\begin{frame}{Categor\'ias}
+    \begin{block}{Block}
+        Una \emph{categor\'{\i}a} $\mathcal{C}$ consiste en:
+        % \begin{itemize}
+        %     \item \emph{Objetos}: ${\rm Ob}(\mathcal{C})$.
+        %     % \item Para cada par de objectos $A, B\in{\rm Ob}(\mathcal{C})$ un conjunto $\mathcal{C}(A,B)$ de \emph{morfismos} o \emph{flechas} de $A$ a $B$.
+        %     % \item Para cada tres objectos $A, B, C\in{\rm Ob}(\mathcal{C})$ una \emph{funci\'on de composici\'on}
+        %           $$
+        %               \mathcal{C}(B,C)\times \mathcal{C}(A,B)\stackrel{\circ}{\longrightarrow} \mathcal{C}(A,C)
+        %           $$
+        %           que env\'{\i}a el par $(g,f)$ a $g\circ f$.
+        %     \item Para cada objeto $A$, un elemento ${\rm id}_A\in\mathcal{C}(A,A)$ que llamaremos la \emph{identidad} en $A$.
+        % \end{itemize}
+    \end{block}
+    Adem\'as, esta estructura cumple los siguientes axiomas:
+        \begin{itemize}
+            \item \emph{Asociatividad}. La funci\'on de composici\'on es asociativa, esto es, dados $f\in\mathcal{C}(A,B)$, $g\in\mathcal{C}(B,C)$ y $h\in\mathcal{C}(C,D)$, se cumple que $(h\circ g)\circ f=h\circ(g\circ f)$.
+            \item \emph{Unidad}. La identidad es un elemento neutro para la composici\'on, es decir, para toda $f\in\mathcal{C}(A,B)$ tenemos que $f\circ {\rm id}_A=f={\rm id}_B\circ f$.
+        \end{itemize}
+
+\end{frame}
+
+\begin{frame}{Funtores}
+
+\end{frame}
+
+\begin{frame}{Op\'eradas}
+
+\end{frame}
+
+%------------------------------------------------
+\section{\'Arboles como op\'eradas coloreadas}
+%------------------------------------------------
+
+\begin{frame}{Formalismo de \'arboles}
+
+\end{frame}
+
+\begin{frame}{Categor\'ia \pmb{$\Omega_p$}}
+
+\end{frame}
+%------------------------------------------------
+
+% \begin{frame}{References}
+%     % Beamer does not support BibTeX so references must be inserted manually as below
+%     \footnotesize{
+%         \begin{thebibliography}{99}
+%             \bibitem[Smith, 2012]{p1} John Smith (2012)
+%             \newblock Title of the publication
+%             \newblock \emph{Journal Name} 12(3), 45 -- 678.
+%         \end{thebibliography}
+%     }
+% \end{frame}
+
+%------------------------------------------------
+\section{Producto Tensorial}
+%------------------------------------------------
+
+\begin{frame}{Producto Tensorial de Boardman--Vogt}
+
+\end{frame}
+
+\begin{frame}{Producto Tensorial de Conjuntos Dendroidales}
+
+\end{frame}
+
+%------------------------------------------------
+\section{Conjunto de Shuffles}
+%------------------------------------------------
+
+\begin{frame}{Shuffles}
+    H
+\end{frame}
+
+\begin{frame}{Estructura de orden parcial}
+    H
+\end{frame}
+
+\begin{frame}{Generar Shuffles en Python}
+
+\end{frame}
+%------------------------------------------------
+\section{Conclusiones}
+%------------------------------------------------
+
+\begin{frame}{Conclusiones}
+    H
+\end{frame}
+
+%------------------------------------------------
+
+\begin{frame}
+    \Huge{\centerline{\textbf{Gracias por vuestra atenci\'on}}}
+\end{frame}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
