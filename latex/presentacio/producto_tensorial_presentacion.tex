@@ -1,6 +1,9 @@
 \documentclass[12pt,aspectratio=169]{beamer}
 
 \usetheme[progressbar=frametitle, numbering=fraction]{metropolis}
+\usepackage{animate}
+\usepackage{multimedia}
+\usepackage{xmpmulti}
 \usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate, tikz-cd}
 \usepackage{hyperref}
 \usepackage[all]{xy}
@@ -55,7 +58,7 @@
 \setbeamercolor{normal text}{ fg= DarkGrey  }
 \setbeamercolor{alerted text}{ fg= ECNURed  }
 \setbeamercolor{example text}{ fg= ECNUBrown  }
-% \setbeamercolor{background canvas}{bg=white}{\rm Ob}
+\setbeamercolor{background canvas}{bg=white}
 \setbeamertemplate{section in toc}[sections numbered]
 \setbeamertemplate{footline}[page number]
 \setbeamertemplate{navigation symbols}{}
@@ -251,9 +254,9 @@
     \end{defi}
 \end{frame}
 %------------------------------------------------
-\section{Conjuntos Dendroidales}
+\section{Conjuntos dendroidales}
 %------------------------------------------------
-\begin{frame}{Conjuntos Dendroidales}
+\begin{frame}{Conjuntos dendroidales}
     \begin{defi}
         La categor\'ia $dSets$ de \emph{conjuntos dendroidales} es la categor\'ia de prehaces en $\Omega$. Los objetos son funtores $\Omega^{\rm op}\to\Set$ y los morfismos vienen dados por las transformaciones naturales. % La categor\'ia $pd\Set$ de \emph{conjuntos dendroidales planares} esta definida de manera an\'aloga intercambiando $\Omega$ por $\Omega_p$.
     
@@ -266,40 +269,429 @@
         % Decimos que $Y$ es un \emph{subconjunto dendroidal} de $X$ si para cada \'arbol $T$ tenemos que $Y_T\subseteq X_T$ y la inclusi\'on $Y \hookrightarrow X$ es un morfismo de conjuntos dendroidales.
     \end{defi}
 \end{frame}
+\begin{frame}{Nervio dendroidal}
+    El funtor $\Omega \to Oper$ que env\'ia un \'arbol $T$ a la op\'erada coloreada $\Omega(T)$ induce, por extensi\'on de Kan, la siguiente adjunci\'on
+\[
+    \xymatrix{
+        \tau_d\colon dSets\ar@<0.5ex>[r] &  Oper\colon N_d \ar@<0.5ex>[l]
+    }
+\]
+
+El funtor $N_d$ se llama \emph{nervio dendroidal}. Para toda op\'erada $P$, su nervio dendroidal es el conjunto dendroidal
+$$
+    N_d(P)_T = Oper(\Omega(T), P)
+$$
+Este funtor es plenamente fiel y $N_d(\Omega(T))=\Omega[T]$ para cada \'arbol $T$ en $\Omega$.
+\end{frame}
 %------------------------------------------------
-\section{Producto Tensorial}
+\section{Producto tensorial}
 %------------------------------------------------
 
-\begin{frame}{Producto Tensorial de Boardman--Vogt}
+\begin{frame}{Producto tensorial de Boardman--Vogt}
+    \begin{defi}
+        Sea $P$ una op\'erada sim\'etrica $C$-coloreada, y sea $Q$ una op\'erada sim\'etrica $D$-coloreada. El \emph{producto tensorial de Boardman--Vogt} $P\otimes_{BV}Q$ es una op\'erada $(C\times D)$-coloreada definida en terminos de generadores y relaciones de la siguiente manera.
+        Para cada color $d\in D$ y cada operaci\'on $p\in P(c_1,\dots,c_n;c)$ existe un generador
+        $$
+            p \otimes d \in P\otimes_{BV}Q((c_1,d),\dots,(c_n,d);(c,d))
+        $$
+        De manera an\'aloga, para cada color $c\in C$ y cada operaci\'on $q\in Q(d_1,\dots,d_m;d)$. % existe un generador
+        % $$
+        %     c \otimes q \in P\otimes_{BV}Q((c,d_1),\dots,(c,d_m);(c,d))
+        % $$
+        Estos generadores est\'an sujetos a cinco relaciones:
+        % \begin{enumerate}
+        %     \item[{\rm (i)}] $(p\otimes d) \circ ((p_1\otimes d),\dots,(p_n\otimes d)) = (p\circ(p_1,\dots,p_n))\otimes d$.
+        %     \item[{\rm (ii)}] $\sigma^{*}(p\otimes d) = (\sigma^{*}p)\otimes d$, para cada $\sigma\in\Sigma_n$.
+        %     \item[{\rm (iii)}] $(c\otimes q) \circ ((c\otimes q_1),\dots,(c\otimes q_m)) = c\otimes (q\circ(q_1,\dots,q_m))$.
+        %     \item[{\rm (iv)}] $\sigma^{*}(c\otimes q) = c\otimes (\sigma^{*}q)$, para cada $\sigma\in\Sigma_m$.
+        %     \item[{\rm (v)}] $\sigma_{n,m}^{*}((p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))) = (c\otimes q)\circ((p\otimes d_1),\dots,(p\otimes d_m))$, donde $\sigma_{n,m}\in\Sigma_{nm}$ es una permutaci\'on que descibimos a continuaci\'on.
+        %           Consideramos el conjunto $\Sigma_{nm}$ como el conjunto de biyecciones del conjunto $\{0,1,\dots,nm-1\}$. Cada elemento de dicho conjunto se puede escribir como $kn+j$ de manera \'unica para $0\le k<m$ y $0\le j<n$; y, an\'alogamente, se puede escribir como $km+j$ para $0\le k<n$ y $0\le j<m$.
+        %           Finalmente, la permutaci\'on $\sigma_{n,m}$ la definimos de tal manera que $\sigma_{n,m}(kn+j) = jm+k$.
+        % \end{enumerate}
+    \end{defi}
+\end{frame}
+\begin{frame}{Relaci\'on de intercambio}
+    \begin{defi}
+        (v) $\sigma_{n,m}^{*}((p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))) = (c\otimes q)\circ((p\otimes d_1),\dots,(p\otimes d_m))$, donde $\sigma_{n,m}\in\Sigma_{nm}$ es una permutaci\'on.
+    \end{defi}
 
+    \begin{ex}
+        Suponemos que $n=2$ y $m=3$.
+        Antes de aplicar la permutaci\'on $\sigma_{2,3}^{*}$
+        % Dibujo del arbol (p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))%
+        \begin{equation}
+            \xy
+            <0.08cm, 0cm>:
+            %Vertices%
+            (0.0, 0.0)*{}="1"; %root_c-d
+            (0.0, 10.0)*\cir<2pt>{}="2"; %p\otimes dW
+            (-45.0, 20.0)*=0{\bullet}="3"; %c_1\otimes qB
+            (-75.0, 30.0)*{}="4"; %leaf_c_1-d_1
+            (-45.0, 30.0)*{}="5"; %leaf_c_1-d_2
+            (-15.0, 30.0)*{}="6"; %leaf_c_1-d_3
+            (45.0, 20.0)*=0{\bullet}="7"; %c_2\otimes qB
+            (15.0, 30.0)*{}="8"; %leaf_c_2-d_1
+            (45.0, 30.0)*{}="9"; %leaf_c_2-d_2
+            (75.0, 30.0)*{}="10"; %leaf_c_2-d_3
+            %Edges%
+            "1";"2" **\dir{-};
+            "2";"3" **\dir{-};
+            "3";"4" **\dir{-};
+            "3";"5" **\dir{-};
+            "3";"6" **\dir{-};
+            "2";"7" **\dir{-};
+            "7";"8" **\dir{-};
+            "7";"9" **\dir{-};
+            "7";"10" **\dir{-};
+            %Labels%
+            (5.0, 9.0)*=0{\scriptstyle p\otimes d};
+            (-52.0, 19.0)*=0{\scriptstyle c_1\otimes q};
+            (52.0, 19.0)*=0{\scriptstyle c_2\otimes q};
+            (-5.0, 5.0)*=0{\scriptstyle (c,d)};
+            (-20.5, 11.0)*=0{\scriptstyle (c_1,d)};
+            (-71.5, 25.0)*=0{\scriptstyle (c_1,d_1)};
+            (-45.0, 32.0)*=0{\scriptstyle (c_1,d_2)};
+            (-19.0, 25.0)*=0{\scriptstyle (c_1,d_3)};
+            (20.5, 11.0)*=0{\scriptstyle (c_2,d)};
+            (19.0, 25.0)*=0{\scriptstyle (c_2,d_1)};
+            (45.0, 32.0)*=0{\scriptstyle (c_2,d_2)};
+            (71.5, 25.0)*=0{\scriptstyle (c_2,d_3)};
+            \endxy
+        \end{equation}
+    \end{ex}
+\end{frame}
+\begin{frame}{Relaci\'on de intercambio}
+    % Representamos mediante el siguiente \'arbol la operaci\'on de la derecha de la relaci\'on (v)
+    % Dibujo del arbol (c\otimes q)\circ((p\otimes d_1),\dots,(p\otimes d_m))%
+    Despu\'es de aplicar la permutaci\'on $\sigma_{2,3}^{*}$
+        \begin{equation}
+            \xy
+            <0.08cm, 0cm>:
+            %Vertices%
+            (0.0, 0.0)*{}="1"; %root_c-d
+            (0.0, 15.0)*=0{\bullet}="2"; %c\otimes qB
+            (-60.0, 30.0)*\cir<2pt>{}="3"; %p\otimes d_1W
+            (-75.0, 45.0)*{}="4"; %leaf_c_1-d_1
+            (-45.0, 45.0)*{}="5"; %leaf_c_2-d_1
+            (0.0, 30.0)*\cir<2pt>{}="6"; %p\otimes d_2W
+            (-15.0, 45.0)*{}="7"; %leaf_c_1-d_2
+            (15.0, 45.0)*{}="8"; %leaf_c_2-d_2
+            (60.0, 30.0)*\cir<2pt>{}="9"; %p\otimes d_3W
+            (45.0, 45.0)*{}="10"; %leaf_c_1-d_3
+            (75.0, 45.0)*{}="11"; %leaf_c_2-d_3
+            %Edges%
+            "1";"2" **\dir{-};
+            "2";"3" **\dir{-};
+            "3";"4" **\dir{-};
+            "3";"5" **\dir{-};
+            "2";"6" **\dir{-};
+            "6";"7" **\dir{-};
+            "6";"8" **\dir{-};
+            "2";"9" **\dir{-};
+            "9";"10" **\dir{-};
+            "9";"11" **\dir{-};
+            %Labels%
+            (5.0, 13.5)*=0{\scriptstyle c\otimes q};
+            (-65.5, 30.0)*=0{\scriptstyle p\otimes d_1};
+            (6.0, 30.0)*=0{\scriptstyle p\otimes d_2};
+            (66, 30.0)*=0{\scriptstyle p\otimes d_3};
+            (-4.5, 7.5)*=0{\scriptstyle (c,d)};
+            (-32.0, 19.5)*=0{\scriptstyle (c,d_1)};
+            (-75, 37.5)*=0{\scriptstyle (c_1,d_1)};
+            (-45, 37.5)*=0{\scriptstyle (c_2,d_1)};
+            (-5.5, 22.5)*=0{\scriptstyle (c,d_2)};
+            (-15, 37.5)*=0{\scriptstyle (c_1,d_2)};
+            (15, 37.5)*=0{\scriptstyle (c_2,d_2)};
+            (32.0, 19.5)*=0{\scriptstyle (c,d_3)};
+            (45, 37.5)*=0{\scriptstyle (c_1,d_3)};
+            (75, 37.5)*=0{\scriptstyle (c_2,d_3)};
+            \endxy
+        \end{equation}
+        % Observamos que la permutaci\'on $\sigma_{2,3}$ corresponde a la permutaci\'on (2 4 5 3) de $\Sigma_6$.
+        % Hemos pintado los v\'ertices de las operaciones en $P$ de color blanco y los v\'ertices de las operaciones en $Q$ de color negro.
 \end{frame}
 
-\begin{frame}{Producto Tensorial de Conjuntos Dendroidales}
-
+\begin{frame}{Producto tensorial de conjuntos dendroidales}
+    \begin{defi}
+        Para todo par de \'arboles $T$ y $S$ en $\Omega$, el \emph{producto tensorial} de los representables $\Omega[T]$ y $\Omega[S]$ se define como
+        $$
+            \Omega[T]\otimes\Omega[S] = N_d(\Omega(T)\otimes_{BV}\Omega(S))
+        $$
+        % Donde $N_d$ es el nervio dendroidal, $\Omega(T)$ y $\Omega(S)$ son las op\'eradas coloreadas asociadas a los \'arboles $T$ y $S$, respectivamente; y $\otimes_{BV}$ es el producto tensorial de Boardman--Vogt.
+    
+        % Esto define un producto tensorial en toda la categor\'ia de conjuntos dendroidales, ya que es una categor\'ia de prehaces y entonces cada objeto es un col\'imite can\'onico de representables y $\otimes$ conserva col\'imites en cada variable.
+    \end{defi}
+\end{frame}
+\begin{frame}{Producto tensorial de conjuntos dendroidales}
+    \begin{defi}
+        Sean $X$ e $Y$ dos conjuntos dendroidales y sea $X = \lim_{\to}\Omega[T]$ y $Y = \lim_{\to}\Omega[S]$ sus expresiones can\'onicas como col\'imites de representables. Entonces, definimos el \emph{producto tensorial} $X\otimes Y$ como
+        $$
+            X\otimes Y = \lim_{\to}\Omega[T]\otimes\lim_{\to}\Omega[S] = \lim_{\to} N_d(\Omega(T)\otimes_{BV}\Omega(S))
+        $$
+        % Sabemos que este producto tensorial es cerrado gracias a la teor\'ia general de categor\'ias \cite{BCEC}, y el conjunto de $T$-d\'endrices del hom interno viene definido por
+        % $$
+        %     {\rm Hom}_{dSets}(X,Y)_T = dSets(\Omega[T]\otimes X, Y)
+        % $$
+        % Para cada par $X$ e $Y$ de conjuntos dendroidales y para cada \'arbol $T$ en $\Omega$.
+    \end{defi}
+\end{frame}
+\begin{frame}{Producto tensorial de conjuntos dendroidales}
+    \begin{teo}
+        La categor\'ia de conjuntos dendroidales admite una estructura monoidal, sim\'etrica y cerrada. Esta estructura monoidal est\'a \'unicamente determinada (salvo isomorfismo) por la propiedad de que existe un isomorfismo natural
+        $$
+            \Omega[T]\otimes\Omega[S] \cong N_d(\Omega(T)\otimes_{BV}\Omega(S))
+        $$
+        para cada par $T$ y $S$ de objetos de $\Omega$. La unidad del producto tensorial es el conjunto dendroidal representable $\Omega[\eta]=i_!(\Delta[0]) = U$.
+    \end{teo}
 \end{frame}
 
 %------------------------------------------------
-\section{Conjunto de Shuffles}
+\section{Conjunto de shuffles}
 %------------------------------------------------
 
 \begin{frame}{Shuffles}
-    H
+    \begin{defi}
+        Sea $S$ y $T$ dos objetos de $\Omega$. Un \emph{shuffle} de $S$ y $T$ es un \'arbol $R$ cuyo conjunto de aristas es un subconjunto de $E(S)\times E(T)$. La ra\'iz de $R$ es $(a,x)$, donde $a$ es la ra\'iz de $S$ y $x$ es la ra\'iz de $T$,
+        y sus hojas son todos los pares $(l_S,l_T)$, donde $l_S$ es una hoja de $S$ y $l_T$ es una hoja de $T$. Los v\'ertices son de la forma
+        $$
+            \xy
+            <0.08cm, 0cm>:
+            %Vertices%
+            (0.0, 0.0)*{}="1"; %root_b-x
+            (0.0, 10.0)*\cir<2pt>{}="2"; %uW
+            (-7.5, 20.0)*{}="3"; %leaf_a_1-x
+            (7.5, 20.0)*{}="4"; %leaf_a_n-x
+            %Edges%
+            "1";"2" **\dir{-};
+            "2";"3" **\dir{-};
+            "2";"4" **\dir{-};
+            %Labels%
+            (3.0, 10.0)*=0{\scriptstyle u};
+            (-5.5, 5)*=0{\scriptstyle (b,\text{ }x)};
+            (-10, 13.0)*=0{\scriptstyle (a_1,\text{ }x)};
+            (10, 13.0)*=0{\scriptstyle (a_n,\text{ }x)};
+            (0,15)*{\dots};
+            \endxy
+            \xy
+            <0.08cm, 0cm>:
+            (-15, 0.0)*{}="1";
+            (15, 10.0)*{}="2";
+            (0,10)*{\rm o};
+            \endxy
+            \xy
+            <0.08cm, 0cm>:
+            %Vertices%
+            (0.0, 0.0)*{}="1"; %root_a-y
+            (0.0, 10.0)*=0{\bullet}="2"; %vB
+            (-7.5, 20.0)*{}="3"; %leaf_a-x_1
+            (7.5, 20.0)*{}="4"; %leaf_a-x_m
+            %Edges%
+            "1";"2" **\dir{-};
+            "2";"3" **\dir{-};
+            "2";"4" **\dir{-};
+            %Labels%
+            (3.0, 10.0)*=0{\scriptstyle v};
+            (-5.5, 5)*=0{\scriptstyle (a,\text{ }y)};
+            (-10, 13.0)*=0{\scriptstyle (a,\text{ }x_1)};
+            (10, 13.0)*=0{\scriptstyle (a,\text{ }x_m)};
+            (0,15)*{\dots};
+            \endxy
+        $$
+        % Donde $u$ es un v\'ertice de $S$ con entradas $a_1,\dots,a_n$ y salida $b$, y $v$ es un v\'ertice de $T$ con entradas $x_1,\dots,x_m$ y salida $y$. Nos referiremos a los dos tipos de v\'ertices como \emph{v\'ertices blancos} y \emph{v\'ertices negros}, respectivamente. Para diferenciarlos visualmente los pintaremos con $\circ$ y $\bullet$, respectivamente.
+    
+        % Observamos que existe una biyecci\'on entre los shuffles de dos \'arboles lineales $L_n$ y $L_m$ con los $(n,m)$-shuffles de $[n]\times[m]$.
+    \end{defi}
+\end{frame}
+\begin{frame}{Conjunto de shuffles}
+    \begin{prop}
+        El n\'umero de shuffles $sh(S,\text{ }T)$ de dos \'arboles $S$ y $T$ satisface tres propiedades:
+        \begin{enumerate}
+            \item[{\rm (i)}] Sim\'etrico: $sh(S, \text{ }T) = sh(T, \text{ }S)$
+            \item[{\rm (ii)}] Unitario: Si $T$ es un \'arbol unitario $\eta$, entonces $sh(S, \text{ }\eta)=1$
+            \item[{\rm (iii)}] Inducci\'on: Si $S=C_n[S_1,\dots,S_n]$ y $T=C_m[T_1,\dots,T_m]$, entonces
+                  $$
+                      sh(S, \text{ }T)  = \prod_{i=1}^n sh(S_i, \text{ }T) + \prod_{j=1}^m sh(S, \text{ }T_j)
+                  $$
+        \end{enumerate}
+        % donde $C_n$ y $C_m$ son $n$ y $m$-corolas, respectivamente; y $C_n[S_1,\dots,S_n]$ es una $n$-corola que cada hoja $i$-esima la conectamos con la ra\'iz del \'arbol $S_i$. \cite[Proposici\'on 3.1]{SoT}.
+    \end{prop}
 \end{frame}
 
 \begin{frame}{Estructura de orden parcial}
-    H
+    Existen los \emph{shuffles intermediarios} $R_k$ $(1 < k < N)$ entre $R_1$ y $R_N$. % obtenidos filtrando los v\'ertices negros en $R_1$ hacia la ra\'iz del \'arbol mediante intercambios con los v\'ertices blancos.
+Todo $R_k$ se obtiene desde un $R_l$ anterior. Es decir, cada intercambio se basa en transformar una configuraci\'on de $R_l$
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 15.0)*\cir<2pt>{}="2"; %0W
+    (-25.0, 30.0)*=0{\bullet}="3"; %1B
+    (-37.5, 45.0)*{}="4"; %leaf_b_1-y_1
+    (-12.5, 45.0)*{}="5"; %leaf_b_n-y_1
+    (25.0, 30.0)*=0{\bullet}="6"; %2B
+    (12.5, 45.0)*{}="7"; %leaf_b_1-y_m
+    (37.5, 45.0)*{}="8"; %leaf_b_n-y_m
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    (-5.5, 7.5)*=0{\scriptstyle (a,\text{ }x)};
+    (-19.5, 21)*=0{\scriptstyle (a,\text{ }y_1)};
+    (-39, 37.5)*=0{\scriptstyle (b_1,\text{ }y_1)};
+    (-11, 37.5)*=0{\scriptstyle (b_n,\text{ }y_1)};
+    (19.5, 21)*=0{\scriptstyle (a,\text{ }y_m)};
+    (10.5, 37.5)*=0{\scriptstyle (b_1,\text{ }y_m)};
+    (39.5, 37.5)*=0{\scriptstyle (b_n,\text{ }y_m)};
+    (-25,35)*{\dots};
+    (25,35)*{\dots};
+    (0,20)*{\dots\dots};
+    \endxy
+\end{equation}
+\end{frame}
+\begin{frame}{Estructura de orden parcial}
+    A una configuraci\'on de $R_k$
+\begin{equation}
+    \xy
+    <0.08cm, 0cm>:
+    %Vertices%
+    (0.0, 0.0)*{}="1"; %root_a-x
+    (0.0, 15.0)*=0{\bullet}="2"; %0B
+    (-25.0, 30.0)*\cir<2pt>{}="3"; %1W
+    (-37.5, 45.0)*{}="4"; %leaf_b_1-y_1
+    (-12.5, 45.0)*{}="5"; %leaf_b_1-y_m
+    (25.0, 30.0)*\cir<2pt>{}="6"; %2W
+    (12.5, 45.0)*{}="7"; %leaf_b_n-y_1
+    (37.5, 45.0)*{}="8"; %leaf_b_n-y_m
+    %Edges%
+    "1";"2" **\dir{-};
+    "2";"3" **\dir{-};
+    "3";"4" **\dir{-};
+    "3";"5" **\dir{-};
+    "2";"6" **\dir{-};
+    "6";"7" **\dir{-};
+    "6";"8" **\dir{-};
+    %Labels%
+    (-5.5, 7.5)*=0{\scriptstyle (a,\text{ }x)};
+    (-19.5, 21)*=0{\scriptstyle (b_1,\text{ }x)};
+    (-39, 37.5)*=0{\scriptstyle (b_1,\text{ }y_1)};
+    (-11, 37.5)*=0{\scriptstyle (b_1,\text{ }y_m)};
+    (19.5, 21)*=0{\scriptstyle (b_n,\text{ }x)};
+    (10.5, 37.5)*=0{\scriptstyle (b_n,\text{ }y_1)};
+    (39.5, 37.5)*=0{\scriptstyle (b_n,\text{ }y_m)};
+    (-25,35)*{\dots};
+    (25,35)*{\dots};
+    (0,20)*{\dots\dots};
+    \endxy
+\end{equation}
+Si un shuffle $R_k$ se obtiene the otro shuffle $R_l$ mediante la norma de arriba, entonces $R_l\le R_k$.
+% As\'i, obtenemos un orden parcial en el conjunto de todos los shuffles.
+\end{frame}
+\begin{frame}{Producto tensorial de \'arboles}
+    \begin{lema}
+        Para todo shuffle $R_i$ de $S$ y $T$ tenemos un monomorfismo
+        $$
+            \xymatrix{
+                m\colon\Omega[R_i] \ar@{>->}[r] & \Omega[S]\otimes\Omega[T]
+            }
+        $$
+        % El subconjunto dendroidal, que viene dado por la im\'agen de este monomorfismo, lo denotaremos $m(R_i)$.
+    \end{lema}
+    % \begin{proof}
+    %     Los v\'ertices del conjunto dendroidal $\Omega[R_i]$ son las aristas del \'arbol $R_i$. La funci\'on $m$ env\'ia aristas nombradas como $(a, x)$ en $R_i$ a la arista con el mismo nombre en $\Omega[S]\otimes\Omega[T]$.
+    %     Un morfismo $\Omega[R]\to X$, de un representable de un conjunto dendroidal a un conjunto dendroidal arbitrario, es un monomorfismo desde que el morfismo $\Omega[R]_\eta \to X_\eta$ lo es en los v\'ertices.
+    
+    % \end{proof}
+    \begin{corol}
+        Para todo objeto $T$ y $S$ en $\Omega$, tenemos que
+        $$
+            \Omega[S]\otimes\Omega[T] = \bigcup_{i=1}^{N} m(R_i)
+        $$
+        % donde la uni\'on recorre todos los posibles shuffles de $S$ y $T$.
+    \end{corol}
 \end{frame}
 
-\begin{frame}{Generar Shuffles en Python}
-
+\begin{frame}{Generar shuffles en Python}
+    \begin{ex}
+        Para acabar esta secci\'on, pondremos un ejemplo para ense\~nar la utilidad del paquete. Sean $S$ y $T$ los \'arboles
+    $$
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*\cir<2pt>{}="2"; %0W
+        (-22.5, 20.0)*\cir<2pt>{}="3"; %1W
+        (-37.5, 30.0)*{}="4"; %leaf_d
+        (-22.5, 30.0)*{}="5"; %leaf_e
+        (-7.5, 30.0)*{}="6"; %leaf_f
+        (22.5, 20.0)*\cir<2pt>{}="7"; %2W
+        (7.5, 30.0)*{}="8"; %leaf_g
+        (22.5, 30.0)*{}="9"; %leaf_h
+        (37.5, 30.0)*{}="10"; %leaf_i
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "3";"5" **\dir{-};
+        "3";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "7";"9" **\dir{-};
+        "7";"10" **\dir{-};
+        (-13,0)*{S};
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        (-20, 0.0)*{}="1";
+        (20, 10.0)*{}="2";
+        \endxy
+        \xy
+        <0.08cm, 0cm>:
+        %Vertices%
+        (0.0, 0.0)*{}="1"; %root_a
+        (0.0, 10.0)*=0{\bullet}="2"; %0B
+        (-15.0, 20.0)*=0{\bullet}="3"; %1B
+        (-15.0, 30.0)*=0{\bullet}="4"; %3B
+        (-22.5, 40.0)*{}="5"; %leaf_f
+        (-7.5, 40.0)*{}="6"; %leaf_g
+        (15.0, 20.0)*=0{\bullet}="7"; %2B
+        (15.0, 30.0)*=0{\bullet}="8"; %4B
+        (7.5, 40.0)*{}="9"; %leaf_h
+        (22.5, 40.0)*{}="10"; %leaf_i
+        %Edges%
+        "1";"2" **\dir{-};
+        "2";"3" **\dir{-};
+        "3";"4" **\dir{-};
+        "4";"5" **\dir{-};
+        "4";"6" **\dir{-};
+        "2";"7" **\dir{-};
+        "7";"8" **\dir{-};
+        "8";"9" **\dir{-};
+        "8";"10" **\dir{-};
+        (-13,0)*{T};
+        \endxy
+    $$
+    \end{ex}
+\end{frame}
+\begin{frame}{Generar shuffles en Python}
+    El conjunto de shuffles resultante ser\'ia
+    \begin{center}\makebox[0pt]{
+        \movie{\includegraphics{statics/R1.png}}{statics/slow.avi}
+    }\end{center}
+    
 \end{frame}
 %------------------------------------------------
 \section{Conclusiones}
 %------------------------------------------------
 
-\begin{frame}{Conclusiones}
-    H
-\end{frame}
+% \begin{frame}{Conclusiones}
+%     H
+% \end{frame}
 
 %------------------------------------------------
 

@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Nociones previas}{3}{0}{1}
 \beamer@sectionintoc {2}{\'Arboles como op\'eradas coloreadas}{8}{0}{2}
-\beamer@sectionintoc {3}{Conjuntos Dendroidales}{12}{0}{3}
-\beamer@sectionintoc {4}{Producto Tensorial}{14}{0}{4}
-\beamer@sectionintoc {5}{Conjunto de Shuffles}{17}{0}{5}
-\beamer@sectionintoc {6}{Conclusiones}{21}{0}{6}
+\beamer@sectionintoc {3}{Conjuntos dendroidales}{12}{0}{3}
+\beamer@sectionintoc {4}{Producto tensorial}{15}{0}{4}
+\beamer@sectionintoc {5}{Conjunto de shuffles}{22}{0}{5}
+\beamer@sectionintoc {6}{Conclusiones}{30}{0}{6}
