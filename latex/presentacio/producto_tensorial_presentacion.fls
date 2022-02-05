@@ -480,15 +480,12 @@ INPUT /home/rbrasco/Documents/GitHub/trees-shuffling/latex/presentacio/producto_
 INPUT /home/rbrasco/Documents/GitHub/trees-shuffling/latex/presentacio/producto_tensorial_presentacion.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/ts1cmss.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcss1200.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
@@ -508,6 +505,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/rsfs/rsfs7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssi12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssi10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmssi8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /home/rbrasco/Documents/GitHub/trees-shuffling/latex/presentacio/./statics/slow.avi
 INPUT /home/rbrasco/Documents/GitHub/trees-shuffling/latex/presentacio/statics/R1.png
 INPUT /home/rbrasco/Documents/GitHub/trees-shuffling/latex/presentacio/statics/R1.png
