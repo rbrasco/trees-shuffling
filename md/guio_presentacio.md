@@ -7,7 +7,7 @@ Hola, me llamo Roger Brascó Garcés y bienvenidos a mi presentación del trabaj
 ## Introducción
 Una de las ideas inciciales del trabajo era encontrar una formula cerrada para el número de shuffles entre dos arboles, pero para entender que significa este numero, hace falta toda una teoria que presentaré en la primera parte de la presentacion. 
 Esta primera parte quiero llegar a explicar que es el producto tensorial, para ello debo introducir unas nociones previas. Luego seguiré con un formalismo de árboles y su definición como opéradas coloreadas. y Así podré introducir la nocion de conjuntos dendroidales junto con su producto tensorial.
-En la segunda parte de la presentación comentaré como he desarrollado un paquete de python para que ayude con el calculo del producto tensorial mediante los shuffles.
+En la segunda parte de la presentación comentaré como se forma el conjunto de shuffles y como he desarrollado un paquete de python para que ayude con el calculo del producto tensorial mediante estos shuffles.
 
 ## Nociones previas
 
