@@ -200,7 +200,7 @@
     \begin{defi}
         Sea $P$ una op\'erada $C$-coloreada y $Q$ una op\'erada $D$-coloreada. Un \emph{morfismo de op\'eradas} $f\colon P\to Q$ consiste en una aplicaciones entre los conjuntos de colores $f\colon C\to D$ y aplicaciones
         $$
-            f_{c_1,\dots,c_n;c}: P(c_1,\dots,c_n;c) \longrightarrow Q(f(c_1),\dots,f(c_n);c)
+            f_{c_1,\dots,c_n;c}: P(c_1,\dots,c_n;c) \longrightarrow Q(f(c_1),\dots,f(c_n);f(c))
         $$
         compatibles con el producto composici\'on, las unidades y la acci\'on del grupo sim\'etrico.
     \end{defi}
@@ -594,20 +594,6 @@
         % Observamos que existe una biyecci\'on entre los shuffles de dos \'arboles lineales $L_n$ y $L_m$ con los $(n,m)$-shuffles de $[n]\times[m]$.
     \end{defi}
 \end{frame}
-\begin{frame}{Conjunto de shuffles}
-    \begin{prop}
-        El n\'umero de shuffles $sh(S,\text{ }T)$ de dos \'arboles $S$ y $T$ satisface tres propiedades:
-        \begin{enumerate}
-            \item[{\rm (i)}] Sim\'etrico: $sh(S, \text{ }T) = sh(T, \text{ }S)$
-            \item[{\rm (ii)}] Unitario: Si $T$ es un \'arbol unitario $\eta$, entonces $sh(S, \text{ }\eta)=1$
-            \item[{\rm (iii)}] Inducci\'on: Si $S=C_n[S_1,\dots,S_n]$ y $T=C_m[T_1,\dots,T_m]$, entonces
-                  $$
-                      sh(S, \text{ }T)  = \prod_{i=1}^n sh(S_i, \text{ }T) + \prod_{j=1}^m sh(S, \text{ }T_j)
-                  $$
-        \end{enumerate}
-        % donde $C_n$ y $C_m$ son $n$ y $m$-corolas, respectivamente; y $C_n[S_1,\dots,S_n]$ es una $n$-corola que cada hoja $i$-esima la conectamos con la ra\'iz del \'arbol $S_i$. \cite[Proposici\'on 3.1]{SoT}.
-    \end{prop}
-\end{frame}
 
 \begin{frame}{Estructura de orden parcial}
     Existen los \emph{shuffles intermediarios} $R_k$ $(1 < k < N)$ entre $R_1$ y $R_N$. % obtenidos filtrando los v\'ertices negros en $R_1$ hacia la ra\'iz del \'arbol mediante intercambios con los v\'ertices blancos.
@@ -685,7 +671,7 @@
         \endxy
     $$
 
-    Si un shuffle $R_k$ se obtiene the otro shuffle $R_l$ mediante la norma de arriba, entonces $R_l\le R_k$.
+    Si un shuffle $R_k$ se obtiene de otro shuffle $R_l$ mediante la norma de arriba, entonces $R_l\le R_k$.
 \end{frame}
 
 \begin{frame}{Producto tensorial de \'arboles}
@@ -710,6 +696,20 @@
         $$
         % donde la uni\'on recorre todos los posibles shuffles de $S$ y $T$.
     \end{corol}
+\end{frame}
+\begin{frame}{N\'umero de shuffles}
+    \begin{prop}
+        El n\'umero de shuffles $sh(S,\text{ }T)$ de dos \'arboles $S$ y $T$ satisface tres propiedades:
+        \begin{enumerate}
+            \item[{\rm (i)}] Sim\'etrico: $sh(S, \text{ }T) = sh(T, \text{ }S)$
+            \item[{\rm (ii)}] Unitario: Si $T$ es un \'arbol unitario $\eta$, entonces $sh(S, \text{ }\eta)=1$
+            \item[{\rm (iii)}] Inducci\'on: Si $S=C_n[S_1,\dots,S_n]$ y $T=C_m[T_1,\dots,T_m]$, entonces
+                  $$
+                      sh(S, \text{ }T)  = \prod_{i=1}^n sh(S_i, \text{ }T) + \prod_{j=1}^m sh(S, \text{ }T_j)
+                  $$
+        \end{enumerate}
+        % donde $C_n$ y $C_m$ son $n$ y $m$-corolas, respectivamente; y $C_n[S_1,\dots,S_n]$ es una $n$-corola que cada hoja $i$-esima la conectamos con la ra\'iz del \'arbol $S_i$. \cite[Proposici\'on 3.1]{SoT}.
+    \end{prop}
 \end{frame}
 
 \begin{frame}{Generar shuffles en Python}

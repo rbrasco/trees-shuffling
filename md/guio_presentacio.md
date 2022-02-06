@@ -2,12 +2,12 @@
 
 ## Presentación
 
-Hola, me llamo Roger Brascó Garcés y bienvenidos a mi presentación del trabajo final de carrera. Hablaremos sobre el producto tensorial de conjuntos dendroidales.
+Hola, me llamo Roger Brascó Garcés y bienvenidos a mi presentación del trabajo final de carrera. Hoy hablaremos sobre el producto tensorial de conjuntos dendroidales.
 
 ## Introducción
-
-La idea principal del trabajo es entender que es este producto tensorial, para ello tengo que introducir unas nociones previas. 
-Seguiré con un formalismo de árboles y su definición como opéradas coloreadas. Así podré introducir la nocion de conjuntos dendroidales y luego su producto tensorial. Finalmente hablaré de una técnica para encontrar dicho producto.
+Una de las ideas inciciales del trabajo era encontrar una formula cerrada para el número de shuffles entre dos arboles, pero para entender que significa este numero, hace falta toda una teoria que presentaré en la primera parte de la presentacion. 
+Esta primera parte quiero llegar a explicar que es el producto tensorial, para ello debo introducir unas nociones previas. Luego seguiré con un formalismo de árboles y su definición como opéradas coloreadas. y Así podré introducir la nocion de conjuntos dendroidales junto con su producto tensorial.
+En la segunda parte de la presentación comentaré como he desarrollado un paquete de python para que ayude con el calculo del producto tensorial mediante los shuffles.
 
 ## Nociones previas
 
@@ -26,7 +26,7 @@ Una operada coloreada extiende la definición de operada mediante la introducci�
 
 __Slide - Formalismo de arboles__
 
-Voy a dar un formalismo de arboles. Un árbol es un grafo no vacı́o,  finito, conexo y sin lazos. Pero lo que se hace es borrar los vertices que solo tienen un arista adjunta, y dejar alguno como el vertice w si se quiere. Los vertices restantes seran los vertices que forman el arbol. Se escoje un arista que la llamaremos raiz, por ejemplo la arista a. Las hojas o aristas externas son las que tienen un solo vertice adjunto (como e o f) y las aristas internas son las que quedan (como b o d). Cada vertice tiene un conjunto de aristas de entradas y un arista de salida, (inputs y output). Entonces un arbol planar con raiz es un arbol con raiz dotado con un orden lineal en los conjuntos de entradas de cada vertice.
+Voy introducir un formalismo de arboles. Un árbol es un grafo no vacı́o,  finito, conexo y sin lazos. Pero lo que se hace es borrar los vertices que solo tienen un arista adjunta, y dejar alguno como el vertice w si se quiere. Los vertices restantes seran los vertices que forman el arbol. Se escoje un arista que la llamaremos raiz, por ejemplo la arista a. Las hojas o aristas externas son las que tienen un solo vertice adjunto (como e o f) y las aristas internas son todas las que quedan (como b o d). Cada vertice tiene un conjunto de aristas de entradas y un arista de salida, (inputs y output). Entonces definimos un arbol planar con raiz como un arbol con raiz dotado con un orden lineal fijo en los conjuntos de entradas de cada vertice.
 
 __Slide - Arboles como operadas coloreadas__
 
@@ -40,7 +40,7 @@ Sean S y T dos arboles, entonces los morfismos de estas categorias son los morfi
 
 __Slide - morfismos en omegap y omega__
 
-Dentro de este conjunto de morfismos se puede diferenciar entre caras internas o externas y degeneraciones. Por ejemplo, esta funcion es una inclusion de colores y de las operaciones generadoras del primer arbol, menos la operacion u que se envia a la composicion v-r por la arista b.
+Dentro de este conjunto de morfismos se puede diferenciar entre caras internas o externas y degeneraciones. Por ejemplo, esta funcion es una inclusion de colores y de las operaciones generadoras del primer arbol, menos la operacion u que se envia a la operacion composicion v-r por la arista b.
 
 __Slide - Conjuntos denroidales__
 
@@ -56,7 +56,7 @@ __Slide - Boardman-Vogt__
 
 **SAS**
 
-Las relaciones i,ii indica que la funcion que envia la operada P al producto tensorial de BV PQ son morfismos de operadas para color d, y analogamente para iii,iv. La quinta relacion se llama la relacion de intercambio, donde se observa se aplica una permutacion en las entradas del vertice blanco de la operada P, para obtener el itercambio con el vertice negro de la operada Q. Y las entradas son las mismas con otra configuracion planar.
+Las relaciones i,ii indican que la funcion que envia la operada P al producto tensorial de BV PQ son morfismos de operadas para color d, y analogamente para iii,iv. La quinta relacion se llama la relacion de intercambio, donde se observa se aplica una permutacion en las entradas del vertice blanco de la operada P, para obtener el itercambio con el vertice negro de la operada Q. Observamos que las hojas han sido permutadas en el intercambio.
 
 __Slide - Producto tensorial en dendroidal__
 
@@ -72,9 +72,6 @@ Finalmente, hay otra alternativa para encontrar el producto tensorial. para ello
 
 Entonces, el conjunto de shuffles entre dos arboles es la colecion de todos los shuffles posibles. 
 
-__Slide - Conjunto de shuffles__
-
-Es intersante calcular la cardinalidad del conjunto. **SAS**. Una de las ideas inciales del trabajo era ver si se puede encontrar una formula cerrada para esta funcion recurisva. Esto es un problema abierto ya que es muy complejo y solo se conoce una formula cerrada para el caso especial de arboles lineales. Un arbol lineal es un arbol cuyos vertices solo tienen una entrada. De esta manera, la funcion recursiva se reduce a la relacion inductiva que define el coeficiente binomial.
 
 __Slide - Estructura orden parcial__
 
@@ -84,14 +81,20 @@ __Slide - Producto tensorial de arboles__
 
 **SAS** Donde la union no es disjunta ya que hay shuffles que son caras de otros shuffles.
 
+__Slide - Numero de shuffles de shuffles__
+
+Es intersante calcular el numero de shuffles. **SAS**. Encontrar una formula cerrada para esta funcion recurisva es un problema abierto ya que es muy complejo y solo se conoce una formula cerrada para el caso especial de arboles lineales. Un arbol lineal es un arbol cuyos vertices solo tienen una entrada. De esta manera, la funcion recursiva se reduce a la relacion inductiva que define el coeficiente binomial.
+
 __Slide - Generar shuffles python__
 
 Para acabar, he desarrollado un paquete de python para tratar con los arboles como operadas y generar el conjunto de shuffles. Tambien este paquete tiene una herramienta para prinitar los arboles en latex, como todos los que hay en el trabajo o en la presentacion. 
 
+Voy a mostrar todos los shuffles de estos dos arboles.
 **SAS**
-Para poder generar el conjunto de shuffles he disenyado un algoritmo de busqueda no informada que tiene un actuador. es decir, es un algoritmo que encuentra vertices donde les puedo aplicar la norma del intercambio y luego aplicar dicho intercambio. En el proceso del algoritmo voy guardando cada shuffle y sus parientes, es decir, para cada shuffle tengo sus parientes directos, y asi, puedo formar la estructura de orden parcial dentro del conjunto de shuffles, como habiamos visto en ejemplo.
-tambien he desarrollado un algoritmo que sigue la proposicion del cardinal del conjunto, asi podia validar que mi algoritmo que genera los shuffles sea correcto, comparando el numero total de shuffles encontrados y el numero obtenido por la proposicion. 
-Todo este paquete funciona mediante la entrada de una descripcion completa de un arbol como operada coloreada. Y como podeis ver, este gif lo he podido generar con mi código de manera automatica.
+Lo que podemos ver como primer shuffle es T sobre S.
+Para poder generar el conjunto de shuffles que estais viendo, he disenyado un algoritmo de busqueda no informada que tiene un actuador. es decir, es un algoritmo que encuentra vertices donde les puedo aplicar la norma del intercambio y luego aplicar dicho intercambio. Durante el proceso del algoritmo voy guardando cada shuffle y sus parientes, asi, puedo formar la estructura de orden parcial dentro del conjunto de shuffles.
+tambien he desarrollado un algoritmo que sigue la proposicion del numero de shuffles, asi podia validar que mi algoritmo que genera los shuffles fuera correcto, comparando el numero total de shuffles encontrados y el numero obtenido por la proposicion. 
+Este paquete es util ya que funciona mediante la entrada de una descripcion completa de un arbol como operada coloreada. 
 
-Como conclusión, esta técncia alternativa de encontrar el producto tensorial entre conjuntos dendroidales es util si los arboles son pequeños pero si son grandes, si o si se debe usar un programa informatico para que te ayude con los multiples de calculos.
+Como conclusión, encontrar todos los shuffles envez de calcular el producto tensorial entre conjuntos dendroidales es util si puedes usar programa informatico para que te ayude con los multiples de calculos, ya que como podeis ver por arboles que parecen senzillos generan muchas configuraciones distintas.
 
