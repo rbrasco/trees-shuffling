@@ -314,6 +314,10 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/ocgx2/ocgbase.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/ocgx2/ocgbase.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/multimedia.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/multimedia.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/media9/media9.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/media9/media9.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+INPUT /usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/xmpmulti.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/beamer/xmpmulti.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty
