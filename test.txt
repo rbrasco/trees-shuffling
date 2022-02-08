@@ -1,4 +1,4 @@
 Number of trees:  6
 Number of trees generated:  6
-Dictionary of trees:  {'R_{1}': '0W(b-a;a-a)|1W(d-a;b-a)|0B(d-b,d-c;d-a)|1B(d-d;d-c)', 'R_{2}': '0W(b-a;a-a)|0B(b-b,b-c;b-a)|1W(d-b;b-b)|1W(d-c;b-c)|1B(d-d;d-c)', 'R_{3}': '0B(a-b,a-c;a-a)|0W(b-c;a-c)|1W(d-c;b-c)|1B(d-d;d-c)|0W(b-b;a-b)|1W(d-b;b-b)', 'R_{4}': '0W(b-a;a-a)|0B(b-b,b-c;b-a)|1W(d-b;b-b)|1B(b-d;b-c)|1W(d-d;b-d)', 'R_{5}': '0B(a-b,a-c;a-a)|0W(b-c;a-c)|1B(b-d;b-c)|1W(d-d;b-d)|0W(b-b;a-b)|1W(d-b;b-b)', 'R_{6}': '0B(a-b,a-c;a-a)|0W(b-b;a-b)|1W(d-b;b-b)|1B(a-d;a-c)|0W(b-d;a-d)|1W(d-d;b-d)'}
-Skeleton of trees:  {'R_{1}': set(), 'R_{2}': {'R_{1}'}, 'R_{3}': {'R_{2}'}, 'R_{4}': {'R_{2}'}, 'R_{5}': {'R_{3}', 'R_{4}'}, 'R_{6}': {'R_{5}'}}
+Dictionary of trees:  {'R_{1}': '0W(b-a;a-a)|1W(d-a;b-a)|0B(d-b,d-c;d-a)|1B(d-d;d-c)', 'R_{2}': '0W(b-a;a-a)|0B(b-b,b-c;b-a)|1W(d-c;b-c)|1B(d-d;d-c)|1W(d-b;b-b)', 'R_{3}': '0B(a-b,a-c;a-a)|0W(b-b;a-b)|1W(d-b;b-b)|0W(b-c;a-c)|1W(d-c;b-c)|1B(d-d;d-c)', 'R_{4}': '0W(b-a;a-a)|0B(b-b,b-c;b-a)|1W(d-b;b-b)|1B(b-d;b-c)|1W(d-d;b-d)', 'R_{5}': '0B(a-b,a-c;a-a)|0W(b-b;a-b)|1W(d-b;b-b)|0W(b-c;a-c)|1B(b-d;b-c)|1W(d-d;b-d)', 'R_{6}': '0B(a-b,a-c;a-a)|0W(b-b;a-b)|1W(d-b;b-b)|1B(a-d;a-c)|0W(b-d;a-d)|1W(d-d;b-d)'}
+Skeleton of trees:  {'R_{1}': set(), 'R_{2}': {'R_{1}'}, 'R_{3}': {'R_{2}'}, 'R_{4}': {'R_{2}'}, 'R_{5}': {'R_{4}', 'R_{3}'}, 'R_{6}': {'R_{5}'}}
