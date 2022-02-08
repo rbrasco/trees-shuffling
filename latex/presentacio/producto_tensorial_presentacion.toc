@@ -1,5 +1,5 @@
 \beamer@sectionintoc {1}{Nociones previas}{3}{0}{1}
-\beamer@sectionintoc {2}{\'Arboles como op\'eradas}{6}{0}{2}
-\beamer@sectionintoc {3}{Conjuntos dendroidales}{10}{0}{3}
-\beamer@sectionintoc {4}{Producto tensorial}{12}{0}{4}
-\beamer@sectionintoc {5}{Conjunto de shuffles}{18}{0}{5}
+\beamer@sectionintoc {2}{\'Arboles como op\'eradas}{7}{0}{2}
+\beamer@sectionintoc {3}{Conjuntos dendroidales}{12}{0}{3}
+\beamer@sectionintoc {4}{Producto tensorial}{15}{0}{4}
+\beamer@sectionintoc {5}{Conjunto de shuffles}{23}{0}{5}

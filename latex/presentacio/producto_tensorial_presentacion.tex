@@ -7,7 +7,8 @@
 \usepackage{xmpmulti}
 \usepackage{amsfonts, amsmath, amssymb,latexsym,amsthm, mathrsfs, enumerate, tikz-cd}
 \usepackage{hyperref}
-\usepackage[all]{xy}
+\usepackage[all,color]{xy}
+\UseCrayolaColors
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \usepackage{hyperref}
@@ -106,7 +107,7 @@
 
 %------------------------------------------------
 {
-\AtBeginSection{}
+% \AtBeginSection{}
 \section{Nociones previas}
 %------------------------------------------------
 \begin{frame}{Nociones previas}
@@ -501,6 +502,99 @@
         $$
     \end{ex}
 \end{frame}
+\begin{frame}{Relaci\'on de intercambio}
+    \begin{ex}
+        % Suponemos que $n=2$ y $m=3$.
+        % Antes de aplicar la permutaci\'on $\sigma_{2,3}^{*}$
+        % Dibujo del arbol (p\otimes d)\circ((c_1\otimes q),\dots,(c_n\otimes q))%
+        $$
+            \xy
+            <0.072cm, 0cm>:
+            %Vertices%
+            (0.0, 0.0)*{}="1"; %root_c-d
+            (0.0, 10.0)*\cir<2pt>{}="2"; %p\otimes dW
+            (-45.0, 20.0)*=0{\bullet}="3"; %c_1\otimes qB
+            (-75.0, 30.0)*{}="4"; %leaf_c_1-d_1
+            (-45.0, 30.0)*{}="5"; %leaf_c_1-d_2
+            (-15.0, 30.0)*{}="6"; %leaf_c_1-d_3
+            (45.0, 20.0)*=0{\bullet}="7"; %c_2\otimes qB
+            (15.0, 30.0)*{}="8"; %leaf_c_2-d_1
+            (45.0, 30.0)*{}="9"; %leaf_c_2-d_2
+            (75.0, 30.0)*{}="10"; %leaf_c_2-d_3
+            %Edges%
+            "1";"2" **\dir{-};
+            "2";"3" **[Red]\dir{-};
+            "3";"4" **[Blue]\dir{-};
+            "3";"5" **[Blue]\dir{-};
+            "3";"6" **[Blue]\dir{-};
+            "2";"7" **[Red]\dir{-};
+            "7";"8" **[Blue]\dir{-};
+            "7";"9" **[Blue]\dir{-};
+            "7";"10" **[thicker][Blue]\dir{-};
+            %Labels%
+            (5.0, 9.0)*=0{\scriptstyle p\otimes d};
+            (-52.0, 19.0)*=0{\scriptstyle c_1\otimes q};
+            (52.0, 19.0)*=0{\scriptstyle c_2\otimes q};
+            (-5.0, 5.0)*=0{\scriptstyle (c,d)};
+            (-20.5, 11.0)*=0{\scriptstyle (c_1,d)};
+            (-71.5, 25.0)*=0{\scriptstyle (c_1,d_1)};
+            (-45.0, 32.0)*=0{\scriptstyle (c_1,d_2)};
+            (-19.0, 25.0)*=0{\scriptstyle (c_1,d_3)};
+            (20.5, 11.0)*=0{\scriptstyle (c_2,d)};
+            (19.0, 25.0)*=0{\scriptstyle (c_2,d_1)};
+            (45.0, 32.0)*=0{\scriptstyle (c_2,d_2)};
+            (71.5, 25.0)*=0{\scriptstyle (c_2,d_3)};
+            (-13,0)*{T};
+            \endxy
+        $$
+
+        $$
+            \xy
+            <0.072cm, 0cm>:
+            %Vertices%
+            (0.0, 0.0)*{}="1"; %root_c-d
+            (0.0, 15.0)*=0{\bullet}="2"; %c\otimes qB
+            (-60.0, 30.0)*\cir<2pt>{}="3"; %p\otimes d_1W
+            (-75.0, 45.0)*{}="4"; %leaf_c_1-d_1
+            (-45.0, 45.0)*{}="5"; %leaf_c_2-d_1
+            (0.0, 30.0)*\cir<2pt>{}="6"; %p\otimes d_2W
+            (-15.0, 45.0)*{}="7"; %leaf_c_1-d_2
+            (15.0, 45.0)*{}="8"; %leaf_c_2-d_2
+            (60.0, 30.0)*\cir<2pt>{}="9"; %p\otimes d_3W
+            (45.0, 45.0)*{}="10"; %leaf_c_1-d_3
+            (75.0, 45.0)*{}="11"; %leaf_c_2-d_3
+            %Edges%
+            "1";"2" **\dir{-};
+            "2";"3" **[Blue]\dir{-};
+            "3";"4" **[Red]\dir{-};
+            "3";"5" **[Red]\dir{-};
+            "2";"6" **[Blue]\dir{-};
+            "6";"7" **[Red]\dir{-};
+            "6";"8" **[Red]\dir{-};
+            "2";"9" **[Blue]\dir{-};
+            "9";"10" **[Red]\dir{-};
+            "9";"11" **[Red]\dir{-};
+            %Labels%
+            (5.0, 13.5)*=0{\scriptstyle c\otimes q};
+            (-65.5, 30.0)*=0{\scriptstyle p\otimes d_1};
+            (6.0, 30.0)*=0{\scriptstyle p\otimes d_2};
+            (66, 30.0)*=0{\scriptstyle p\otimes d_3};
+            (-4.5, 7.5)*=0{\scriptstyle (c,d)};
+            (-32.0, 19.5)*=0{\scriptstyle (c,d_1)};
+            (-75, 37.5)*=0{\scriptstyle (c_1,d_1)};
+            (-45, 37.5)*=0{\scriptstyle (c_2,d_1)};
+            (-5.5, 22.5)*=0{\scriptstyle (c,d_2)};
+            (-15, 37.5)*=0{\scriptstyle (c_1,d_2)};
+            (15, 37.5)*=0{\scriptstyle (c_2,d_2)};
+            (32.0, 19.5)*=0{\scriptstyle (c,d_3)};
+            (45, 37.5)*=0{\scriptstyle (c_1,d_3)};
+            (75, 37.5)*=0{\scriptstyle (c_2,d_3)};
+            (-17,0)*{\sigma_{2,3}^{*}(T)};
+            \endxy
+        $$
+    \end{ex}
+\end{frame}
+
 
 
 \begin{frame}{Producto tensorial de conjuntos dendroidales}

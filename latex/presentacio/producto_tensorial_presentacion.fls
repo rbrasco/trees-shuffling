@@ -367,6 +367,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xyarrow.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xyarrow.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xygraph.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xygraph.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xycolor.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xycolor.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-co.tex
@@ -374,6 +376,8 @@ INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-cu.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-fr.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-li.tex
 INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xypdf-ro.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xycrayon.tex
+INPUT /usr/share/texlive/texmf-dist/tex/generic/xypic/xycrayon.tex
 INPUT /usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/float/float.sty
